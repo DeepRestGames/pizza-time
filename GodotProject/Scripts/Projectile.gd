@@ -14,10 +14,15 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	var enemy = body as Enemy
-	if enemy != null:
+	if body is Enemy:
+		var enemy = body as Enemy
 		enemy.take_hit()
-		queue_free()
+	
+	if body is InteractableButton:
+		var button = body as InteractableButton
+		button.activate_button()
+	
+	queue_free()
 
 
 func _on_despawn_timer_timeout():

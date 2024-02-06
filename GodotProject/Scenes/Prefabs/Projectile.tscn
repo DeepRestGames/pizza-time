@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cwjqm88bs7exc"]
 
-[ext_resource type="Script" path="res://Scripts/Projectile.gd" id="1_xpupl"]
+[ext_resource type="Script" path="res://Scripts/Projectile.gd" id="1_ghg8v"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_lb5o8"]
 size = Vector3(0.1, 0.1, 0.3)
@@ -8,10 +8,10 @@ size = Vector3(0.1, 0.1, 0.3)
 [sub_resource type="BoxShape3D" id="BoxShape3D_3stxj"]
 size = Vector3(0.1, 0.1, 0.3)
 
-[node name="DaggerProjectile" type="Area3D"]
+[node name="Projectile" type="Area3D"]
 collision_layer = 0
-collision_mask = 4
-script = ExtResource("1_xpupl")
+collision_mask = 13
+script = ExtResource("1_ghg8v")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_lb5o8")

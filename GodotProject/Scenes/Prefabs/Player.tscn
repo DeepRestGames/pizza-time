@@ -148,7 +148,7 @@ mesh = SubResource("BoxMesh_e47yb")
 
 [node name="WeaponHitbox" type="Area3D" parent="Head/WeaponPivot/WeaponModel"]
 collision_layer = 0
-collision_mask = 4
+collision_mask = 12
 monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Head/WeaponPivot/WeaponModel/WeaponHitbox"]

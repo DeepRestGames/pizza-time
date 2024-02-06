@@ -27,7 +27,7 @@ const FOV_CHANGE = 1.5
 # Weapon & combat variables
 @onready var animation_player = $AnimationPlayer
 @onready var weapon_model = $Head/WeaponPivot/WeaponModel
-var projectile_prefab = preload("res://Scenes/Prefabs/DaggerProjectile.tscn")
+var projectile_prefab = preload("res://Scenes/Prefabs/Projectile.tscn")
 var projectile_instance
 @onready var projectile_throw_trajectory = $Head/Camera3D/ProjectileThrowTrajectory
 
@@ -117,9 +117,13 @@ func _headbob(time) -> Vector3:
 
 # Handle enemy hit
 func _on_weapon_hitbox_body_entered(body):
+	if body is Enemy:
 		var enemy = body as Enemy
-		if enemy != null:
-			enemy.take_hit()
+		enemy.take_hit()
+	
+	if body is InteractableButton:
+		var button = body as InteractableButton
+		button.activate_button()
 
 
 # Handle pickup items

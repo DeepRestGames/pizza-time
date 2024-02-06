@@ -1,0 +1,217 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://b2xtxf8hbu210"
+path="res://.godot/imported/240202_Dark_souls_aqueduct.gltf-afe4b070664e51dde264c1283d62c92c.scn"
+
+[deps]
+
+source_file="res://Models/Environment/240202_Dark_souls_aqueduct.gltf"
+dest_files=["res://.godot/imported/240202_Dark_souls_aqueduct.gltf-afe4b070664e51dde264c1283d62c92c.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=false
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"nodes": {
+"PATH:Mesh": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh10": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh11": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh12": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh13": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh14": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh15": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh16": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh17": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh18": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh19": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh2": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh20": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh21": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh22": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh23": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh24": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh25": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh26": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh27": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh28": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh29": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh3": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh30": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh31": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh32": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh33": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh34": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh35": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh36": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh4": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh5": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh6": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh7": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh8": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+},
+"PATH:Mesh9": {
+"generate/physics": true,
+"physics/mask": 6,
+"physics/shape_type": 2
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

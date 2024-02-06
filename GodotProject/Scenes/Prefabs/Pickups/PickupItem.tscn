@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3phruk5mowp3"]
+
+[ext_resource type="Script" path="res://Scripts/PickupItem.gd" id="1_c04ot"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_amiot"]
+radius = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_orb7v"]
+albedo_color = Color(0.596078, 0.6, 0.364706, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_3kf1l"]
+material = SubResource("StandardMaterial3D_orb7v")
+
+[node name="PickupItem" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_c04ot")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_amiot")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_3kf1l")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,164 @@
+[gd_scene load_steps=11 format=3 uid="uid://bq4r28jv36sep"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_6d860"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_cyhp0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_esyaj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87ajx"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_e47yb"]
+material = SubResource("StandardMaterial3D_87ajx")
+size = Vector3(0.2, 0.2, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7hafm"]
+size = Vector3(0.2, 0.2, 1.5)
+
+[sub_resource type="Animation" id="Animation_ykda8"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/WeaponPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.39626, 0, 0.0174533)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/WeaponPivot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.5, -0.7, -0.6)]
+}
+
+[sub_resource type="Animation" id="Animation_jihoy"]
+resource_name = "attack_melee"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/WeaponPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.785398, 0, 0), Vector3(0, 0, 0), Vector3(0.785398, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/WeaponPivot/WeaponModel/WeaponHitbox:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_la2qo"]
+resource_name = "attack_throw"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/WeaponPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.365709, 1.53902, 0.0183219), Vector3(0.365709, -0.0482198, 0.0183219)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/WeaponPivot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.5, -0.7, -0.6), Vector3(0.5, -0.7, -0.1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dytqh"]
+_data = {
+"RESET": SubResource("Animation_ykda8"),
+"attack_melee": SubResource("Animation_jihoy"),
+"attack_throw": SubResource("Animation_la2qo")
+}
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 5
+floor_stop_on_slope = false
+script = ExtResource("1_6d860")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_cyhp0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_esyaj")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="ProjectileThrowTrajectory" type="RayCast3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0.130839, -0.288042, -1.56447)
+target_position = Vector3(0, 0, -1)
+collision_mask = 0
+debug_shape_custom_color = Color(1, 0, 0, 1)
+
+[node name="WallDetectionRayCast3D" type="RayCast3D" parent="Head"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -1, 0)
+target_position = Vector3(0.6, 0, 0)
+debug_shape_custom_color = Color(1, 1, 0, 1)
+debug_shape_thickness = 5
+
+[node name="StepDetectionRayCast3D" type="RayCast3D" parent="Head"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -1.5, 0)
+target_position = Vector3(0.5, 0, 0)
+debug_shape_custom_color = Color(1, 1, 0, 1)
+debug_shape_thickness = 5
+
+[node name="WeaponPivot" type="Node3D" parent="Head"]
+transform = Transform3D(0.999847, -0.0174524, 0, 0.00303064, 0.173625, -0.984805, 0.0171872, 0.984657, 0.173651, 0.5, -0.7, -0.6)
+
+[node name="WeaponModel" type="MeshInstance3D" parent="Head/WeaponPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, -0.7)
+mesh = SubResource("BoxMesh_e47yb")
+
+[node name="WeaponHitbox" type="Area3D" parent="Head/WeaponPivot/WeaponModel"]
+collision_layer = 0
+collision_mask = 4
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/WeaponPivot/WeaponModel/WeaponHitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_7hafm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dytqh")
+}
+
+[connection signal="body_entered" from="Head/WeaponPivot/WeaponModel/WeaponHitbox" to="." method="_on_weapon_hitbox_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

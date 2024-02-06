@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cngrix4nac3ym"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_i6w3t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_un1oy"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_crbsr"]
+material = SubResource("StandardMaterial3D_un1oy")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rsglj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2egk5"]
+radius = 10.0
+
+[node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_i6w3t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_crbsr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_rsglj")
+
+[node name="PlayerDetectionArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetectionArea"]
+shape = SubResource("SphereShape3D_2egk5")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[connection signal="body_entered" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_entered"]
+[connection signal="body_exited" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_exited"]

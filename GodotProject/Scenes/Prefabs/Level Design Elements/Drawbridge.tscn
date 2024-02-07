@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dy0nyqewtis1"]
+[gd_scene load_steps=8 format=3 uid="uid://dy0nyqewtis1"]
 
-[ext_resource type="Script" path="res://Scripts/MovablePlatform.gd" id="1_yurs2"]
+[ext_resource type="Script" path="res://Scripts/MovableElement.gd" id="1_8bf7l"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_cuibe"]
 size = Vector3(3, 0.5, 20)
@@ -24,7 +24,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_t4gbe"]
-resource_name = "move_platform"
+resource_name = "move_forward"
 length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -39,25 +39,45 @@ tracks/0/keys = {
 "values": [Vector3(-1.39626, 0, 0), Vector3(0.289725, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_1o7te"]
+resource_name = "move_backward"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.289725, 0, 0), Vector3(-1.39626, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kedf1"]
 _data = {
 "RESET": SubResource("Animation_5d0cn"),
-"move_platform": SubResource("Animation_t4gbe")
+"move_backward": SubResource("Animation_1o7te"),
+"move_forward": SubResource("Animation_t4gbe")
 }
 
-[node name="MovablePlatform" type="AnimatableBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.173652, 0.984807, 0, -0.984807, 0.173652, 0, 0, 0)
-script = ExtResource("1_yurs2")
+[node name="Drawbridge" type="Node3D"]
+script = ExtResource("1_8bf7l")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.173651, 0.984807, 0, -0.984807, 0.173651, 0, 0, 0)
+collision_mask = 7
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
 mesh = SubResource("BoxMesh_cuibe")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
 shape = SubResource("BoxShape3D_qt8se")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody3D"]
 libraries = {
 "": SubResource("AnimationLibrary_kedf1")
 }

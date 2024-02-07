@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bpsik757801yd"
-path="res://.godot/imported/Chrysler building_v1.gltf-51ff2134261b1fae147c74d9fd9ef875.scn"
+path="res://.godot/imported/Chrysler building_v1.gltf-18c3dc8c332db34f439f557cc1b5b5f1.scn"
 
 [deps]
 
-source_file="res://Models/Environment/Chrysler building_v1.gltf"
-dest_files=["res://.godot/imported/Chrysler building_v1.gltf-51ff2134261b1fae147c74d9fd9ef875.scn"]
+source_file="res://Art/Models/Environment/Chrysler building_v1.gltf"
+dest_files=["res://.godot/imported/Chrysler building_v1.gltf-18c3dc8c332db34f439f557cc1b5b5f1.scn"]
 
 [params]
 

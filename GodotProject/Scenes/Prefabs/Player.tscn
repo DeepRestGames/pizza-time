@@ -1,6 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://bq4r28jv36sep"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_6d860"]
+[ext_resource type="Texture2D" uid="uid://ma18qtx1qeta" path="res://Art/Icons/WhiteCircle.png" id="2_jepl7"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cyhp0"]
 
@@ -122,7 +123,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 [node name="Camera3D" type="Camera3D" parent="Head"]
 
 [node name="ProjectileThrowTrajectory" type="RayCast3D" parent="Head/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0.130839, -0.288042, -1.56447)
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, -1.5)
 target_position = Vector3(0, 0, -1)
 collision_mask = 0
 debug_shape_custom_color = Color(1, 0, 0, 1)
@@ -159,6 +160,63 @@ shape = SubResource("BoxShape3D_7hafm")
 libraries = {
 "": SubResource("AnimationLibrary_dytqh")
 }
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Target" type="Control" parent="HUD"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Outline" type="TextureRect" parent="HUD/Target"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jepl7")
+expand_mode = 1
+
+[node name="Inner" type="TextureRect" parent="HUD/Target"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jepl7")
+expand_mode = 1
 
 [connection signal="body_entered" from="Head/WeaponPivot/WeaponModel/WeaponHitbox" to="." method="_on_weapon_hitbox_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

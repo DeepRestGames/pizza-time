@@ -1,7 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://cids036378ug5"]
+[gd_scene load_steps=18 format=3 uid="uid://cids036378ug5"]
 
 [ext_resource type="PackedScene" uid="uid://bq4r28jv36sep" path="res://Scenes/Prefabs/Player.tscn" id="1_ut346"]
-[ext_resource type="PackedScene" uid="uid://b2xtxf8hbu210" path="res://Models/Environment/240202_Dark_souls_aqueduct.gltf" id="3_82p7p"]
+[ext_resource type="PackedScene" uid="uid://b2xtxf8hbu210" path="res://Art/Models/Environment/240202_Dark_souls_aqueduct.gltf" id="3_82p7p"]
 [ext_resource type="PackedScene" uid="uid://cngrix4nac3ym" path="res://Scenes/Prefabs/Enemy.tscn" id="3_xjk1f"]
 [ext_resource type="PackedScene" uid="uid://d3phruk5mowp3" path="res://Scenes/Prefabs/Pickups/PickupItem.tscn" id="4_3tytv"]
 [ext_resource type="PackedScene" uid="uid://dy0nyqewtis1" path="res://Scenes/Prefabs/Level Design Elements/Drawbridge.tscn" id="5_b4d6r"]
@@ -186,6 +186,7 @@ movable_platform = NodePath("../Drawbridge")
 [node name="SlidingDoor" parent="." instance=ExtResource("7_qkbge")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 18.8579, 12, -36.751)
 two_way_movement = true
+activated = true
 
 [node name="InteractableButton" parent="." node_paths=PackedStringArray("movable_platform") instance=ExtResource("6_l0g6y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3221, 12, -35.8805)

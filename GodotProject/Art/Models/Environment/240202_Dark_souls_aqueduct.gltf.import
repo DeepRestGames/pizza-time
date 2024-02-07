@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b2xtxf8hbu210"
-path="res://.godot/imported/240202_Dark_souls_aqueduct.gltf-afe4b070664e51dde264c1283d62c92c.scn"
+path="res://.godot/imported/240202_Dark_souls_aqueduct.gltf-09a1498c44327742fd4d0af78cce57a5.scn"
 
 [deps]
 
-source_file="res://Models/Environment/240202_Dark_souls_aqueduct.gltf"
-dest_files=["res://.godot/imported/240202_Dark_souls_aqueduct.gltf-afe4b070664e51dde264c1283d62c92c.scn"]
+source_file="res://Art/Models/Environment/240202_Dark_souls_aqueduct.gltf"
+dest_files=["res://.godot/imported/240202_Dark_souls_aqueduct.gltf-09a1498c44327742fd4d0af78cce57a5.scn"]
 
 [params]
 

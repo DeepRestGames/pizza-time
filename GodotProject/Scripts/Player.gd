@@ -35,7 +35,7 @@ var Weapon_Attack_Types = {
 	"MELEE" = "attack_melee",
 	"THROW" = "attack_throw"
 }
-var weapon_attack_animation = Weapon_Attack_Types["MELEE"]
+var weapon_attack_animation = Weapon_Attack_Types["THROW"]
 
 
 func _ready():
@@ -85,8 +85,8 @@ func _physics_process(delta):
 			velocity.z = lerp(velocity.z, direction.z * speed, delta * 7.0)
 		
 		# Handle stairs/steps
-		if step_detection.is_colliding() and not wall_detection.is_colliding():
-			velocity.y = 2
+		#if step_detection.is_colliding() and not wall_detection.is_colliding():
+			#velocity.y = 2
 		
 	else:
 		velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)

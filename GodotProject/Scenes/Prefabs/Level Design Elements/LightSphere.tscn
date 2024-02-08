@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bn3yvr42eef65"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ph1dg"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.470588)
+disable_receive_shadows = true
+
+[node name="LightSphere2" type="CSGSphere3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6703, 12.3835, -19.2585)
+smooth_faces = false
+material = SubResource("StandardMaterial3D_ph1dg")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0, 0.737255, 1, 1)
+omni_attenuation = 1.1487

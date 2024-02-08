@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cngrix4nac3ym" path="res://Scenes/Prefabs/Enemy.tscn" id="7_yu3nt"]
 [ext_resource type="PackedScene" uid="uid://bn3yvr42eef65" path="res://Scenes/Prefabs/Level Design Elements/LightSphere.tscn" id="8_6xfpy"]
 [ext_resource type="PackedScene" uid="uid://c80jmo5p7x2l4" path="res://Scenes/Prefabs/Level Design Elements/Elevator.tscn" id="9_lo7c2"]
+[ext_resource type="PackedScene" uid="uid://clsaosmykk3n0" path="res://Art/Models/Platforms/pizza box v1.glb" id="10_aoeuq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6cv3v"]
 sky_top_color = Color(0.541176, 0.129412, 1, 1)
@@ -517,6 +518,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -42, -7.31629)
 
 [node name="BaseInteractableButton" parent="BaseLevelElements/FirstLevelElevator/BaseButton" index="1" node_paths=PackedStringArray("movable_platform")]
 movable_platform = NodePath("../..")
+
+[node name="pizza box v1" parent="." instance=ExtResource("10_aoeuq")]
+transform = Transform3D(0.995207, 0.0977913, 0, -0.0965285, 0.982355, 0.160191, 0.0156653, -0.159424, 0.987086, 7.83109, 1.0544, 8.23048)
+
+[node name="pizza box v2" parent="." instance=ExtResource("10_aoeuq")]
+transform = Transform3D(-0.238364, 0.346811, -0.907141, -0.122822, 0.9158, 0.382395, 0.963378, 0.202566, -0.175698, 2.03595, 2.16048, 5.64853)
+
+[node name="pizza box v3" parent="." instance=ExtResource("10_aoeuq")]
+transform = Transform3D(-0.273421, 0.0729074, 0.959127, -0.177249, 0.976229, -0.124737, -0.945422, -0.20411, -0.253999, -4.10472, 3.45412, 10.1366)
+
+[node name="pizza box v4" parent="." instance=ExtResource("10_aoeuq")]
+transform = Transform3D(0.49945, 0.226739, -0.836145, -0.268974, 0.958033, 0.0991271, 0.823531, 0.175392, 0.539476, -9.80905, 4.99904, 5.86389)
+
+[node name="pizza box v5" parent="." instance=ExtResource("10_aoeuq")]
+transform = Transform3D(-0.997095, -0.0572273, -0.0502555, -0.0462632, 0.979265, -0.197231, 0.0605004, -0.194334, -0.979068, -9.80905, 5.26138, -1.11068)
+
+[node name="pizza box v6" parent="." instance=ExtResource("10_aoeuq")]
+transform = Transform3D(0.806642, 0.255029, -0.533188, -0.267408, 0.96198, 0.0555718, 0.527088, 0.0977524, 0.84417, -12.2712, 5.86095, -7.33293)
 
 [editable path="GroundLevelElements/Drawbridge"]
 [editable path="FirstLevelElements/SlidingPlatform01"]

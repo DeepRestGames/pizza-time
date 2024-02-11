@@ -48,6 +48,7 @@ _data = {
 
 [node name="SlidingDoor" type="Node3D"]
 script = ExtResource("1_ogrrl")
+two_way_movement = true
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
 collision_mask = 7

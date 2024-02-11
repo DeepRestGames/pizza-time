@@ -2,7 +2,7 @@ class_name Enemy
 extends CharacterBody3D
 
 
-const SPEED = 3.0
+@export var SPEED = 6.0
 
 var player = null
 

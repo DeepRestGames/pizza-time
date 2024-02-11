@@ -55,6 +55,7 @@ font_size = 50
 
 [node name="Elevator" type="Node3D"]
 script = ExtResource("1_v0jgr")
+two_way_movement = true
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -45, 0)

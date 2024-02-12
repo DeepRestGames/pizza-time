@@ -2,8 +2,9 @@ class_name InteractableButton
 extends StaticBody3D
 
 
-@export var movable_platform: MovableElement
+@export var movable_platforms: Array[MovableElement]
 
 
 func activate_button():
-	movable_platform.move_platform()
+	for movable_platform in movable_platforms:
+		movable_platform.move_platform()

@@ -5,11 +5,54 @@ transparency = 1
 albedo_color = Color(1, 1, 1, 0.470588)
 disable_receive_shadows = true
 
-[node name="LightSphere2" type="CSGSphere3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6703, 12.3835, -19.2585)
+[sub_resource type="Animation" id="Animation_v7joy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pw5g8"]
+resource_name = "hover"
+length = 4.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -0.1, 0), Vector3(0, 0.1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u2q3j"]
+_data = {
+"RESET": SubResource("Animation_v7joy"),
+"hover": SubResource("Animation_pw5g8")
+}
+
+[node name="LightSphere" type="CSGSphere3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 smooth_faces = false
 material = SubResource("StandardMaterial3D_ph1dg")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_color = Color(0, 0.737255, 1, 1)
 omni_attenuation = 1.1487
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u2q3j")
+}

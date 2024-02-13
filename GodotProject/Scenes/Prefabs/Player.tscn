@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bq4r28jv36sep"]
+[gd_scene load_steps=13 format=3 uid="uid://bq4r28jv36sep"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_6d860"]
 [ext_resource type="Texture2D" uid="uid://ma18qtx1qeta" path="res://Art/Icons/WhiteCircle.png" id="2_jepl7"]
+[ext_resource type="PackedScene" uid="uid://85bmetumyjya" path="res://Art/Models/PC/pizza v1.glb" id="2_xadov"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cyhp0"]
 
@@ -156,8 +157,12 @@ debug_shape_thickness = 5
 [node name="WeaponPivot" type="Node3D" parent="Head"]
 transform = Transform3D(0.999847, -0.0174524, 0, 0.00303064, 0.173625, -0.984805, 0.0171872, 0.984657, 0.173651, 0.5, -0.7, -0.6)
 
+[node name="pizza v1" parent="Head/WeaponPivot" instance=ExtResource("2_xadov")]
+transform = Transform3D(3.49972, -1.90847, -0.331384, 1.90573, 3.51493, -0.116452, 0.346759, -0.055997, 3.98456, -0.0214876, -0.00947267, -0.650531)
+
 [node name="WeaponModel" type="MeshInstance3D" parent="Head/WeaponPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, -0.7)
+visible = false
 mesh = SubResource("BoxMesh_e47yb")
 
 [node name="WeaponHitbox" type="Area3D" parent="Head/WeaponPivot/WeaponModel"]

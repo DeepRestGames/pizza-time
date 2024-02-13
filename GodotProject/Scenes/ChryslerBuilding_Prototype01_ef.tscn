@@ -354,9 +354,10 @@ _data = {
 [node name="ChryslerBuilding_Prototype01" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.383022, 0.321394, 0, 0.642788, 0.766044, -0.5, 0.663414, -0.55667, 0, 0, 0)
+transform = Transform3D(-0.866025, -0.383022, 0.321394, 0, 0.642788, 0.766044, -0.5, 0.663414, -0.556671, 0, 0, 28.7185)
 light_energy = 0.2
 shadow_enabled = true
+directional_shadow_pancake_size = 40.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_gk65a")
@@ -577,7 +578,7 @@ use_collision = true
 size = Vector3(61.1035, 1, 34.9878)
 
 [node name="Player" parent="." instance=ExtResource("2_vvby3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7042, 87.8049, -17.2877)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1151, 87.6222, -17.1424)
 
 [node name="GroundLevelElements" type="Node3D" parent="."]
 
@@ -861,7 +862,7 @@ libraries = {
 autoplay = "new_animation"
 
 [node name="pizza box v2" parent="." instance=ExtResource("10_itov8")]
-transform = Transform3D(-0.238364, 0.346811, -0.907141, -0.122822, 0.9158, 0.382394, 0.963378, 0.202566, -0.175697, 2.03595, 2.16048, 5.64853)
+transform = Transform3D(-0.238363, 0.346811, -0.907141, -0.122822, 0.9158, 0.382394, 0.963378, 0.202566, -0.175697, 2.03595, 2.16048, 5.64853)
 
 [node name="pizza box v3" parent="." instance=ExtResource("10_itov8")]
 transform = Transform3D(-0.273424, 0.0729068, 0.959126, -0.177249, 0.976229, -0.124736, -0.945421, -0.20411, -0.254002, -4.10472, 3.45412, 10.1366)

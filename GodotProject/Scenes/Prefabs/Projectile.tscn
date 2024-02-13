@@ -1,12 +1,50 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwjqm88bs7exc"]
+[gd_scene load_steps=8 format=3 uid="uid://cwjqm88bs7exc"]
 
 [ext_resource type="Script" path="res://Scripts/Projectile.gd" id="1_ghg8v"]
+[ext_resource type="PackedScene" uid="uid://85bmetumyjya" path="res://Art/Models/PC/pizza v1.glb" id="2_84wrn"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_lb5o8"]
 size = Vector3(0.1, 0.1, 0.3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3stxj"]
 size = Vector3(0.1, 0.1, 0.3)
+
+[sub_resource type="Animation" id="Animation_1mmb4"]
+resource_name = "pizza projectile animation"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pizza v1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.361367, -0.857072, 0.387597)]
+}
+
+[sub_resource type="Animation" id="Animation_b4kub"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pizza v1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kqelo"]
+_data = {
+"RESET": SubResource("Animation_b4kub"),
+"pizza projectile animation": SubResource("Animation_1mmb4")
+}
 
 [node name="Projectile" type="Area3D"]
 collision_layer = 0
@@ -21,6 +59,15 @@ shape = SubResource("BoxShape3D_3stxj")
 
 [node name="DespawnTimer" type="Timer" parent="."]
 wait_time = 5.0
+
+[node name="pizza v1" parent="." instance=ExtResource("2_84wrn")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.00128633, 0, 0.00104387)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kqelo")
+}
+autoplay = "pizza projectile animation"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]

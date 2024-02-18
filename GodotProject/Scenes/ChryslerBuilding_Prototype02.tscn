@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bn3yvr42eef65" path="res://Scenes/Prefabs/Level Design Elements/LightSphere.tscn" id="9_i131b"]
 [ext_resource type="PackedScene" uid="uid://clsaosmykk3n0" path="res://Art/Models/Platforms/pizza box v1.glb" id="11_k380o"]
 [ext_resource type="PackedScene" uid="uid://dlltw0b60rnrl" path="res://Scenes/Prefabs/Level Design Elements/Rotating platform.tscn" id="12_u6yo8"]
+[ext_resource type="Material" uid="uid://bqh8kkm1la54r" path="res://Art/Materials/building_material.tres" id="13_its71"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6cv3v"]
 sky_top_color = Color(0.541176, 0.129412, 1, 1)
@@ -355,6 +356,8 @@ _data = {
 transform = Transform3D(-0.866025, -0.383022, 0.321394, 0, 0.642788, 0.766044, -0.5, 0.663414, -0.55667, 0, 0, 0)
 light_energy = 0.2
 shadow_enabled = true
+directional_shadow_max_distance = 256.0
+directional_shadow_pancake_size = 1024.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_gk65a")
@@ -364,6 +367,9 @@ navigation_mesh = SubResource("NavigationMesh_xtvgm")
 
 [node name="Chrysler building v2" parent="NavigationRegion3D" instance=ExtResource("1_5tvl7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 30)
+
+[node name="Mesh" parent="NavigationRegion3D/Chrysler building v2" index="0"]
+surface_material_override/0 = ExtResource("13_its71")
 
 [node name="BaseLevel" type="Node3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -580,10 +586,13 @@ use_collision = true
 size = Vector3(49, 1, 34.9878)
 
 [node name="Player" parent="." instance=ExtResource("2_5e5w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.154598, 54.319, -19.9834)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.154598, 59.2001, 0.201202)
 
 [node name="Head" parent="Player" index="2"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.700001, 0)
+transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 0, 0.700001, 0)
+
+[node name="WeaponPivot" parent="Player/Head" index="3"]
+transform = Transform3D(0.998353, -0.0355339, -0.0450135, 0.0171093, 0.933713, -0.357611, 0.0547371, 0.356253, 0.932783, 0.5, -0.7, -0.1)
 
 [node name="GroundLevelElements" type="Node3D" parent="."]
 
@@ -1524,11 +1533,11 @@ transform = Transform3D(1, 3.02617e-08, -3.02617e-08, 3.02617e-08, 1.91068e-15, 
 transform = Transform3D(1, -3.55271e-15, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 
 [node name="End of Level Elevator" parent="SLIDING DOORS PUZZLE" instance=ExtResource("7_duvpp")]
-transform = Transform3D(1.8, -5.4657e-15, 0, 9.83826e-15, 1, 0, 0, 0, 1, -18.1136, -0.516148, 28.7556)
+transform = Transform3D(1.8, -3.98996e-15, 0, 9.83826e-15, 0.73, 0, 0, 0, 1, -18.1136, -0.516148, 28.7556)
 activated = true
 
 [node name="AnimatableBody3D" parent="SLIDING DOORS PUZZLE/End of Level Elevator" index="0"]
-transform = Transform3D(1, 3.02617e-08, 1.32278e-15, 0, -4.37114e-08, 1, 3.02617e-08, -1, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(1, 3.02617e-08, 1.32278e-15, 0, -4.37114e-08, 1, 3.02617e-08, -1, -4.37114e-08, 0, 7, 0)
 
 [node name="MeshInstance3D" parent="SLIDING DOORS PUZZLE/End of Level Elevator/AnimatableBody3D" index="0"]
 transform = Transform3D(1, -3.55271e-15, 2.25467e-15, 7.10543e-15, 1, 0, -3.55271e-15, -2.11758e-22, 1, 0, 5, 0)
@@ -1574,7 +1583,7 @@ transform = Transform3D(1, -3.55271e-15, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 
 [node name="InteractableButton7" parent="SLIDING DOORS PUZZLE/SlidingDoor4/AnimatableBody3D" index="3" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("4_2d8fi")]
 transform = Transform3D(-6.72482e-08, 6.72483e-08, 1.53846, 2.22222, 4.24597e-15, 9.71364e-08, 0, 2, -8.74228e-08, 0.093605, 4.58086, 0.327115)
-movable_platforms = [NodePath("../../../SlidingDoor9"), NodePath("../../../SlidingDoorWithButton")]
+movable_platforms = [NodePath("../../../SlidingDoor9")]
 
 [node name="SlidingDoor5" parent="SLIDING DOORS PUZZLE" instance=ExtResource("7_duvpp")]
 transform = Transform3D(2.84124e-08, -0.45, 4.37114e-08, -0.65, -1.96701e-08, 0, 2.48389e-15, -3.93403e-08, -0.5, 2.47197, 1.95005, -5.40594)
@@ -1679,16 +1688,17 @@ transform = Transform3D(1.53846, -4.58497e-08, -6.72483e-08, 4.37114e-08, -4.371
 movable_platforms = [NodePath("../../../SlidingDoor12"), NodePath("../..")]
 
 [node name="SlidingDoorWithButton" parent="SLIDING DOORS PUZZLE" instance=ExtResource("7_duvpp")]
-transform = Transform3D(-2.18557e-08, 0.4, 0, -0.5, -1.74846e-08, 0, 0, 0, 0.3, 6.07988, 1.95005, -0.0597477)
+transform = Transform3D(-2.18557e-08, 0.4, 0, -0.5, -1.74846e-08, 0, 0, 0, 0.3, 12.5509, 1.78949, 31.6404)
+activated = true
 
 [node name="AnimatableBody3D" parent="SLIDING DOORS PUZZLE/SlidingDoorWithButton" index="0"]
-transform = Transform3D(1, 4.18957e-08, -4.18957e-08, 4.18957e-08, -4.37114e-08, 1, 4.18957e-08, -1, -4.37114e-08, 0, 7, 0)
+transform = Transform3D(1, 4.18957e-08, -4.18957e-08, 4.18957e-08, -4.37114e-08, 1, 4.18957e-08, -1, -4.37114e-08, 0, 0, 0)
 
 [node name="MeshInstance3D" parent="SLIDING DOORS PUZZLE/SlidingDoorWithButton/AnimatableBody3D" index="0"]
-transform = Transform3D(1, -3.55271e-15, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+transform = Transform3D(1, -3.55271e-15, -4.99052e-16, 0, 1, 0, -5.49631e-17, 0, 1, 0, 5, 0)
 
 [node name="InteractableButton11" parent="SLIDING DOORS PUZZLE/SlidingDoorWithButton/AnimatableBody3D" index="3" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("4_2d8fi")]
-transform = Transform3D(-2, 7.01066e-08, 1.39652e-07, -8.37914e-08, 1.09279e-07, -3.33333, -1.34766e-07, -2.5, -1.45705e-07, 0.141502, 3.09201, -0.237118)
+transform = Transform3D(-2, 7.01066e-08, 1.39652e-07, -8.37914e-08, 1.09279e-07, -3.33333, -1.34766e-07, -2.5, -1.45705e-07, 0.141502, 2.09148, -0.23712)
 movable_platforms = [NodePath("../../../SlidingDoor10")]
 
 [node name="HorizontalSlidingPlatform1" parent="SLIDING DOORS PUZZLE" instance=ExtResource("7_duvpp")]
@@ -1729,25 +1739,24 @@ movable_platforms = [NodePath("../SlidingDoor"), NodePath("../SlidingDoor2"), No
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -7.19194, 1.8793, -10.3628)
 movable_platforms = [NodePath("../SlidingDoor2"), NodePath("../SlidingDoor7"), NodePath("../SlidingDoor8")]
 
+[node name="InteractableButton7" parent="SLIDING DOORS PUZZLE" instance=ExtResource("4_2d8fi")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.95494, 1.8793, 9.59419)
+
 [node name="InteractableButton3" parent="SLIDING DOORS PUZZLE" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("4_2d8fi")]
 transform = Transform3D(2.98023e-08, 1, 0, -1, 2.98023e-08, 0, 0, 0, 1, -23.6758, 1.9927, -7.24896)
 movable_platforms = [NodePath("../SlidingDoor5"), NodePath("../SlidingDoor6"), NodePath("../SlidingDoor2")]
 
 [node name="InteractableButton4" parent="SLIDING DOORS PUZZLE" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("4_2d8fi")]
-transform = Transform3D(1, 0, 0, 0, 2.98023e-08, 1, 0, -1, 2.98023e-08, 20.9283, 1.84965, -3.35016)
+transform = Transform3D(-4.37114e-08, 1, -2.98023e-08, 0, 2.98023e-08, 1, 1, 4.37114e-08, -1.3027e-15, 25.0764, 1.84965, -9.24049)
 movable_platforms = [NodePath("../HorizontalSlidingPlatform1"), NodePath("../HorizontalSlidingPlatform3")]
 
 [node name="InteractableButton5" parent="SLIDING DOORS PUZZLE" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("4_2d8fi")]
-transform = Transform3D(1, 0, 0, 0, 2.98023e-08, 1, 0, -1, 2.98023e-08, 22.7619, 1.84965, -3.35016)
+transform = Transform3D(-4.37114e-08, 1, -2.98023e-08, 0, 2.98023e-08, 1, 1, 4.37114e-08, -1.3027e-15, 25.0764, 1.84965, -7.40689)
 movable_platforms = [NodePath("../HorizontalSlidingPlatform1"), NodePath("../HorizontalSlidingPlatform2")]
 
 [node name="InteractableButton6" parent="SLIDING DOORS PUZZLE" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("4_2d8fi")]
-transform = Transform3D(-4.37114e-08, 1, -2.98023e-08, 0, 2.98023e-08, 1, 1, 4.37114e-08, -1.3027e-15, 24.7762, 4.42167, -10.2471)
+transform = Transform3D(-4.37114e-08, 1, -2.98023e-08, 0, 2.98023e-08, 1, 1, 4.37114e-08, -1.3027e-15, 25.0582, 1.83868, -8.3026)
 movable_platforms = [NodePath("../HorizontalSlidingPlatform2")]
-
-[node name="InteractableButton7" parent="SLIDING DOORS PUZZLE" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("4_2d8fi")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.6446, 8.82606, 28.5957)
-movable_platforms = [NodePath("../SlidingDoor4")]
 
 [node name="InteractableButton8" parent="SLIDING DOORS PUZZLE" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("4_2d8fi")]
 transform = Transform3D(8.88178e-16, 2.98023e-08, -1, -1, 2.98023e-08, 0, 2.98023e-08, 1, 2.98023e-08, -19.6878, 1.9927, 12.0682)
@@ -1779,6 +1788,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0455, 2.84914, 12.6159)
 [node name="LightSphere5" parent="SLIDING DOORS PUZZLE" instance=ExtResource("9_i131b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.68011, 2.84914, 12.5202)
 
+[editable path="NavigationRegion3D/Chrysler building v2"]
 [editable path="Player"]
 [editable path="GroundLevelElements/Drawbridge"]
 [editable path="FirstLevelElements/SlidingPlatform01"]

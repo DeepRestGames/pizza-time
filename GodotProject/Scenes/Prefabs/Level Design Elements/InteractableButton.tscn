@@ -1,16 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://b8intk1ci0l4v"]
 
 [ext_resource type="Script" path="res://Scripts/InteractableButton.gd" id="1_p8mvq"]
+[ext_resource type="Material" uid="uid://b71ceub7220i6" path="res://Art/Materials/button_material.tres" id="2_42uwu"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_6y4b6"]
+material = ExtResource("2_42uwu")
 top_radius = 0.3
 bottom_radius = 0.3
 height = 0.5
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4qvu"]
-albedo_color = Color(0.658824, 0.435294, 0, 1)
-emission_enabled = true
-emission = Color(0.752941, 0.521569, 0, 1)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_u0xd6"]
 height = 0.6
@@ -23,7 +20,6 @@ script = ExtResource("1_p8mvq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CylinderMesh_6y4b6")
-surface_material_override/0 = SubResource("StandardMaterial3D_o4qvu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_u0xd6")

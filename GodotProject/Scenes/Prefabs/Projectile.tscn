@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwjqm88bs7exc"]
+[gd_scene load_steps=7 format=3 uid="uid://cwjqm88bs7exc"]
 
 [ext_resource type="Script" path="res://Scripts/Projectile.gd" id="1_ghg8v"]
 [ext_resource type="PackedScene" uid="uid://85bmetumyjya" path="res://Art/Models/PC/pizza v1.glb" id="2_84wrn"]

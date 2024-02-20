@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwijqr3vfdybc"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bkbqo"]
+top_radius = 1.0
+bottom_radius = 1.0
+height = 1.0
+radial_segments = 8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jc0tb"]
+
+[node name="StaticCylinder" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("CylinderMesh_bkbqo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_jc0tb")

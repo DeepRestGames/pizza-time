@@ -16,30 +16,23 @@ radius = 3.0
 script = ExtResource("1_v0jgr")
 two_way_movement = true
 
-[node name="ElevatorPivot" type="Node3D" parent="."]
+[node name="Pivot" type="Node3D" parent="."]
 
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="ElevatorPivot"]
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Pivot"]
 collision_mask = 7
 sync_to_physics = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ElevatorPivot/AnimatableBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot/AnimatableBody3D"]
 mesh = SubResource("CylinderMesh_1wxs3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ElevatorPivot/AnimatableBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/AnimatableBody3D"]
 shape = SubResource("CylinderShape3D_5lojs")
 
-[node name="InteractableButton" parent="ElevatorPivot" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("2_g6dh4")]
+[node name="InteractableButton" parent="Pivot" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("2_g6dh4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2)
 movable_platforms = [NodePath("../..")]
 
-[node name="StartingPosition" type="Node3D" parent="."]
+[node name="StartingNode" type="Node3D" parent="."]
 
-[node name="EndingPosition" type="Node3D" parent="."]
+[node name="EndingNode" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
-
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
-collision_layer = 0
-collision_mask = 0
-sync_to_physics = false
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody3D"]

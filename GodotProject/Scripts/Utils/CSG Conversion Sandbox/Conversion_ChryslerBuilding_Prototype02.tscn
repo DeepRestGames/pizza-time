@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b8intk1ci0l4v" path="res://Scenes/Prefabs/Level Design Elements/InteractableButton.tscn" id="4_ihyfv"]
 [ext_resource type="PackedScene" uid="uid://c80jmo5p7x2l4" path="res://Scenes/Prefabs/Level Design Elements/Elevator.tscn" id="5_6v636"]
 [ext_resource type="PackedScene" uid="uid://d3phruk5mowp3" path="res://Scenes/Prefabs/Pickups/PickupItem.tscn" id="6_vnblv"]
-[ext_resource type="PackedScene" uid="uid://crhigal1rlfrx" path="res://Scenes/Prefabs/Level Design Elements/SlidingDoor.tscn" id="7_0esxo"]
+[ext_resource type="PackedScene" uid="uid://crhigal1rlfrx" path="res://Scenes/Prefabs/Level Design Elements/SlidingPlatform.tscn" id="7_0esxo"]
 [ext_resource type="PackedScene" uid="uid://cngrix4nac3ym" path="res://Scenes/Prefabs/Enemy.tscn" id="8_ofo5i"]
 [ext_resource type="PackedScene" uid="uid://clsaosmykk3n0" path="res://Art/Models/Platforms/pizza box v1.glb" id="9_6hjy5"]
 [ext_resource type="PackedScene" uid="uid://bn3yvr42eef65" path="res://Scenes/Prefabs/Level Design Elements/LightSphere.tscn" id="10_714rn"]

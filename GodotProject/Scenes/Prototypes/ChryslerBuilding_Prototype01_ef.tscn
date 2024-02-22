@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dyrx4h8efgp2d" path="res://Art/Models/Environment/Chrysler building v2.gltf" id="2_73ty0"]
 [ext_resource type="PackedScene" uid="uid://bq4r28jv36sep" path="res://Scenes/Prefabs/Player.tscn" id="2_vvby3"]
 [ext_resource type="PackedScene" uid="uid://d3phruk5mowp3" path="res://Scenes/Prefabs/Pickups/PickupItem.tscn" id="3_my62h"]
-[ext_resource type="PackedScene" uid="uid://crhigal1rlfrx" path="res://Scenes/Prefabs/Level Design Elements/SlidingDoor.tscn" id="4_snekg"]
+[ext_resource type="PackedScene" uid="uid://crhigal1rlfrx" path="res://Scenes/Prefabs/Level Design Elements/SlidingPlatform.tscn" id="4_snekg"]
 [ext_resource type="PackedScene" uid="uid://b8intk1ci0l4v" path="res://Scenes/Prefabs/Level Design Elements/InteractableButton.tscn" id="5_oqxsu"]
 [ext_resource type="PackedScene" uid="uid://dy0nyqewtis1" path="res://Scenes/Prefabs/Level Design Elements/Drawbridge.tscn" id="6_08tb5"]
 [ext_resource type="PackedScene" uid="uid://cngrix4nac3ym" path="res://Scenes/Prefabs/Enemy.tscn" id="7_s7npg"]

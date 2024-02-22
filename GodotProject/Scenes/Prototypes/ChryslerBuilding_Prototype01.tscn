@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://bq6ilcx8jrp42"]
 
 [ext_resource type="PackedScene" uid="uid://bq4r28jv36sep" path="res://Scenes/Prefabs/Player.tscn" id="1_bgc4y"]
-[ext_resource type="PackedScene" uid="uid://crhigal1rlfrx" path="res://Scenes/Prefabs/Level Design Elements/SlidingDoor.tscn" id="4_8pu77"]
+[ext_resource type="PackedScene" uid="uid://crhigal1rlfrx" path="res://Scenes/Prefabs/Level Design Elements/SlidingPlatform.tscn" id="4_8pu77"]
 [ext_resource type="PackedScene" uid="uid://d3phruk5mowp3" path="res://Scenes/Prefabs/Pickups/PickupItem.tscn" id="4_upnw6"]
 [ext_resource type="PackedScene" uid="uid://b8intk1ci0l4v" path="res://Scenes/Prefabs/Level Design Elements/InteractableButton.tscn" id="5_bhsa7"]
 [ext_resource type="PackedScene" uid="uid://dy0nyqewtis1" path="res://Scenes/Prefabs/Level Design Elements/Drawbridge.tscn" id="6_efn8e"]

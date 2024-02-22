@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d3phruk5mowp3" path="res://Scenes/Prefabs/Pickups/PickupItem.tscn" id="4_3tytv"]
 [ext_resource type="PackedScene" uid="uid://dy0nyqewtis1" path="res://Scenes/Prefabs/Level Design Elements/Drawbridge.tscn" id="5_b4d6r"]
 [ext_resource type="PackedScene" uid="uid://b8intk1ci0l4v" path="res://Scenes/Prefabs/Level Design Elements/InteractableButton.tscn" id="6_l0g6y"]
-[ext_resource type="PackedScene" uid="uid://crhigal1rlfrx" path="res://Scenes/Prefabs/Level Design Elements/SlidingDoor.tscn" id="7_qkbge"]
+[ext_resource type="PackedScene" uid="uid://crhigal1rlfrx" path="res://Scenes/Prefabs/Level Design Elements/SlidingPlatform.tscn" id="7_qkbge"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6cv3v"]
 sky_top_color = Color(0.541176, 0.129412, 1, 1)

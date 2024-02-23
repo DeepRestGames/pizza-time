@@ -15,12 +15,20 @@ run/main_scene="res://Scenes/Prototypes/ChryslerBuilding_Prototype03.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Analytics="*res://addons/quiver_analytics/analytics.tscn"
+
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="viewport"
 window/stretch/scale=3.0
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/quiver_analytics/plugin.cfg")
 
 [input]
 
@@ -76,6 +84,10 @@ attack={
 3d_physics/layer_2="Player"
 3d_physics/layer_3="Enemies"
 3d_physics/layer_4="Interactables"
+
+[quiver]
+
+general/auth_token="9xDHLwMsVuJtC9oqXyIuAQ5oZb7sBivIvRvtzzRf"
 
 [rendering]
 

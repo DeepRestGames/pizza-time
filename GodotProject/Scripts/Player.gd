@@ -55,6 +55,7 @@ func _unhandled_key_input(_event):
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
 	if Input.is_action_just_pressed("quit"):
+		await Analytics.handle_exit()
 		get_tree().quit()
 
 
@@ -145,3 +146,5 @@ func _on_animation_player_animation_finished(anim_name):
 		projectile_instance.position = projectile_throw_trajectory.global_position
 		projectile_instance.transform.basis = projectile_throw_trajectory.global_transform.basis
 		get_parent().add_child(projectile_instance)
+		
+		Analytics.add_event("Thrown Pizzas")

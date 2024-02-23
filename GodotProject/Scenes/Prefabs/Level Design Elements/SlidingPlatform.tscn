@@ -11,6 +11,8 @@ size = Vector3(6, 10, 1)
 [node name="SlidingPlatform" type="Node3D"]
 script = ExtResource("1_ogrrl")
 two_way_movement = true
+animation_interval = 0.0
+auto_start = false
 
 [node name="Pivot" type="Node3D" parent="."]
 

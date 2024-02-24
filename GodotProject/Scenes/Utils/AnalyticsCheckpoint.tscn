@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy2utrbaplfyk"]
+
+[ext_resource type="Script" path="res://Scripts/Utils/AnalyticsCheckpoint.gd" id="1_p7xfq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qhkg0"]
+
+[node name="AnalyticsCheckpoint" type="Node3D"]
+script = ExtResource("1_p7xfq")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_qhkg0")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -1,0 +1,1898 @@
+[gd_scene load_steps=38 format=3 uid="uid://bkgyudfy7qqso"]
+
+[ext_resource type="PackedScene" uid="uid://djcjuxcxoilpw" path="res://Art/Models/Environment/Chrysler building v6.gltf" id="2_1p8g1"]
+[ext_resource type="Material" uid="uid://bqh8kkm1la54r" path="res://Art/Materials/building_material.tres" id="2_tjq3o"]
+[ext_resource type="PackedScene" uid="uid://jjygr33tp3f" path="res://Scenes/Prefabs/Level Design Elements/StaticBox.tscn" id="3_q6mt2"]
+[ext_resource type="PackedScene" uid="uid://dy0nyqewtis1" path="res://Scenes/Prefabs/Level Design Elements/Drawbridge.tscn" id="4_pigjl"]
+[ext_resource type="PackedScene" uid="uid://b8intk1ci0l4v" path="res://Scenes/Prefabs/Level Design Elements/InteractableButton.tscn" id="5_bq56s"]
+[ext_resource type="Material" uid="uid://c61llak261mqg" path="res://Art/Materials/steel_material.tres" id="6_51plb"]
+[ext_resource type="PackedScene" uid="uid://c80jmo5p7x2l4" path="res://Scenes/Prefabs/Level Design Elements/Elevator.tscn" id="7_x28al"]
+[ext_resource type="PackedScene" uid="uid://dy2utrbaplfyk" path="res://Scenes/Utils/AnalyticsCheckpoint.tscn" id="8_axjnh"]
+[ext_resource type="PackedScene" uid="uid://dwijqr3vfdybc" path="res://Scenes/Prefabs/Level Design Elements/StaticCylinder.tscn" id="8_xu8vt"]
+[ext_resource type="PackedScene" uid="uid://crhigal1rlfrx" path="res://Scenes/Prefabs/Level Design Elements/SlidingPlatform.tscn" id="10_2g3pf"]
+[ext_resource type="PackedScene" uid="uid://clsaosmykk3n0" path="res://Art/Models/Platforms/pizza box v1.glb" id="12_80vqa"]
+[ext_resource type="Material" uid="uid://b71ceub7220i6" path="res://Art/Materials/button_material.tres" id="12_e76c7"]
+[ext_resource type="PackedScene" uid="uid://bn3yvr42eef65" path="res://Scenes/Prefabs/Level Design Elements/LightSphere.tscn" id="13_upr5q"]
+[ext_resource type="PackedScene" uid="uid://dlltw0b60rnrl" path="res://Scenes/Prefabs/Level Design Elements/Rotating platform.tscn" id="14_sahsi"]
+[ext_resource type="PackedScene" uid="uid://bq4r28jv36sep" path="res://Scenes/Prefabs/Player.tscn" id="15_olpqq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6cv3v"]
+sky_top_color = Color(0.541176, 0.129412, 1, 1)
+sky_horizon_color = Color(1, 0.419608, 0.678431, 1)
+sky_curve = 0.0609202
+sky_energy_multiplier = 0.6
+ground_bottom_color = Color(0.233758, 0.00064707, 0.426209, 1)
+ground_horizon_color = Color(0.72549, 0.560784, 0.945098, 1)
+ground_curve = 0.0237842
+ground_energy_multiplier = 0.9
+
+[sub_resource type="Sky" id="Sky_pkavx"]
+sky_material = SubResource("ProceduralSkyMaterial_6cv3v")
+
+[sub_resource type="Environment" id="Environment_gk65a"]
+background_mode = 2
+sky = SubResource("Sky_pkavx")
+ambient_light_sky_contribution = 0.3
+tonemap_mode = 2
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_cyhp0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_esyaj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87ajx"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_e47yb"]
+material = SubResource("StandardMaterial3D_87ajx")
+size = Vector3(0.2, 0.2, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7hafm"]
+size = Vector3(0.2, 0.2, 1.5)
+
+[sub_resource type="Animation" id="Animation_ykda8"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/WeaponPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.365709, -0.0482198, 0.0183219)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/WeaponPivot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.5, -0.7, -0.1)]
+}
+
+[sub_resource type="Animation" id="Animation_jihoy"]
+resource_name = "attack_melee"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/WeaponPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.872665, 0), Vector3(0, -0.872665, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/WeaponPivot/WeaponModel/WeaponHitbox:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head/WeaponPivot:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.8, -0.7, -1.2), Vector3(0.8, -0.7, -1.2)]
+}
+
+[sub_resource type="Animation" id="Animation_la2qo"]
+resource_name = "attack_throw"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/WeaponPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.365709, 1.53902, 0.0183219), Vector3(0.365709, -0.0482198, 0.0183219)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/WeaponPivot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.5, -0.7, -0.6), Vector3(0.5, -0.7, -0.1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dytqh"]
+_data = {
+"RESET": SubResource("Animation_ykda8"),
+"attack_melee": SubResource("Animation_jihoy"),
+"attack_throw": SubResource("Animation_la2qo")
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_l3itp"]
+material = ExtResource("6_51plb")
+
+[sub_resource type="Animation" id="Animation_4iodu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(7.83109, 1.0544, 8.23048)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.160885, 7.43508e-08, -0.0979479)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.03595, 2.16048, 5.64853)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.392386, -1.76211, -0.133319)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-4.10472, 3.45412, 10.1366)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v3:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.125062, 1.82968, -0.179608)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v4:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-9.80905, 4.99904, 5.86389)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v4:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0992901, -0.997807, -0.27371)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v5:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-9.80905, 5.26138, -1.11068)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v5:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.198533, -3.09031, -0.0472077)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v6:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-12.2712, 5.86095, -7.33293)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v6:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0556001, -0.56334, -0.271132)]
+}
+
+[sub_resource type="Animation" id="Animation_inhma"]
+resource_name = "new_animation"
+length = 20.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4, 9.5, 18.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(7.83109, 1.0544, 8.23048), Vector3(7.88147, 0.635358, 8.05687), Vector3(7.83109, 1.0544, 8.23048)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 9.5, 18.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.160885, 7.43508e-08, -0.0979479), Vector3(0.0103329, 0.343646, -0.0415184), Vector3(-0.160885, 7.43508e-08, -0.0979479)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4, 9.5, 18.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(2.03595, 2.16048, 5.64853), Vector3(2.03595, 1.51079, 5.64853), Vector3(2.03595, 2.16048, 5.64853)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.4, 9.5, 18.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.392386, -1.76211, -0.133319), Vector3(-0.0968117, -2.1172, 0.0684566), Vector3(-0.392386, -1.76211, -0.133319)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.4, 9.5, 18.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-4.10472, 3.45412, 10.1366), Vector3(-3.90365, 2.47124, 8.57545), Vector3(-4.10472, 3.45412, 10.1366)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v3:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.4, 9.5, 18.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.125062, 1.82968, -0.179608), Vector3(0.0374214, 1.97793, 0.0283289), Vector3(0.125062, 1.82968, -0.179608)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v4:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4, 9.5, 18.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-9.80905, 4.99904, 5.86389), Vector3(-9.80905, 3.00328, 5.86389), Vector3(-9.80905, 3.68233, 5.86389)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v4:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.4, 9.5, 18.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0992901, -0.997807, -0.27371), Vector3(0.0628815, 1.3936, 3.03573), Vector3(-0.150198, -1.76559, 0.0307992)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v5:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.4, 9.5, 18.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-9.80905, 5.26138, -1.11068), Vector3(-11.0168, 4.43293, -0.857121), Vector3(-9.80905, 5.26138, -1.11068)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v5:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.4, 9.5, 18.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.198533, -3.09031, -0.0472077), Vector3(-0.0757959, -2.7786, -0.0611526), Vector3(0.198533, -3.09031, -0.0472077)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v6:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.4, 9.5, 18.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-12.2712, 5.86095, -7.33293), Vector3(-12.7063, 5.41893, -7.45311), Vector3(-12.2712, 5.86095, -7.33293)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Environment/GroundLevel/PizzaBoxes/pizza box v6:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.4, 9.5, 18.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0556001, -0.56334, -0.271132), Vector3(-0.0570573, -1.485, -0.0604161), Vector3(-0.0556001, -0.56334, -0.271132)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oa75c"]
+_data = {
+"RESET": SubResource("Animation_4iodu"),
+"new_animation": SubResource("Animation_inhma")
+}
+
+[sub_resource type="TextMesh" id="TextMesh_le0ak"]
+material = ExtResource("12_e76c7")
+text = "ELEVATOR
+FIRST FLOOR"
+font_size = 50
+
+[sub_resource type="SphereMesh" id="SphereMesh_fdmm4"]
+material = ExtResource("6_51plb")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yr510"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pcmfp"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0q4y4"]
+
+[sub_resource type="TextMesh" id="TextMesh_ndlqv"]
+material = ExtResource("12_e76c7")
+text = "ELEVATOR
+SECOND FLOOR"
+font_size = 50
+
+[node name="ChryslerBuilding_Prototype02" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.383022, 0.321394, 0, 0.642788, 0.766044, -0.5, 0.663414, -0.55667, 0, 0, 0)
+light_energy = 0.2
+shadow_enabled = true
+directional_shadow_max_distance = 256.0
+directional_shadow_pancake_size = 1024.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gk65a")
+
+[node name="Player" parent="." instance=ExtResource("15_olpqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.11728, 111.578, -9.82173)
+
+[node name="MeshInstance3D" parent="Player" index="0"]
+mesh = SubResource("CapsuleMesh_cyhp0")
+
+[node name="CollisionShape3D" parent="Player" index="1"]
+shape = SubResource("CapsuleShape3D_esyaj")
+
+[node name="Head" parent="Player" index="2"]
+transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 0, 0.700001, 0)
+
+[node name="Camera3D" parent="Player/Head" index="0"]
+current = true
+
+[node name="WeaponPivot" parent="Player/Head" index="3"]
+transform = Transform3D(0.998353, -0.0355339, -0.0450135, 0.0171093, 0.933713, -0.357611, 0.0547371, 0.356253, 0.932783, 0.5, -0.7, -0.1)
+
+[node name="pizza v1" parent="Player/Head/WeaponPivot" index="0"]
+transform = Transform3D(2.18732, -1.19279, -0.207116, 1.19108, 2.19682, -0.0727816, 0.216724, -0.0349976, 2.49034, -0.0214877, -0.00947762, -0.650532)
+
+[node name="WeaponModel" parent="Player/Head/WeaponPivot" index="1"]
+mesh = SubResource("BoxMesh_e47yb")
+
+[node name="CollisionShape3D" parent="Player/Head/WeaponPivot/WeaponModel/WeaponHitbox" index="0"]
+shape = SubResource("BoxShape3D_7hafm")
+
+[node name="AnimationPlayer" parent="Player" index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_dytqh")
+}
+
+[node name="PlayerStartingPosition" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 27)
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Chrysler building v6" parent="Environment" instance=ExtResource("2_1p8g1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 30)
+
+[node name="Mesh" parent="Environment/Chrysler building v6" index="0"]
+surface_material_override/0 = ExtResource("2_tjq3o")
+
+[node name="EnvironmentBase" parent="Environment" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(150, 0, 0, 0, 1, 0, 0, 0, 150, 0, -1, 0)
+
+[node name="GroundLevel" type="Node3D" parent="Environment"]
+
+[node name="Doorway" type="Node3D" parent="Environment/GroundLevel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18)
+
+[node name="Wall01" parent="Environment/GroundLevel/Doorway" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-5.24537e-07, 0, -1, 0, 12, 0, 12, 0, -4.37114e-08, 6.5, 6, 6)
+
+[node name="Wall02" parent="Environment/GroundLevel/Doorway" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-5.24537e-07, 0, -1, 0, 12, 0, 12, 0, -4.37114e-08, -6.5, 6, 6)
+
+[node name="Wall03" parent="Environment/GroundLevel/Doorway" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(6, 0, 0, 0, 12, 0, 0, 0, 1, 4, 6, 0)
+
+[node name="Wall04" parent="Environment/GroundLevel/Doorway" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(6, 0, 0, 0, 12, 0, 0, 0, 1, -4, 6, 0)
+
+[node name="Wall05" parent="Environment/GroundLevel/Doorway" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(2, 0, 0, 0, 7.5, 0, 0, 0, 1, 0, 7.5, 0)
+
+[node name="EntryDoor" parent="Environment/GroundLevel/Doorway" instance=ExtResource("10_2g3pf")]
+
+[node name="Pivot" parent="Environment/GroundLevel/Doorway/EntryDoor" index="0"]
+transform = Transform3D(0.35, 0, 0, 0, 0.38, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="EndingNode" parent="Environment/GroundLevel/Doorway/EntryDoor" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8, 0)
+
+[node name="Intercom" type="Node3D" parent="Environment/GroundLevel/Doorway"]
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1.5, 6, 2, 6)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/GroundLevel/Doorway/Intercom"]
+mesh = SubResource("BoxMesh_l3itp")
+
+[node name="InteractableButton" parent="Environment/GroundLevel/Doorway" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, 1.5, 0.4)
+movable_platforms = [NodePath("../EntryDoor")]
+
+[node name="AnalyticsCheckpoint" parent="Environment/GroundLevel" instance=ExtResource("8_axjnh")]
+transform = Transform3D(3, 0, 0, 0, 5, 0, 0, 0, 1, 0, 2.33792, 17.114)
+
+[node name="PizzaBoxes" type="Node3D" parent="Environment/GroundLevel"]
+
+[node name="pizza box v1" parent="Environment/GroundLevel/PizzaBoxes" instance=ExtResource("12_80vqa")]
+transform = Transform3D(0.995207, 0.0977914, 7.33906e-08, -0.0965285, 0.982355, 0.160192, 0.0156653, -0.159424, 0.987086, 7.83109, 1.0544, 8.23048)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Environment/GroundLevel/PizzaBoxes/pizza box v1"]
+root_node = NodePath("../../../../..")
+libraries = {
+"": SubResource("AnimationLibrary_oa75c")
+}
+autoplay = "new_animation"
+
+[node name="pizza box v2" parent="Environment/GroundLevel/PizzaBoxes" instance=ExtResource("12_80vqa")]
+transform = Transform3D(-0.238363, 0.346811, -0.907141, -0.122822, 0.9158, 0.382394, 0.963377, 0.202566, -0.175697, 2.03595, 2.16048, 5.64853)
+
+[node name="pizza box v3" parent="Environment/GroundLevel/PizzaBoxes" instance=ExtResource("12_80vqa")]
+transform = Transform3D(-0.273424, 0.0729068, 0.959126, -0.177249, 0.976229, -0.124736, -0.945421, -0.20411, -0.254002, -4.10472, 3.45412, 10.1366)
+
+[node name="pizza box v4" parent="Environment/GroundLevel/PizzaBoxes" instance=ExtResource("12_80vqa")]
+transform = Transform3D(0.49945, 0.226739, -0.836145, -0.268974, 0.958033, 0.099127, 0.823531, 0.175392, 0.539476, -9.80905, 4.99904, 5.86389)
+
+[node name="pizza box v5" parent="Environment/GroundLevel/PizzaBoxes" instance=ExtResource("12_80vqa")]
+transform = Transform3D(-0.997096, -0.057227, -0.0502532, -0.0462632, 0.979265, -0.197231, 0.0604981, -0.194334, -0.979068, -9.80905, 5.26138, -1.11068)
+
+[node name="pizza box v6" parent="Environment/GroundLevel/PizzaBoxes" instance=ExtResource("12_80vqa")]
+transform = Transform3D(0.806642, 0.255029, -0.533188, -0.267408, 0.96198, 0.0555715, 0.527088, 0.0977527, 0.84417, -12.2712, 5.86095, -7.33293)
+
+[node name="Drawbridge" parent="Environment/GroundLevel" instance=ExtResource("4_pigjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.97539, -10.9923)
+two_way_movement = false
+animation_interval = 0.0
+auto_start = false
+
+[node name="Pivot" parent="Environment/GroundLevel/Drawbridge" index="0"]
+transform = Transform3D(1.3, 0, 0, 0, 0.34202, 3.28892, 0, -0.939693, 1.19707, 0, 0, 0)
+
+[node name="DrawbridgeButton" parent="Environment/GroundLevel" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(1, 0, 0, 0, -1.49012e-08, -1, 0, 1, -1.49012e-08, 0, 7.5, -20.5)
+movable_platforms = [NodePath("../Drawbridge")]
+
+[node name="BigBlock01" parent="Environment/GroundLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(61, 0, 0, 0, 6, 0, 0, 0, 10, 0, 3, -16)
+
+[node name="Stairs01" parent="Environment/GroundLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(13, 0, 0, 0, 1, 0, 0, 0, 10, 24.0707, 6.5, -15.7)
+
+[node name="Stairs02" parent="Environment/GroundLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(9, 0, 0, 0, 1, 0, 0, 0, 10, 25.5037, 7.5, -16)
+
+[node name="Stairs03" parent="Environment/GroundLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 10, 27.0764, 8.5, -16)
+
+[node name="BigBlock02" parent="Environment/GroundLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(13, 0, 0, 0, 10, 0, 0, 0, 10, 24, 5, -6)
+
+[node name="Stairs04" parent="Environment/GroundLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-3.0598e-07, 0, -13, 0, 1, 0, 7, 0, -5.68248e-07, 24, 10.5, -4.54051)
+
+[node name="Stairs05" parent="Environment/GroundLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-1.74846e-07, 0, -13, 0, 1, 0, 4, 0, -5.68248e-07, 24, 11.5, -3.04051)
+
+[node name="Stairs06" parent="Environment/GroundLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-2.62268e-07, 0, -15, 0, 1, 0, 6, 0, -6.55671e-07, 0, 13.5483, 10.749)
+
+[node name="Stairs07" parent="Environment/GroundLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-1.31134e-07, 0, -9, 0, 1, 0, 3, 0, -3.93403e-07, 0, 14.5483, 12.2744)
+
+[node name="UpperPlatform" parent="Environment/GroundLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(61, 0, 0, 0, 2, 0, 0, 0, 32, -0.257643, 12.0483, 14.8597)
+
+[node name="Flavour_Cylinder01" parent="Environment/GroundLevel" instance=ExtResource("8_xu8vt")]
+transform = Transform3D(0.743148, -2.47813, 0.905252, 1.06995, 2.89089, -0.164415, -0.478231, 2.61691, 1.03887, -6.0776, 9.83771, 5.56138)
+
+[node name="Flavour_Cylinder02" parent="Environment/GroundLevel" instance=ExtResource("8_xu8vt")]
+transform = Transform3D(1.33486, -5.81411, -1.29999, -0.386691, 12.1338, -1.245, 1.43827, 8.65835, 0.871791, -27.4701, 10, -13.1366)
+
+[node name="Flavour_Box01" parent="Environment/GroundLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(8.20312, 0.448319, 3.19594, 0, 0.620902, -7.055, -5.71917, 0.643033, 4.584, -25.6064, 14.6994, -5.22519)
+
+[node name="FirstLevel" type="Node3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.685, 23)
+
+[node name="Salvo01" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(5, 0, 0, 0, 0.819152, -14.3394, 0, 0.573576, 20.4788, -2.11306, -7.81472, 17.3465)
+
+[node name="AnalyticsCheckpoint" parent="Environment/FirstLevel" instance=ExtResource("8_axjnh")]
+transform = Transform3D(2.53679, 0, 0.861735, 0, 4, 0, -4.30868, 0, 0.507358, -1.52496, 5.29325, 3.30602)
+checkpoint_signal = 1
+
+[node name="Slope01" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(2.5, -0.296198, 14.6484, -2.66758e-15, 0.939693, 6.15636, -4.33013, -0.17101, 8.45724, -2.11306, 2.54158, 2.96563)
+
+[node name="Slope02" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-4.63696, 0.155435, -6.12488, -0.015818, 0.906302, 7.60713, 1.87039, 0.393009, -15.1201, 6.77213, 8.2256, -1.03045)
+
+[node name="Slope03" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3.93226, 0.263285, -10.0571, -0.015818, 0.906302, 7.60713, 3.08822, -0.330601, 12.8447, -4.86501, 15.1202, -0.790932)
+
+[node name="SlidingPlatform01" parent="Environment/FirstLevel" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(1.74846e-07, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 1.74846e-07, -4.37114e-08, -9.977, 17.8101, -2.649)
+
+[node name="Pivot" parent="Environment/FirstLevel/SlidingPlatform01" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.4, 0, 0, 0, 0.6, 0, 0, 0)
+
+[node name="SlidingPlatform01Button" parent="Environment/FirstLevel" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(1, 0, 0, 0, -1.20206e-07, -1, 0, 2.75, -4.37114e-08, -10, 20.25, -8.8)
+movable_platforms = [NodePath("../SlidingPlatform01")]
+
+[node name="Platform19" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(6.47767, 0, -1.51615, 0, 1, 0, 2.65325, 0, 3.70153, -11.0414, 16.942, -10.1549)
+
+[node name="Platform20" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(4.16238, 0.238709, 1.25, -1.37819, 0.961262, 0, -2.40315, -0.137819, 2.16506, -17.8603, 16.942, -9.2682)
+
+[node name="Platform01" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(7, 0, 0, 0, 1, 0, 0, 0, 7.75537, -26.6162, 16.942, 6.34184)
+
+[node name="Platform02" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 2.923, -28.1458, 17.942, 13.3041)
+
+[node name="Platform03" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 2.923, -23.2793, 18.942, 15.3509)
+
+[node name="Platform04" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 2.923, -18.9332, 19.942, 13.3674)
+
+[node name="Platform05" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 2.923, -15.4329, 20.942, 9.77967)
+
+[node name="Platform06" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 2.923, -20.3333, 21.942, 9.37132)
+
+[node name="Platform07" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 2.923, -25.175, 22.942, 8.71335)
+
+[node name="Platform08" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 14.6895, -21.4636, 23.5383, 0.336472)
+
+[node name="Platform09" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(4.29859, 3.72529e-08, 7.50293, 0.31119, 0.992548, -1.53885, -2.53481, 0.121852, 12.5347, -25.1696, 23.5383, -15.5143)
+
+[node name="Platform10" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(1.54093, 0, -41.8583, 0, 1, 0, 4.75663, 0, 13.5602, -4.94039, 23.5383, -31.6847)
+
+[node name="Platform11" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(2.49081, 0.0693022, 0.301931, -0.133085, 0.961385, -1.62007, -0.167728, 0.26634, 5.76925, 4.59941, 24.7209, -41.3052)
+
+[node name="ShortcutElevator_FirstFloor" parent="Environment/FirstLevel" node_paths=PackedStringArray("base_button") instance=ExtResource("7_x28al")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.84268, 25.8066, -47.4938)
+base_button = NodePath("ShortcutElevator_FirstFloor_Button")
+animation_duration = 3.0
+animation_transition_type = 7
+
+[node name="EndingNode" parent="Environment/FirstLevel/ShortcutElevator_FirstFloor" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -39.9916, 0)
+
+[node name="ShortcutElevator_FirstFloor_Button" type="Node3D" parent="Environment/FirstLevel/ShortcutElevator_FirstFloor"]
+transform = Transform3D(1, 0, -2.38419e-07, 0, 1, 0, 2.38419e-07, 0, 1, 0, -38.807, -2.996)
+visible = false
+
+[node name="ButtonText" type="MeshInstance3D" parent="Environment/FirstLevel/ShortcutElevator_FirstFloor/ShortcutElevator_FirstFloor_Button"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33602, 0)
+mesh = SubResource("TextMesh_le0ak")
+
+[node name="InteractableButton" parent="Environment/FirstLevel/ShortcutElevator_FirstFloor/ShortcutElevator_FirstFloor_Button" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+movable_platforms = [NodePath("../..")]
+
+[node name="Platform12" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-0.332716, 0.419165, 6.24777, 0.0316345, 0.90617, -2.95833, -1.97188, -0.0561885, -1.10165, -3.07859, 27.6662, -47.524)
+
+[node name="Platform13" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-1.94388, -0.0501865, -1.60871, 0.0046674, 0.974871, -1.55932, 0.47044, -0.217045, -6.63179, -4.67475, 30.1595, -42.1502)
+
+[node name="Platform14" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-1.86451, -0.110252, 2.41213, 0.154869, 0.869565, 3.41397, -0.706828, 0.481354, -5.61484, -0.33823, 32.954, -43.0882)
+
+[node name="Platform15" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.603054, -0.286821, 2.72788, 0.024341, 0.954761, 0.89138, -1.90676, -0.0785251, 0.87413, 3.49904, 35.3194, -46.6011)
+
+[node name="Platform16" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(1.92901, -0.212537, -0.470165, 0.253234, 0.893022, -1.2955, 0.463472, 0.39666, 2.6647, 6.33976, 36.8431, -46.2665)
+
+[node name="Platform17" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-1.22146, 0, 6.78791, 0, 1, 0, -4.84851, 0, -1.71005, 2.88812, 37.6189, -50.0068)
+
+[node name="Platform18" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-1.83545, -0.0560176, -2.41639, 0.131706, 0.82137, -1.9155, 0.78343, -0.269325, -5.3392, -1.35975, 38.1635, -47.1471)
+
+[node name="SecondLevel" type="Node3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.7, 0)
+
+[node name="SecondLevelBasePlatform" parent="Environment/SecondLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(49, 0, 0, 0, 1, 0, 0, 0, 34.9878, 0.0517502, 1.11864, -3.35715)
+
+[node name="AnalyticsCheckpoint" parent="Environment/SecondLevel" instance=ExtResource("8_axjnh")]
+transform = Transform3D(5, 0, 0, 0, 4, 0, 0, 0, 1, 0, 3.61864, -18.4479)
+checkpoint_signal = 2
+
+[node name="SLIDING DOORS PUZZLE" type="Node3D" parent="Environment/SecondLevel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.276244, 1.6186, -4.46906)
+
+[node name="Wall01" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-1.50685e-08, 0, 4.35352, 0, 4, 0, -0.344727, 0, -1.90298e-07, 5.16208, 2, -16.2017)
+
+[node name="Wall02" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-1.50685e-08, 0, 4.35352, 0, 4, 0, -0.344727, 0, -1.90298e-07, -4.5827, 2, -16.2017)
+
+[node name="Wall03" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.344727, 0, 0, 0, 4, 0, 0, 0, 6, -2.0827, 2, -13.1043)
+
+[node name="Wall04" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.344727, 0, 0, 0, 4, 0, 0, 0, 7.33411, -7.18074, 2, -12.4372)
+
+[node name="Wall05" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-1.50685e-08, 0, 5.12012, 0, 4, 0, -0.344727, 0, -2.23808e-07, -4.78658, 2, -8.91512)
+
+[node name="Wall06" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-2.18557e-08, 0, 8, 0, 4, 0, -0.5, 0, -3.49691e-07, -6.22652, 2, -5.40372)
+
+[node name="Wall07" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.344727, 0, 0, 0, 4, 0, 0, 0, 12.4585, 2.6173, 2, -9.84525)
+
+[node name="Wall08" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.5, 0, 0, 0, 4, 0, 0, 0, 20, -2.16034, 2, 4.34426)
+
+[node name="Wall09" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-2.18557e-08, 0, 8.467, 0, 4, 0, -0.5, 0, -3.70104e-07, 1.93344, 2, 0.623555)
+
+[node name="Wall10" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-0.5, 0, -2.0676e-06, 0, 4, 0, 7.54979e-08, 0, -13.6931, 6.00878, 2, -6.05495)
+
+[node name="Wall11" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-2.18557e-08, 0, 13.6931, 0, 4, 0, -0.5, 0, -5.98544e-07, 12.6111, 2, -12.664)
+
+[node name="Wall14" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.5, 0, 1.06989e-13, 0, 4, 0, -5.32905e-15, 0, 10.0383, 19.2098, 2, -7.89324)
+
+[node name="Wall18" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.5, 0, 1.51611e-13, 0, 4, 0, -5.32905e-15, 0, 14.225, 24.5183, 2, 4.58188)
+
+[node name="Wall22" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.5, 0, 1.17205e-13, 0, 4, 0, -5.32905e-15, 0, 10.9968, 2.47513, 2, 6.19599)
+
+[node name="Wall17" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-2.18557e-08, 0, 6.09025, 0, 4, 0, -0.5, 0, -2.66213e-07, 22.0055, 2, -3.12395)
+
+[node name="Wall19" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-2.18557e-08, 0, 22.4829, 0, 4, 0, -0.5, 0, -9.82759e-07, 13.8092, 2, 18.3549)
+
+[node name="Wall21" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-2.18557e-08, 0, 10.7116, 0, 4, 0, -0.5, 0, -4.68219e-07, -7.23839, 2, 18.3549)
+
+[node name="Wall20" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-2.18557e-08, 0, 29.88, 0, 4, 0, -0.5, 0, -1.3061e-06, 9.32812, 2, 11.764)
+
+[node name="Wall23" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-2.18557e-08, 0, 11.3084, 0, 4, 0, -0.5, 0, -4.94306e-07, -7.82091, 2, 14.0923)
+
+[node name="Wall24" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-2.18557e-08, 0, 17.6882, 0, 4, 0, -0.5, 0, -7.73176e-07, -21.8665, 2, 11.8622)
+
+[node name="Wall25" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.5, 0, 3.19743e-14, 0, 4, 0, -5.32905e-15, 0, 3, -13.2747, 2, 12.8422)
+
+[node name="Wall12" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.5, 0, 0, 0, 4, 0, 0, 0, 4, -10.4759, 2, -10.7702)
+
+[node name="Wall13" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-2.18557e-08, 0, 9, 0, 4, 0, -0.5, 0, -3.93403e-07, -15.2103, 2, -12.6255)
+
+[node name="ANTICHEAT1" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.321433, -2.1951, 0.978134, 0.325384, 2.03325, 1.47758, -0.202007, -0.217761, 3.93644, -24.9044, 1.93208, -14.7973)
+
+[node name="Wall15" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-2.18557e-08, 0, 12.9658, 0, 4, 0, -0.5, 0, -5.66753e-07, -17.156, 2, -9.02783)
+
+[node name="Wall16" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-2.18557e-08, 0, 12.9658, 0, 4, 0, -0.5, 0, -5.66753e-07, -17.1561, 2, -4.60446)
+
+[node name="ANTICHEAT2" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-0.0742565, -0.607352, 6.69988, -0.089196, 3.22326, 1.07381, -0.486344, -0.498416, -1.2199, -27.1839, 1.75883, -3.76464)
+
+[node name="ANTICHEAT3" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.333338, -1.07543, 1.90402, -0.183147, 1.81362, 2.05972, -0.324566, -2.12789, 0.793221, -30.2561, 1.55828, -4.16087)
+
+[node name="ANTICHEAT4" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-0.236747, 2.29658, -3.14979, 0.234735, 4.22041, 0.9713, 0.372626, -1.19952, -2.61308, 27.5063, 2.81177, 18.2083)
+
+[node name="ANTICHEAT5" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.286164, -0.335784, -3.71728, 0.230362, 3.04919, 1.02227, 0.33918, -1.78763, 2.44195, 29.4359, 1.96885, 18.5412)
+
+[node name="SALVO1" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-0.0232528, 2.53377, -2.68675, -0.486914, 1.23721, 0.372208, 0.111238, 5.94518, 1.06761, 29.2403, -9.40364, 7.66692)
+
+[node name="SALVO2" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.0272292, 4.09635, -1.82315, -0.46218, 0.83208, 1.62126, 0.188807, 1.44608, 4.23161, 26.5154, -9.22591, 9.68371)
+
+[node name="SALVO7" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-0.122658, 1.65079, -4.37032, -0.454025, -1.82087, 0.377308, -0.169753, 3.67735, 2.14869, 29.5282, -9.22591, 13.1009)
+
+[node name="SALVO3" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.0617665, 3.94348, -2.7452, -0.486176, 0.134538, -1.60022, -0.0990864, 1.79808, 6.14039, 26.9703, -10.5928, 4.46878)
+
+[node name="SALVO4" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.075258, 3.32047, -5.21061, -0.448021, -0.418433, -4.32356, -0.208837, 2.09426, 7.39765, 28.2489, -8.09639, -2.17537)
+
+[node name="SALVO5" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-0.0401667, 1.96542, -0.348285, -0.460654, -0.166073, -5.07827, -0.190223, -0.0128392, 12.3713, 31.9842, -4.30619, -11.1404)
+
+[node name="SALVO6" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.058014, 2.86837, 0.113483, -0.496328, 0.329553, 0.0869767, 0.0171264, -0.165798, 2.13619, 30.8957, -2.3666, -17.5504)
+
+[node name="SALVO - InteractableButton" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(1, -1.06581e-14, 0, 1.06581e-14, 1, 0, 0, 0, 1, 27.0977, -2.37627, -16.5048)
+movable_platforms = [NodePath("../SALVO - Elevator")]
+
+[node name="SALVO - Elevator" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(-1.0665e-15, -0.4, -6.55671e-09, -1.31134e-08, -1.74846e-08, 0.15, -0.3, 2.18629e-15, -6.55671e-09, 29.1768, -2.50991, -18.193)
+animation_duration = 1.5
+animation_transition_type = 7
+
+[node name="Pivot" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SALVO - Elevator" index="0"]
+transform = Transform3D(1.2, 0, 0, 0, 0.75, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="EndingNode" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SALVO - Elevator" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.95923e-23, 7.10543e-15, -6.37104e-22, 1, 0, 0, 19)
+
+[node name="End of Level Elevator" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(1.8, -3.98996e-15, 0, -1.19237e-21, -3.19093e-08, 1, -9.83826e-15, -0.73, -4.37114e-08, -18.1136, -0.516148, 25.9697)
+
+[node name="EndingNode" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/End of Level Elevator" index="2"]
+transform = Transform3D(1, 4.23516e-22, 0, 2.5411e-21, 1, 0, 5.04871e-29, 0, 1, 0, 0, 4.9)
+
+[node name="SlidingDoor" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(-2.84124e-08, 0.45, 0, -0.65, -1.96701e-08, 0, 0, 0, 0.5, -1.96739, 1.95005, -9.83496)
+
+[node name="EndingNode" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+
+[node name="SlidingDoor2" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(5.86047e-15, -1.96701e-08, 0.5, -0.65, -1.96701e-08, 7.7647e-23, 2.84124e-08, -0.45, -2.18557e-08, -2.1661, 1.95005, -5.59335)
+activated = true
+
+[node name="Pivot" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
+
+[node name="EndingNode" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor2" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
+
+[node name="SlidingDoor3" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(-3.37658e-15, -1.96701e-08, -0.5, -0.65, -1.96701e-08, 3.55271e-15, -2.84124e-08, 0.45, -2.18557e-08, 6.00675, 1.95005, -16.0381)
+
+[node name="EndingNode" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor3" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
+
+[node name="SlidingDoor5" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(2.84124e-08, -0.45, 4.37114e-08, -0.65, -1.96701e-08, 0, 2.48389e-15, -3.93403e-08, -0.5, 2.47197, 1.95005, -5.40594)
+
+[node name="EndingNode" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor5" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+
+[node name="SlidingDoor6" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(6.20973e-15, -9.83506e-08, -0.5, -0.65, -1.96701e-08, -2.32941e-22, -2.84124e-08, 0.45, -1.09278e-07, -10.4762, 1.95005, -8.80141)
+
+[node name="EndingNode" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor6" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
+
+[node name="SlidingDoor7" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(6.20973e-15, -9.83506e-08, -0.5, -0.65, -1.96701e-08, -2.32941e-22, -2.84124e-08, 0.45, -1.09278e-07, -10.4762, 1.95005, -16.0266)
+
+[node name="EndingNode" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor7" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
+
+[node name="SlidingDoor8" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(-2.84124e-08, 0.45, -8.74227e-08, -0.65, -1.96701e-08, -1.25645e-21, -7.27705e-15, 7.86805e-08, 0.5, -23.6396, 1.95005, -12.6277)
+activated = true
+
+[node name="Pivot" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 0)
+
+[node name="SlidingDoor9" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(-2.84124e-08, 0.623, 0, -0.65, -2.72322e-08, 0, 0, 0, 0.5, -1.92296, 1.95005, 18.3562)
+activated = true
+
+[node name="Pivot" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor9" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
+
+[node name="EndingNode" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor9" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
+
+[node name="SlidingDoor10" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(1.24195e-15, -2.72322e-08, -0.5, 0.65, -2.72322e-08, 1.91069e-15, -2.84124e-08, -0.623, 2.18557e-08, -2.16, 1.95, 18.12)
+two_way_movement = false
+
+[node name="Pivot" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor10" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="EndingNode" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor10" index="2"]
+transform = Transform3D(1, 7.10543e-15, -3.17637e-22, 3.55271e-15, 1, -3.55271e-15, -8.47033e-22, -7.10543e-15, 1, 0, 6.5, 0)
+
+[node name="SlidingDoor11" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(1.24195e-15, -4.37114e-08, -0.5, 0.65, 1.31134e-07, -1.91068e-15, 8.52372e-08, -1, 2.18557e-08, 5.44587, 1.95, 18.1182)
+
+[node name="Pivot" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor11" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.62, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="EndingNode" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor11" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.2, 0)
+
+[node name="SlidingDoor12" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(1.24195e-15, -4.37114e-08, -0.5, 0.65, 1.31134e-07, -1.91068e-15, 8.52372e-08, -1, 2.18557e-08, 10.8018, 1.95, 18.1182)
+
+[node name="Pivot" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor12" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.62, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="InteractableButton2" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor12/Pivot" index="1" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(1.53846, -6.72483e-08, 2.01745e-07, 2.11507e-07, 7.05022e-08, -1.6129, 8.74228e-08, 2, 8.74228e-08, 0, 5, 0.4)
+movable_platforms = [NodePath("../../../SlidingDoor11"), NodePath("../../../SlidingDoor9")]
+
+[node name="EndingNode" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor12" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.2, 0)
+
+[node name="SlidingDoor13" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(1.24195e-15, -4.37114e-08, -0.5, 0.65, 1.31134e-07, -1.91068e-15, 8.52372e-08, -1, 2.18557e-08, 16.4033, 1.95, 18.1182)
+
+[node name="Pivot" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor13" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.62, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="EndingNode" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor13" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.2, 0)
+
+[node name="SlidingDoor14" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(1.24195e-15, -4.37114e-08, -0.5, 0.65, 1.31134e-07, -1.91068e-15, 8.52372e-08, -1, 2.18557e-08, 21.4622, 1.95, 18.1182)
+
+[node name="Pivot" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor14" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.62, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="InteractableButton" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor14/Pivot" index="1" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(1.53846, -6.72483e-08, 2.01745e-07, 2.11507e-07, 7.05022e-08, -1.6129, 8.74228e-08, 2, 8.74228e-08, 0, 5, 0.4)
+movable_platforms = [NodePath("../.."), NodePath("../../../SlidingDoor12")]
+
+[node name="EndingNode" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor14" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.2, 0)
+
+[node name="SlidingDoorWithButton" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(4.50806e-15, -1.74846e-08, 0.3, -0.5, -1.74846e-08, 0, 2.18557e-08, -0.4, -1.31134e-08, 14.4001, 1.78949, 31.6404)
+
+[node name="Pivot" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoorWithButton" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.45, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="InteractableButton" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoorWithButton/Pivot" index="1" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(-2, -5.96047e-08, 8.74229e-08, -2.42841e-07, 2.42841e-07, -5.55556, 9.93411e-08, -3.33333, -1.45705e-07, -0.726654, 3.96208, -0.386845)
+movable_platforms = [NodePath("../../../SlidingDoor10")]
+
+[node name="EndingNode" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoorWithButton" index="2"]
+transform = Transform3D(1, 0, 0, 1.06581e-14, 1, 0, -2.11758e-22, 0, 1, 0, 0, -6.5)
+
+[node name="HorizontalSlidingPlatform1" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(-2.84124e-08, 0.8, -2.18557e-08, 0, -3.49691e-08, -0.5, -0.65, -3.49691e-08, 9.55343e-16, 16.7441, -0.363205, -0.390294)
+
+[node name="Pivot" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/HorizontalSlidingPlatform1" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="HorizontalSlidingPlatform2" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(-2.84124e-08, 0.8, -2.18557e-08, 0, -3.49691e-08, -0.5, -0.65, -3.49691e-08, 9.55343e-16, 16.7441, -0.363205, 4.56114)
+
+[node name="Pivot" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/HorizontalSlidingPlatform2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="HorizontalSlidingPlatform3" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(-2.84124e-08, 0.8, -2.18557e-08, 0, -3.49691e-08, -0.5, -0.65, -3.49691e-08, 9.55343e-16, 16.7441, -0.363205, 9.43631)
+
+[node name="Pivot" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/HorizontalSlidingPlatform3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="InteractableButton" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(-4.37114e-08, -1.3, 0, 1, -5.68248e-08, 0, 0, 0, 1, 2.62254, 1.58723, -10.8259)
+movable_platforms = [NodePath("../SlidingDoor"), NodePath("../SlidingDoor2"), NodePath("../SlidingDoor3")]
+
+[node name="InteractableButton2" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -7.24305, 1.8793, -10.3628)
+movable_platforms = [NodePath("../SlidingDoor2"), NodePath("../SlidingDoor7"), NodePath("../SlidingDoor8")]
+
+[node name="InteractableButton3" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(2.98023e-08, 1, 0, -1, 2.98023e-08, 0, 0, 0, 1, -23.6758, 1.9927, -7.24896)
+movable_platforms = [NodePath("../SlidingDoor5"), NodePath("../SlidingDoor6"), NodePath("../SlidingDoor2")]
+
+[node name="InteractableButton4" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(1, 5.96046e-08, -1.77636e-15, 4.92642e-09, -0.0826516, 0.996579, 5.94007e-08, -0.996579, -0.0826516, 27.46, 3.88601, -0.575382)
+movable_platforms = [NodePath("../HorizontalSlidingPlatform1"), NodePath("../HorizontalSlidingPlatform3")]
+
+[node name="InteractableButton5" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(1, 1.06581e-14, -2.11758e-22, 0, 2.98023e-08, 1, 1.06581e-14, -1, 2.98023e-08, 30.8009, -0.609562, 6.77364)
+movable_platforms = [NodePath("../HorizontalSlidingPlatform1"), NodePath("../HorizontalSlidingPlatform2")]
+
+[node name="InteractableButton6" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(-0.999503, 0.0314097, -0.00257794, -0.0315153, -0.996154, 0.0817588, -7.15113e-09, 0.0817994, 0.996649, 28.055, 3.93574, 5.50107)
+movable_platforms = [NodePath("../HorizontalSlidingPlatform2"), NodePath("../HorizontalSlidingPlatform3"), NodePath("../SlidingDoor13")]
+
+[node name="InteractableButton7" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 0.127177, 1.8793, 11.9772)
+movable_platforms = [NodePath("../SlidingDoorWithButton")]
+
+[node name="InteractableButton8" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(8.88178e-16, 2.98023e-08, -1, -1, 2.98023e-08, 0, 2.98023e-08, 1, 2.98023e-08, -19.6878, 1.9927, 12.0682)
+movable_platforms = [NodePath("../End of Level Elevator")]
+
+[node name="InteractableButton9" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(2.98023e-08, 1, 0, -1, 2.98023e-08, 0, 0, 0, 1, 24.2394, 1.9927, 16.9795)
+movable_platforms = [NodePath("../SlidingDoor12"), NodePath("../SlidingDoor14")]
+
+[node name="LightSphere" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("13_upr5q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.233, 2.84914, -0.153933)
+
+[node name="LightSphere6" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("13_upr5q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89542, 2.84914, -6.16545)
+
+[node name="LightSphere2" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("13_upr5q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9464, 2.84914, -3.87129)
+
+[node name="LightSphere3" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("13_upr5q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2282, 2.84914, -5.35471)
+
+[node name="LightSphere4" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("13_upr5q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0455, 2.84914, 12.6159)
+
+[node name="LightSphere5" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("13_upr5q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.68011, 2.84914, 12.5202)
+
+[node name="SecondLevelCeiling" parent="Environment/SecondLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(49, 0, 0, 0, 1, 0, 0, 0, 34.9878, 0.0517502, 6.00008, -3.35715)
+
+[node name="ThirdLevel" type="Node3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.7, 0)
+
+[node name="AnalyticsCheckpoint" parent="Environment/ThirdLevel" instance=ExtResource("8_axjnh")]
+transform = Transform3D(11, 0, 0, 0, -3.49691e-07, 1, 0, -8, -4.37114e-08, -18.4868, 7.00008, 18.02)
+checkpoint_signal = 3
+
+[node name="MeditationSphere" type="StaticBody3D" parent="Environment/ThirdLevel"]
+transform = Transform3D(11.1342, 0, 0, 0, 11.1342, 0, 0, 0, 11.1342, -0.275578, 14.4025, -0.816633)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/ThirdLevel/MeditationSphere"]
+mesh = SubResource("SphereMesh_fdmm4")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/ThirdLevel/MeditationSphere"]
+shape = SubResource("SphereShape3D_yr510")
+
+[node name="Opening01" type="CSGMesh3D" parent="Environment/ThirdLevel"]
+transform = Transform3D(14.3364, 0, 0, 0, 19.4599, 0, 0, 0, 0.948325, -0.0276372, 15.723, 14.1974)
+use_collision = true
+mesh = SubResource("BoxMesh_pcmfp")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="Environment/ThirdLevel/Opening01"]
+transform = Transform3D(0.9, 0, 0, 0, -3.93402e-08, -0.698364, 0, 0.899999, -3.05264e-08, 0, -0.121258, 0)
+operation = 2
+mesh = SubResource("CylinderMesh_0q4y4")
+
+[node name="Opening02" type="CSGMesh3D" parent="Environment/ThirdLevel"]
+transform = Transform3D(14.3364, 0, 0, 0, 19.4599, 0, 0, 0, 0.948325, -0.0276372, 15.723, -20.9116)
+use_collision = true
+mesh = SubResource("BoxMesh_pcmfp")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="Environment/ThirdLevel/Opening02"]
+transform = Transform3D(0.9, 0, 0, 0, -3.93402e-08, -0.698364, 0, 0.899999, -3.05264e-08, 0, -0.121258, 0)
+operation = 2
+mesh = SubResource("CylinderMesh_0q4y4")
+
+[node name="Opening03" type="CSGMesh3D" parent="Environment/ThirdLevel"]
+transform = Transform3D(-6.26666e-07, 0, 0.948325, 0, 19.4599, 0, -14.3364, 0, -4.14526e-08, 24.3804, 15.723, 0.0385807)
+use_collision = true
+mesh = SubResource("BoxMesh_pcmfp")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="Environment/ThirdLevel/Opening03"]
+transform = Transform3D(0.9, 0, 0, 0, -3.93402e-08, -0.698364, 5.68434e-14, 0.899999, -3.05264e-08, 0, -0.121258, 0)
+operation = 2
+mesh = SubResource("CylinderMesh_0q4y4")
+
+[node name="Opening04" type="CSGMesh3D" parent="Environment/ThirdLevel"]
+transform = Transform3D(-6.26666e-07, 0, 0.948325, 0, 19.4599, 0, -14.3364, 0, -4.14526e-08, -24.4307, 15.723, 0.0385821)
+use_collision = true
+mesh = SubResource("BoxMesh_pcmfp")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="Environment/ThirdLevel/Opening04"]
+transform = Transform3D(0.9, 0, 0, 0, -3.93402e-08, -0.698364, 0, 0.899999, -3.05264e-08, 0, -0.121258, 0)
+operation = 2
+mesh = SubResource("CylinderMesh_0q4y4")
+
+[node name="Slope01" parent="Environment/ThirdLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-0.0563626, -0.0535241, 7.58604, -0.486553, 0.993885, 0.396418, -4.97595, -0.0965767, -0.124689, 0.694414, 6.18552, 17.4907)
+
+[node name="Slope02" parent="Environment/ThirdLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(4.26396, -0.11056, 8.00075, -0.382368, 0.940364, 5.19567, -2.58311, -0.321701, 12.4378, 6.78765, 7.11495, 24.512)
+
+[node name="Slope03" parent="Environment/ThirdLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.233608, -0.272754, 23.4491, -0.151871, 0.961166, 6.69329, -4.99223, -0.0420033, 0.893662, 20.9032, 9.59134, 28.8519)
+
+[node name="Slope04" parent="Environment/ThirdLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-4.93807, -0.15674, 0.43213, -0.725485, 0.929659, 20.5179, -0.29855, 0.333416, -57.0067, 33.415, 20.4683, 2.02783)
+
+[node name="Slope05" parent="Environment/ThirdLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-0.332224, 0.306547, -21.295, -0.279616, 0.948997, 6.95875, 4.98111, 0.0737179, -1.02968, 20.186, 32.5729, -24.3607)
+
+[node name="ElevatorPath" type="Node3D" parent="Environment/ThirdLevel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.00008, 0)
+
+[node name="Staircase01" parent="Environment/ThirdLevel/ElevatorPath" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(4.84004, -0.042896, -0.0666331, 0.223832, 0.937073, 0.460954, 0.032762, -0.0649482, 6.69466, 27.6714, -1.26376, -1.76824)
+
+[node name="Staircase02" parent="Environment/ThirdLevel/ElevatorPath" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3.654, -0.0720164, 3.11252, 0.200421, 0.946437, 0.400527, -2.33047, -0.0315224, 4.91463, 28.7352, 0.374496, -4.85454)
+
+[node name="Staircase03" parent="Environment/ThirdLevel/ElevatorPath" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(4.38315, -0.259557, 1.37228, 1.10165, 1.00704, 0.375316, -2.88909, -0.00978606, 2.22505, 28.7237, 0.374496, -10.0649)
+
+[node name="Staircase04" parent="Environment/ThirdLevel/ElevatorPath" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(2.26141, 0.00181473, 5.56676, -0.17769, 0.658976, 0.433171, -2.18706, -0.0516626, 5.7208, 28.1134, 0.481518, -16.392)
+
+[node name="Staircase05" parent="Environment/ThirdLevel/ElevatorPath" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(5.1379, -0.104723, -0.104082, 0.626261, 0.862068, 0.543918, 0.0271789, -0.067174, 7.14256, 27.5619, 0.70834, -22.1516)
+
+[node name="Staircase06" parent="Environment/ThirdLevel/ElevatorPath" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3.06971, 0, -3.26612, 0.538741, 0.507694, 0.938457, 2.33783, -0.116996, 4.07236, 27.331, 1.84842, -23.621)
+
+[node name="Staircase07" parent="Environment/ThirdLevel/ElevatorPath" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3.81864, -0.0517657, -0.91017, 0.460925, 0.514498, 0.55141, 0.619969, -0.0636654, 5.19615, 26.1931, 2.76555, -24.0372)
+
+[node name="Staircase08" parent="Environment/ThirdLevel/ElevatorPath" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(2.65088, 0.192052, -2.52348, -0.254466, 1.33802, 0.713869, 1.5692, -0.107459, 4.37873, 21.7199, 3.6604, -24.5237)
+
+[node name="ShortcutElevator_SecondFloor" parent="Environment/ThirdLevel/ElevatorPath" node_paths=PackedStringArray("base_button") instance=ExtResource("7_x28al")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 16.1727, 4.52897, -25.1717)
+base_button = NodePath("ShortcutElevator_SecondFloor_Button")
+animation_duration = 5.0
+animation_transition_type = 7
+
+[node name="EndingNode" parent="Environment/ThirdLevel/ElevatorPath/ShortcutElevator_SecondFloor" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -63.729, 0)
+
+[node name="ShortcutElevator_SecondFloor_Button" type="Node3D" parent="Environment/ThirdLevel/ElevatorPath/ShortcutElevator_SecondFloor"]
+transform = Transform3D(1, 0, -2.38419e-07, 0, 1, 0, 2.38419e-07, 0, 1, 0, -62.542, -3.665)
+visible = false
+
+[node name="ButtonText" type="MeshInstance3D" parent="Environment/ThirdLevel/ElevatorPath/ShortcutElevator_SecondFloor/ShortcutElevator_SecondFloor_Button"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33602, 0)
+mesh = SubResource("TextMesh_ndlqv")
+
+[node name="InteractableButton" parent="Environment/ThirdLevel/ElevatorPath/ShortcutElevator_SecondFloor/ShortcutElevator_SecondFloor_Button" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+movable_platforms = [NodePath("../..")]
+
+[node name="Staircase09" parent="Environment/ThirdLevel/ElevatorPath" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.0988334, 0.0999626, -6.5068, -0.728119, 0.884362, 0.677234, 3.73949, 0.169553, 0.303837, 22.8397, 2.17969, -28.8468)
+
+[node name="Staircase10" parent="Environment/ThirdLevel/ElevatorPath" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-2.86006, -0.0510679, -3.71602, -0.800721, 0.884362, 0.52729, 2.95692, 0.190086, -3.45151, 23.6715, 4.1154, -32.2588)
+
+[node name="Staircase11" parent="Environment/ThirdLevel/ElevatorPath" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3.79096, 0.060332, -0.770275, -0.22552, 0.903275, 0.220977, 0.696452, -0.0359095, 4.26436, 23.9017, 3.02589, -36.0505)
+
+[node name="Staircase12" parent="Environment/ThirdLevel/ElevatorPath" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.760942, 0.0679234, -0.173086, -0.0825038, 0.987769, -0.219898, 0.121594, 0.245151, 0.933976, 25.3221, 4.14911, -37.6782)
+
+[node name="Staircase13" parent="Environment/ThirdLevel/ElevatorPath" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.634394, 0.151771, 0.236395, -0.0922973, 0.839817, -0.160575, -0.176777, 0.106177, 0.932179, 25.9465, 3.73719, -38.903)
+
+[node name="Staircase14" parent="Environment/ThirdLevel/ElevatorPath" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.682407, 0.0964959, -0.191337, -0.0308803, 0.873642, 0.286609, 0.152861, -0.254291, 0.912069, 24.9227, 4.17026, -39.3338)
+
+[node name="Staircase15" parent="Environment/ThirdLevel/ElevatorPath" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.978553, 0.0494093, 0.207923, -0.092056, 0.792543, 0.0818212, -0.253348, -0.0971337, 0.773368, 25.1805, 4.85872, -40.5622)
+
+[node name="Staircase16" parent="Environment/ThirdLevel/ElevatorPath" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3.07572, 0.0964326, -0.222832, -0.262234, 1.07236, 0.476481, 0.159611, -0.0964133, 5.07682, 9.55841, 7.38151, -25.0562)
+
+[node name="Staircase17" parent="Environment/ThirdLevel/ElevatorPath" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3.08845, 0.026482, 0.165329, -0.0849676, 1.07566, 0.486781, -0.0924077, -0.103975, 5.07804, 6.45569, 10.8329, -24.8655)
+
+[node name="Staircase18" parent="Environment/ThirdLevel/ElevatorPath" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(2.94465, -0.00795692, 0.15465, 0.0132654, 1.07596, 0.508205, -0.0880728, -0.103975, 5.24718, 0.528662, 12.9952, -24.7407)
+
+[node name="FourthLevel" type="Node3D" parent="Environment"]
+
+[node name="AnalyticsCheckpoint" parent="Environment/FourthLevel" instance=ExtResource("8_axjnh")]
+transform = Transform3D(12, 0, 0, 0, 6, 0, 0, 0, 1, 12.9733, 89.5066, -20.9082)
+checkpoint_signal = 4
+
+[node name="Flavour" type="Node3D" parent="Environment/FourthLevel"]
+
+[node name="FlavourBox-02" parent="Environment/FourthLevel/Flavour" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(5.52182, 0.0238566, -13.0113, -11.3594, 0.155957, -4.96977, 4.8222, 0.340061, 3.192, -25.1786, 111.832, 16.7285)
+
+[node name="FlavourBox-03" parent="Environment/FourthLevel/Flavour" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(7.67851, -0.0240087, -8.02378, -5.30862, 0.216044, -7.66935, 4.35872, 0.305421, 4.79428, -20.0253, 106.277, 17.5465)
+
+[node name="FlavourBox-15" parent="Environment/FourthLevel/Flavour" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3.88185, 0.0058657, -12.7692, 2.2895, 0.36035, 1.79235, 8.21625, -0.103185, 5.53351, -30.8552, 119.809, 22.5584)
+
+[node name="FlavourBox-06" parent="Environment/FourthLevel/Flavour" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-5.19036, 0.178103, 7.69992, 5.85297, 0.0864136, 8.30245, 1.31505, 0.318348, -6.56145, 14.6007, 92.9275, -10.1619)
+
+[node name="FlavourBox-07" parent="Environment/FourthLevel/Flavour" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(1.50859, 0.152291, 11.6967, 7.76612, -0.00393863, -2.66376, -0.581435, 0.342528, -5.23109, 8.00985, 95.9394, -4.55184)
+
+[node name="FlavourBox-08" parent="Environment/FourthLevel/Flavour" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(2.49966, -0.295831, 4.10385, 7.52807, 0.0960153, -1.43097, 0.0796335, 0.209281, 6.45754, -1.36254, 98.2092, -0.485902)
+
+[node name="FlavourBox-09" parent="Environment/FourthLevel/Flavour" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-1.57773, -0.332821, -3.2304, 7.58501, -0.0310977, -2.18559, 1.70437, -0.169696, 6.73623, -3.52701, 98.5429, 2.47582)
+
+[node name="FlavourBox-10" parent="Environment/FourthLevel/Flavour" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-5.92634, 0.249013, 0.196329, 0.175236, -0.00491594, 7.78133, 5.27013, 0.280182, -0.0379608, -6.61524, 99.9161, 3.91175)
+
+[node name="FlavourBox-11" parent="Environment/FourthLevel/Flavour" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-8.15803, 0.00639926, -0.609577, 0.197416, 0.372776, -0.909613, 0.54671, -0.0391191, -8.76767, -13.7952, 105.346, 13.6259)
+
+[node name="FlavourBox-14" parent="Environment/FourthLevel/Flavour" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-8.15803, 0.00639926, -0.712469, 0.197416, 0.372776, -1.06315, 0.54671, -0.039119, -10.2476, -13.8628, 111.464, 15.2142)
+
+[node name="FlavourBox-16" parent="Environment/FourthLevel/Flavour" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(1.73985, 0.19217, 14.6615, 4.43769, -0.006357, -7.6574, -0.951283, 0.321813, -8.90632, -18.2117, 107.51, 9.70416)
+
+[node name="FlavourBox-17" parent="Environment/FourthLevel/Flavour" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(1.8194, 0.287393, 6.99386, 6.0561, -0.0131695, -4.72597, -1.84371, 0.240344, -8.62189, -27.1466, 115.269, 21.5867)
+
+[node name="FlavourBox16" parent="Environment/FourthLevel/Flavour" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(7.86188, -0.0244389, 1.00362, 0.689893, -0.134073, -7.92544, 0.815029, 0.349229, -2.97243, 17.6816, 88.5798, -15.0093)
+
+[node name="FlavourBox17" parent="Environment/FourthLevel/Flavour" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(5.77194, 0.253799, -1.32426, 0.707562, -0.13318, -6.42135, -5.67273, 0.241625, -2.14836, 19.2793, 91.4815, -17.5767)
+
+[node name="FlavourBox18" parent="Environment/FourthLevel/Flavour" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-0.654274, 0.354507, -2.17353, -2.41677, -0.121631, -6.19505, -7.72832, 0.00802362, 2.1213, 23.359, 92.1595, -20.1249)
+
+[node name="FlavourBox19" parent="Environment/FourthLevel/Flavour" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(2.92777, 0.330898, 0.744856, -0.448815, 0.0587896, -6.79692, -5.67433, 0.166083, 0.921928, 26.735, 95.2059, -19.3611)
+
+[node name="FlavourBox20" parent="Environment/FourthLevel/Flavour" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.595581, 0.355454, 2.09597, -4.08392, 0.109095, -4.91868, -4.89266, -0.0477931, 4.36078, 25.1523, 94.8756, -26.1568)
+
+[node name="FlavourBox21" parent="Environment/FourthLevel/Flavour" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-0.834658, 0.318659, 2.80376, -3.14148, 0.109095, -4.00803, -3.69837, -0.164584, 2.77176, 28.6574, 97.8401, -25.2301)
+
+[node name="FlavourBox28" parent="Environment/FourthLevel/Flavour" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3.99301, 0.203096, -1.24227, -2.46478, 0.167553, -4.16811, -1.49137, 0.266855, 3.56254, 31.9501, 98.5444, -27.2141)
+
+[node name="StaticCylinder" parent="Environment/FourthLevel/Flavour" instance=ExtResource("8_xu8vt")]
+transform = Transform3D(0.682729, -1.10519, 0.108013, 0, 4.89267, 0.500618, -0.154536, -4.88266, 0.477195, -17.653, 102.713, -13.436)
+
+[node name="---ROT PLAT PUZZLE 1---" type="Node3D" parent="Environment/FourthLevel"]
+transform = Transform3D(1, 1.49012e-08, 3.91155e-08, 2.23517e-08, -5.96046e-08, -1, 0, 1, -2.98023e-08, 12.0681, 4.5676, -10.955)
+
+[node name="InteractableButton01" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 1---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.75618, -3.2305, -84.3133)
+movable_platforms = [NodePath("../RotatingPlatform01")]
+
+[node name="RotatingPlatform01" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 1---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.22986, -6.81579, -81.9904)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="InteractableButton02" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 1---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -9.6392, -3.2305, -84.3133)
+movable_platforms = [NodePath("../RotatingPlatform02")]
+
+[node name="RotatingPlatform02" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 1---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0299, -6.81579, -81.9904)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="InteractableButton03" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 1---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -14.5027, -3.2305, -84.3133)
+movable_platforms = [NodePath("../RotatingPlatform03")]
+
+[node name="RotatingPlatform03" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 1---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -16.8899, -6.81579, -81.9904)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="---ROT PLAT PUZZLE 2---" type="Node3D" parent="Environment/FourthLevel"]
+transform = Transform3D(1, 1.49012e-08, 3.91155e-08, 2.23517e-08, -5.96046e-08, -1, 0, 1, -2.98023e-08, 12.0681, 4.5676, -10.955)
+
+[node name="InteractableButton01" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 2---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(-3.49691e-08, 0.8, -3.49691e-08, -0.8, -3.49691e-08, 3.49691e-08, 3.49691e-08, 3.49691e-08, 0.8, -31.3074, 3.72012, -84.3133)
+movable_platforms = [NodePath("../RotatingPlatform01"), NodePath("../RotatingPlatform02"), NodePath("../RotatingPlatform03")]
+
+[node name="RotatingPlatform01" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 2---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, -1.64203e-15, -33.1424, 6.12963, -81.9904)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="InteractableButton02" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 2---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(-3.49691e-08, 0.8, -3.49691e-08, -0.8, -3.49691e-08, 3.49691e-08, 3.49691e-08, 3.49691e-08, 0.8, -31.3074, 8.60314, -84.3133)
+movable_platforms = [NodePath("../RotatingPlatform02"), NodePath("../RotatingPlatform03")]
+
+[node name="RotatingPlatform02" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 2---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 4.37114e-08, 1, -33.1424, 10.9297, -81.9904)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="InteractableButton03" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 2---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(-3.49691e-08, 0.8, -3.49691e-08, -0.8, -3.49691e-08, 3.49691e-08, 3.49691e-08, 3.49691e-08, 0.8, -31.3074, 13.4666, -84.3133)
+movable_platforms = [NodePath("../RotatingPlatform03")]
+
+[node name="RotatingPlatform03" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 2---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, -1.64203e-15, -33.1424, 15.7897, -81.9904)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="---ROT PLAT PUZZLE 3---" type="Node3D" parent="Environment/FourthLevel"]
+transform = Transform3D(1, 1.49012e-08, 3.91155e-08, 2.23517e-08, -5.96046e-08, -1, 0, 1, -2.98023e-08, 12.0681, 4.5676, -10.955)
+
+[node name="InteractableButton01" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 3---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(-0.8, -6.99382e-08, 3.0571e-15, 6.99382e-08, -0.8, 6.99382e-08, -3.0571e-15, 6.99382e-08, 0.8, -19.3601, 25.612, -84.9974)
+movable_platforms = [NodePath("../RotatingPlatform01"), NodePath("../RotatingPlatform02")]
+
+[node name="InteractableButton02" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 3---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(-0.8, -6.99382e-08, 3.0571e-15, 6.99382e-08, -0.8, 6.99382e-08, -3.0571e-15, 6.99382e-08, 0.8, -19.3601, 25.612, -83.9974)
+movable_platforms = [NodePath("../RotatingPlatform02"), NodePath("../RotatingPlatform03")]
+
+[node name="InteractableButton03" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 3---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(-0.8, -6.99382e-08, 3.0571e-15, 6.99382e-08, -0.8, 6.99382e-08, -3.0571e-15, 6.99382e-08, 0.8, -19.3601, 25.612, -82.9974)
+movable_platforms = [NodePath("../RotatingPlatform03"), NodePath("../RotatingPlatform01")]
+
+[node name="InteractableButton04" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 3---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(-0.8, -6.99382e-08, 3.0571e-15, 6.99382e-08, -0.8, 6.99382e-08, -3.0571e-15, 6.99382e-08, 0.8, -4.75823, 25.612, -84.9974)
+movable_platforms = [NodePath("../RotatingPlatform04"), NodePath("../RotatingPlatform03")]
+
+[node name="InteractableButton05" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 3---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(-0.8, -6.99382e-08, 3.0571e-15, 6.99382e-08, -0.8, 6.99382e-08, -3.0571e-15, 6.99382e-08, 0.8, -4.75823, 25.612, -83.9974)
+movable_platforms = [NodePath("../RotatingPlatform05"), NodePath("../RotatingPlatform04")]
+
+[node name="InteractableButton06" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 3---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(-0.8, -6.99382e-08, 3.0571e-15, 6.99382e-08, -0.8, 6.99382e-08, -3.0571e-15, 6.99382e-08, 0.8, -4.7581, 25.612, -82.9974)
+movable_platforms = [NodePath("../RotatingPlatform03"), NodePath("../RotatingPlatform05")]
+
+[node name="RotatingPlatform01" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 3---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(-1, 0, -8.74228e-08, 8.74228e-08, -4.37114e-08, -1, -3.82137e-15, -1, 4.37114e-08, -21.7693, 29.1969, -81.9904)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="RotatingPlatform02" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 3---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 8.74228e-08, -1, 8.74228e-08, -3.82137e-15, 8.74228e-08, 1, -16.9693, 29.1969, -81.9904)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="RotatingPlatform03" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 3---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(-1, 0, -8.74228e-08, 8.74228e-08, -4.37114e-08, -1, -3.82137e-15, -1, 4.37114e-08, -12.1093, 29.1969, -81.9904)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="RotatingPlatform04" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 3---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 8.74228e-08, -1, 8.74228e-08, -3.82137e-15, 8.74228e-08, 1, -6.94981, 29.1969, -81.9904)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="RotatingPlatform05" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 3---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(-1, 0, -8.74228e-08, 8.74228e-08, -4.37114e-08, -1, -3.82137e-15, -1, 4.37114e-08, -2.08981, 29.1969, -81.9904)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="---ROT PLAT PUZZLE 4---" type="Node3D" parent="Environment/FourthLevel"]
+transform = Transform3D(1, 1.49012e-08, 3.91155e-08, 2.23517e-08, -5.96046e-08, -1, 0, 1, -2.98023e-08, 35.3278, 4.5676, 12.7173)
+
+[node name="InteractableButton01" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 4---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(-3.49691e-08, -0.8, 3.49691e-08, 0.8, -3.49691e-08, 3.49691e-08, -3.49691e-08, 3.49691e-08, 0.8, -16.1785, -5.35044, -84.3133)
+movable_platforms = [NodePath("../rp1"), NodePath("../rp6")]
+
+[node name="InteractableButton02" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 4---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(-3.49691e-08, -0.8, 3.49691e-08, 0.8, -3.49691e-08, 3.49691e-08, -3.49691e-08, 3.49691e-08, 0.8, -16.1785, -10.2335, -84.3133)
+movable_platforms = [NodePath("../rp2"), NodePath("../rp5")]
+
+[node name="InteractableButton03" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 4---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(-3.49691e-08, -0.8, 3.49691e-08, 0.8, -3.49691e-08, 3.49691e-08, -3.49691e-08, 3.49691e-08, 0.8, -16.1785, -15.097, -84.3133)
+movable_platforms = [NodePath("../rp3"), NodePath("../rp4"), NodePath("../rp5")]
+
+[node name="InteractableButton04" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 4---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(-3.49691e-08, -0.8, 3.49691e-08, 0.8, -3.49691e-08, 3.49691e-08, -3.49691e-08, 3.49691e-08, 0.8, -17.069, -15.097, -87.5)
+movable_platforms = [NodePath("../rp4"), NodePath("../rp5")]
+
+[node name="InteractableButton05" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 4---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(-3.49691e-08, -0.8, 3.49691e-08, 0.8, -3.49691e-08, 3.49691e-08, -3.49691e-08, 3.49691e-08, 0.8, -17.069, -10.2248, -87.5)
+movable_platforms = [NodePath("../rp4"), NodePath("../rp5")]
+
+[node name="rp1" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 4---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(8.74228e-08, -8.74228e-08, 1, -1, -8.74228e-08, 8.74228e-08, 8.74228e-08, -1, -8.74228e-08, -14.53, -7.824, -82.69)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="rp2" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 4---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(3.55271e-15, -7.10543e-15, -1, 1, -8.74228e-08, 3.55271e-15, -8.74228e-08, -1, 1.06581e-14, -14.53, -12.624, -83.69)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="rp3" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 4---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(3.55271e-15, 1, 4.37114e-08, 1, 1.91069e-15, -8.74228e-08, -8.74228e-08, 4.37114e-08, -1, -14.53, -17.484, -84.59)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="rp4" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 4---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(-1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 4.37114e-08, 1, 4.37114e-08, -19.825, -17.484, -85.59)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="rp5" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 4---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(-8.74228e-08, -1, -4.37114e-08, -1, 8.74228e-08, -3.55271e-15, 7.10543e-15, 4.37114e-08, -1, -19.3194, -12.7318, -86.59)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="rp6" parent="Environment/FourthLevel/---ROT PLAT PUZZLE 4---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -8.74228e-08, -4.37114e-08, 8.74228e-08, -1, -19.825, -7.784, -87.59)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="--- SAFE PLATFORM---" type="Node3D" parent="Environment/FourthLevel"]
+transform = Transform3D(1, -7.45058e-08, -1.17347e-07, 4.65661e-08, -1.49012e-08, 1, -4.47035e-08, -1, -5.96046e-08, 15.5028, 92.1576, 4.93329)
+
+[node name="FlavourCylinder03" parent="Environment/FourthLevel/--- SAFE PLATFORM---" instance=ExtResource("8_xu8vt")]
+transform = Transform3D(-0.649925, -11.986, -1.3117, -1.86767, 5.99521, 0.217256, 0.299009, 11.3946, -1.49407, -1.51065, -6.30461, -3.35872)
+
+[node name="FlavourBox2" parent="Environment/FourthLevel/--- SAFE PLATFORM---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(2.57105, -0.662752, -2.97439, -4.07046, -0.418618, -1.87873, 0, 0.620901, -4.44153, -4.83137, -3.32999, -2.10361)
+
+[node name="FlavourBox3" parent="Environment/FourthLevel/--- SAFE PLATFORM---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(10.2938, -0.0420122, 0.0894771, 0.300898, 0.341211, -5.32341, 0.351203, 0.939047, 1.93831, -8.58911, -5.9057, -4.02575)
+
+[node name="FlavourBox4" parent="Environment/FourthLevel/--- SAFE PLATFORM---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3.14511, -0.638795, -2.24113, 0.0805822, 0.250935, -14.4064, 2.73456, 0.727305, 3.00212, 4.60354, -9.45017, -8.8195)
+
+[node name="FlavourBox5" parent="Environment/FourthLevel/--- SAFE PLATFORM---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(1.18473, -0.322813, -5.24538, 0.464108, 0.242502, -7.45795, 4.75937, 0.0567091, 2.03297, -1.57034, -20.4867, -1.64797)
+
+[node name="FlavourBox7" parent="Environment/FourthLevel/--- SAFE PLATFORM---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.134901, -0.407345, -0.259053, -0.236577, 0.010545, -9.32354, 4.15955, 0.0138106, -0.52188, 0.199495, -16.1504, -0.130142)
+
+[node name="FlavourBox6" parent="Environment/FourthLevel/--- SAFE PLATFORM---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(5.8154, 0.0572954, 2.78459, 1.2272, 0.044239, -12.4321, -0.964237, 0.401857, 0.971585, 0.346652, -12.9924, 0.177498)
+
+[node name="FlavourBox8" parent="Environment/FourthLevel/--- SAFE PLATFORM---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.0266423, -0.371159, 4.12437, 0.0620717, -0.170022, -8.99538, 2.57565, 0.00793665, 0.174121, -1.45115, -4.51149, -0.712051)
+
+[node name="SecondLevelBasePlatform2" parent="Environment/FourthLevel/--- SAFE PLATFORM---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(10.3932, 1.08478e-08, -1.34615e-14, 0, -1.08478e-08, -7.04538, -4.54301e-07, 0.248169, -3.07963e-07, -2.33359, -5.74724, 0.802719)
+
+[node name="---ROT PLAT PUZ 5---" type="Node3D" parent="Environment/FourthLevel"]
+transform = Transform3D(0.754502, -0.597912, -0.135049, 0.656013, 0.680758, 0.180906, -0.0193315, -0.234875, 0.868126, 20.1063, 83.3381, 14.3835)
+
+[node name="rp1" parent="Environment/FourthLevel/---ROT PLAT PUZ 5---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(0.754502, 0.019331, 0.656012, -0.682474, 0.268092, 0.777035, -0.167845, -1.07894, 0.224838, -4.20445, 19.6111, 2.27546)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="rp2" parent="Environment/FourthLevel/---ROT PLAT PUZ 5---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(0.0193311, 0.656012, 0.754502, 0.268092, 0.777035, -0.682474, -1.07894, 0.224838, -0.167845, -7.07338, 23.5766, 3.28445)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="rp3" parent="Environment/FourthLevel/---ROT PLAT PUZ 5---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(-0.754502, 0.656012, 0.019331, 0.682474, 0.777035, 0.268092, 0.167845, 0.224838, -1.07894, -10.1085, 27.6924, 4.3304)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="rp4" parent="Environment/FourthLevel/---ROT PLAT PUZ 5---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(-0.754502, 0.656012, 0.019331, 0.682474, 0.777035, 0.268092, 0.167845, 0.224838, -1.07894, -11.771, 30.7588, 4.34779)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="rp5" parent="Environment/FourthLevel/---ROT PLAT PUZ 5---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(-0.754502, -0.019331, 0.656012, 0.682474, -0.268092, 0.777035, 0.167845, 1.07894, 0.224838, -13.3784, 33.5831, 5.07613)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="StaticPlatform01" parent="Environment/FourthLevel/---ROT PLAT PUZ 5---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-1.98413, -0.136924, -0.636438, -2.35017, -1.19879, 0.504351, -0.68003, 4.54248, 0.113917, -14.6605, 36.0921, 5.81191)
+
+[node name="StaticPlatform02" parent="Environment/FourthLevel/---ROT PLAT PUZ 5---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.0547637, -7.31581, 0.558857, 0.759491, 6.64588, 0.579938, -3.05658, 1.52027, 0.154114, -15.3536, 36.3544, 11.1593)
+
+[node name="InteractableButton01" parent="Environment/FourthLevel/---ROT PLAT PUZ 5---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(0.585383, 0.545006, -0.0171922, -0.529499, 0.562138, -0.208883, -0.130223, 0.164225, 0.772057, 1.25761, 21.4507, 4.74601)
+movable_platforms = [NodePath("../rp1"), NodePath("../rp4")]
+
+[node name="InteractableButton02" parent="Environment/FourthLevel/---ROT PLAT PUZ 5---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(0.585383, 0.545006, -0.0171922, -0.529499, 0.562138, -0.208883, -0.130223, 0.164225, 0.772057, -2.63107, 24.9681, 5.61107)
+movable_platforms = [NodePath("../rp1")]
+
+[node name="InteractableButton03" parent="Environment/FourthLevel/---ROT PLAT PUZ 5---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(0.585383, 0.545006, -0.0171922, -0.529499, 0.562138, -0.208883, -0.130223, 0.164225, 0.772057, -6.30569, 28.2919, 6.42852)
+movable_platforms = [NodePath("../rp3")]
+
+[node name="InteractableButton04" parent="Environment/FourthLevel/---ROT PLAT PUZ 5---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(-0.873813, -0.07762, 0.480027, -0.127525, 0.989205, -0.0721849, -0.469242, -0.124291, -0.874279, -1.6291, 18.5596, -2.14625)
+movable_platforms = [NodePath("../rp2"), NodePath("../rp5")]
+
+[node name="---ROT PLAT PUZ 6---" type="Node3D" parent="Environment/FourthLevel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 100, 0)
+
+[node name="RP1" parent="Environment/FourthLevel/---ROT PLAT PUZ 6---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 1.5, 4.916)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="Pivot" parent="Environment/FourthLevel/---ROT PLAT PUZ 6---/RP1" index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+
+[node name="InteractableButton" parent="Environment/FourthLevel/---ROT PLAT PUZ 6---/RP1/Pivot" index="1" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(1, 0, 0, 0, -1, 2.62268e-07, 0, -2.62268e-07, -1, 0, -0.2, 0)
+movable_platforms = [NodePath("../../../RP4")]
+
+[node name="EndingNode" parent="Environment/FourthLevel/---ROT PLAT PUZ 6---/RP1" index="2"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
+
+[node name="RP2" parent="Environment/FourthLevel/---ROT PLAT PUZ 6---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.5, 0)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="RP3" parent="Environment/FourthLevel/---ROT PLAT PUZ 6---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 3.5, -4.748)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="RP4" parent="Environment/FourthLevel/---ROT PLAT PUZ 6---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 4.5, -10.5)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="EndPlatform" parent="Environment/FourthLevel/---ROT PLAT PUZ 6---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3, 0, 0, 0, 0.5, 0, 0, 0, 3, 0.0667019, 5.5, -15.3463)
+
+[node name="InteractableButton" parent="Environment/FourthLevel/---ROT PLAT PUZ 6---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(-3.93403e-08, -0.9, 0, 0.9, -3.93403e-08, 0, 0, 0, 0.9, 1.7, 2.5, 7.684)
+movable_platforms = [NodePath("../RP1"), NodePath("../RP2")]
+
+[node name="InteractableButton2" parent="Environment/FourthLevel/---ROT PLAT PUZ 6---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(-3.93403e-08, -0.9, 0, 0.9, -3.93403e-08, 0, 0, 0, 0.9, 1.7, 5, -2.364)
+movable_platforms = [NodePath("../RP2"), NodePath("../RP3")]
+
+[node name="Salvo" type="Node3D" parent="Environment/FourthLevel/---ROT PLAT PUZ 6---"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
+
+[node name="Elevator" parent="Environment/FourthLevel/---ROT PLAT PUZ 6---/Salvo" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(0.25, 0, 0, 0, -1.74846e-08, 0.6, 0, -0.4, -2.62268e-08, 3.45146, -0.436661, 13.4989)
+animation_duration = 1.5
+
+[node name="EndingNode" parent="Environment/FourthLevel/---ROT PLAT PUZ 6---/Salvo/Elevator" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="StaticBox" parent="Environment/FourthLevel/---ROT PLAT PUZ 6---/Salvo" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(2.80715, 0.0744811, 1.8366, -0.771088, 0.37664, 1.33354, -0.724813, -0.112226, 5.69434, 1.70307, -1.39584, 6.5312)
+
+[node name="StaticBox2" parent="Environment/FourthLevel/---ROT PLAT PUZ 6---/Salvo" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(1.94277, 0.132061, -2.43758, -0.67951, 0.377571, 0.852578, 1.58049, 5.96046e-09, 3.36287, -0.409504, -1.57137, 4.7331)
+
+[node name="StaticBox3" parent="Environment/FourthLevel/---ROT PLAT PUZ 6---/Salvo" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(2.80597, -0.0798635, 1.79041, 0.412002, 0.386281, 1.35077, -0.978155, -0.0663961, 5.70498, 0.288214, -2.63833, 0.391459)
+
+[node name="StaticBox4" parent="Environment/FourthLevel/---ROT PLAT PUZ 6---/Salvo" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3.01318, 0, -2.57917, 0, 0.4, 0, 3.295, 0, 2.35858, -0.399353, -2.86778, -4.51787)
+
+[node name="StaticBox5" parent="Environment/FourthLevel/---ROT PLAT PUZ 6---/Salvo" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.905815, -0.228524, -1.93631, 0.705545, 0.328162, -1.31951, 2.63578, -0.00930737, 1.01864, 1.71678, -2.86778, -2.10386)
+
+[node name="InteractableButton" parent="Environment/FourthLevel/---ROT PLAT PUZ 6---/Salvo" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.33168, 0.802483, 11.7989)
+movable_platforms = [NodePath("../Elevator")]
+
+[node name="---ROT PLAT PUZ 7---" type="Node3D" parent="Environment/FourthLevel"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 105.8, -15.1)
+
+[node name="SlidingPlatform" parent="Environment/FourthLevel/---ROT PLAT PUZ 7---" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, 9.53674e-07, 0, 15.9047)
+move_with_timer = true
+animation_interval = 1.0
+
+[node name="Pivot" parent="Environment/FourthLevel/---ROT PLAT PUZ 7---/SlidingPlatform" index="0"]
+transform = Transform3D(0.5, 0, 0, 0, 0.2, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="EndingNode" parent="Environment/FourthLevel/---ROT PLAT PUZ 7---/SlidingPlatform" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, 0, 1, 0, 5.5, 0)
+
+[node name="Rotating platform" parent="Environment/FourthLevel/---ROT PLAT PUZ 7---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(1, 2.68657e-16, -8.74228e-08, -3.55271e-15, -1, -8.74228e-08, -8.74228e-08, 8.74228e-08, -1, 0, 0, 4.866)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="Pivot" parent="Environment/FourthLevel/---ROT PLAT PUZ 7---/Rotating platform" index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+
+[node name="InteractableButton" parent="Environment/FourthLevel/---ROT PLAT PUZ 7---/Rotating platform/Pivot" index="1" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(1, 4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 8.74228e-08, -4.37114e-08, -8.74228e-08, -1, 0, 0.15, 0)
+movable_platforms = [NodePath("../.."), NodePath("../../../SlidingPlatform")]
+
+[node name="InteractableButton" parent="Environment/FourthLevel/---ROT PLAT PUZ 7---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, 1.75, 1.5, 7.086)
+movable_platforms = [NodePath("../Rotating platform2"), NodePath("../SlidingPlatform2")]
+
+[node name="Rotating platform2" parent="Environment/FourthLevel/---ROT PLAT PUZ 7---" instance=ExtResource("14_sahsi")]
+transform = Transform3D(1, 2.68657e-16, -8.74228e-08, -3.55271e-15, -1, -8.74228e-08, -8.74228e-08, 8.74228e-08, -1, 0, 0.5, 0)
+two_way_movement = true
+animation_interval = 0.0
+auto_start = false
+
+[node name="Pivot" parent="Environment/FourthLevel/---ROT PLAT PUZ 7---/Rotating platform2" index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="StartingNode" parent="Environment/FourthLevel/---ROT PLAT PUZ 7---/Rotating platform2" index="1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="SlidingPlatform2" parent="Environment/FourthLevel/---ROT PLAT PUZ 7---" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, 0, -1.5, -2.865)
+animation_interval = 1.0
+
+[node name="Pivot" parent="Environment/FourthLevel/---ROT PLAT PUZ 7---/SlidingPlatform2" index="0"]
+transform = Transform3D(0.5, 0, 0, 0, 0.4, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="EndingNode" parent="Environment/FourthLevel/---ROT PLAT PUZ 7---/SlidingPlatform2" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35188e-23, 0, 0, 1, 0, 0, 5.5)
+
+[node name="Salvo" type="Node3D" parent="Environment/FourthLevel/---ROT PLAT PUZ 7---"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+
+[node name="StaticBox" parent="Environment/FourthLevel/---ROT PLAT PUZ 7---/Salvo" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(2.62709, 0.26513, -2.41016, -2.70438, 0.316023, 0.444826, 1.54608, 0.102275, 4.87343, -0.600857, 0, -4.79833)
+
+[node name="StaticBox2" parent="Environment/FourthLevel/---ROT PLAT PUZ 7---/Salvo" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3.11118, -0.0352472, -1.02951, 0.444097, 0.451845, 1.4698, 0.575629, -0.158093, 4.43037, 3.37109, 5.13981, 13.45)
+
+[node name="StaticBox3" parent="Environment/FourthLevel/---ROT PLAT PUZ 7---/Salvo" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(2.88473, -0.105157, 0.720247, 0.744399, 0.329299, 2.18054, -0.579183, -0.10052, 6.38988, 4.74818, 3.39777, 8.63235)
+
+[node name="StaticBox4" parent="Environment/FourthLevel/---ROT PLAT PUZ 7---/Salvo" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(5.31371, -0.0887443, 0.347663, 1.3137, 0.368929, -1.05754, -0.119394, 0.109731, 3.83676, 0.764298, 0.763153, 4.85887)
+
+[node name="StaticBox5" parent="Environment/FourthLevel/---ROT PLAT PUZ 7---/Salvo" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(5.04007, 0.140605, 0.728466, -2.03598, 0.36524, 0.371416, -0.654307, -0.0534343, 4.45559, 0.764298, -0.554932, -0.0490384)
+
+[node name="StaticBox6" parent="Environment/FourthLevel/---ROT PLAT PUZ 7---/Salvo" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3.72736, -0.0638297, 3.53328, 0.682469, 0.282133, 1.26706, -2.19669, -0.0206532, 6.38894, 2.65855, -1.24458, -3.23819)
+
+[node name="StaticBox7" parent="Environment/FourthLevel/---ROT PLAT PUZ 7---/Salvo" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3.09941, -0.162221, -0.404328, 1.00318, 0.442715, 3.37453, -0.283204, -0.207155, 7.52839, 4.73273, 0.712601, 2.92805)
+
+[node name="StaticBox8" parent="Environment/FourthLevel/---ROT PLAT PUZ 7---/Salvo" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(2.51659, 0.18687, -0.553139, -0.915044, 0.466039, 2.70337, 0.382751, -0.114508, 10.0998, -0.806405, 0.918732, 11.5767)
+
+[node name="---ANTI CHEAT & SAFETY---" type="Node3D" parent="Environment/FourthLevel"]
+
+[node name="Anti-cheat-Box15" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3.45543, 0.329794, 3.01637, -3.68465, 0.170114, -7.02593, -9.63831, 0.0532014, 3.76736, 18.242, 88.4514, -17.8802)
+
+[node name="Anti-cheat-Box22" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(9.24998, 0.192562, -0.993232, 0.947775, -0.13318, -7.9331, -5.65272, 0.292774, -2.95542, 14.5947, 85.9116, -12.9665)
+
+[node name="Anti-cheat-Box23" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(9.35836, -0.019528, -0.0220933, 0.469714, 0.362997, -3.43321, 0.133728, 0.0915699, 13.6051, 15.6628, 84.1282, -8.42834)
+
+[node name="Anti-cheat-Box24" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(11.2727, 0.104725, -0.229776, -3.25717, 0.359758, 0.213673, 0.737375, -0.0118493, 4.45658, 16.8336, 80.9889, -0.245741)
+
+[node name="Anti-cheat-Box25" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(7.5754, -0.0184067, -1.09198, 0.65585, 0.36109, 1.90351, 0.983292, -0.0990381, 7.14309, 15.775, 81.5501, 4.3742)
+
+[node name="Anti-cheat-Box26" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(4.03403, -0.141507, -6.425, 4.85846, 0.277245, 0.996069, 3.71515, -0.208912, 5.67387, 16.3402, 81.4971, 9.45177)
+
+[node name="Anti-cheat-Box27" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(5.32282, -0.249852, -0.159798, 4.73514, 0.277245, 1.52972, -0.485671, -0.035253, 13.1629, 17.2315, 82.3394, 9.75944)
+
+[node name="Staircase7" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3.22347, -0.163473, 0.241597, 0.532147, 0.986353, 0.20776, -0.105409, -0.0196076, 8.43704, 24.4671, 79.1593, 2.79855)
+
+[node name="Staircase8" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3.49368, -0.0843112, 0.281507, 0.26182, 0.988587, 0.517946, -0.286136, -0.12485, 3.91108, 23.5564, 78.7627, 9.64345)
+
+[node name="Staircase9" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3.35003, -0.301247, -0.124267, 1.02804, 0.888301, 1.40057, -0.276866, -0.346659, 3.6969, 24.9863, 79.8651, 13.2666)
+
+[node name="Staircase10" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3.49439, 0.0846673, -0.268306, -0.220019, 0.9583, 1.10283, 0.31149, -0.272934, 3.78891, 25.0364, 80.784, 16.9332)
+
+[node name="Staircase11" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3.25771, 0.37145, 0.221348, -1.31551, 0.925862, 0.206406, -0.113996, -0.0693069, 3.94366, 25.0364, 81.8043, 20.8303)
+
+[node name="Staircase13" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(3.50544, 0.0590021, 0.178156, -0.207652, 0.998254, 0.00103146, -0.158002, -0.00292092, 3.95125, 25.4034, 83.1189, 24.4068)
+
+[node name="Staircase12" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(4.28996, 0.28734, 0.11664, -1.25659, 0.94908, -0.567791, -0.310248, 0.129164, 3.91256, 20.8391, 84.6909, 24.0857)
+
+[node name="FifthLevel" type="Node3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 110.013, 0)
+
+[node name="FifthLevelBase" parent="Environment/FifthLevel" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 24.3948, 0, 0, 0)
+
+[node name="Elevator" parent="." instance=ExtResource("7_x28al")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 9.55292, 110.102, -5.89305)
+animation_duration = 1.0
+
+[node name="InteractableButton" parent="Elevator/Pivot" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0100346, 0.5, -0.0249624)
+
+[node name="InteractableButton2" parent="Elevator/Pivot" index="2" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0100346, -0.479385, -0.0249624)
+movable_platforms = [NodePath("../..")]
+
+[node name="EndingNode" parent="Elevator" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.35439, 0)
+
+[node name="Elevator2" parent="." instance=ExtResource("7_x28al")]
+transform = Transform3D(-2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, 2.70859, 110.188, 7.42094)
+animation_duration = 1.0
+
+[node name="InteractableButton" parent="Elevator2/Pivot" index="1"]
+transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 0.0548115, 0.5, 0.00852489)
+
+[node name="InteractableButton2" parent="Elevator2/Pivot" index="2" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 0.0548115, -0.464172, 0.00852489)
+movable_platforms = [NodePath("../..")]
+
+[node name="EndingNode" parent="Elevator2" index="2"]
+transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 0, 9.47891, 0)
+
+[node name="Elevator3" parent="." instance=ExtResource("7_x28al")]
+transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, -8.48848, 109.977, -2.75765)
+animation_duration = 1.0
+
+[node name="InteractableButton" parent="Elevator3/Pivot" index="1"]
+transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0.0121803, 0.5, 0.0389748)
+
+[node name="InteractableButton2" parent="Elevator3/Pivot" index="2" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(1, 0, 7.10543e-14, 0, 1, 0, -7.10543e-14, 0, 1, 0.0121784, -0.479156, 0.0389743)
+movable_platforms = [NodePath("../..")]
+
+[node name="EndingNode" parent="Elevator3" index="2"]
+transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 0, 4.26872, 0)
+
+[node name="Elevator4" parent="." instance=ExtResource("7_x28al")]
+transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, 7.04084, 114.385, -0.693561)
+activated = true
+animation_duration = 1.0
+
+[node name="InteractableButton" parent="Elevator4/Pivot" index="1"]
+transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0.0121803, 0.5, 0.0389748)
+
+[node name="InteractableButton2" parent="Elevator4/Pivot" index="2" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(1, 0, 7.10543e-14, 0, 1, 0, -7.10543e-14, 0, 1, 0.0121784, -0.479156, 0.0389743)
+movable_platforms = [NodePath("../..")]
+
+[node name="EndingNode" parent="Elevator4" index="2"]
+transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 0, 4.26872, 0)
+
+[editable path="Player"]
+[editable path="Player/Head/WeaponPivot/pizza v1"]
+[editable path="Environment/Chrysler building v6"]
+[editable path="Environment/GroundLevel/Doorway/EntryDoor"]
+[editable path="Environment/GroundLevel/Drawbridge"]
+[editable path="Environment/FirstLevel/SlidingPlatform01"]
+[editable path="Environment/FirstLevel/SlidingPlatform01Button"]
+[editable path="Environment/FirstLevel/ShortcutElevator_FirstFloor"]
+[editable path="Environment/SecondLevel/SLIDING DOORS PUZZLE/SALVO - Elevator"]
+[editable path="Environment/SecondLevel/SLIDING DOORS PUZZLE/End of Level Elevator"]
+[editable path="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor"]
+[editable path="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor2"]
+[editable path="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor3"]
+[editable path="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor5"]
+[editable path="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor6"]
+[editable path="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor7"]
+[editable path="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor8"]
+[editable path="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor9"]
+[editable path="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor10"]
+[editable path="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor11"]
+[editable path="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor12"]
+[editable path="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor13"]
+[editable path="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor14"]
+[editable path="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoorWithButton"]
+[editable path="Environment/SecondLevel/SLIDING DOORS PUZZLE/HorizontalSlidingPlatform1"]
+[editable path="Environment/SecondLevel/SLIDING DOORS PUZZLE/HorizontalSlidingPlatform2"]
+[editable path="Environment/SecondLevel/SLIDING DOORS PUZZLE/HorizontalSlidingPlatform3"]
+[editable path="Environment/SecondLevel/SecondLevelCeiling"]
+[editable path="Environment/ThirdLevel/ElevatorPath/ShortcutElevator_SecondFloor"]
+[editable path="Environment/FourthLevel/---ROT PLAT PUZ 6---/RP1"]
+[editable path="Environment/FourthLevel/---ROT PLAT PUZ 6---/Salvo/Elevator"]
+[editable path="Environment/FourthLevel/---ROT PLAT PUZ 7---/SlidingPlatform"]
+[editable path="Environment/FourthLevel/---ROT PLAT PUZ 7---/Rotating platform"]
+[editable path="Environment/FourthLevel/---ROT PLAT PUZ 7---/Rotating platform2"]
+[editable path="Environment/FourthLevel/---ROT PLAT PUZ 7---/SlidingPlatform2"]
+[editable path="Elevator"]
+[editable path="Elevator2"]
+[editable path="Elevator3"]
+[editable path="Elevator4"]

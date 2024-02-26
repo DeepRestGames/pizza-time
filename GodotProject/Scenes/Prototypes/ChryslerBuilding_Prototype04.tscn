@@ -1808,13 +1808,12 @@ transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 24.3948, 0, 0, 0)
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 9.55292, 0.0889969, -5.89305)
 animation_duration = 1.0
 
-[node name="InteractableButton" parent="Environment/FifthLevel/Elevator/Pivot" index="1" node_paths=PackedStringArray("movable_platforms")]
+[node name="InteractableButton" parent="Environment/FifthLevel/Elevator/Pivot" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0100346, 0.5, -0.0249624)
-movable_platforms = [NodePath("")]
 
 [node name="InteractableButton2" parent="Environment/FifthLevel/Elevator/Pivot" index="2" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0100346, -0.479385, -0.0249624)
-movable_platforms = [NodePath("")]
+movable_platforms = [NodePath("../..")]
 
 [node name="EndingNode" parent="Environment/FifthLevel/Elevator" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.35439, 0)
@@ -1823,13 +1822,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.35439, 0)
 transform = Transform3D(-2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, 2.70859, 0.175003, 7.42094)
 animation_duration = 1.0
 
-[node name="InteractableButton" parent="Environment/FifthLevel/Elevator2/Pivot" index="1" node_paths=PackedStringArray("movable_platforms")]
+[node name="InteractableButton" parent="Environment/FifthLevel/Elevator2/Pivot" index="1"]
 transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 0.0548115, 0.5, 0.00852489)
-movable_platforms = [NodePath("")]
 
 [node name="InteractableButton2" parent="Environment/FifthLevel/Elevator2/Pivot" index="2" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 0.0548115, -0.464172, 0.00852489)
-movable_platforms = [NodePath("")]
+movable_platforms = [NodePath("../..")]
 
 [node name="EndingNode" parent="Environment/FifthLevel/Elevator2" index="2"]
 transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 0, 9.47891, 0)
@@ -1838,13 +1836,12 @@ transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 0, 9.478
 transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, -8.48848, 0.949799, -2.75765)
 animation_duration = 1.0
 
-[node name="InteractableButton" parent="Environment/FifthLevel/Elevator3/Pivot" index="1" node_paths=PackedStringArray("movable_platforms")]
+[node name="InteractableButton" parent="Environment/FifthLevel/Elevator3/Pivot" index="1"]
 transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0.0121803, 0.5, 0.0389748)
-movable_platforms = [NodePath("")]
 
 [node name="InteractableButton2" parent="Environment/FifthLevel/Elevator3/Pivot" index="2" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(1, 0, 7.10543e-14, 0, 1, 0, -7.10543e-14, 0, 1, 0.0121784, -0.479156, 0.0389743)
-movable_platforms = [NodePath("")]
+movable_platforms = [NodePath("../..")]
 
 [node name="EndingNode" parent="Environment/FifthLevel/Elevator3" index="2"]
 transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 0, 4.26872, 0)
@@ -1854,13 +1851,12 @@ transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, 
 activated = true
 animation_duration = 1.0
 
-[node name="InteractableButton" parent="Environment/FifthLevel/Elevator4/Pivot" index="1" node_paths=PackedStringArray("movable_platforms")]
+[node name="InteractableButton" parent="Environment/FifthLevel/Elevator4/Pivot" index="1"]
 transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0.0121803, 0.5, 0.0389748)
-movable_platforms = [NodePath("")]
 
 [node name="InteractableButton2" parent="Environment/FifthLevel/Elevator4/Pivot" index="2" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(1, 0, 7.10543e-14, 0, 1, 0, -7.10543e-14, 0, 1, 0.0121784, -0.479156, 0.0389743)
-movable_platforms = [NodePath("")]
+movable_platforms = [NodePath("../..")]
 
 [node name="EndingNode" parent="Environment/FifthLevel/Elevator4" index="2"]
 transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 0, 4.26872, 0)
@@ -1869,13 +1865,12 @@ transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 0, 4.268
 transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, 9.46079, 7.98409, 4.6571)
 animation_duration = 0.5
 
-[node name="InteractableButton" parent="Environment/FifthLevel/Elevator5/Pivot" index="1" node_paths=PackedStringArray("movable_platforms")]
+[node name="InteractableButton" parent="Environment/FifthLevel/Elevator5/Pivot" index="1"]
 transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0.0121803, 0.5, 0.0389748)
-movable_platforms = [NodePath("")]
 
 [node name="InteractableButton2" parent="Environment/FifthLevel/Elevator5/Pivot" index="2" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(1, 0, 7.10543e-14, 0, 1, 0, -7.10543e-14, 0, 1, 0.0121784, -0.479156, 0.0389743)
-movable_platforms = [NodePath("")]
+movable_platforms = [NodePath("../..")]
 
 [node name="EndingNode" parent="Environment/FifthLevel/Elevator5" index="2"]
 transform = Transform3D(1, 0, -5.68434e-14, 0, 1, 0, 5.68434e-14, 0, 1, 0, 5.65204, 0)
@@ -1884,13 +1879,12 @@ transform = Transform3D(1, 0, -5.68434e-14, 0, 1, 0, 5.68434e-14, 0, 1, 0, 5.652
 transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, -7.68337, 34.4926, 9.34494)
 animation_duration = 0.8
 
-[node name="InteractableButton" parent="Environment/FifthLevel/Elevator6/Pivot" index="1" node_paths=PackedStringArray("movable_platforms")]
+[node name="InteractableButton" parent="Environment/FifthLevel/Elevator6/Pivot" index="1"]
 transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0.0121803, 0.5, 0.0389748)
-movable_platforms = [NodePath("")]
 
 [node name="InteractableButton2" parent="Environment/FifthLevel/Elevator6/Pivot" index="2" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(1, 0, 7.10543e-14, 0, 1, 0, -7.10543e-14, 0, 1, 0.0121784, -0.479156, 0.0389743)
-movable_platforms = [NodePath("")]
+movable_platforms = [NodePath("../..")]
 
 [node name="EndingNode" parent="Environment/FifthLevel/Elevator6" index="2"]
 transform = Transform3D(1, 0, -5.68434e-14, 0, 1, 0, 5.68434e-14, 0, 1, 0, 5.65204, 0)
@@ -1899,13 +1893,12 @@ transform = Transform3D(1, 0, -5.68434e-14, 0, 1, 0, 5.68434e-14, 0, 1, 0, 5.652
 transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, 0.0267212, 32.2883, -11.1073)
 animation_duration = 3.0
 
-[node name="InteractableButton" parent="Environment/FifthLevel/Elevator8/Pivot" index="1" node_paths=PackedStringArray("movable_platforms")]
+[node name="InteractableButton" parent="Environment/FifthLevel/Elevator8/Pivot" index="1"]
 transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0.0121803, 0.5, 0.0389748)
-movable_platforms = [NodePath("")]
 
 [node name="InteractableButton2" parent="Environment/FifthLevel/Elevator8/Pivot" index="2" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(1, 0, 7.10543e-14, 0, 1, 0, -7.10543e-14, 0, 1, 0.0121784, -0.479156, 0.0389743)
-movable_platforms = [NodePath("")]
+movable_platforms = [NodePath("../..")]
 
 [node name="EndingNode" parent="Environment/FifthLevel/Elevator8" index="2"]
 transform = Transform3D(1, 0, -8.52651e-14, 0, 1, 0, 8.52651e-14, 0, 1, 0, 15.789, 0)
@@ -1914,13 +1907,12 @@ transform = Transform3D(1, 0, -8.52651e-14, 0, 1, 0, 8.52651e-14, 0, 1, 0, 15.78
 transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, 13.1439, 52.6642, -5.02374)
 animation_duration = 0.6
 
-[node name="InteractableButton" parent="Environment/FifthLevel/Elevator7/Pivot" index="1" node_paths=PackedStringArray("movable_platforms")]
+[node name="InteractableButton" parent="Environment/FifthLevel/Elevator7/Pivot" index="1"]
 transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0.0121803, 0.5, 0.0389748)
-movable_platforms = [NodePath("")]
 
 [node name="InteractableButton2" parent="Environment/FifthLevel/Elevator7/Pivot" index="2" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(1, 0, 7.10543e-14, 0, 1, 0, -7.10543e-14, 0, 1, 0.0121784, -0.479156, 0.0389743)
-movable_platforms = [NodePath("")]
+movable_platforms = [NodePath("../..")]
 
 [node name="EndingNode" parent="Environment/FifthLevel/Elevator7" index="2"]
 transform = Transform3D(1, 0, -8.52651e-14, 0, 1, 0, 8.52651e-14, 0, 1, 0, 6.59598, 0)
@@ -1934,7 +1926,7 @@ move_with_timer = true
 auto_start = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform10" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5901, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4782, 5, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform10/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -1952,13 +1944,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.0132, 5, 0)
 
 [node name="SlidingPlatform7" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 13.2226, 46.628, -4.89493)
+activated = true
 animation_duration = 3.7
 animation_transition_type = 1
 move_with_timer = true
 auto_start = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform7" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.34369, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109723, 5, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform7/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -1976,14 +1969,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.0132, 5, 0)
 
 [node name="SlidingPlatform4" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 13.2226, 74.9782, -17.1457)
-activated = true
 animation_duration = 5.0
 animation_transition_type = 1
 move_with_timer = true
 auto_start = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform4" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.795081, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0137119, 5, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform4/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -2001,14 +1993,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.0132, 5, 0)
 
 [node name="SlidingPlatform2" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, -4.81274, 28.4242, 10.0952)
-activated = true
 animation_duration = 4.8
 animation_transition_type = 1
 move_with_timer = true
 auto_start = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.89962, 5, -2.41742e-08)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75471, 5, -3.5056e-08)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform2/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.00803924, 5, 0)
@@ -2032,7 +2023,7 @@ move_with_timer = true
 auto_start = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform8" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5065, 5, -1.20978e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7748, 5, -2.38925e-07)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform8/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.00803924, 5, 0)
@@ -2050,14 +2041,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 5, -2.5332e-07)
 
 [node name="SlidingPlatform5" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, 4.83578, 40.8691, 10.0952)
-activated = true
 animation_duration = 4.8
 animation_transition_type = 1
 move_with_timer = true
 auto_start = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform5" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.89962, 5, -2.41742e-08)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75471, 5, -3.5056e-08)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform5/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.00803924, 5, 0)
@@ -2075,14 +2065,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 5, -2.5332e-07)
 
 [node name="SlidingPlatform11" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, -5.05705, 45.8978, 10.0952)
-activated = true
 animation_duration = 4.8
 animation_transition_type = 1
 move_with_timer = true
 auto_start = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform11" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.89962, 5, -2.41742e-08)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75471, 5, -3.5056e-08)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform11/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.00803924, 5, 0)
@@ -2107,7 +2096,7 @@ move_with_timer = true
 auto_start = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform3" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0455746, 5, -5.79974e-10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.98645, 5, -6.34566e-08)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform3/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -2132,7 +2121,7 @@ move_with_timer = true
 auto_start = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform6" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2267, 5, -2.19224e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6205, 5, -2.36962e-07)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform6/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(5.99256, -0.0248904, -0.00744343, 0.298685, 0.498759, 0.298685, -0.00744343, -0.0248904, 5.99256, 0, 5, 0)
@@ -2156,7 +2145,7 @@ move_with_timer = true
 auto_start = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform9" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5603, 5, -1.85291e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.19778, 5, -4.06944e-08)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform9/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)

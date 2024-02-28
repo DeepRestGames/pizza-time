@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bn3yvr42eef65" path="res://Scenes/Prefabs/Level Design Elements/LightSphere.tscn" id="13_upr5q"]
 [ext_resource type="PackedScene" uid="uid://dlltw0b60rnrl" path="res://Scenes/Prefabs/Level Design Elements/Rotating platform.tscn" id="14_sahsi"]
 [ext_resource type="PackedScene" uid="uid://bq4r28jv36sep" path="res://Scenes/Prefabs/Player.tscn" id="15_olpqq"]
+[ext_resource type="PackedScene" uid="uid://dmh0tv4rn6ut7" path="res://Scenes/Prefabs/NPC.tscn" id="16_a3o22"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6cv3v"]
 sky_top_color = Color(0.541176, 0.129412, 1, 1)
@@ -552,6 +553,11 @@ transform = Transform3D(150, 0, 0, 0, 1, 0, 0, 0, 150, 0, -1, 0)
 
 [node name="GroundLevel" type="Node3D" parent="Environment"]
 
+[node name="NPC_CouchDude" parent="Environment/GroundLevel" instance=ExtResource("16_a3o22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.105, 14.0483, 13.1333)
+NPC_name = "CouchDude"
+random_dialogues_indexes = Array[String](["02", "03", "04"])
+
 [node name="Doorway" type="Node3D" parent="Environment/GroundLevel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18)
 
@@ -782,6 +788,11 @@ transform = Transform3D(-1.83545, -0.0560176, -2.41639, 0.131706, 0.82137, -1.91
 
 [node name="SecondLevel" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.7, 0)
+
+[node name="NPC_LabyrinthMan" parent="Environment/SecondLevel" instance=ExtResource("16_a3o22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5929, 2.90808, -19.2973)
+NPC_name = "LabyrinthMan"
+random_dialogues_indexes = Array[String](["02", "03", "04"])
 
 [node name="SecondLevelBasePlatform" parent="Environment/SecondLevel" instance=ExtResource("3_q6mt2")]
 transform = Transform3D(49, 0, 0, 0, 1, 0, 0, 0, 34.9878, 0.0517502, 1.11864, -3.35715)
@@ -1126,6 +1137,11 @@ transform = Transform3D(49, 0, 0, 0, 1, 0, 0, 0, 34.9878, 0.0517502, 6.00008, -3
 
 [node name="ThirdLevel" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.7, 0)
+
+[node name="NPC_MeditationGuy" parent="Environment/ThirdLevel" instance=ExtResource("16_a3o22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.275578, 7.50008, -0.816633)
+NPC_name = "MeditationGuy"
+random_dialogues_indexes = Array[String](["02", "03", "04"])
 
 [node name="AnalyticsCheckpoint" parent="Environment/ThirdLevel" instance=ExtResource("8_axjnh")]
 transform = Transform3D(11, 0, 0, 0, -3.49691e-07, 1, 0, -8, -4.37114e-08, -18.4868, 7.00008, 18.02)
@@ -1813,6 +1829,11 @@ transform = Transform3D(4.28996, 0.28734, 0.11664, -1.25659, 0.94908, -0.567791,
 [node name="FifthLevel" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 110.013, 0)
 
+[node name="NPC_HypeGuy" parent="Environment/FifthLevel" instance=ExtResource("16_a3o22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.65529, 1.5, 7.36722)
+NPC_name = "HypeGuy"
+random_dialogues_indexes = Array[String](["02"])
+
 [node name="FifthLevelBase" parent="Environment/FifthLevel" instance=ExtResource("3_q6mt2")]
 transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 24.3948, 0, 0, 0)
 metadata/_edit_group_ = true
@@ -1948,7 +1969,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform10" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.47151, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3168, 5, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform10/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -1973,7 +1994,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform7" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9647, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1723, 5, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform7/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -1998,7 +2019,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform4" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.900646, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.30608, 5, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform4/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -2023,7 +2044,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.385, 5, -2.4669e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.20867, 5, -6.62846e-08)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform2/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.00803924, 5, 0)
@@ -2048,7 +2069,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform8" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4843, 5, -2.09776e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2461, 5, -1.43115e-07)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform8/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.00803924, 5, 0)
@@ -2073,7 +2094,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform5" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.385, 5, -2.4669e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.20867, 5, -6.62846e-08)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform5/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.00803924, 5, 0)
@@ -2098,7 +2119,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform11" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.385, 5, -2.4669e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.20867, 5, -6.62846e-08)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform11/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.00803924, 5, 0)
@@ -2116,7 +2137,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 5, -2.5332e-07)
 
 [node name="SlidingPlatform3" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 0.5, 0, 0.707107, 0, -0.707107, -5.72419, 47.1526, 5.59642)
-activated = true
 animation_duration = 5.2
 animation_transition_type = 1
 move_with_timer = true
@@ -2124,7 +2144,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform3" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00504718, 5, -6.42295e-11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.055, 5, -2.29764e-07)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform3/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -2149,7 +2169,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform6" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3895, 5, -1.95844e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.677, 5, -2.3768e-07)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform6/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(5.99256, -0.0248904, -0.00744343, 0.298685, 0.498759, 0.298685, -0.00744343, -0.0248904, 5.99256, 0, 5, 0)
@@ -2167,7 +2187,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 5, -2.5332e-07)
 
 [node name="SlidingPlatform9" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 0.5, 0, 0.707107, 0, 0.707107, 1.97272, 44.4314, 9.52763)
-activated = true
 animation_duration = 4.5
 animation_transition_type = 1
 move_with_timer = true
@@ -2175,7 +2194,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform9" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4411, 5, -1.965e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9383, 5, -2.02828e-07)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform9/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -2341,187 +2360,171 @@ transform = Transform3D(17.9804, 0.0703448, 0.28848, -0.107107, -0.125889, 3.726
 [node name="FlavourBox-20" parent="Environment/FifthLevel" instance=ExtResource("3_q6mt2")]
 transform = Transform3D(-6.29666, -0.0440991, 3.24477, 0.581967, 0.284295, 7.79233, -1.84371, 0.240344, -8.62189, -27.1466, 88.6128, 21.5867)
 
-[node name="SixthLevel" type="Node3D" parent="Environment/FifthLevel"]
-transform = Transform3D(25, 0, 0, 0, 0.163399, 0, 0, 0, 25, -0.0304698, 111.433, 0.0402393)
+[node name="SixthLevel" type="Node3D" parent="Environment"]
+transform = Transform3D(25, 0, 0, 0, 0.163399, 0, 0, 0, 25, -0.0304698, 221.446, 0.0402393)
 
-[node name="SixthLevel base" type="StaticBody3D" parent="Environment/FifthLevel/SixthLevel"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="SixthLevel base" type="StaticBody3D" parent="Environment/SixthLevel"]
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/FifthLevel/SixthLevel/SixthLevel base"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/SixthLevel/SixthLevel base"]
 mesh = SubResource("CylinderMesh_ygk13")
-skeleton = NodePath("../../../SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
+skeleton = NodePath("../../../FifthLevel/SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/FifthLevel/SixthLevel/SixthLevel base"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/SixthLevel/SixthLevel base"]
 shape = SubResource("CylinderShape3D_i5xm5")
 
-[node name="SixthLevel base2" type="StaticBody3D" parent="Environment/FifthLevel/SixthLevel"]
+[node name="SixthLevel base2" type="StaticBody3D" parent="Environment/SixthLevel"]
 transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 5.92959e-05, 42.3679, 0.229313)
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/FifthLevel/SixthLevel/SixthLevel base2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/SixthLevel/SixthLevel base2"]
 mesh = SubResource("CylinderMesh_ygk13")
-skeleton = NodePath("../../../SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
+skeleton = NodePath("../../../FifthLevel/SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/FifthLevel/SixthLevel/SixthLevel base2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/SixthLevel/SixthLevel base2"]
 shape = SubResource("CylinderShape3D_i5xm5")
 
-[node name="SixthLevel base3" type="StaticBody3D" parent="Environment/FifthLevel/SixthLevel"]
+[node name="SixthLevel base3" type="StaticBody3D" parent="Environment/SixthLevel"]
 transform = Transform3D(0.25, 0, 0, 0, 1, 0, 0, 0, 0.25, -0.190846, 85.2659, -0.192204)
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/FifthLevel/SixthLevel/SixthLevel base3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/SixthLevel/SixthLevel base3"]
 mesh = SubResource("CylinderMesh_ygk13")
-skeleton = NodePath("../../../SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
+skeleton = NodePath("../../../FifthLevel/SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/FifthLevel/SixthLevel/SixthLevel base3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/SixthLevel/SixthLevel base3"]
 shape = SubResource("CylinderShape3D_i5xm5")
 
-[node name="Step1" type="StaticBody3D" parent="Environment/FifthLevel/SixthLevel"]
+[node name="Step1" type="StaticBody3D" parent="Environment/SixthLevel"]
 transform = Transform3D(0.0486069, 0, -0.0117206, 0, 1, 0, 0.0117206, 0, 0.0486069, -0.275272, 36.3118, 0.299134)
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/FifthLevel/SixthLevel/Step1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/SixthLevel/Step1"]
 mesh = SubResource("CylinderMesh_ygk13")
-skeleton = NodePath("../../../SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
+skeleton = NodePath("../../../FifthLevel/SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/FifthLevel/SixthLevel/Step1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/SixthLevel/Step1"]
 shape = SubResource("CylinderShape3D_i5xm5")
 
-[node name="Step2" type="StaticBody3D" parent="Environment/FifthLevel/SixthLevel"]
+[node name="Step2" type="StaticBody3D" parent="Environment/SixthLevel"]
 transform = Transform3D(0.0486069, 0, -0.0117206, 0, 1, 0, 0.0117206, 0, 0.0486069, -0.316428, 30.1917, 0.260417)
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/FifthLevel/SixthLevel/Step2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/SixthLevel/Step2"]
 mesh = SubResource("CylinderMesh_ygk13")
-skeleton = NodePath("../../../SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
+skeleton = NodePath("../../../FifthLevel/SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/FifthLevel/SixthLevel/Step2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/SixthLevel/Step2"]
 shape = SubResource("CylinderShape3D_i5xm5")
 
-[node name="Step3" type="StaticBody3D" parent="Environment/FifthLevel/SixthLevel"]
+[node name="Step3" type="StaticBody3D" parent="Environment/SixthLevel"]
 transform = Transform3D(0.0486069, 0, -0.0117206, 0, 1, 0, 0.0117206, 0, 0.0486069, -0.352204, 24.0717, 0.216816)
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/FifthLevel/SixthLevel/Step3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/SixthLevel/Step3"]
 mesh = SubResource("CylinderMesh_ygk13")
-skeleton = NodePath("../../../SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
+skeleton = NodePath("../../../FifthLevel/SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/FifthLevel/SixthLevel/Step3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/SixthLevel/Step3"]
 shape = SubResource("CylinderShape3D_i5xm5")
 
-[node name="Step4" type="StaticBody3D" parent="Environment/FifthLevel/SixthLevel"]
+[node name="Step4" type="StaticBody3D" parent="Environment/SixthLevel"]
 transform = Transform3D(0.0486069, 0, -0.0117206, 0, 1, 0, 0.0117206, 0, 0.0486069, -0.3793, 17.952, 0.167079)
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/FifthLevel/SixthLevel/Step4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/SixthLevel/Step4"]
 mesh = SubResource("CylinderMesh_ygk13")
-skeleton = NodePath("../../../SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
+skeleton = NodePath("../../../FifthLevel/SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/FifthLevel/SixthLevel/Step4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/SixthLevel/Step4"]
 shape = SubResource("CylinderShape3D_i5xm5")
 
-[node name="Step5" type="StaticBody3D" parent="Environment/FifthLevel/SixthLevel"]
+[node name="Step5" type="StaticBody3D" parent="Environment/SixthLevel"]
 transform = Transform3D(0.0486069, 0, -0.0117206, 0, 1, 0, 0.0117206, 0, 0.0486069, -0.40328, 11.832, 0.112949)
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/FifthLevel/SixthLevel/Step5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/SixthLevel/Step5"]
 mesh = SubResource("CylinderMesh_ygk13")
-skeleton = NodePath("../../../SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
+skeleton = NodePath("../../../FifthLevel/SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/FifthLevel/SixthLevel/Step5"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/SixthLevel/Step5"]
 shape = SubResource("CylinderShape3D_i5xm5")
 
-[node name="Step6" type="StaticBody3D" parent="Environment/FifthLevel/SixthLevel"]
+[node name="Step6" type="StaticBody3D" parent="Environment/SixthLevel"]
 transform = Transform3D(0.0486069, 0, -0.0117206, 0, 1, 0, 0.0117206, 0, 0.0486069, -0.418779, 5.71204, 0.0577789)
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/FifthLevel/SixthLevel/Step6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/SixthLevel/Step6"]
 mesh = SubResource("CylinderMesh_ygk13")
-skeleton = NodePath("../../../SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
+skeleton = NodePath("../../../FifthLevel/SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/FifthLevel/SixthLevel/Step6"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/SixthLevel/Step6"]
 shape = SubResource("CylinderShape3D_i5xm5")
 
-[node name="Step10" type="StaticBody3D" parent="Environment/FifthLevel/SixthLevel"]
+[node name="Step10" type="StaticBody3D" parent="Environment/SixthLevel"]
 transform = Transform3D(-0.0405986, 0, 0.0291849, 0, 1, 0, -0.0291849, 0, -0.0405986, -0.0194203, 73.0315, -0.268676)
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/FifthLevel/SixthLevel/Step10"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/SixthLevel/Step10"]
 mesh = SubResource("CylinderMesh_ygk13")
-skeleton = NodePath("../../../SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
+skeleton = NodePath("../../../FifthLevel/SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/FifthLevel/SixthLevel/Step10"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/SixthLevel/Step10"]
 shape = SubResource("CylinderShape3D_i5xm5")
 
-[node name="Step15" type="StaticBody3D" parent="Environment/FifthLevel/SixthLevel"]
+[node name="Step15" type="StaticBody3D" parent="Environment/SixthLevel"]
 transform = Transform3D(-0.0405986, 0, 0.0291849, 0, 1, 0, -0.0291849, 0, -0.0405986, -0.0579101, 79.1515, -0.320778)
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/FifthLevel/SixthLevel/Step15"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/SixthLevel/Step15"]
 mesh = SubResource("CylinderMesh_ygk13")
-skeleton = NodePath("../../../SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
+skeleton = NodePath("../../../FifthLevel/SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/FifthLevel/SixthLevel/Step15"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/SixthLevel/Step15"]
 shape = SubResource("CylinderShape3D_i5xm5")
 
-[node name="Step11" type="StaticBody3D" parent="Environment/FifthLevel/SixthLevel"]
+[node name="Step11" type="StaticBody3D" parent="Environment/SixthLevel"]
 transform = Transform3D(-0.0405986, 0, 0.0291849, 0, 1, 0, -0.0291849, 0, -0.0405986, -0.0027783, 66.9119, -0.206348)
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/FifthLevel/SixthLevel/Step11"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/SixthLevel/Step11"]
 mesh = SubResource("CylinderMesh_ygk13")
-skeleton = NodePath("../../../SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
+skeleton = NodePath("../../../FifthLevel/SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/FifthLevel/SixthLevel/Step11"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/SixthLevel/Step11"]
 shape = SubResource("CylinderShape3D_i5xm5")
 
-[node name="Step12" type="StaticBody3D" parent="Environment/FifthLevel/SixthLevel"]
+[node name="Step12" type="StaticBody3D" parent="Environment/SixthLevel"]
 transform = Transform3D(-0.0405986, 0, 0.0291849, 0, 1, 0, -0.0291849, 0, -0.0405986, -0.00828759, 60.7919, -0.144484)
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/FifthLevel/SixthLevel/Step12"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/SixthLevel/Step12"]
 mesh = SubResource("CylinderMesh_ygk13")
-skeleton = NodePath("../../../SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
+skeleton = NodePath("../../../FifthLevel/SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/FifthLevel/SixthLevel/Step12"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/SixthLevel/Step12"]
 shape = SubResource("CylinderShape3D_i5xm5")
 
-[node name="Step13" type="StaticBody3D" parent="Environment/FifthLevel/SixthLevel"]
+[node name="Step13" type="StaticBody3D" parent="Environment/SixthLevel"]
 transform = Transform3D(-0.0405986, 0, 0.0291849, 0, 1, 0, -0.0291849, 0, -0.0405986, -0.0347437, 54.6718, -0.0875807)
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/FifthLevel/SixthLevel/Step13"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/SixthLevel/Step13"]
 mesh = SubResource("CylinderMesh_ygk13")
-skeleton = NodePath("../../../SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
+skeleton = NodePath("../../../FifthLevel/SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/FifthLevel/SixthLevel/Step13"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/SixthLevel/Step13"]
 shape = SubResource("CylinderShape3D_i5xm5")
 
-[node name="Step14" type="StaticBody3D" parent="Environment/FifthLevel/SixthLevel"]
+[node name="Step14" type="StaticBody3D" parent="Environment/SixthLevel"]
 transform = Transform3D(-0.0405986, 0, 0.0291849, 0, 1, 0, -0.0291849, 0, -0.0405986, -0.0809927, 48.5518, -0.0429343)
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/FifthLevel/SixthLevel/Step14"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/SixthLevel/Step14"]
 mesh = SubResource("CylinderMesh_ygk13")
-skeleton = NodePath("../../../SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
+skeleton = NodePath("../../../FifthLevel/SlidingPlatform6/Pivot/AnimatableBody3D/CollisionShape3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/FifthLevel/SixthLevel/Step14"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/SixthLevel/Step14"]
 shape = SubResource("CylinderShape3D_i5xm5")
 
 [editable path="Player"]

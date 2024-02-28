@@ -22,6 +22,10 @@ func _on_body_entered(body):
 		var button = body as InteractableButton
 		button.activate_button()
 	
+	if body is NPC:
+		var npc = body as NPC
+		npc.start_dialogue()
+	
 	queue_free()
 
 

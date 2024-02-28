@@ -43,6 +43,10 @@ func _ready():
 
 
 func _unhandled_input(event):
+	# When Dialogue is active, skip camera movement
+	if Dialogic.current_timeline != null:
+		return
+	
 	# Camera movement
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
@@ -60,6 +64,10 @@ func _unhandled_key_input(_event):
 
 
 func _physics_process(delta):
+	# When Dialogue is active, skip physics process
+	if Dialogic.current_timeline != null:
+		return
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta

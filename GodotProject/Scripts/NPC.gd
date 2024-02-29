@@ -9,12 +9,9 @@ var rng = RandomNumberGenerator.new()
 
 func start_dialogue():
 	if !main_dialogue_done:
-		print("Main dialogue: " + NPC_name + "_" + main_dialogue_index)
 		Dialogic.start(NPC_name + "_" + main_dialogue_index)
 		main_dialogue_done = true
 	else:
 		var my_random_number = rng.randi_range(0, random_dialogues_indexes.size() - 1)
 		var random_dialogue_index = random_dialogues_indexes[my_random_number]
-		
-		print("Random dialogue: " + NPC_name + "_" + random_dialogue_index)
 		Dialogic.start(NPC_name + "_" + random_dialogue_index)

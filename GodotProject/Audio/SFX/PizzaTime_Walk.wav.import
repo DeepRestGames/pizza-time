@@ -2,7 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://c1coe5lovt0ow"
+uid="uid://w5hhq2cl1qui"
 path="res://.godot/imported/PizzaTime_Walk.wav-4b8028d1c9e4c58e7a6cfdd6c76861cd.sample"
 
 [deps]
@@ -16,9 +16,9 @@ force/8_bit=false
 force/mono=false
 force/max_rate=false
 force/max_rate_hz=44100
-edit/trim=false
+edit/trim=true
 edit/normalize=true
-edit/loop_mode=0
+edit/loop_mode=2
 edit/loop_begin=0
 edit/loop_end=-1
 compress/mode=0

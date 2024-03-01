@@ -71,6 +71,10 @@ window/stretch/scale=3.0
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/quiver_analytics/plugin.cfg")
 
+[filesystem]
+
+import/fbx/enabled=false
+
 [input]
 
 forward={

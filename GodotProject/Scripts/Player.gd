@@ -12,6 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 const SENSITIVITY = 0.003
+var mouse_captured = false
 # Head bob
 const BOB_FREQUENCY = 2.0
 const BOB_AMPLITUDE = 0.08
@@ -37,16 +38,16 @@ var Weapon_Attack_Types = {
 }
 var weapon_attack_animation = Weapon_Attack_Types["THROW"]
 
+# Audio variables
 @onready var audio_stream_player = $AudioStreamPlayer3D
 @export var walking_sound: AudioStreamWAV
 @export var jumping_sounds: Array[AudioStreamWAV]
 
 
-func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
-
 func _unhandled_input(event):
+	if !mouse_captured:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 	# When Dialogue is active, skip camera movement
 	if Dialogic.current_timeline != null:
 		return

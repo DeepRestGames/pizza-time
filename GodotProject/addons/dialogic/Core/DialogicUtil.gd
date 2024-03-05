@@ -75,7 +75,9 @@ static func update_autoload_subsystem_access() -> void:
 	new_subsystem_access_list += "\n#endregion"
 	script.source_code = RegEx.create_from_string("#region SUBSYSTEMS\\n#*\\n((?!#endregion)(.*\\n))*#endregion").sub(script.source_code, new_subsystem_access_list)
 	ResourceSaver.save(script)
-	EditorInterface.get_resource_filesystem().reimport_files(["res://addons/dialogic/Core/DialogicGameHandler.gd"])
+	if Engine.is_editor_hint():
+		var editor_interface = Engine.get_singleton("EditorInterface")
+		editor_interface.get_resource_filesystem().reimport_files(["res://addons/dialogic/Core/DialogicGameHandler.gd"])
 
 
 static func get_indexers(include_custom := true, force_reload := false) -> Array[DialogicIndexer]:

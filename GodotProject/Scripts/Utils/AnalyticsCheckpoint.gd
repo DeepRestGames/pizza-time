@@ -7,7 +7,8 @@ enum LevelsSignals {
 	LABYRINT_LEVEL = 2,
 	MEDITATING_SPHERE_LEVEL = 3,
 	ROTATING_PLATFORMS_LEVEL = 4,
-	CATAPULTS_LEVEL = 5
+	CATAPULTS_LEVEL = 5,
+	FINAL_LEVEL = 6
 }
 
 @export var checkpoint_signal: LevelsSignals

@@ -24,6 +24,7 @@ script = ExtResource("1_p8mvq")
 button_sounds = Array[AudioStreamWAV]([ExtResource("2_ue1c0"), ExtResource("3_xmu6f"), ExtResource("4_dcm48"), ExtResource("5_xpy3h")])
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
 mesh = SubResource("CylinderMesh_6y4b6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

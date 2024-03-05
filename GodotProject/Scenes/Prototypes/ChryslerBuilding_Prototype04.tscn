@@ -1,6 +1,7 @@
 [gd_scene load_steps=40 format=3 uid="uid://bkgyudfy7qqso"]
 
 [ext_resource type="PackedScene" uid="uid://djcjuxcxoilpw" path="res://Art/Models/Environment/Chrysler building v6.gltf" id="2_1p8g1"]
+[ext_resource type="ArrayOccluder3D" uid="uid://cyetaisjnp06u" path="res://Scenes/Prototypes/ChryslerBuilding_Prototype04_OccluderBake.occ" id="2_hj2vh"]
 [ext_resource type="Material" uid="uid://bqh8kkm1la54r" path="res://Art/Materials/building_material.tres" id="2_tjq3o"]
 [ext_resource type="PackedScene" uid="uid://jjygr33tp3f" path="res://Scenes/Prefabs/Level Design Elements/StaticBox.tscn" id="3_q6mt2"]
 [ext_resource type="PackedScene" uid="uid://dy0nyqewtis1" path="res://Scenes/Prefabs/Level Design Elements/Drawbridge.tscn" id="4_pigjl"]
@@ -860,6 +861,10 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 27)
 
 [node name="Environment" type="Node3D" parent="."]
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Environment"]
+occluder = ExtResource("2_hj2vh")
+bake_mask = 4294967293
 
 [node name="Chrysler building v6" parent="Environment" instance=ExtResource("2_1p8g1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 30)

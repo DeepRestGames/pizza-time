@@ -51,6 +51,7 @@ smooth_faces = false
 material = SubResource("StandardMaterial3D_ph1dg")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="LightSphere"]
+layers = 2
 light_color = Color(0, 0.737255, 1, 1)
 omni_attenuation = 1.1487
 

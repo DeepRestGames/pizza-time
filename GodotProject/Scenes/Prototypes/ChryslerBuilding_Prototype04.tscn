@@ -901,8 +901,6 @@ mesh = SubResource("ArrayMesh_sqsi4")
 
 [node name="Table+TV" type="StaticBody3D" parent="Environment/GroundLevel/LivingRoom"]
 transform = Transform3D(-5.96046e-08, 0, -1, 0, 1, 0, 1, 0, -5.96046e-08, 3.41499, 0.0298939, -0.729061)
-collision_layer = 0
-collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/GroundLevel/LivingRoom/Table+TV"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.107758, 0.812155, 0)

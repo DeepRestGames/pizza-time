@@ -6,7 +6,7 @@ extends Node3D
 @onready var starting_node = $StartingNode
 @onready var ending_node = $EndingNode
 @onready var animation_pivot = $Pivot
-@onready var audio_stream_player = $AudioStreamPlayer3D
+@onready var audio_stream_player = $Pivot/AudioStreamPlayer3D
 
 @export var two_way_movement = false
 @export var activated = false

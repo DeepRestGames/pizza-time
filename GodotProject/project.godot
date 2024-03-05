@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Analytics="*res://addons/quiver_analytics/analytics.tscn"
+GameManager="*res://Scripts/Utils/GameManager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]

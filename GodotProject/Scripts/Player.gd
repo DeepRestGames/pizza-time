@@ -62,7 +62,7 @@ func _unhandled_input(event):
 func _unhandled_key_input(_event):
 	# DEBUGGING PURPOSES
 	if Input.is_action_just_pressed("restart"):
-		get_tree().reload_current_scene()
+		GameManager.respawn_player()
 	if Input.is_action_just_pressed("quit"):
 		await Analytics.handle_exit()
 		get_tree().quit()

@@ -59,15 +59,6 @@ func _unhandled_input(event):
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(80))
 
 
-func _unhandled_key_input(_event):
-	# DEBUGGING PURPOSES
-	if Input.is_action_just_pressed("restart"):
-		GameManager.respawn_player()
-	if Input.is_action_just_pressed("quit"):
-		await Analytics.handle_exit()
-		get_tree().quit()
-
-
 func _physics_process(delta):
 	# When Dialogue is active, skip physics process
 	if Dialogic.current_timeline != null:

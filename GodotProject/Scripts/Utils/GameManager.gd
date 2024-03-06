@@ -5,9 +5,11 @@ var player: Player
 var player_respawn_point: Vector3 = Vector3(0, 1, 27)
 signal checkpoint_reached
 
-
+# DEVELOPMENT - MOVE TO start_game WHEN MAIN MENU IS IMPLEMENTED
 func _ready():
-	player = get_tree().get_root().get_node("MainScene/Player")
+	start_game()
+	#player = get_tree().get_root().get_node("MainScene/Player")
+	#game_started.emit()
 
 
 func start_game():

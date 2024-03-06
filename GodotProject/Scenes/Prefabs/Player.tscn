@@ -155,6 +155,23 @@ _data = {
 "fade_to_black": SubResource("Animation_22588")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_it7v1"]
+bg_color = Color(0.219608, 0, 0.423529, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 2
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oc1ly"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
 collision_mask = 5
@@ -222,6 +239,7 @@ libraries = {
 }
 
 [node name="HUD" type="Control" parent="."]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -279,8 +297,19 @@ grow_vertical = 2
 texture = ExtResource("2_jepl7")
 expand_mode = 1
 
+[node name="TimerLabel" type="Label" parent="HUD"]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 15.0
+offset_right = 100.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 25
+text = "00:00"
+
 [node name="CheckpointLabel" type="Label" parent="HUD"]
-visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -297,6 +326,23 @@ theme_override_font_sizes/font_size = 25
 text = "NEW CHECKPOINT REACHED!"
 horizontal_alignment = 1
 
+[node name="FPSLabel" type="Label" parent="HUD"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -70.0
+offset_top = 15.0
+offset_right = -20.0
+offset_bottom = 50.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 25
+text = "60"
+horizontal_alignment = 2
+
 [node name="DeathScreen" type="ColorRect" parent="HUD"]
 layout_mode = 1
 anchors_preset = 15
@@ -307,6 +353,250 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
+[node name="PauseMenu" type="Control" parent="HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 2.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="HUD/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -100.0
+offset_right = 75.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_it7v1")
+
+[node name="MenuTitleLabel" type="Label" parent="HUD/PauseMenu/Panel"]
+layout_mode = 2
+offset_left = 11.0
+offset_top = 15.0
+offset_right = 139.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 20
+text = "PAUSE"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/PauseMenu/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -43.0
+offset_right = 64.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="ResumeButton" type="Button" parent="HUD/PauseMenu/Panel/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.545098, 0.545098, 0, 1)
+theme_override_colors/font_hover_color = Color(0.545098, 0.545098, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/focus = SubResource("StyleBoxFlat_oc1ly")
+text = "RESUME"
+
+[node name="OptionsButton" type="Button" parent="HUD/PauseMenu/Panel/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.545098, 0.545098, 0, 1)
+theme_override_colors/font_hover_color = Color(0.545098, 0.545098, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/focus = SubResource("StyleBoxFlat_oc1ly")
+text = "OPTIONS"
+
+[node name="MainMenuButton" type="Button" parent="HUD/PauseMenu/Panel/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.545098, 0.545098, 0, 1)
+theme_override_colors/font_hover_color = Color(0.545098, 0.545098, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/focus = SubResource("StyleBoxFlat_oc1ly")
+disabled = true
+text = "MAIN MENU"
+
+[node name="CloseButton" type="Button" parent="HUD/PauseMenu/Panel/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.545098, 0.545098, 0, 1)
+theme_override_colors/font_hover_color = Color(0.545098, 0.545098, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/focus = SubResource("StyleBoxFlat_oc1ly")
+text = "CLOSE"
+
+[node name="OptionsMenu" type="Control" parent="HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="HUD/OptionsMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -110.0
+offset_right = 90.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_it7v1")
+
+[node name="MenuTitleLabel" type="Label" parent="HUD/OptionsMenu/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = 15.0
+offset_right = 64.0
+offset_bottom = 43.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 20
+text = "OPTIONS"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/OptionsMenu/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -171.0
+offset_right = 75.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="TimerCheckButton" type="CheckBox" parent="HUD/OptionsMenu/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.545098, 0.545098, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/focus = SubResource("StyleBoxFlat_oc1ly")
+button_pressed = true
+text = "SHOW TIMER"
+
+[node name="FPSCheckButton" type="CheckBox" parent="HUD/OptionsMenu/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.545098, 0.545098, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/focus = SubResource("StyleBoxFlat_oc1ly")
+button_pressed = true
+text = "SHOW FPS"
+
+[node name="AudioVolumeLabel" type="Label" parent="HUD/OptionsMenu/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_oc1ly")
+text = "MUSIC:"
+
+[node name="AudioVolumeSlider" type="HSlider" parent="HUD/OptionsMenu/Panel/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+focus_mode = 0
+min_value = -30.0
+max_value = 0.0
+
+[node name="BackButton" type="Button" parent="HUD/OptionsMenu/Panel/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.545098, 0.545098, 0, 1)
+theme_override_colors/font_hover_color = Color(0.545098, 0.545098, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_oc1ly")
+theme_override_styles/focus = SubResource("StyleBoxFlat_oc1ly")
+text = "BACK"
+
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 volume_db = -10.0
@@ -314,5 +604,12 @@ pitch_scale = 0.8
 
 [connection signal="body_entered" from="Head/WeaponPivot/WeaponModel/WeaponHitbox" to="." method="_on_weapon_hitbox_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="HUD/PauseMenu/Panel/VBoxContainer/ResumeButton" to="HUD" method="_on_resume_button_pressed"]
+[connection signal="pressed" from="HUD/PauseMenu/Panel/VBoxContainer/OptionsButton" to="HUD" method="_on_options_button_pressed"]
+[connection signal="pressed" from="HUD/PauseMenu/Panel/VBoxContainer/CloseButton" to="HUD" method="_on_close_button_pressed"]
+[connection signal="toggled" from="HUD/OptionsMenu/Panel/VBoxContainer/TimerCheckButton" to="HUD" method="_on_timer_check_button_toggled"]
+[connection signal="toggled" from="HUD/OptionsMenu/Panel/VBoxContainer/FPSCheckButton" to="HUD" method="_on_fps_check_button_toggled"]
+[connection signal="value_changed" from="HUD/OptionsMenu/Panel/VBoxContainer/AudioVolumeSlider" to="HUD" method="_on_audio_volume_slider_value_changed"]
+[connection signal="pressed" from="HUD/OptionsMenu/Panel/VBoxContainer/BackButton" to="HUD" method="_on_options_back_button_pressed"]
 
 [editable path="Head/WeaponPivot/pizza v1"]

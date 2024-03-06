@@ -1123,6 +1123,7 @@ transform = Transform3D(1, 4.23516e-22, 0, 2.5411e-21, 1, 0, 5.04871e-29, 0, 1, 
 
 [node name="SlidingDoor" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-2.84124e-08, 0.45, 0, -0.65, -1.96701e-08, 0, 0, 0, 0.5, -1.96739, 1.95005, -9.83496)
+metadata/_edit_group_ = true
 
 [node name="EndingNode" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
@@ -1130,6 +1131,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 [node name="SlidingDoor2" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(5.86047e-15, -1.96701e-08, 0.5, -0.65, -1.96701e-08, 7.7647e-23, 2.84124e-08, -0.45, -2.18557e-08, -2.1661, 1.95005, -5.59335)
 activated = true
+metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor2" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
@@ -1139,24 +1141,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
 
 [node name="SlidingDoor3" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-3.37658e-15, -1.96701e-08, -0.5, -0.65, -1.96701e-08, 3.55271e-15, -2.84124e-08, 0.45, -2.18557e-08, 6.00675, 1.95005, -16.0381)
+metadata/_edit_group_ = true
 
 [node name="EndingNode" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor3" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
 
 [node name="SlidingDoor5" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(2.84124e-08, -0.45, 4.37114e-08, -0.65, -1.96701e-08, 0, 2.48389e-15, -3.93403e-08, -0.5, 2.47197, 1.95005, -5.40594)
+metadata/_edit_group_ = true
 
 [node name="EndingNode" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor5" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 
 [node name="SlidingDoor6" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(6.20973e-15, -9.83506e-08, -0.5, -0.65, -1.96701e-08, -2.32941e-22, -2.84124e-08, 0.45, -1.09278e-07, -10.4762, 1.95005, -8.80141)
+metadata/_edit_group_ = true
 
 [node name="EndingNode" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor6" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
 
 [node name="SlidingDoor7" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(6.20973e-15, -9.83506e-08, -0.5, -0.65, -1.96701e-08, -2.32941e-22, -2.84124e-08, 0.45, -1.09278e-07, -10.4762, 1.95005, -16.0266)
+metadata/_edit_group_ = true
 
 [node name="EndingNode" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor7" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
@@ -1164,6 +1170,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
 [node name="SlidingDoor8" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-2.84124e-08, 0.45, -8.74227e-08, -0.65, -1.96701e-08, -1.25645e-21, -7.27705e-15, 7.86805e-08, 0.5, -23.6396, 1.95005, -12.6277)
 activated = true
+metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor8" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 0)
@@ -1171,6 +1178,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 0)
 [node name="SlidingDoor9" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-2.84124e-08, 0.623, 0, -0.65, -2.72322e-08, 0, 0, 0, 0.5, -1.92296, 1.95005, 18.3562)
 activated = true
+metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor9" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
@@ -1181,6 +1189,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
 [node name="SlidingDoor10" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(1.24195e-15, -2.72322e-08, -0.5, 0.65, -2.72322e-08, 1.91069e-15, -2.84124e-08, -0.623, 2.18557e-08, -2.16, 1.95, 18.12)
 two_way_movement = false
+metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor10" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1, 0, 0, 0)
@@ -1190,6 +1199,7 @@ transform = Transform3D(1, 7.10543e-15, -3.17637e-22, 3.55271e-15, 1, -3.55271e-
 
 [node name="SlidingDoor11" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(1.24195e-15, -4.37114e-08, -0.5, 0.65, 1.31134e-07, -1.91068e-15, 8.52372e-08, -1, 2.18557e-08, 5.44587, 1.95, 18.1182)
+metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor11" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.62, 0, 0, 0, 1, 0, 0, 0)
@@ -1199,6 +1209,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.2, 0)
 
 [node name="SlidingDoor12" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(1.24195e-15, -4.37114e-08, -0.5, 0.65, 1.31134e-07, -1.91068e-15, 8.52372e-08, -1, 2.18557e-08, 10.8018, 1.95, 18.1182)
+metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor12" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.62, 0, 0, 0, 1, 0, 0, 0)
@@ -1212,6 +1223,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.2, 0)
 
 [node name="SlidingDoor13" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(1.24195e-15, -4.37114e-08, -0.5, 0.65, 1.31134e-07, -1.91068e-15, 8.52372e-08, -1, 2.18557e-08, 16.4033, 1.95, 18.1182)
+metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor13" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.62, 0, 0, 0, 1, 0, 0, 0)
@@ -1221,6 +1233,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.2, 0)
 
 [node name="SlidingDoor14" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(1.24195e-15, -4.37114e-08, -0.5, 0.65, 1.31134e-07, -1.91068e-15, 8.52372e-08, -1, 2.18557e-08, 21.4622, 1.95, 18.1182)
+metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor14" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.62, 0, 0, 0, 1, 0, 0, 0)
@@ -1234,6 +1247,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.2, 0)
 
 [node name="SlidingDoorWithButton" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(4.50806e-15, -1.74846e-08, 0.3, -0.5, -1.74846e-08, 0, 2.18557e-08, -0.4, -1.31134e-08, 14.4001, 1.78949, 31.6404)
+metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoorWithButton" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.45, 0, 0, 0, 1, 0, 0, 0)
@@ -1273,7 +1287,7 @@ movable_platforms = [NodePath("../SlidingDoor2"), NodePath("../SlidingDoor7"), N
 
 [node name="InteractableButton3" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(2.98023e-08, 1, 0, -1, 2.98023e-08, 0, 0, 0, 1, -23.6758, 1.9927, -7.24896)
-movable_platforms = [NodePath("../SlidingDoor5"), NodePath("../SlidingDoor6"), NodePath("../SlidingDoor2")]
+movable_platforms = [NodePath("../SlidingDoor5"), NodePath("../SlidingDoor6")]
 
 [node name="InteractableButton4" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(1, 5.96046e-08, -1.77636e-15, 4.92642e-09, -0.0826516, 0.996579, 5.94007e-08, -0.996579, -0.0826516, 27.46, 3.88601, -0.575382)

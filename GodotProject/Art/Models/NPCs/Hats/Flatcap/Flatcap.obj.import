@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cnhs4rvtlbloh"
+path="res://.godot/imported/Flatcap.obj-15a245f87771fc4ad1d048ff359557d3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Flatcap.obj-15a245f87771fc4ad1d048ff359557d3.mesh"]
+
+source_file="res://Art/Models/NPCs/Hats/Flatcap/Flatcap.obj"
+dest_files=["res://.godot/imported/Flatcap.obj-15a245f87771fc4ad1d048ff359557d3.mesh", "res://.godot/imported/Flatcap.obj-15a245f87771fc4ad1d048ff359557d3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

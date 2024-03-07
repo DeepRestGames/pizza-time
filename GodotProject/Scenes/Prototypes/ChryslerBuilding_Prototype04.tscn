@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bkgyudfy7qqso"]
+[gd_scene load_steps=71 format=3 uid="uid://bkgyudfy7qqso"]
 
 [ext_resource type="PackedScene" uid="uid://djcjuxcxoilpw" path="res://Art/Models/Environment/Chrysler building v6.gltf" id="2_1p8g1"]
 [ext_resource type="ArrayOccluder3D" uid="uid://cyetaisjnp06u" path="res://Scenes/Prototypes/ChryslerBuilding_Prototype04_OccluderBake.occ" id="2_hj2vh"]
@@ -2059,9 +2059,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 110.013, 0)
 [node name="DancingNPC" parent="Environment/FifthLevel" instance=ExtResource("26_nqknn")]
 transform = Transform3D(-1.11137, 0, 1.15102, 0, 1.6, 0, -1.15102, 0, -1.11137, -12.0273, 1.3302, 11.5899)
 
-[node name="Hair" parent="Environment/FifthLevel/DancingNPC/Armature/Skeleton3D" index="2"]
-transform = Transform3D(0.835071, -0.190329, -0.516171, 0.545376, 0.409643, 0.731271, 0.0722635, -0.89217, 0.445882, -14.6508, 6.98767, -149.735)
-
 [node name="AnalyticsCheckpoint" parent="Environment/FifthLevel" instance=ExtResource("8_axjnh")]
 transform = Transform3D(16, 0, 0, 0, 4, 0, 0, 0, 1, 0, 2.46494, -12.0575)
 checkpoint_signal = 5
@@ -2983,7 +2980,6 @@ transform = Transform3D(-0.080507, -0.152833, 0.469213, -0.0988627, 0.470773, 0.
 [editable path="Environment/FourthLevel/---ROT PLAT PUZ 7---/Rotating platform"]
 [editable path="Environment/FourthLevel/---ROT PLAT PUZ 7---/Rotating platform2"]
 [editable path="Environment/FourthLevel/---ROT PLAT PUZ 7---/SlidingPlatform2"]
-[editable path="Environment/FifthLevel/DancingNPC"]
 [editable path="Environment/FifthLevel/Elevator"]
 [editable path="Environment/FifthLevel/Elevator2"]
 [editable path="Environment/FifthLevel/Elevator3"]

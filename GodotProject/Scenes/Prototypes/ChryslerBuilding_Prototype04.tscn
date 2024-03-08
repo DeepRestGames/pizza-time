@@ -1016,6 +1016,9 @@ transform = Transform3D(0.344727, 0, 0, 0, 4, 0, 0, 0, 12.4585, 2.6173, 2, -9.84
 [node name="Wall08" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
 transform = Transform3D(0.5, 0, 0, 0, 4, 0, 0, 0, 20, -2.16034, 2, 4.34426)
 
+[node name="Wall26" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(0.5, 0, 0, 0, 4, 0, 0, 0, 14.7632, -23.9196, 2, 4.34426)
+
 [node name="Wall09" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
 transform = Transform3D(-2.18557e-08, 0, 8.467, 0, 4, 0, -0.5, 0, -3.70104e-07, 1.93344, 2, 0.623555)
 
@@ -2765,6 +2768,12 @@ transform = Transform3D(17.9804, 0.0703448, 0.28848, -0.107107, -0.125889, 3.726
 [node name="FlavourBox-20" parent="Environment/FifthLevel" instance=ExtResource("3_q6mt2")]
 transform = Transform3D(-6.29666, -0.0440991, 3.24477, 0.581967, 0.284295, 7.79233, -1.84371, 0.240344, -8.62189, -27.1466, 88.6128, 21.5867)
 
+[node name="pizza box v1" parent="Environment/FifthLevel" instance=ExtResource("12_80vqa")]
+transform = Transform3D(-0.0535179, 0.003009, 0.497119, -0.0701822, 0.494938, -0.0105513, -0.492149, -0.0709071, -0.0525536, -9.63348, 37.233, 13.6544)
+
+[node name="pizza box v2" parent="Environment/FifthLevel" instance=ExtResource("12_80vqa")]
+transform = Transform3D(-0.080507, -0.152833, 0.469213, -0.0988627, 0.470773, 0.136378, -0.483472, -0.0708165, -0.10602, -11.3523, 37.527, 13.6544)
+
 [node name="SixthLevel" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 221.446, 0)
 
@@ -2936,12 +2945,6 @@ skeleton = NodePath("../../../FifthLevel/SlidingPlatform6/Pivot/AnimatableBody3D
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/SixthLevel/Step14"]
 shape = SubResource("CylinderShape3D_i5xm5")
-
-[node name="pizza box v1" parent="." instance=ExtResource("12_80vqa")]
-transform = Transform3D(-0.0535179, 0.003009, 0.497119, -0.0701822, 0.494938, -0.0105513, -0.492149, -0.0709071, -0.0525536, -9.63348, 147.246, 13.6544)
-
-[node name="pizza box v2" parent="." instance=ExtResource("12_80vqa")]
-transform = Transform3D(-0.080507, -0.152833, 0.469213, -0.0988627, 0.470773, 0.136378, -0.483472, -0.0708165, -0.10602, -11.3523, 147.54, 13.6544)
 
 [connection signal="body_entered" from="Environment/EndlessVoid" to="Player/HUD" method="_on_endless_void_body_entered"]
 

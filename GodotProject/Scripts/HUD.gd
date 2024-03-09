@@ -18,6 +18,13 @@ var elapsed_time: int
 
 
 func _ready():
+	# Play Intro
+	#animation_player.current_animation = "fade_to_black"
+	#animation_player.seek(animation_player.current_animation_length, true, true)
+	#Dialogic.start("Intro")
+	#await Dialogic.timeline_ended
+	#animation_player.play("fade_to_black", -1, -2, true)
+	
 	start_time = Time.get_ticks_msec() / 1000
 	GameManager.checkpoint_reached.connect(_on_checkpoint_reached)
 
@@ -55,8 +62,6 @@ func _on_checkpoint_reached():
 
 
 func _on_endless_void_body_entered(_body):
-	print("Fade to black animation start")
-	
 	animation_player.play("fade_to_black")
 	await animation_player.animation_finished
 	GameManager.respawn_player()

@@ -310,6 +310,7 @@ theme_override_font_sizes/font_size = 25
 text = "00:00"
 
 [node name="CheckpointLabel" type="Label" parent="HUD"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

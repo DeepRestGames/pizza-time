@@ -35,6 +35,10 @@ func _on_body_entered(body):
 		var npc = body as NPC
 		npc.start_dialogue()
 		queue_free()
+	elif body is Intercom:
+		var intercom = body as Intercom
+		intercom.start_dialogue()
+		queue_free()
 	else:
 		var audio_stream = pizza_hit_sounds.pick_random()
 		audio_stream_player.stream = audio_stream

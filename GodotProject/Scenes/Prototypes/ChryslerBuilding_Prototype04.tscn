@@ -20,7 +20,9 @@
 [ext_resource type="PackedScene" uid="uid://crhigal1rlfrx" path="res://Scenes/Prefabs/Level Design Elements/SlidingPlatform.tscn" id="10_2g3pf"]
 [ext_resource type="PackedScene" uid="uid://clsaosmykk3n0" path="res://Art/Models/Platforms/pizza box v1.glb" id="12_80vqa"]
 [ext_resource type="PackedScene" uid="uid://bn3yvr42eef65" path="res://Scenes/Prefabs/Level Design Elements/LightSphere.tscn" id="13_upr5q"]
+[ext_resource type="Script" path="res://Scripts/Intercom.gd" id="14_s577g"]
 [ext_resource type="PackedScene" uid="uid://dlltw0b60rnrl" path="res://Scenes/Prefabs/Level Design Elements/Rotating platform.tscn" id="14_sahsi"]
+[ext_resource type="Shader" path="res://Art/Shaders/cel-shader-emission.gdshader" id="15_0gg8l"]
 [ext_resource type="PackedScene" uid="uid://c38831xhw3bw5" path="res://Scenes/Prefabs/NPCs/SittingNPC.tscn" id="15_bjigl"]
 [ext_resource type="PackedScene" uid="uid://bq4r28jv36sep" path="res://Scenes/Prefabs/Player.tscn" id="15_olpqq"]
 [ext_resource type="AudioStream" uid="uid://b8c81o4ftrmit" path="res://Audio/SFX/PizzaTime_PlatformMovement04.wav" id="17_mwgyj"]
@@ -346,8 +348,44 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_p0a0p")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_0iosa"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_l3itp"]
 material = ExtResource("6_51plb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1r8qw"]
+render_priority = 0
+next_pass = ExtResource("7_2sskf")
+shader = ExtResource("15_0gg8l")
+shader_parameter/emission = Color(1, 1, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2sust"]
+material = SubResource("ShaderMaterial_1r8qw")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_woh2f"]
+render_priority = 0
+next_pass = ExtResource("7_2sskf")
+shader = ExtResource("15_0gg8l")
+shader_parameter/emission = Color(0.305882, 0.305882, 0.305882, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ims0n"]
+material = SubResource("ShaderMaterial_woh2f")
+size = Vector3(0.1, 0.4, 1.2)
 
 [sub_resource type="Animation" id="Animation_4iodu"]
 length = 0.001
@@ -797,11 +835,83 @@ transform = Transform3D(0.35, 0, 0, 0, 0.38, 0, 0, 0, 1, 0, 0, 0)
 [node name="EndingNode" parent="Environment/GroundLevel/Doorway/EntryDoor" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8, 0)
 
-[node name="Intercom" type="Node3D" parent="Environment/GroundLevel/Doorway"]
+[node name="Intercom" type="StaticBody3D" parent="Environment/GroundLevel/Doorway" node_paths=PackedStringArray("door_button")]
 transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1.5, 6, 2, 6)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("14_s577g")
+door_button = NodePath("../InteractableButton")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/GroundLevel/Doorway/Intercom"]
+shape = SubResource("BoxShape3D_0iosa")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/GroundLevel/Doorway/Intercom"]
 mesh = SubResource("BoxMesh_l3itp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/GroundLevel/Doorway/Intercom/MeshInstance3D"]
+transform = Transform3D(-8.74228e-08, -2, 0, 0.5, -2.18557e-08, 0, 0, 0, 0.666667, -0.482075, 0.364087, -0.342339)
+mesh = SubResource("CylinderMesh_2sust")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment/GroundLevel/Doorway/Intercom/MeshInstance3D"]
+transform = Transform3D(-8.74228e-08, -2, 0, 0.5, -2.18557e-08, 0, 0, 0, 0.666667, -0.482075, 0.214808, -0.342339)
+mesh = SubResource("CylinderMesh_2sust")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment/GroundLevel/Doorway/Intercom/MeshInstance3D"]
+transform = Transform3D(-8.74228e-08, -2, 0, 0.5, -2.18557e-08, 0, 0, 0, 0.666667, -0.482075, 0.0571311, -0.342339)
+mesh = SubResource("CylinderMesh_2sust")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Environment/GroundLevel/Doorway/Intercom/MeshInstance3D"]
+transform = Transform3D(-8.74228e-08, -2, 0, 0.5, -2.18557e-08, 0, 0, 0, 0.666667, -0.482075, -0.103878, -0.342339)
+mesh = SubResource("CylinderMesh_2sust")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Environment/GroundLevel/Doorway/Intercom/MeshInstance3D"]
+transform = Transform3D(-8.74228e-08, -2, 0, 0.5, -2.18557e-08, 0, 0, 0, 0.666667, -0.482075, 0.364087, -0.0186539)
+mesh = SubResource("CylinderMesh_2sust")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Environment/GroundLevel/Doorway/Intercom/MeshInstance3D"]
+transform = Transform3D(-8.74228e-08, -2, 0, 0.5, -2.18557e-08, 0, 0, 0, 0.666667, -0.482075, 0.214808, -0.0186539)
+mesh = SubResource("CylinderMesh_2sust")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Environment/GroundLevel/Doorway/Intercom/MeshInstance3D"]
+transform = Transform3D(-8.74228e-08, -2, 0, 0.5, -2.18557e-08, 0, 0, 0, 0.666667, -0.482075, 0.0571311, -0.0186539)
+mesh = SubResource("CylinderMesh_2sust")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Environment/GroundLevel/Doorway/Intercom/MeshInstance3D"]
+transform = Transform3D(-8.74228e-08, -2, 0, 0.5, -2.18557e-08, 0, 0, 0, 0.666667, -0.482075, -0.103878, -0.0186539)
+mesh = SubResource("CylinderMesh_2sust")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Environment/GroundLevel/Doorway/Intercom/MeshInstance3D"]
+transform = Transform3D(-8.74228e-08, -2, 0, 0.5, -2.18557e-08, 0, 0, 0, 0.666667, -0.482075, 0.364087, 0.317215)
+mesh = SubResource("CylinderMesh_2sust")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Environment/GroundLevel/Doorway/Intercom/MeshInstance3D"]
+transform = Transform3D(-8.74228e-08, -2, 0, 0.5, -2.18557e-08, 0, 0, 0, 0.666667, -0.482075, 0.214808, 0.317215)
+mesh = SubResource("CylinderMesh_2sust")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Environment/GroundLevel/Doorway/Intercom/MeshInstance3D"]
+transform = Transform3D(-8.74228e-08, -2, 0, 0.5, -2.18557e-08, 0, 0, 0, 0.666667, -0.482075, 0.0571311, 0.317215)
+mesh = SubResource("CylinderMesh_2sust")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Environment/GroundLevel/Doorway/Intercom/MeshInstance3D"]
+transform = Transform3D(-8.74228e-08, -2, 0, 0.5, -2.18557e-08, 0, 0, 0, 0.666667, -0.482075, -0.103878, 0.317215)
+mesh = SubResource("CylinderMesh_2sust")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Environment/GroundLevel/Doorway/Intercom/MeshInstance3D"]
+transform = Transform3D(2, 0, 0, 0, 0.5, 0, 0, 0, 0.666667, -0.5, -0.320816, 0)
+mesh = SubResource("BoxMesh_ims0n")
+skeleton = NodePath("../../..")
 
 [node name="InteractableButton" parent="Environment/GroundLevel/Doorway" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, 1.5, 0.4)

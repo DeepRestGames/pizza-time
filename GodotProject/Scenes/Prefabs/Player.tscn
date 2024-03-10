@@ -2,13 +2,12 @@
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_6d860"]
 [ext_resource type="Texture2D" uid="uid://ma18qtx1qeta" path="res://Art/Icons/WhiteCircle.png" id="2_jepl7"]
-[ext_resource type="PackedScene" uid="uid://85bmetumyjya" path="res://Art/Models/PC/pizza v1.glb" id="2_xadov"]
 [ext_resource type="AudioStream" uid="uid://w5hhq2cl1qui" path="res://Audio/SFX/PizzaTime_Walk.wav" id="2_xht7t"]
 [ext_resource type="AudioStream" uid="uid://dab7nbdnypttn" path="res://Audio/SFX/PizzaTime_Jump01.wav" id="3_3xvii"]
-[ext_resource type="Material" uid="uid://dh0gfjniluaww" path="res://Art/Materials/pizza_material.tres" id="3_fw6aw"]
 [ext_resource type="AudioStream" uid="uid://c4kpq7gwyehef" path="res://Audio/SFX/PizzaTime_Jump02.wav" id="4_l47gu"]
 [ext_resource type="AudioStream" uid="uid://48nitw4vbmhn" path="res://Audio/SFX/PizzaTime_Jump03.wav" id="5_moyer"]
 [ext_resource type="AudioStream" uid="uid://dv2q0e8ff7ldb" path="res://Audio/SFX/PizzaTime_Jump04.wav" id="6_o22b6"]
+[ext_resource type="PackedScene" uid="uid://bw3e72fqxwb7" path="res://Scenes/Prefabs/pizza_v_5_3.tscn" id="7_kec1n"]
 [ext_resource type="Script" path="res://Scripts/HUD.gd" id="9_7uv1p"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cyhp0"]
@@ -213,11 +212,8 @@ debug_shape_thickness = 5
 [node name="WeaponPivot" type="Node3D" parent="Head"]
 transform = Transform3D(0.998353, -0.0355339, -0.0450135, 0.0171093, 0.933713, -0.357611, 0.0547371, 0.356253, 0.932783, 0.5, -0.7, -0.1)
 
-[node name="pizza v1" parent="Head/WeaponPivot" instance=ExtResource("2_xadov")]
-transform = Transform3D(2.18732, -1.19279, -0.207116, 1.19108, 2.19682, -0.0727816, 0.216724, -0.0349977, 2.49034, -0.0214876, -0.00947267, -0.650531)
-
-[node name="Cylinder" parent="Head/WeaponPivot/pizza v1" index="0"]
-surface_material_override/0 = ExtResource("3_fw6aw")
+[node name="pizza_v5" parent="Head/WeaponPivot" instance=ExtResource("7_kec1n")]
+transform = Transform3D(2.08233, -1.13553, -0.197174, 1.13391, 2.09138, -0.0692885, 0.206321, -0.0333175, 2.37081, -0.0214876, -0.00947267, -0.650531)
 
 [node name="WeaponModel" type="MeshInstance3D" parent="Head/WeaponPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, -0.7)
@@ -612,5 +608,3 @@ pitch_scale = 0.8
 [connection signal="toggled" from="HUD/OptionsMenu/Panel/VBoxContainer/FPSCheckButton" to="HUD" method="_on_fps_check_button_toggled"]
 [connection signal="value_changed" from="HUD/OptionsMenu/Panel/VBoxContainer/AudioVolumeSlider" to="HUD" method="_on_audio_volume_slider_value_changed"]
 [connection signal="pressed" from="HUD/OptionsMenu/Panel/VBoxContainer/BackButton" to="HUD" method="_on_options_back_button_pressed"]
-
-[editable path="Head/WeaponPivot/pizza v1"]

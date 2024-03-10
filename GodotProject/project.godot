@@ -29,6 +29,7 @@ directories/dtl_directory={
 "CouchDude_02": "res://Dialogues/CouchDude_02.dtl",
 "CouchDude_03": "res://Dialogues/CouchDude_03.dtl",
 "CouchDude_04": "res://Dialogues/CouchDude_04.dtl",
+"FinalNPC_01": "res://Dialogues/FinalNPC_01.dtl",
 "HypeGuy_01": "res://Dialogues/HypeGuy_01.dtl",
 "HypeGuy_02": "res://Dialogues/HypeGuy_02.dtl",
 "Intercom": "res://Dialogues/Intercom.dtl",

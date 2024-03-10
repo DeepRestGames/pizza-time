@@ -30,7 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://b2rnrj5exvrc6" path="res://Scenes/Prefabs/NPCs/MeditatingNPC.tscn" id="23_pny7q"]
 [ext_resource type="Material" uid="uid://c3vhodwyfrn1v" path="res://Art/Materials/waterSphere_material.tres" id="25_ccv2f"]
 [ext_resource type="PackedScene" uid="uid://cias1nc0ubmto" path="res://Scenes/Prefabs/NPCs/DancingNPC.tscn" id="26_nqknn"]
-[ext_resource type="AudioStream" uid="uid://i7fn0c217u5l" path="res://Audio/SFX/PizzaTime_PlatformMovement01.wav" id="29_vjsf5"]
+[ext_resource type="PackedScene" uid="uid://8qi7oub3w8qc" path="res://Art/Models/Environment/Props/boombox.tscn" id="28_ctcll"]
 [ext_resource type="AudioStream" uid="uid://dc6rtf1rb7vb" path="res://Audio/SFX/PizzaTime_PlatformMovement03.wav" id="30_0ehs2"]
 [ext_resource type="AudioStream" uid="uid://cs8hrjvyuo0e6" path="res://Audio/SFX/PizzaTime_PlatformMovement02.wav" id="31_jpbg6"]
 
@@ -2168,6 +2168,9 @@ transform = Transform3D(4.28996, 0.28734, 0.11664, -1.25659, 0.94908, -0.567791,
 
 [node name="FifthLevel" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 110.013, 0)
+
+[node name="Boombox" parent="Environment/FifthLevel" instance=ExtResource("28_ctcll")]
+transform = Transform3D(0.375557, -0.124826, 0.577387, 0.206798, 0.66868, 0.0100528, -0.553346, 0.165181, 0.395631, -15.3899, 1.4221, 12.9748)
 
 [node name="DancingNPC" parent="Environment/FifthLevel" instance=ExtResource("26_nqknn")]
 transform = Transform3D(-1.11137, 0, 1.15102, 0, 1.6, 0, -1.15102, 0, -1.11137, -12.0273, 1.3302, 11.5899)

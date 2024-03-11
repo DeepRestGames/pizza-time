@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://bkgyudfy7qqso"]
+[gd_scene load_steps=86 format=3 uid="uid://bkgyudfy7qqso"]
 
 [ext_resource type="PackedScene" uid="uid://djcjuxcxoilpw" path="res://Art/Models/Environment/Chrysler building v6.gltf" id="2_1p8g1"]
 [ext_resource type="ArrayOccluder3D" uid="uid://cyetaisjnp06u" path="res://Scenes/Prototypes/ChryslerBuilding_Prototype04_OccluderBake.occ" id="2_hj2vh"]
@@ -32,8 +32,9 @@
 [ext_resource type="PackedScene" uid="uid://cias1nc0ubmto" path="res://Scenes/Prefabs/NPCs/DancingNPC.tscn" id="26_nqknn"]
 [ext_resource type="PackedScene" uid="uid://8qi7oub3w8qc" path="res://Art/Models/Environment/Props/boombox.tscn" id="28_ctcll"]
 [ext_resource type="AudioStream" uid="uid://i7fn0c217u5l" path="res://Audio/SFX/PizzaTime_PlatformMovement01.wav" id="29_vjsf5"]
-[ext_resource type="AudioStream" uid="uid://dc6rtf1rb7vb" path="res://Audio/SFX/PizzaTime_PlatformMovement03.wav" id="30_0ehs2"]
 [ext_resource type="AudioStream" uid="uid://cs8hrjvyuo0e6" path="res://Audio/SFX/PizzaTime_PlatformMovement02.wav" id="31_jpbg6"]
+[ext_resource type="AudioStream" uid="uid://dc6rtf1rb7vb" path="res://Audio/SFX/PizzaTime_PlatformMovement03.wav" id="32_36tue"]
+[ext_resource type="Script" path="res://Scripts/CameraMovement.gd" id="35_noiuo"]
 [ext_resource type="PackedScene" uid="uid://diiam5vtrjabd" path="res://Art/Models/Environment/Props/chair_stool_wood.gltf" id="35_ycekf"]
 [ext_resource type="PackedScene" uid="uid://b6o7ybw4x2lck" path="res://Scenes/Prefabs/NPCs/FinalNPC.tscn" id="36_3hmvg"]
 
@@ -764,7 +765,7 @@ shadow_mesh = SubResource("ArrayMesh_ehdi4")
 
 [sub_resource type="Curve3D" id="Curve3D_2wj0v"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 34.125, 9.335, 0, 0, 0, 0, 0, 20, 0, 34.125, 30, 0, -20, 0, 0, 0, 0, 0, 100, 200),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 34.125, 9.335, 0, 0, 0, 0, 0, 100, 0, 34.125, 20, 0, 0, 0, 0, 0, 0, 0, 0, 350),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
@@ -782,7 +783,7 @@ directional_shadow_pancake_size = 1024.0
 environment = SubResource("Environment_gk65a")
 
 [node name="Player" parent="." instance=ExtResource("15_olpqq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.675481, 112.396, -12.3777)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3274, 236.542, -4.78687)
 
 [node name="WeaponPivot" parent="Player/Head" index="3"]
 transform = Transform3D(0.998353, -0.0355339, -0.0450135, 0.0171093, 0.933713, -0.357611, 0.0547371, 0.356253, 0.932783, 0.5, -0.7, -0.1)
@@ -2430,7 +2431,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.0132, 5, 0)
 
 [node name="SlidingPlatform4" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 13.2226, 74.9782, -17.1457)
-activated = true
 animation_duration = 5.0
 animation_transition_type = 1
 move_with_timer = true
@@ -2438,10 +2438,10 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform4" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5999, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4798, 5, 0)
 
 [node name="AudioStreamPlayer3D" parent="Environment/FifthLevel/SlidingPlatform4/Pivot" index="0"]
-stream = ExtResource("17_mwgyj")
+stream = ExtResource("32_36tue")
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform4/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -2564,6 +2564,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, 4.83
 
 [node name="SlidingPlatform13" parent="Environment/FifthLevel/Part 1" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.1657, -38.4352, 14.9558)
+activated = true
 animation_duration = 5.0
 animation_transition_type = 1
 move_with_timer = true
@@ -2571,10 +2572,10 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform13" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08152, 5, -1.37632e-08)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.82564, 5, -1.12313e-07)
 
 [node name="AudioStreamPlayer3D" parent="Environment/FifthLevel/Part 1/SlidingPlatform13/Pivot" index="0"]
-stream = ExtResource("17_mwgyj")
+stream = ExtResource("31_jpbg6")
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/Part 1/SlidingPlatform13/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -2592,7 +2593,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 5, -2.5332e-07)
 
 [node name="SlidingPlatform14" parent="Environment/FifthLevel/Part 1" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -16.8473, -48.7286, 14.9558)
-activated = true
 animation_duration = 5.0
 animation_transition_type = 1
 move_with_timer = true
@@ -2600,10 +2600,10 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform14" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8245, 5, -2.39557e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0804, 5, -1.41007e-07)
 
 [node name="AudioStreamPlayer3D" parent="Environment/FifthLevel/Part 1/SlidingPlatform14/Pivot" index="0"]
-stream = ExtResource("17_mwgyj")
+stream = ExtResource("32_36tue")
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/Part 1/SlidingPlatform14/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -2621,6 +2621,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 5, -2.5332e-07)
 
 [node name="SlidingPlatform15" parent="Environment/FifthLevel/Part 1" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.016, -49.249, 14.956)
+activated = true
 is_pausable = true
 animation_duration = 5.0
 animation_transition_type = 1
@@ -2629,10 +2630,10 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform15" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08152, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.82564, 0, 0)
 
 [node name="AudioStreamPlayer3D" parent="Environment/FifthLevel/Part 1/SlidingPlatform15/Pivot" index="0"]
-stream = ExtResource("17_mwgyj")
+stream = ExtResource("29_vjsf5")
 
 [node name="InteractableButton" parent="Environment/FifthLevel/Part 1/SlidingPlatform15/Pivot/AnimatableBody3D" index="0" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(7.54979e-08, 0, -1, 0, 3, 0, 1, 0, 7.54979e-08, 0, 0, 0)
@@ -2651,6 +2652,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 0, 0)
 
 [node name="SlidingPlatform12" parent="Environment/FifthLevel/Part 1" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -62.4854, 14.9558)
+activated = true
 is_pausable = true
 animation_duration = 5.0
 animation_transition_type = 1
@@ -2659,10 +2661,10 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform12" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08152, 5, -1.37632e-08)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.82564, 5, -1.12313e-07)
 
 [node name="AudioStreamPlayer3D" parent="Environment/FifthLevel/Part 1/SlidingPlatform12/Pivot" index="0"]
-stream = ExtResource("29_vjsf5")
+stream = ExtResource("17_mwgyj")
 
 [node name="InteractableButton" parent="Environment/FifthLevel/Part 1/SlidingPlatform12/Pivot/AnimatableBody3D" index="0" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 3, 0, -1, 0, -4.37114e-08, 0, 5, 0)
@@ -3125,8 +3127,10 @@ skeleton = NodePath("../../../FifthLevel/SlidingPlatform6/Pivot/AnimatableBody3D
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/SixthLevel/Step14"]
 shape = SubResource("CylinderShape3D_i5xm5")
 
-[node name="CameraMovement" type="Node3D" parent="."]
+[node name="CameraMovement" type="Node3D" parent="." node_paths=PackedStringArray("hud")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 237.669, -12.5991)
+script = ExtResource("35_noiuo")
+hud = NodePath("../Player/HUD")
 
 [node name="Path3D" type="Path3D" parent="CameraMovement"]
 curve = SubResource("Curve3D_2wj0v")
@@ -3135,8 +3139,6 @@ curve = SubResource("Curve3D_2wj0v")
 rotation_mode = 0
 loop = false
 tilt_enabled = false
-
-[connection signal="body_entered" from="Environment/EndlessVoid" to="Player/HUD" method="_on_endless_void_body_entered"]
 
 [editable path="Player"]
 [editable path="Environment/Chrysler building v6"]

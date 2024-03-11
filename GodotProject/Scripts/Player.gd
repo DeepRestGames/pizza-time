@@ -43,6 +43,18 @@ var weapon_attack_animation = Weapon_Attack_Types["THROW"]
 @export var walking_sound: AudioStreamWAV
 @export var jumping_sounds: Array[AudioStreamWAV]
 
+var process_inputs = true
+
+
+func _ready():
+	Dialogic.signal_event.connect(_disable_inputs)
+
+
+func _disable_inputs(argument: String):
+	if argument == "start_ending_cinematic":
+		process_inputs = false
+		$HUD.disable_all()
+
 
 func _unhandled_input(event):
 	if !mouse_captured:
@@ -53,7 +65,7 @@ func _unhandled_input(event):
 		return
 	
 	# Camera movement
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and process_inputs:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(80))
@@ -61,7 +73,7 @@ func _unhandled_input(event):
 
 func _physics_process(delta):
 	# When Dialogue is active, skip physics process
-	if Dialogic.current_timeline != null:
+	if Dialogic.current_timeline != null or !process_inputs:
 		return
 	
 	# Add the gravity.

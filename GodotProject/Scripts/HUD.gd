@@ -1,6 +1,8 @@
+class_name HUD
 extends Control
 
 
+@onready var target = $Target
 @onready var timer_label = $TimerLabel
 @onready var checkpoint_label = $CheckpointLabel
 @onready var fps_label = $FPSLabel
@@ -15,6 +17,8 @@ var master_bus = AudioServer.get_bus_index("Master")
 
 var start_time: int
 var elapsed_time: int
+
+var process_inputs = true
 
 
 func _ready():
@@ -40,7 +44,18 @@ func _process(_delta):
 		timer_label.text = ("%02d" % minutes) + ":" + ("%02d" % seconds)
 
 
+func disable_all():
+	process_inputs = false
+	target.hide()
+	timer_label.hide()
+	fps_label.hide()
+
+
 func _unhandled_key_input(_event):
+	
+	if !process_inputs:
+		return
+	
 	# DEBUGGING PURPOSES
 	if Input.is_action_just_pressed("restart"):
 		GameManager.respawn_player()
@@ -66,6 +81,12 @@ func _on_endless_void_body_entered(_body):
 	await animation_player.animation_finished
 	GameManager.respawn_player()
 	animation_player.play("fade_to_black", -1, -2, true)
+
+
+func last_hide():
+	animation_player.play("fade_to_black", -1, .2)
+	await animation_player.animation_finished
+	get_tree().quit()
 
 
 # Pause menu

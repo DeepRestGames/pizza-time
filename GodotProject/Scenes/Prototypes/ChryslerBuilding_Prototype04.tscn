@@ -31,6 +31,7 @@
 [ext_resource type="Material" uid="uid://c3vhodwyfrn1v" path="res://Art/Materials/waterSphere_material.tres" id="25_ccv2f"]
 [ext_resource type="PackedScene" uid="uid://cias1nc0ubmto" path="res://Scenes/Prefabs/NPCs/DancingNPC.tscn" id="26_nqknn"]
 [ext_resource type="PackedScene" uid="uid://8qi7oub3w8qc" path="res://Art/Models/Environment/Props/boombox.tscn" id="28_ctcll"]
+[ext_resource type="AudioStream" uid="uid://i7fn0c217u5l" path="res://Audio/SFX/PizzaTime_PlatformMovement01.wav" id="29_vjsf5"]
 [ext_resource type="AudioStream" uid="uid://dc6rtf1rb7vb" path="res://Audio/SFX/PizzaTime_PlatformMovement03.wav" id="30_0ehs2"]
 [ext_resource type="AudioStream" uid="uid://cs8hrjvyuo0e6" path="res://Audio/SFX/PizzaTime_PlatformMovement02.wav" id="31_jpbg6"]
 [ext_resource type="PackedScene" uid="uid://diiam5vtrjabd" path="res://Art/Models/Environment/Props/chair_stool_wood.gltf" id="35_ycekf"]

@@ -2516,6 +2516,19 @@ transform = Transform3D(1, 0, -5.68434e-14, 0, 1, 0, 5.68434e-14, 0, 1, 0, 5.652
 transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, -7.68337, 33.2327, 9.34494)
 metadata/_edit_group_ = true
 
+[node name="Pivot" parent="Environment/FifthLevel/Elevator6" index="0"]
+transform = Transform3D(1, 0, -8.52651e-14, 0, 1, 0, 8.52651e-14, 0, 1, 0, -4.97244, 0)
+
+[node name="InteractableButton" parent="Environment/FifthLevel/Elevator6/Pivot" index="2"]
+transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0.0121813, 0.0235901, 0.0389748)
+visible = false
+
+[node name="StartingNode" parent="Environment/FifthLevel/Elevator6" index="1"]
+transform = Transform3D(1, 0, -5.68434e-14, 0, 1, 0, 5.68434e-14, 0, 1, 0, -4.97244, 0)
+
+[node name="EndingNode" parent="Environment/FifthLevel/Elevator6" index="2"]
+transform = Transform3D(1, 0, -8.52651e-14, 0, 1, 0, 8.52651e-14, 0, 1, 0, 4.83377, 0)
+
 [node name="InteractableButton2" parent="Environment/FifthLevel/Elevator6" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(1, 1.50996e-07, 1.50996e-07, -1.50996e-07, -4.37114e-08, 1, 1.50996e-07, -1, -4.37114e-08, -0.100043, 7.14185, -4.12307)
 movable_platforms = [NodePath("..")]
@@ -2524,35 +2537,22 @@ movable_platforms = [NodePath("..")]
 transform = Transform3D(1, 1.50996e-07, 1.50996e-07, -1.50996e-07, -4.37114e-08, 1, 1.50996e-07, -1, -4.37114e-08, -0.100043, -3.83524, -4.12307)
 movable_platforms = [NodePath("..")]
 
-[node name="Pivot" parent="Environment/FifthLevel/Elevator6" index="2"]
-transform = Transform3D(1, 0, -8.52651e-14, 0, 1, 0, 8.52651e-14, 0, 1, 0, -4.97244, 0)
-
-[node name="InteractableButton" parent="Environment/FifthLevel/Elevator6/Pivot" index="2"]
-transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0.0121813, 0.0235901, 0.0389748)
-visible = false
-
-[node name="StartingNode" parent="Environment/FifthLevel/Elevator6" index="3"]
-transform = Transform3D(1, 0, -5.68434e-14, 0, 1, 0, 5.68434e-14, 0, 1, 0, -4.97244, 0)
-
-[node name="EndingNode" parent="Environment/FifthLevel/Elevator6" index="4"]
-transform = Transform3D(1, 0, -8.52651e-14, 0, 1, 0, 8.52651e-14, 0, 1, 0, 4.83377, 0)
-
 [node name="Elevator8" parent="Environment/FifthLevel" instance=ExtResource("7_x28al")]
 transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, 4.721, 39.6807, -11.1073)
 activated = true
 animation_duration = 1.0
 metadata/_edit_group_ = true
 
-[node name="InteractableButton2" parent="Environment/FifthLevel/Elevator8" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
-transform = Transform3D(1, 1.50996e-07, 1.50996e-07, -1.50996e-07, -4.37114e-08, 1, 1.50996e-07, -1, -4.37114e-08, -3.24401, 7.46584, 1.87977)
-movable_platforms = [NodePath("..")]
-
 [node name="InteractableButton" parent="Environment/FifthLevel/Elevator8/Pivot" index="2"]
 transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0.0121803, 0.0822601, 0.0389748)
 visible = false
 
-[node name="EndingNode" parent="Environment/FifthLevel/Elevator8" index="3"]
+[node name="EndingNode" parent="Environment/FifthLevel/Elevator8" index="2"]
 transform = Transform3D(1, 0, -8.52651e-14, 0, 1, 0, 8.52651e-14, 0, 1, 0, 3.69798, 0)
+
+[node name="InteractableButton2" parent="Environment/FifthLevel/Elevator8" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(1, 1.50996e-07, 1.50996e-07, -1.50996e-07, -4.37114e-08, 1, 1.50996e-07, -1, -4.37114e-08, -3.24401, 7.46584, 1.87977)
+movable_platforms = [NodePath("..")]
 
 [node name="SlidingPlatform4" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 13.2226, 74.9782, -17.1457)
@@ -2563,10 +2563,10 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform4" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.375444, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.69131, 5, 0)
 
 [node name="AudioStreamPlayer3D" parent="Environment/FifthLevel/SlidingPlatform4/Pivot" index="0"]
-stream = ExtResource("32_6v4iq")
+stream = ExtResource("17_mwgyj")
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform4/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -2584,7 +2584,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.0132, 5, 0)
 
 [node name="SlidingPlatform2" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, -0.0171695, 38.8905, 10.0952)
-activated = true
 animation_duration = 4.0
 animation_transition_type = 1
 move_with_timer = true
@@ -2592,10 +2591,10 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.50321, 0, 0)
 
 [node name="AudioStreamPlayer3D" parent="Environment/FifthLevel/SlidingPlatform2/Pivot" index="0"]
-stream = ExtResource("17_mwgyj")
+stream = ExtResource("29_vjsf5")
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform2/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -2610,7 +2609,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 0, 0)
 
 [node name="SlidingPlatform15" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, -4.82836, 46.5124, 10.0952)
-activated = true
 animation_duration = 4.0
 animation_transition_type = 1
 move_with_timer = true
@@ -2618,10 +2616,10 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform15" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.50321, 0, 0)
 
 [node name="AudioStreamPlayer3D" parent="Environment/FifthLevel/SlidingPlatform15/Pivot" index="0"]
-stream = ExtResource("29_vjsf5")
+stream = ExtResource("32_36tue")
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform15/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -2636,7 +2634,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 0, 0)
 
 [node name="SlidingPlatform14" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, 4.86771, 48.5124, 10.0952)
-activated = true
 animation_duration = 4.0
 animation_transition_type = 1
 move_with_timer = true
@@ -2644,10 +2641,10 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform14" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.50321, 0, 0)
 
 [node name="AudioStreamPlayer3D" parent="Environment/FifthLevel/SlidingPlatform14/Pivot" index="0"]
-stream = ExtResource("29_vjsf5")
+stream = ExtResource("32_36tue")
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform14/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -2662,15 +2659,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 0, 0)
 
 [node name="SlidingPlatform12" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, -0.0171695, 44.2713, 10.0952)
-activated = true
 animation_duration = 4.0
 animation_transition_type = 1
 move_with_timer = true
 auto_start = true
 metadata/_edit_group_ = true
 
+[node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform12" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.50321, 0, 0)
+
 [node name="AudioStreamPlayer3D" parent="Environment/FifthLevel/SlidingPlatform12/Pivot" index="0"]
-stream = ExtResource("31_jpbg6")
+stream = ExtResource("29_vjsf5")
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform12/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -2805,7 +2804,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Elevator puzzle/SlidingPlatform17" index="0"]
-transform = Transform3D(0.9, 0, 0, 0, 0.25, 0, 0, 0, 0.9, -3.01719, -0.136139, 0.874793)
+transform = Transform3D(0.9, 0, 0, 0, 0.25, 0, 0, 0, 0.9, -3.01719, 0, 0.874793)
 
 [node name="AudioStreamPlayer3D" parent="Environment/FifthLevel/Elevator puzzle/SlidingPlatform17/Pivot" index="0"]
 stream = ExtResource("29_vjsf5")
@@ -2837,7 +2836,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform13" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.6187, 5, -2.49664e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5509, 5, -1.97897e-07)
 
 [node name="AudioStreamPlayer3D" parent="Environment/FifthLevel/Part 1/SlidingPlatform13/Pivot" index="0"]
 stream = ExtResource("17_mwgyj")
@@ -2865,7 +2864,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform14" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2873, 5, -3.65614e-09)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.35514, 5, -5.54227e-08)
 
 [node name="AudioStreamPlayer3D" parent="Environment/FifthLevel/Part 1/SlidingPlatform14/Pivot" index="0"]
 stream = ExtResource("29_vjsf5")
@@ -2895,10 +2894,10 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform15" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.6187, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5509, 0, 0)
 
 [node name="AudioStreamPlayer3D" parent="Environment/FifthLevel/Part 1/SlidingPlatform15/Pivot" index="0"]
-stream = ExtResource("17_mwgyj")
+stream = ExtResource("32_36tue")
 
 [node name="InteractableButton" parent="Environment/FifthLevel/Part 1/SlidingPlatform15/Pivot/AnimatableBody3D" index="0" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(7.54979e-08, 0, -1, 0, 3, 0, 1, 0, 7.54979e-08, 0, 0, 0)
@@ -2926,10 +2925,10 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform12" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.6187, 5, -2.49664e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5509, 5, -1.97897e-07)
 
 [node name="AudioStreamPlayer3D" parent="Environment/FifthLevel/Part 1/SlidingPlatform12/Pivot" index="0"]
-stream = ExtResource("31_jpbg6")
+stream = ExtResource("32_36tue")
 
 [node name="InteractableButton" parent="Environment/FifthLevel/Part 1/SlidingPlatform12/Pivot/AnimatableBody3D" index="0" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 3, 0, -1, 0, -4.37114e-08, 0, 5, 0)

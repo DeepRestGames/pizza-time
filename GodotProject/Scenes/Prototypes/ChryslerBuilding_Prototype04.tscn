@@ -792,7 +792,7 @@ directional_shadow_pancake_size = 1024.0
 environment = SubResource("Environment_gk65a")
 
 [node name="Player" parent="." instance=ExtResource("15_olpqq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0464, 175.254, -2.56333)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.23675, 61.9511, 12.4443)
 
 [node name="WeaponPivot" parent="Player/Head" index="3"]
 transform = Transform3D(0.998353, -0.0355339, -0.0450135, 0.0171093, 0.933713, -0.357611, 0.0547371, 0.356253, 0.932783, 0.5, -0.7, -0.1)
@@ -813,9 +813,12 @@ shape = SubResource("BoxShape3D_vak4n")
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Environment"]
 occluder = ExtResource("2_hj2vh")
 bake_mask = 4294967293
+metadata/_edit_lock_ = true
 
 [node name="Chrysler building v6" parent="Environment" instance=ExtResource("2_1p8g1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 30)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="Mesh" parent="Environment/Chrysler building v6" index="0"]
 surface_material_override/0 = ExtResource("2_tjq3o")

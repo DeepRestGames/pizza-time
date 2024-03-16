@@ -2663,11 +2663,13 @@ movable_platforms = [NodePath("../Elevator11")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.80164, 109.607, -13.3787)
 movable_platforms = [NodePath("../Elevator10")]
 
-[node name="InteractableButton3" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("5_bq56s")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 8.04676, 111.184, -13.3787)
+[node name="InteractableButton4" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8285, 110.411, -13.3787)
+movable_platforms = [NodePath("../Elevator13")]
 
-[node name="InteractableButton5" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("5_bq56s")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 8.04676, 108.816, -13.3787)
+[node name="InteractableButton6" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8285, 109.607, -13.3787)
+movable_platforms = [NodePath("../Elevator12")]
 
 [node name="FifthLevel" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 110.013, 0)

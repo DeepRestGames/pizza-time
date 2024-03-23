@@ -798,6 +798,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.644699, 1.4157, 22.8151)
 [node name="WeaponPivot" parent="Player/Head" index="3"]
 transform = Transform3D(0.998353, -0.0355339, -0.0450135, 0.0171093, 0.933713, -0.357611, 0.0547371, 0.356253, 0.932783, 0.5, -0.7, -0.1)
 
+[node name="CinematicBandTop" parent="Player/HUD/CinematicBands" index="0"]
+offset_right = 13440.0
+
+[node name="CinematicBandBottom" parent="Player/HUD/CinematicBands" index="1"]
+offset_right = 13440.0
+
 [node name="PlayerStartingPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 27)
 

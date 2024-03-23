@@ -51,6 +51,13 @@ func disable_all():
 	fps_label.hide()
 
 
+func show_cinematic_bands(show_bands: bool):
+	if show_bands:
+		animation_player.play("start_cinematic")
+	else:
+		animation_player.play("start_cinematic", -1, -2, true)
+
+
 func _unhandled_key_input(_event):
 	
 	if !process_inputs:

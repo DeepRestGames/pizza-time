@@ -8,9 +8,10 @@ extends StaticBody3D
 
 
 func activate_button():
-	var audio_stream = button_sounds.pick_random()
-	audio_stream_player.stream = audio_stream
-	audio_stream_player.play()
-	
-	for movable_platform in movable_platforms:
-		movable_platform.move_platform()
+	if is_visible_in_tree():
+		var audio_stream = button_sounds.pick_random()
+		audio_stream_player.stream = audio_stream
+		audio_stream_player.play()
+		
+		for movable_platform in movable_platforms:
+			movable_platform.move_platform()

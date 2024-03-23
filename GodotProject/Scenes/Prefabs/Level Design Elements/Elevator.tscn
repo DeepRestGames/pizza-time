@@ -26,6 +26,7 @@ auto_start = false
 [node name="Pivot" type="Node3D" parent="."]
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Pivot"]
+volume_db = -10.0
 max_distance = 100.0
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="Pivot"]

@@ -11,7 +11,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 # Camera variables
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
-const SENSITIVITY = 0.003
+const SENSITIVITY = 0.001
 var mouse_captured = false
 # Head bob
 const BOB_FREQUENCY = 2.0

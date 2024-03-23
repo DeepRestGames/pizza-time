@@ -2,6 +2,7 @@ extends Node3D
 
 
 enum LevelsSignals {
+	NO_ANALYTICS = -1,
 	GROUND_LEVEL = 0,
 	FIRST_LEVEL = 1,
 	LABYRINT_LEVEL = 2,
@@ -17,6 +18,8 @@ enum LevelsSignals {
 
 func _on_area_3d_body_entered(body):
 	if body is Player:
-		Analytics.add_event("Entered Level", {"Level": LevelsSignals.find_key(checkpoint_signal)})
+		if checkpoint_signal != LevelsSignals.NO_ANALYTICS:
+			Analytics.add_event("Entered Level", {"Level": LevelsSignals.find_key(checkpoint_signal)})
+		
 		checkpoint_area.set_deferred("monitoring", false)
 		GameManager.set_respawn_point(global_position)

@@ -2494,6 +2494,10 @@ transform = Transform3D(0.905815, -0.228524, -1.93631, 0.705545, 0.328162, -1.31
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.33168, 0.802483, 11.7989)
 movable_platforms = [NodePath("../Elevator")]
 
+[node name="SaveCheckpoint" parent="Environment/FourthLevel" instance=ExtResource("8_axjnh")]
+transform = Transform3D(2.69, 0, 0, 0, 2.69, 0, 0, 0, 2.69, -17.9387, 107.095, -15.3144)
+checkpoint_signal = -1
+
 [node name="---ROT PLAT PUZ 7---" type="Node3D" parent="Environment/FourthLevel"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 105.8, -15.1)
 
@@ -2683,6 +2687,18 @@ movable_platforms = [NodePath("../Elevator12")]
 
 [node name="FifthLevel" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 110.013, 0)
+
+[node name="SaveCheckpoint" parent="Environment/FifthLevel" instance=ExtResource("8_axjnh")]
+transform = Transform3D(2.74477, 0, -1.6145, 0, 3, 0, 1.21088, 0, 3.6597, -14.6281, 23.3782, -10.8586)
+checkpoint_signal = -1
+
+[node name="SaveCheckpoint2" parent="Environment/FifthLevel" instance=ExtResource("8_axjnh")]
+transform = Transform3D(3, 0, 0, 0, 2.92019, 1.37479, 0, -0.687397, 5.84037, -0.0360701, 49.9303, 10.8962)
+checkpoint_signal = -1
+
+[node name="SaveCheckpoint3" parent="Environment/FifthLevel" instance=ExtResource("8_axjnh")]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 10, -1.07714, 64.755, -5.14559)
+checkpoint_signal = -1
 
 [node name="Boombox" parent="Environment/FifthLevel" instance=ExtResource("28_ctcll")]
 transform = Transform3D(0.375557, -0.124826, 0.577387, 0.206798, 0.66868, 0.0100528, -0.553346, 0.165181, 0.395631, -15.3899, 1.4221, 12.9748)

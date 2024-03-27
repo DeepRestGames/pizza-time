@@ -37,7 +37,6 @@
 [ext_resource type="PackedScene" uid="uid://diiam5vtrjabd" path="res://Art/Models/Environment/Props/chair_stool_wood.gltf" id="35_ycekf"]
 [ext_resource type="PackedScene" uid="uid://b6o7ybw4x2lck" path="res://Scenes/Prefabs/NPCs/FinalNPC.tscn" id="36_3hmvg"]
 [ext_resource type="PackedScene" uid="uid://bbekkuxaa8jqu" path="res://Art/Models/Environment/240316_Surroundings_v1.gltf" id="38_fc7s1"]
-[ext_resource type="PackedScene" uid="uid://b0rm78k0h7ikh" path="res://Scenes/Prototypes/pizza_v_3_base_001.tscn" id="39_6c0d1"]
 [ext_resource type="PackedScene" uid="uid://c2qldkcxsibka" path="res://Art/Models/Environment/RoundOpening_col.glb" id="39_xnbjg"]
 [ext_resource type="Material" uid="uid://dq4vaqvrld77n" path="res://Art/Materials/final_pizza_material_red.tres" id="40_rngdp"]
 [ext_resource type="Material" uid="uid://bgxvqrn07bubd" path="res://Art/Materials/final_pizza_material_blue.tres" id="41_nta8e"]
@@ -3998,11 +3997,7 @@ mesh = SubResource("BoxMesh_pgbqk")
 skeleton = NodePath("../240327_pizza_fin_anim_v2_stashed&merged/AnimationPlayer")
 
 [node name="240327_pizza_fin_anim_v2_stashed&merged" type="Node3D" parent="."]
-transform = Transform3D(726.575, 0, -687.087, 0, 1000, 0, 687.087, 0, 726.575, 371.162, 366.395, -431.465)
-
-[node name="Pizza v3_base_001" parent="240327_pizza_fin_anim_v2_stashed&merged" instance=ExtResource("39_6c0d1")]
-transform = Transform3D(1.0185, -2.26368e-17, 9.88543e-24, 0, -4.45625e-09, -1.0185, 2.26152e-16, 0.101947, -4.452e-08, 0, 0.00794989, 0)
-visible = false
+transform = Transform3D(726.575, 0, -687.088, 0, 1000, 0, 687.088, 0, 726.575, 371.162, 366.395, -431.465)
 
 [node name="Pizza red" type="MeshInstance3D" parent="240327_pizza_fin_anim_v2_stashed&merged"]
 transform = Transform3D(0.882049, 2.04527e-08, -0.509251, -0.509251, -1.43812e-08, -0.882049, -2.48794e-07, 0.101947, -2.22601e-08, -0.187815, 0.0079499, 1.06814e-09)

@@ -1,15 +1,13 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dq4vaqvrld77n"]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dq4vaqvrld77n"]
 
-[ext_resource type="Material" uid="uid://bhg34bwe4pycc" path="res://Art/Materials/outline.tres" id="1_18140"]
-[ext_resource type="Shader" path="res://Art/Shaders/cel-shader-emission.gdshader" id="2_4pnmj"]
+[ext_resource type="Shader" path="res://Art/Shaders/cel-shader-emission_alpha.gdshader" id="1_ggpmd"]
 
 [resource]
 render_priority = 0
-next_pass = ExtResource("1_18140")
-shader = ExtResource("2_4pnmj")
-shader_parameter/emission = Color(0.239216, 0, 0.309804, 1)
+shader = ExtResource("1_ggpmd")
+shader_parameter/emission = Color(0.239216, 0, 0.309804, 0)
 shader_parameter/emission_energy = 1.0
-shader_parameter/color = Color(0.639216, 0.639216, 0.639216, 1)
+shader_parameter/color = Color(0.427451, 0.427451, 0.427451, 1)
 shader_parameter/specular = Color(0.301961, 0.301961, 0.301961, 0)
 shader_parameter/fresnel = Color(1, 1, 1, 0)
 shader_parameter/uv_scale = Vector2(1, 1)

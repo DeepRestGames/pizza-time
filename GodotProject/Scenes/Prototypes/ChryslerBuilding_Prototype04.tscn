@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=3 uid="uid://bkgyudfy7qqso"]
+[gd_scene load_steps=99 format=3 uid="uid://bkgyudfy7qqso"]
 
 [ext_resource type="Texture2D" uid="uid://67og26y8jdnm" path="res://Art/Sky/240324_Skybox test_panorama_v3.png" id="1_bnxqc"]
 [ext_resource type="PackedScene" uid="uid://djcjuxcxoilpw" path="res://Art/Models/Environment/Chrysler building v6.gltf" id="2_1p8g1"]
@@ -772,6 +772,18 @@ _data = {
 }
 point_count = 4
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3dw4c"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 1)
+metallic_specular = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_pgbqk"]
+material = SubResource("StandardMaterial3D_3dw4c")
+flip_faces = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_yu8qw"]
+material = ExtResource("23_ho5j1")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4u6m2"]
 resource_name = "Material.001"
 render_priority = 1
@@ -891,7 +903,7 @@ tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/path = NodePath(".:rotation")
-tracks/4/interp = 1
+tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0, 10, 20),
@@ -902,7 +914,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("SkyDarkening:mesh:material:albedo_color")
+tracks/5/path = NodePath("../SkyDarkening:mesh:material:albedo_color")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -914,62 +926,62 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("RisingWater:position")
+tracks/6/path = NodePath("Pizza red:mesh:surface_0/material:albedo_color")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 15, 20),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.000152588, -16.7213, 6.10352e-05), Vector3(-0.000152588, 200.9, 6.10352e-05), Vector3(-0.000152588, 200.9, 6.10352e-05)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Pizza red:mesh:surface_0/material:albedo_color")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
 "times": PackedFloat32Array(0, 6, 10),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.427451, 0.427451, 0.427451, 0), Color(0.427451, 0.427451, 0.427451, 0), Color(0.427451, 0.427451, 0.427451, 1)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Pizza red:mesh:surface_0/material:emission")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(10, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.239216, 0, 0.309804, 1), Color(0.443137, 0, 0.00784314, 1)]
+}
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Pizza red:mesh:surface_0/material:emission")
+tracks/8/path = NodePath("Pizza blue:mesh:surface_0/material:emission")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(10, 20),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.239216, 0, 0.309804, 1), Color(0.443137, 0, 0.00784314, 1)]
+"values": [Color(0.239216, 0, 0.309804, 1), Color(0, 0.176471, 0.458824, 1)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Pizza blue:mesh:surface_0/material:emission")
+tracks/9/path = NodePath("Pizza blue:mesh:surface_0/material:albedo_color")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(10, 20),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.239216, 0, 0.309804, 1), Color(0, 0.176471, 0.458824, 1)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Pizza blue:mesh:surface_0/material:albedo_color")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
 "times": PackedFloat32Array(0, 6, 10),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.427451, 0.427451, 0.427451, 0), Color(0.427451, 0.427451, 0.427451, 0), Color(0.427451, 0.427451, 0.427451, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../RisingWater:position")
+tracks/10/interp = 2
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -55, 0.574), Vector3(0, 110.045, 0.574)]
 }
 
 [sub_resource type="Animation" id="Animation_8jfrk"]
@@ -989,7 +1001,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("SkyDarkening:mesh:material:albedo_color")
+tracks/1/path = NodePath("../SkyDarkening:mesh:material:albedo_color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1001,31 +1013,31 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("RisingWater:position")
+tracks/2/path = NodePath("Pizza red:mesh:surface_0/material:albedo_color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-0.000152588, 200.9, 6.10352e-05)]
+"values": [Color(0.427451, 0.427451, 0.427451, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Pizza red:mesh:surface_0/material:albedo_color")
+tracks/3/path = NodePath("Pizza red:mesh:surface_0/material:emission")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.427451, 0.427451, 0.427451, 0)]
+"values": [Color(0.239216, 0, 0.309804, 1)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Pizza red:mesh:surface_0/material:emission")
+tracks/4/path = NodePath("Pizza blue:mesh:surface_0/material:emission")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -1037,26 +1049,26 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Pizza blue:mesh:surface_0/material:emission")
+tracks/5/path = NodePath("Pizza blue:mesh:surface_0/material:albedo_color")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.239216, 0, 0.309804, 1)]
+"values": [Color(0.427451, 0.427451, 0.427451, 0)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Pizza blue:mesh:surface_0/material:albedo_color")
+tracks/6/path = NodePath("../RisingWater:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.427451, 0.427451, 0.427451, 0)]
+"values": [Vector3(0, -55, 0.574)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wuobq"]
@@ -1064,15 +1076,6 @@ _data = {
 "Final_purple_pizza": SubResource("Animation_2f816"),
 "RESET": SubResource("Animation_8jfrk")
 }
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3dw4c"]
-transparency = 1
-albedo_color = Color(0, 0, 0, 1)
-metallic_specular = 0.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_pgbqk"]
-material = SubResource("StandardMaterial3D_3dw4c")
-flip_faces = true
 
 [node name="MainScene" type="Node3D"]
 
@@ -2888,7 +2891,6 @@ transform = Transform3D(1, 0, -8.52651e-14, 0, 1, 0, 8.52651e-14, 0, 1, 1.28047,
 
 [node name="Elevator11" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("7_x28al")]
 transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, -4.8537, 103.615, -30.9883)
-activated = true
 is_pausable = true
 animation_duration = 2.5
 animation_transition_type = 1
@@ -2897,7 +2899,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---/Elevator11" index="0"]
-transform = Transform3D(1, 0, -6.49532e-14, 0, 1, 0, 6.49532e-14, 0, 1, -0.221107, 1.46893, -3.78646)
+transform = Transform3D(1, 0, -5.7112e-14, 0, 1, 0, 5.7112e-14, 0, 1, -0.00732344, 0.0486598, -5.24817)
 
 [node name="InteractableButton" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---/Elevator11/Pivot" index="2" node_paths=PackedStringArray("movable_platforms")]
 transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0.0121803, -0.00328827, 0.0389786)
@@ -2912,6 +2914,7 @@ transform = Transform3D(1, 0, -8.52651e-14, 0, 1, 0, 8.52651e-14, 0, 1, -0.77489
 
 [node name="Elevator13" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("7_x28al")]
 transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, 4.72718, 103.615, -15.8523)
+activated = true
 is_pausable = true
 animation_duration = 5.0
 animation_transition_type = 1
@@ -2920,7 +2923,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---/Elevator13" index="0"]
-transform = Transform3D(0.966121, -0.258087, -2.50932e-08, 0.258087, 0.966121, 1.09686e-15, 2.42431e-08, -6.47623e-09, 1, -1.58398, 6.75788, 3.0001)
+transform = Transform3D(-0.51131, -0.859396, -2.02588e-07, 0.859396, -0.51131, 8.85544e-15, -1.03585e-07, -1.74103e-07, 1, -0.670971, 2.42601, -2.96883)
 
 [node name="InteractableButton" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---/Elevator13/Pivot" index="2" node_paths=PackedStringArray("movable_platforms")]
 transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0.0121803, -0.00328827, 0.0389786)
@@ -3129,7 +3132,6 @@ movable_platforms = [NodePath("..")]
 
 [node name="SlidingPlatform4" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 13.2226, 74.9782, -17.1457)
-activated = true
 animation_duration = 5.0
 animation_transition_type = 1
 move_with_timer = true
@@ -3137,7 +3139,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform4" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1615, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4507, 5, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform4/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -3163,7 +3165,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45388, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.26322, 0, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform2/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -3186,7 +3188,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform15" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45388, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.26322, 0, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform15/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -3209,7 +3211,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform14" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45388, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.26322, 0, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform14/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -3232,7 +3234,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform12" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45388, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.26322, 0, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform12/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -3372,6 +3374,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, 4.83
 
 [node name="SlidingPlatform13" parent="Environment/FifthLevel/Part 1" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.1657, -38.4352, 14.9558)
+activated = true
 animation_duration = 5.0
 animation_transition_type = 1
 move_with_timer = true
@@ -3379,7 +3382,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform13" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.252, 5, -2.32271e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.55227, 5, -8.33829e-08)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/Part 1/SlidingPlatform13/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -3397,7 +3400,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 5, -2.5332e-07)
 
 [node name="SlidingPlatform14" parent="Environment/FifthLevel/Part 1" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -16.8473, -48.7286, 14.9558)
-activated = true
 animation_duration = 5.0
 animation_transition_type = 1
 move_with_timer = true
@@ -3405,7 +3407,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform14" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65403, 5, -2.10489e-08)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3537, 5, -1.69937e-07)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/Part 1/SlidingPlatform14/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -3423,6 +3425,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 5, -2.5332e-07)
 
 [node name="SlidingPlatform15" parent="Environment/FifthLevel/Part 1" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.016, -49.249, 14.956)
+activated = true
 is_pausable = true
 animation_duration = 5.0
 animation_transition_type = 1
@@ -3431,7 +3434,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform15" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.252, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.55227, 0, 0)
 
 [node name="InteractableButton" parent="Environment/FifthLevel/Part 1/SlidingPlatform15/Pivot/AnimatableBody3D" index="0" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(7.54979e-08, 0, -1, 0, 3, 0, 1, 0, 7.54979e-08, 0, 0, 0)
@@ -3450,6 +3453,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 0, 0)
 
 [node name="SlidingPlatform12" parent="Environment/FifthLevel/Part 1" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -62.4854, 14.9558)
+activated = true
 is_pausable = true
 animation_duration = 5.0
 animation_transition_type = 1
@@ -3458,7 +3462,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform12" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.252, 5, -2.32271e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.55227, 5, -8.33829e-08)
 
 [node name="InteractableButton" parent="Environment/FifthLevel/Part 1/SlidingPlatform12/Pivot/AnimatableBody3D" index="0" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 3, 0, -1, 0, -4.37114e-08, 0, 5, 0)
@@ -4038,16 +4042,27 @@ rotation_mode = 0
 loop = false
 tilt_enabled = false
 
+[node name="SkyDarkening" type="MeshInstance3D" parent="."]
+transform = Transform3D(3000, 0.000732422, 7.27596e-12, 0, -0.000131134, -3000, -0.000732422, 3000, -0.000131134, -3.05176e-05, 399.28, 9.15527e-05)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_pgbqk")
+skeleton = NodePath("../PizzaPresence/AnimationPlayer")
+
+[node name="RisingWater" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.53906, 0, -10000, 0, 100, 0, 10000, 0, -4.53906, 0, -55, 0.574)
+mesh = SubResource("BoxMesh_yu8qw")
+skeleton = NodePath("../PizzaPresence")
+
 [node name="PizzaPresence" type="Node3D" parent="."]
 transform = Transform3D(726.575, 0, -687.088, 0, 1000, 0, 687.088, 0, 726.575, 371.162, 366.395, -431.465)
 
 [node name="Pizza red" type="MeshInstance3D" parent="PizzaPresence"]
-transform = Transform3D(1.0185, -2.26367e-17, 9.88542e-24, 0, -4.45625e-09, -1.0185, 2.26152e-16, 0.101947, -4.452e-08, 0, 0.0079499, 1.06814e-09)
+transform = Transform3D(0.882047, 2.65938e-09, -0.509251, -0.509251, 9.92492e-09, -0.882047, 2.65685e-08, 0.101947, 9.91547e-08, -0.187815, 0.0079499, 1.06814e-09)
 mesh = SubResource("ArrayMesh_go43m")
 skeleton = NodePath("")
 
 [node name="Pizza blue" type="MeshInstance3D" parent="PizzaPresence"]
-transform = Transform3D(1.0185, -2.26367e-17, 9.88542e-24, 0, -4.45625e-09, -1.0185, 2.26152e-16, 0.101947, -4.452e-08, 0, 0.0079499, 1.06814e-09)
+transform = Transform3D(0.882047, -2.65938e-09, 0.509251, 0.509251, 9.92492e-09, -0.882047, -2.65685e-08, 0.101947, 9.91547e-08, 0.187387, 0.0079499, 1.06814e-09)
 mesh = SubResource("ArrayMesh_2iear")
 skeleton = NodePath("")
 
@@ -4056,18 +4071,6 @@ libraries = {
 "": SubResource("AnimationLibrary_wuobq")
 }
 autoplay = "Final_purple_pizza"
-
-[node name="RisingWater" type="MeshInstance3D" parent="PizzaPresence"]
-transform = Transform3D(7.26574, 6.87087, -3.00335e-11, 0, -4.37114e-07, -0.001, -6.87087, 7.26574, -3.17596e-11, -0.000152588, 200.9, 6.10352e-05)
-material_override = ExtResource("23_ho5j1")
-mesh = SubResource("BoxMesh_pgbqk")
-skeleton = NodePath("../AnimationPlayer")
-
-[node name="SkyDarkening" type="MeshInstance3D" parent="PizzaPresence"]
-transform = Transform3D(2.17972, 2.06126, -9.01005e-08, 0, -1.31134e-07, -3, -2.06126, 2.17972, -9.52786e-08, 0.0267774, 0.032885, 0.568512)
-cast_shadow = 0
-mesh = SubResource("BoxMesh_pgbqk")
-skeleton = NodePath("../AnimationPlayer")
 
 [connection signal="body_entered" from="Environment/EndlessVoid" to="Player/HUD" method="_on_endless_void_body_entered"]
 

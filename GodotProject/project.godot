@@ -41,7 +41,8 @@ directories/dtl_directory={
 "MeditationGuy_01": "res://Dialogues/MeditationGuy_01.dtl",
 "MeditationGuy_02": "res://Dialogues/MeditationGuy_02.dtl",
 "MeditationGuy_03": "res://Dialogues/MeditationGuy_03.dtl",
-"MeditationGuy_04": "res://Dialogues/MeditationGuy_04.dtl"
+"MeditationGuy_04": "res://Dialogues/MeditationGuy_04.dtl",
+"Sky/CouchDude_01": "res://Art/Sky/CouchDude_01.dtl"
 }
 layout/style_list=["res://Dialogues/test_style.tres"]
 layout/default_style="res://Dialogues/test_style.tres"

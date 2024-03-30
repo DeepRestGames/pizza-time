@@ -22,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://bcgyb4xywscih" path="res://Scenes/Prefabs/NPCs/CouchNPC.tscn" id="10_0lnli"]
 [ext_resource type="PackedScene" uid="uid://crhigal1rlfrx" path="res://Scenes/Prefabs/Level Design Elements/SlidingPlatform.tscn" id="10_2g3pf"]
 [ext_resource type="PackedScene" uid="uid://clsaosmykk3n0" path="res://Art/Models/Platforms/pizza box v1.glb" id="12_80vqa"]
-[ext_resource type="PackedScene" uid="uid://bn3yvr42eef65" path="res://Scenes/Prefabs/Level Design Elements/LightSphere.tscn" id="13_upr5q"]
 [ext_resource type="Script" path="res://Scripts/Intercom.gd" id="14_s577g"]
 [ext_resource type="PackedScene" uid="uid://dlltw0b60rnrl" path="res://Scenes/Prefabs/Level Design Elements/Rotating platform.tscn" id="14_sahsi"]
 [ext_resource type="Shader" path="res://Art/Shaders/cel-shader-emission.gdshader" id="15_0gg8l"]
@@ -1940,24 +1939,6 @@ movable_platforms = [NodePath("../End of Level Elevator")]
 [node name="InteractableButton9" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(2.98023e-08, 1, 0, -1, 2.98023e-08, 0, 0, 0, 1, 24.2394, 1.9927, 16.9795)
 movable_platforms = [NodePath("../SlidingDoor12"), NodePath("../SlidingDoor14")]
-
-[node name="LightSphere" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("13_upr5q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.233, 2.84914, -0.153933)
-
-[node name="LightSphere6" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("13_upr5q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89542, 2.84914, -6.16545)
-
-[node name="LightSphere2" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("13_upr5q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9464, 2.84914, -3.87129)
-
-[node name="LightSphere3" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("13_upr5q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2282, 2.84914, -5.35471)
-
-[node name="LightSphere4" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("13_upr5q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0455, 2.84914, 12.6159)
-
-[node name="LightSphere5" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("13_upr5q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.68011, 2.84914, 12.5202)
 
 [node name="SecondLevelCeiling" parent="Environment/SecondLevel" instance=ExtResource("3_q6mt2")]
 transform = Transform3D(49, 0, 0, 0, 1, 0, 0, 0, 34.9878, 0.0517502, 6.00008, -3.35715)

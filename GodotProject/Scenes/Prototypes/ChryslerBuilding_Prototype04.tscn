@@ -4129,7 +4129,8 @@ skeleton = NodePath("")
 libraries = {
 "": SubResource("AnimationLibrary_wuobq")
 }
-autoplay = "Final_purple_pizza"
+
+[connection signal="body_entered" from="Environment/EndlessVoid" to="Player/HUD" method="_on_endless_void_body_entered"]
 
 [editable path="Player"]
 [editable path="Environment/Chrysler building v6"]

@@ -91,7 +91,7 @@ func _on_endless_void_body_entered(_body):
 
 
 func last_hide():
-	animation_player.play("fade_to_black", -1, .2)
+	animation_player.play("fade_to_black", -1, .02)
 	await animation_player.animation_finished
 	get_tree().quit()
 

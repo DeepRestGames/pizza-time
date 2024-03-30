@@ -1,12 +1,10 @@
-[gd_scene load_steps=102 format=3 uid="uid://bkgyudfy7qqso"]
+[gd_scene load_steps=99 format=3 uid="uid://bkgyudfy7qqso"]
 
 [ext_resource type="Texture2D" uid="uid://irl85kmk43k0" path="res://Art/Sky/240329_Skybox test_panorama_v3 fin.png" id="1_3032f"]
 [ext_resource type="PackedScene" uid="uid://djcjuxcxoilpw" path="res://Art/Models/Environment/Chrysler building v6.gltf" id="2_1p8g1"]
 [ext_resource type="ArrayOccluder3D" uid="uid://cyetaisjnp06u" path="res://Scenes/Prototypes/ChryslerBuilding_Prototype04_OccluderBake.occ" id="2_hj2vh"]
 [ext_resource type="Material" uid="uid://bqh8kkm1la54r" path="res://Art/Materials/building_material.tres" id="2_tjq3o"]
 [ext_resource type="PackedScene" uid="uid://jjygr33tp3f" path="res://Scenes/Prefabs/Level Design Elements/StaticBox.tscn" id="3_q6mt2"]
-[ext_resource type="Texture2D" uid="uid://bdabpt1olxhy4" path="res://Art/UI/240330_in game menu_without_text-02.png" id="3_qpf02"]
-[ext_resource type="FontFile" uid="uid://43nlb582sp2m" path="res://Art/Fonts/ArcaneNine-eZP1x.ttf" id="4_0nqa5"]
 [ext_resource type="PackedScene" uid="uid://dy0nyqewtis1" path="res://Scenes/Prefabs/Level Design Elements/Drawbridge.tscn" id="4_pigjl"]
 [ext_resource type="PackedScene" uid="uid://cepkyfy5f1jgq" path="res://Art/Models/Environment/Props/couch_pillows.gltf" id="5_3t2rq"]
 [ext_resource type="PackedScene" uid="uid://b8intk1ci0l4v" path="res://Scenes/Prefabs/Level Design Elements/InteractableButton.tscn" id="5_bq56s"]
@@ -57,8 +55,6 @@ reflected_light_source = 2
 tonemap_mode = 3
 tonemap_exposure = 1.8
 adjustment_enabled = true
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aa1be"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vak4n"]
 size = Vector3(50, 1, 120)
@@ -1169,76 +1165,11 @@ shadow_enabled = true
 directional_shadow_max_distance = 2000.0
 directional_shadow_pancake_size = 1024.0
 
+[node name="Player" parent="." instance=ExtResource("15_olpqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.89621, 238.043, -11.0621)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_gk65a")
-
-[node name="Player" parent="." instance=ExtResource("15_olpqq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.73488, 236.994, -10.9131)
-
-[node name="WeaponPivot" parent="Player/Head" index="3"]
-transform = Transform3D(0.998353, -0.0355339, -0.0450135, 0.0171093, 0.933713, -0.357611, 0.0547371, 0.356253, 0.932783, 0.5, -0.7, -0.1)
-
-[node name="pizza_v5" parent="Player/Head/WeaponPivot" index="0"]
-visible = false
-
-[node name="CinematicBandBottom" parent="Player/HUD/CinematicBands" index="1"]
-offset_top = 0.0
-offset_bottom = 80.0
-
-[node name="240326InGameMenuRef" type="Sprite2D" parent="Player/HUD/PauseMenu" index="0"]
-position = Vector2(959, 597)
-scale = Vector2(0.175, 0.175)
-texture = ExtResource("3_qpf02")
-
-[node name="Panel" parent="Player/HUD/PauseMenu" index="1"]
-offset_left = -340.0
-offset_top = -223.0
-offset_right = -190.0
-offset_bottom = -23.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_aa1be")
-
-[node name="MenuTitleLabel" parent="Player/HUD/PauseMenu/Panel" index="0"]
-visible = false
-
-[node name="VBoxContainer" parent="Player/HUD/PauseMenu/Panel" index="1"]
-offset_left = -62.0
-offset_top = -195.0
-offset_right = 113.0
-offset_bottom = 263.0
-theme_override_constants/separation = 65
-
-[node name="ResumeButton" parent="Player/HUD/PauseMenu/Panel/VBoxContainer" index="0"]
-theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("4_0nqa5")
-theme_override_font_sizes/font_size = 44
-alignment = 0
-
-[node name="OptionsButton" parent="Player/HUD/PauseMenu/Panel/VBoxContainer" index="1"]
-theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("4_0nqa5")
-theme_override_font_sizes/font_size = 44
-alignment = 0
-
-[node name="MainMenuButton" parent="Player/HUD/PauseMenu/Panel/VBoxContainer" index="2"]
-theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("4_0nqa5")
-theme_override_font_sizes/font_size = 44
-alignment = 0
-
-[node name="CloseButton" parent="Player/HUD/PauseMenu/Panel/VBoxContainer" index="3"]
-theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("4_0nqa5")
-theme_override_font_sizes/font_size = 44
-text = "QUIT"
-alignment = 0
 
 [node name="PlayerStartingPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 27)
@@ -3021,7 +2952,6 @@ transform = Transform3D(1, 0, -8.52651e-14, 0, 1, 0, 8.52651e-14, 0, 1, 1.28047,
 
 [node name="Elevator11" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("7_x28al")]
 transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, -4.8537, 103.615, -30.9883)
-activated = true
 is_pausable = true
 animation_duration = 2.5
 animation_transition_type = 1
@@ -3030,7 +2960,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---/Elevator11" index="0"]
-transform = Transform3D(1, 0, -7.91124e-14, 0, 1, 0, 7.91124e-14, 0, 1, -0.607147, 4.0336, -1.14697)
+transform = Transform3D(1, 0, -6.41885e-14, 0, 1, 0, 6.41885e-14, 0, 1, -0.200259, 1.33043, -3.929)
 
 [node name="InteractableButton" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---/Elevator11/Pivot" index="2" node_paths=PackedStringArray("movable_platforms")]
 transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0.0121803, -0.00328827, 0.0389786)
@@ -3045,7 +2975,6 @@ transform = Transform3D(1, 0, -8.52651e-14, 0, 1, 0, 8.52651e-14, 0, 1, -0.77489
 
 [node name="Elevator13" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("7_x28al")]
 transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, 4.72718, 103.615, -15.8523)
-activated = true
 is_pausable = true
 animation_duration = 5.0
 animation_transition_type = 1
@@ -3054,7 +2983,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---/Elevator13" index="0"]
-transform = Transform3D(-1, -1.50996e-07, -3.01991e-07, 1.50996e-07, -1, 1.32005e-14, -3.01991e-07, -3.23988e-14, 1, -0.15965, 0, -6.31165)
+transform = Transform3D(0.998279, -0.0586407, -5.64026e-09, 0.0586407, 0.998279, 2.46542e-16, 5.63055e-09, -3.30749e-10, 1, -1.68405, 7.23264, 3.65428)
 
 [node name="InteractableButton" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---/Elevator13/Pivot" index="2" node_paths=PackedStringArray("movable_platforms")]
 transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0.0121803, -0.00328827, 0.0389786)
@@ -3262,6 +3191,7 @@ movable_platforms = [NodePath("..")]
 
 [node name="SlidingPlatform4" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 13.2226, 74.9782, -17.1457)
+activated = true
 animation_duration = 5.0
 animation_transition_type = 1
 move_with_timer = true
@@ -3269,7 +3199,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform4" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.0132, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.485839, 5, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform4/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -3295,7 +3225,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4285, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.65093, 0, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform2/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -3318,7 +3248,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform15" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4285, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.65093, 0, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform15/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -3341,7 +3271,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform14" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4285, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.65093, 0, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform14/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -3364,7 +3294,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform12" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4285, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.65093, 0, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform12/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -3504,7 +3434,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, 4.83
 
 [node name="SlidingPlatform13" parent="Environment/FifthLevel/Part 1" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.1657, -38.4352, 14.9558)
-activated = true
 animation_duration = 5.0
 animation_transition_type = 1
 move_with_timer = true
@@ -3512,7 +3441,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform13" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5342, 5, -2.48589e-07)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/Part 1/SlidingPlatform13/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -3530,6 +3459,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 5, -2.5332e-07)
 
 [node name="SlidingPlatform14" parent="Environment/FifthLevel/Part 1" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -16.8473, -48.7286, 14.9558)
+activated = true
 animation_duration = 5.0
 animation_transition_type = 1
 move_with_timer = true
@@ -3537,7 +3467,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform14" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 5, -2.5332e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.371777, 5, -4.73116e-09)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/Part 1/SlidingPlatform14/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -3555,13 +3485,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 5, -2.5332e-07)
 
 [node name="SlidingPlatform15" parent="Environment/FifthLevel/Part 1" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.016, -49.249, 14.956)
-activated = true
 is_pausable = true
 animation_duration = 5.0
 animation_transition_type = 1
 move_with_timer = true
 auto_start = true
 metadata/_edit_group_ = true
+
+[node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform15" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5342, 0, 0)
 
 [node name="InteractableButton" parent="Environment/FifthLevel/Part 1/SlidingPlatform15/Pivot/AnimatableBody3D" index="0" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(7.54979e-08, 0, -1, 0, 3, 0, 1, 0, 7.54979e-08, 0, 0, 0)
@@ -3580,7 +3512,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 0, 0)
 
 [node name="SlidingPlatform12" parent="Environment/FifthLevel/Part 1" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -62.4854, 14.9558)
-activated = true
 is_pausable = true
 animation_duration = 5.0
 animation_transition_type = 1
@@ -3589,7 +3520,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform12" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5342, 5, -2.48589e-07)
 
 [node name="InteractableButton" parent="Environment/FifthLevel/Part 1/SlidingPlatform12/Pivot/AnimatableBody3D" index="0" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 3, 0, -1, 0, -4.37114e-08, 0, 5, 0)
@@ -4199,8 +4130,6 @@ libraries = {
 "": SubResource("AnimationLibrary_wuobq")
 }
 autoplay = "Final_purple_pizza"
-
-[connection signal="body_entered" from="Environment/EndlessVoid" to="Player/HUD" method="_on_endless_void_body_entered"]
 
 [editable path="Player"]
 [editable path="Environment/Chrysler building v6"]

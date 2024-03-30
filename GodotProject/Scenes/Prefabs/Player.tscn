@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bq4r28jv36sep"]
+[gd_scene load_steps=27 format=3 uid="uid://bq4r28jv36sep"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_6d860"]
 [ext_resource type="Texture2D" uid="uid://ma18qtx1qeta" path="res://Art/Icons/WhiteCircle.png" id="2_jepl7"]
@@ -9,6 +9,8 @@
 [ext_resource type="AudioStream" uid="uid://dv2q0e8ff7ldb" path="res://Audio/SFX/PizzaTime_Jump04.wav" id="6_o22b6"]
 [ext_resource type="PackedScene" uid="uid://bw3e72fqxwb7" path="res://Scenes/Prefabs/pizza_v_5_3.tscn" id="7_kec1n"]
 [ext_resource type="Script" path="res://Scripts/HUD.gd" id="9_7uv1p"]
+[ext_resource type="Texture2D" uid="uid://bdabpt1olxhy4" path="res://Art/UI/240330_in game menu_without_text-02.png" id="10_ciih0"]
+[ext_resource type="FontFile" uid="uid://43nlb582sp2m" path="res://Art/Fonts/ArcaneNine-eZP1x.ttf" id="11_yndsa"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cyhp0"]
 
@@ -171,6 +173,9 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_nsubj"]
+resource_name = "show_pause_menu"
+
 [sub_resource type="Animation" id="Animation_ulkax"]
 resource_name = "start_cinematic"
 length = 1.2
@@ -205,8 +210,12 @@ _data = {
 "attack_melee": SubResource("Animation_jihoy"),
 "attack_throw": SubResource("Animation_la2qo"),
 "fade_to_black": SubResource("Animation_22588"),
+"show_pause_menu": SubResource("Animation_nsubj"),
 "start_cinematic": SubResource("Animation_ulkax")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8b7j0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_it7v1"]
 bg_color = Color(0.219608, 0, 0.423529, 1)
@@ -419,7 +428,7 @@ layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_top = -150.0
-offset_right = 7680.0
+offset_right = 9600.0
 offset_bottom = -70.0
 grow_horizontal = 2
 mouse_filter = 2
@@ -432,9 +441,8 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 1080.0
-offset_right = 7680.0
-offset_bottom = 1160.0
+offset_right = 9600.0
+offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
@@ -453,33 +461,21 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="HUD/PauseMenu"]
+[node name="Panel" type="TextureRect" parent="HUD/PauseMenu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -75.0
-offset_top = -100.0
-offset_right = 75.0
-offset_bottom = 100.0
+offset_left = -544.0
+offset_top = -393.0
+offset_right = 544.0
+offset_bottom = 558.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_it7v1")
-
-[node name="MenuTitleLabel" type="Label" parent="HUD/PauseMenu/Panel"]
-layout_mode = 2
-offset_left = 11.0
-offset_top = 15.0
-offset_right = 139.0
-offset_bottom = 43.0
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 20
-text = "PAUSE"
-horizontal_alignment = 1
+texture = ExtResource("10_ciih0")
+expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HUD/PauseMenu/Panel"]
 layout_mode = 1
@@ -488,78 +484,83 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -43.0
-offset_right = 64.0
-offset_bottom = 80.0
+offset_left = -307.0
+offset_top = -351.5
+offset_right = -132.0
+offset_bottom = 48.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 58
+metadata/_edit_group_ = true
 
 [node name="ResumeButton" type="Button" parent="HUD/PauseMenu/Panel/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.545098, 0.545098, 0, 1)
-theme_override_colors/font_hover_color = Color(0.545098, 0.545098, 0, 1)
+theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 17
-theme_override_styles/normal = SubResource("StyleBoxFlat_oc1ly")
-theme_override_styles/hover = SubResource("StyleBoxFlat_oc1ly")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_oc1ly")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_oc1ly")
-theme_override_styles/focus = SubResource("StyleBoxFlat_oc1ly")
+theme_override_fonts/font = ExtResource("11_yndsa")
+theme_override_font_sizes/font_size = 44
+theme_override_styles/normal = SubResource("StyleBoxFlat_8b7j0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8b7j0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8b7j0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_8b7j0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8b7j0")
 text = "RESUME"
+alignment = 0
 
 [node name="OptionsButton" type="Button" parent="HUD/PauseMenu/Panel/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.545098, 0.545098, 0, 1)
-theme_override_colors/font_hover_color = Color(0.545098, 0.545098, 0, 1)
+theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 17
-theme_override_styles/normal = SubResource("StyleBoxFlat_oc1ly")
-theme_override_styles/hover = SubResource("StyleBoxFlat_oc1ly")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_oc1ly")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_oc1ly")
-theme_override_styles/focus = SubResource("StyleBoxFlat_oc1ly")
+theme_override_fonts/font = ExtResource("11_yndsa")
+theme_override_font_sizes/font_size = 44
+theme_override_styles/normal = SubResource("StyleBoxFlat_8b7j0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8b7j0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8b7j0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_8b7j0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8b7j0")
 text = "OPTIONS"
+alignment = 0
 
 [node name="MainMenuButton" type="Button" parent="HUD/PauseMenu/Panel/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.545098, 0.545098, 0, 1)
-theme_override_colors/font_hover_color = Color(0.545098, 0.545098, 0, 1)
+theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 17
-theme_override_styles/normal = SubResource("StyleBoxFlat_oc1ly")
-theme_override_styles/hover = SubResource("StyleBoxFlat_oc1ly")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_oc1ly")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_oc1ly")
-theme_override_styles/focus = SubResource("StyleBoxFlat_oc1ly")
+theme_override_fonts/font = ExtResource("11_yndsa")
+theme_override_font_sizes/font_size = 44
+theme_override_styles/normal = SubResource("StyleBoxFlat_8b7j0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8b7j0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8b7j0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_8b7j0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8b7j0")
 disabled = true
 text = "MAIN MENU"
+alignment = 0
 
 [node name="CloseButton" type="Button" parent="HUD/PauseMenu/Panel/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.545098, 0.545098, 0, 1)
-theme_override_colors/font_hover_color = Color(0.545098, 0.545098, 0, 1)
+theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 17
-theme_override_styles/normal = SubResource("StyleBoxFlat_oc1ly")
-theme_override_styles/hover = SubResource("StyleBoxFlat_oc1ly")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_oc1ly")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_oc1ly")
-theme_override_styles/focus = SubResource("StyleBoxFlat_oc1ly")
+theme_override_fonts/font = ExtResource("11_yndsa")
+theme_override_font_sizes/font_size = 44
+theme_override_styles/normal = SubResource("StyleBoxFlat_8b7j0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8b7j0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8b7j0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_8b7j0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8b7j0")
 text = "CLOSE"
+alignment = 0
 
 [node name="OptionsMenu" type="Control" parent="HUD"]
 visible = false

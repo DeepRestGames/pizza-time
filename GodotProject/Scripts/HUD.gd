@@ -87,7 +87,7 @@ func _on_endless_void_body_entered(_body):
 	animation_player.play("fade_to_black")
 	await animation_player.animation_finished
 	GameManager.respawn_player()
-	animation_player.play("fade_to_black", -1, -2, true)
+	animation_player.play("fade_to_black", -1, -1, true)
 
 
 func last_hide():

@@ -1,6 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwijqr3vfdybc"]
+[gd_scene load_steps=4 format=3 uid="uid://dwijqr3vfdybc"]
+
+[ext_resource type="Material" uid="uid://iyidfsajr7gb" path="res://Art/Materials/GenericPlatform.tres" id="1_4aapf"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_bkbqo"]
+material = ExtResource("1_4aapf")
 top_radius = 1.0
 bottom_radius = 1.0
 height = 1.0

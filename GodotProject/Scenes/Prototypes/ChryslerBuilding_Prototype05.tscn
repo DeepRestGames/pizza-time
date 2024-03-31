@@ -2620,7 +2620,6 @@ surface_material_override/0 = ExtResource("2_tjq3o")
 
 [node name="240316_Surroundings_v1" parent="Environment/Chrysler building v6" instance=ExtResource("38_fc7s1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -0.1, -30)
-visible = false
 
 [node name="GroundLevel" type="Node3D" parent="Environment"]
 

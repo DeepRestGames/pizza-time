@@ -2571,7 +2571,7 @@ directional_shadow_max_distance = 2000.0
 directional_shadow_pancake_size = 1024.0
 
 [node name="Player" parent="." instance=ExtResource("15_olpqq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.504101, 1.38186, 14.5101)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.504101, 1.01137, 14.5101)
 
 [node name="WeaponPivot" parent="Player/Head" index="3"]
 transform = Transform3D(0.998353, -0.0355339, -0.0450135, 0.0171093, 0.933713, -0.357611, 0.0547371, 0.356253, 0.932783, 0.5, -0.7, -0.1)
@@ -3200,229 +3200,229 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.3356, 0, -2.94995)
 [node name="Pizza box stack C 01" type="Node3D" parent="Environment/GroundLevel/Pizza box corner Mound A 06"]
 
 [node name="pizza box v35" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 01" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.00453488, 0.000108868, 0.199949, 0.000182844, 0.199999, -0.000113079, -0.199949, 0.000185323, 0.00453489, 7.71529, 0.0729145, 29.5858)
+transform = Transform3D(-0.199949, 0.000185323, 0.00453488, 0.000182844, 0.199999, -0.000113079, -0.00453487, -0.000108868, -0.199949, 24.3109, 0.0729147, 30.7257)
 
 [node name="pizza box v36" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 01" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.0141019, 9.9871e-05, 0.199503, 0.000182844, 0.199999, -0.000113079, -0.199502, 0.000190323, 0.0141019, 7.72878, 0.223608, 29.675)
+transform = Transform3D(-0.199502, 0.000190323, 0.0141019, 0.000182844, 0.199999, -0.000113079, -0.0141019, -9.9871e-05, -0.199503, 24.4001, 0.223608, 30.7123)
 
 [node name="pizza box v37" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 01" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.0141019, 9.9871e-05, 0.199503, 0.000182844, 0.199999, -0.000113079, -0.199502, 0.000190323, 0.0141019, 7.72878, 0.37652, 29.675)
+transform = Transform3D(-0.199502, 0.000190323, 0.0141019, 0.000182844, 0.199999, -0.000113079, -0.0141019, -9.9871e-05, -0.199503, 24.4001, 0.37652, 30.7123)
 
 [node name="pizza box v38" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 01" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.00453488, 0.000108868, 0.199949, 0.000182844, 0.199999, -0.000113079, -0.199949, 0.000185323, 0.00453489, 7.7035, 0.537954, 29.6885)
+transform = Transform3D(-0.199949, 0.000185323, 0.00453488, 0.000182844, 0.199999, -0.000113079, -0.00453487, -0.000108868, -0.199949, 24.4136, 0.537954, 30.7375)
 
 [node name="pizza box v39" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 01" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(-0.00603004, 0.000118502, 0.199909, 0.000182844, 0.199999, -0.000113079, -0.199909, 0.000179316, -0.00603005, 7.66689, 0.68815, 29.6373)
+transform = Transform3D(-0.199909, 0.000179316, -0.00603006, 0.000182844, 0.199999, -0.000113079, 0.00603005, -0.000118502, -0.199909, 24.3624, 0.68815, 30.7741)
 
 [node name="pizza box v40" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 01" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(-0.00603004, 0.000118502, 0.199909, 0.000182844, 0.199999, -0.000113079, -0.199909, 0.000179316, -0.00603005, 7.66689, 0.839098, 29.6373)
+transform = Transform3D(-0.199909, 0.000179316, -0.00603006, 0.000182844, 0.199999, -0.000113079, 0.00603005, -0.000118502, -0.199909, 24.3624, 0.839098, 30.7741)
 
 [node name="pizza box v41" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 01" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(-0.00603004, 0.000118502, 0.199909, 0.000182844, 0.199999, -0.000113079, -0.199909, 0.000179316, -0.00603005, 7.71441, 0.997688, 29.7193)
+transform = Transform3D(-0.199909, 0.000179316, -0.00603006, 0.000182844, 0.199999, -0.000113079, 0.00603005, -0.000118502, -0.199909, 24.4444, 0.997688, 30.7266)
 
 [node name="Pizza box stack C 06" type="Node3D" parent="Environment/GroundLevel/Pizza box corner Mound A 06"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.752902)
 
 [node name="pizza box v35" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 06" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.00453488, 0.000108868, 0.199949, 0.000182844, 0.199999, -0.000113079, -0.199949, 0.000185323, 0.00453489, 7.71529, 0.0729145, 29.1767)
+transform = Transform3D(-0.199949, 0.000185323, 0.00453488, 0.000182844, 0.199999, -0.000113079, -0.00453487, -0.000108868, -0.199949, 23.1488, 0.0729147, 31.4786)
 
 [node name="pizza box v36" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 06" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.0141019, 9.9871e-05, 0.199503, 0.000182844, 0.199999, -0.000113079, -0.199502, 0.000190323, 0.0141019, 7.72878, 0.223608, 29.2091)
+transform = Transform3D(-0.199502, 0.000190323, 0.0141019, 0.000182844, 0.199999, -0.000113079, -0.0141019, -9.9871e-05, -0.199503, 23.1813, 0.223608, 31.4652)
 
 [node name="pizza box v37" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 06" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.0141019, 9.9871e-05, 0.199503, 0.000182844, 0.199999, -0.000113079, -0.199502, 0.000190323, 0.0141019, 7.72878, 0.37652, 29.2091)
+transform = Transform3D(-0.199502, 0.000190323, 0.0141019, 0.000182844, 0.199999, -0.000113079, -0.0141019, -9.9871e-05, -0.199503, 23.1813, 0.37652, 31.4652)
 
 [node name="pizza box v38" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 06" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.00453488, 0.000108868, 0.199949, 0.000182844, 0.199999, -0.000113079, -0.199949, 0.000185323, 0.00453489, 7.7035, 0.537954, 29.2226)
+transform = Transform3D(-0.199949, 0.000185323, 0.00453488, 0.000182844, 0.199999, -0.000113079, -0.00453487, -0.000108868, -0.199949, 23.1948, 0.537954, 31.4904)
 
 [node name="pizza box v39" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 06" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(-0.00603004, 0.000118502, 0.199909, 0.000182844, 0.199999, -0.000113079, -0.199909, 0.000179316, -0.00603005, 7.66689, 0.68815, 29.1714)
+transform = Transform3D(-0.199909, 0.000179316, -0.00603006, 0.000182844, 0.199999, -0.000113079, 0.00603005, -0.000118502, -0.199909, 23.1436, 0.68815, 31.527)
 
 [node name="pizza box v40" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 06" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(-0.00603004, 0.000118502, 0.199909, 0.000182844, 0.199999, -0.000113079, -0.199909, 0.000179316, -0.00603005, 7.66689, 0.839098, 29.1714)
+transform = Transform3D(-0.199909, 0.000179316, -0.00603006, 0.000182844, 0.199999, -0.000113079, 0.00603005, -0.000118502, -0.199909, 23.1436, 0.839098, 31.527)
 
 [node name="pizza box v41" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 06" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(-0.00603004, 0.000118502, 0.199909, 0.000182844, 0.199999, -0.000113079, -0.199909, 0.000179316, -0.00603005, 7.71441, 0.997688, 29.2534)
+transform = Transform3D(-0.199909, 0.000179316, -0.00603006, 0.000182844, 0.199999, -0.000113079, 0.00603005, -0.000118502, -0.199909, 23.2256, 0.997688, 31.4795)
 
 [node name="Pizza box stack C 07" type="Node3D" parent="Environment/GroundLevel/Pizza box corner Mound A 06"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.2958)
 
 [node name="pizza box v35" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 07" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(-0.0624729, 0.000164488, 0.189993, 0.000182844, 0.199999, -0.000113079, -0.189993, 0.000138349, -0.0624729, 7.70787, 0.0729145, 29.5501)
+transform = Transform3D(-0.189993, 0.000138349, -0.0624729, 0.000182844, 0.199999, -0.000113079, 0.0624729, -0.000164488, -0.189993, 21.9794, 0.0729147, 33.029)
 
 [node name="pizza box v36" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 07" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(-0.0533055, 0.000157676, 0.192766, 0.000182844, 0.199999, -0.000113079, -0.192765, 0.000146066, -0.0533058, 7.7314, 0.223608, 29.5761)
+transform = Transform3D(-0.192765, 0.000146066, -0.0533058, 0.000182844, 0.199999, -0.000113079, 0.0533055, -0.000157676, -0.192766, 22.0054, 0.223608, 33.0054)
 
 [node name="pizza box v37" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 07" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(-0.0533055, 0.000157676, 0.192766, 0.000182844, 0.199999, -0.000113079, -0.192765, 0.000146066, -0.0533058, 7.7314, 0.37652, 29.5761)
+transform = Transform3D(-0.192765, 0.000146066, -0.0533058, 0.000182844, 0.199999, -0.000113079, 0.0533055, -0.000157676, -0.192766, 22.0054, 0.37652, 33.0054)
 
 [node name="pizza box v38" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 07" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(-0.0624729, 0.000164488, 0.189993, 0.000182844, 0.199999, -0.000113079, -0.189993, 0.000138349, -0.0624729, 7.71208, 0.537954, 29.5973)
+transform = Transform3D(-0.189993, 0.000138349, -0.0624729, 0.000182844, 0.199999, -0.000113079, 0.0624729, -0.000164488, -0.189993, 22.0266, 0.537954, 33.0247)
 
 [node name="pizza box v39" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 07" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.198819, -0.000169463, 0.0216995, 0.000182844, 0.199999, -0.000113079, -0.0216996, 0.000132209, 0.198819, 7.66048, 0.68815, 29.5612)
+transform = Transform3D(-0.0216996, 0.000132209, 0.198819, 0.000182844, 0.199999, -0.000113079, -0.198819, 0.000169463, -0.0216995, 21.9905, 0.68815, 33.0764)
 
 [node name="Pizza box stack C 02" type="Node3D" parent="Environment/GroundLevel/Pizza box corner Mound A 06"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10508, 0, 0)
 
 [node name="pizza box v35" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 02" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(-0.199949, 0.000185323, 0.00453488, 0.000182844, 0.199999, -0.000113079, -0.00453487, -0.000108868, -0.199949, 7.67824, 0.0729145, 29.1901)
+transform = Transform3D(-0.00453486, -0.000108868, -0.199949, 0.000182844, 0.199999, -0.000113079, 0.199949, -0.000185323, -0.00453487, 22.8101, 0.0729147, 29.6577)
 
 [node name="pizza box v36" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 02" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(-0.199502, 0.000190323, 0.0141019, 0.000182844, 0.199999, -0.000113079, -0.0141019, -9.98709e-05, -0.199503, 7.71064, 0.223608, 29.1766)
+transform = Transform3D(-0.0141019, -9.98709e-05, -0.199503, 0.000182844, 0.199999, -0.000113079, 0.199502, -0.000190323, -0.0141019, 22.7966, 0.223608, 29.6253)
 
 [node name="pizza box v37" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 02" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(-0.199502, 0.000190323, 0.0141019, 0.000182844, 0.199999, -0.000113079, -0.0141019, -9.98709e-05, -0.199503, 7.71064, 0.37652, 29.1766)
+transform = Transform3D(-0.0141019, -9.98709e-05, -0.199503, 0.000182844, 0.199999, -0.000113079, 0.199502, -0.000190323, -0.0141019, 22.7966, 0.37652, 29.6253)
 
 [node name="pizza box v38" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 02" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(-0.199949, 0.000185323, 0.00453488, 0.000182844, 0.199999, -0.000113079, -0.00453487, -0.000108868, -0.199949, 7.72418, 0.537954, 29.2019)
+transform = Transform3D(-0.00453486, -0.000108868, -0.199949, 0.000182844, 0.199999, -0.000113079, 0.199949, -0.000185323, -0.00453487, 22.8219, 0.537954, 29.6118)
 
 [node name="pizza box v39" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 02" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(-0.199909, 0.000179316, -0.00603006, 0.000182844, 0.199999, -0.000113079, 0.00603005, -0.000118502, -0.199909, 7.67294, 0.68815, 29.2385)
+transform = Transform3D(0.00603006, -0.000118502, -0.199909, 0.000182844, 0.199999, -0.000113079, 0.199909, -0.000179316, 0.00603007, 22.8585, 0.68815, 29.663)
 
 [node name="pizza box v40" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 02" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(-0.199909, 0.000179316, -0.00603006, 0.000182844, 0.199999, -0.000113079, 0.00603005, -0.000118502, -0.199909, 7.67294, 0.839098, 29.2385)
+transform = Transform3D(0.00603006, -0.000118502, -0.199909, 0.000182844, 0.199999, -0.000113079, 0.199909, -0.000179316, 0.00603007, 22.8585, 0.839098, 29.663)
 
 [node name="pizza box v41" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 02" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(-0.199909, 0.000179316, -0.00603006, 0.000182844, 0.199999, -0.000113079, 0.00603005, -0.000118502, -0.199909, 7.75495, 0.997688, 29.191)
+transform = Transform3D(0.00603006, -0.000118502, -0.199909, 0.000182844, 0.199999, -0.000113079, 0.199909, -0.000179316, 0.00603007, 22.811, 0.997688, 29.581)
 
 [node name="Pizza box stack C 03" type="Node3D" parent="Environment/GroundLevel/Pizza box corner Mound A 06"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.29389, 0, 0)
 
 [node name="pizza box v35" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 03" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.0473702, -0.000153123, -0.19431, 0.000182844, 0.199999, -0.000113079, 0.194309, -0.000150831, 0.0473702, 7.73093, 0.0729145, 29.1785)
+transform = Transform3D(0.194309, -0.000150831, 0.0473702, 0.000182844, 0.199999, -0.000113079, -0.0473702, 0.000153123, 0.19431, 21.6097, 0.0729147, 28.4162)
 
 [node name="pizza box v36" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 03" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.0380136, -0.000145727, -0.196354, 0.000182844, 0.199999, -0.000113079, 0.196354, -0.000157989, 0.0380136, 7.70951, 0.223608, 29.1507)
+transform = Transform3D(0.196354, -0.000157989, 0.0380136, 0.000182844, 0.199999, -0.000113079, -0.0380136, 0.000145727, 0.196354, 21.5819, 0.223608, 28.4376)
 
 [node name="pizza box v37" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 03" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.0380136, -0.000145727, -0.196354, 0.000182844, 0.199999, -0.000113079, 0.196354, -0.000157989, 0.0380136, 7.70951, 0.37652, 29.1507)
+transform = Transform3D(0.196354, -0.000157989, 0.0380136, 0.000182844, 0.199999, -0.000113079, -0.0380136, 0.000145727, 0.196354, 21.5819, 0.37652, 28.4376)
 
 [node name="pizza box v38" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 03" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.0473702, -0.000153123, -0.19431, 0.000182844, 0.199999, -0.000113079, 0.194309, -0.000150831, 0.0473702, 7.73043, 0.537954, 29.1311)
+transform = Transform3D(0.194309, -0.000150831, 0.0473702, 0.000182844, 0.199999, -0.000113079, -0.0473702, 0.000153123, 0.19431, 21.5623, 0.537954, 28.4167)
 
 [node name="pizza box v39" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 03" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.0575649, -0.000160875, -0.191537, 0.000182844, 0.199999, -0.000113079, 0.191537, -0.000142535, 0.0575649, 7.77906, 0.68815, 29.1711)
+transform = Transform3D(0.191537, -0.000142535, 0.0575649, 0.000182844, 0.199999, -0.000113079, -0.0575649, 0.000160875, 0.191537, 21.6023, 0.68815, 28.3681)
 
 [node name="pizza box v40" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 03" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.0575649, -0.000160875, -0.191537, 0.000182844, 0.199999, -0.000113079, 0.191537, -0.000142535, 0.0575649, 7.77906, 0.839098, 29.1711)
+transform = Transform3D(0.191537, -0.000142535, 0.0575649, 0.000182844, 0.199999, -0.000113079, -0.0575649, 0.000160875, 0.191537, 21.6023, 0.839098, 28.3681)
 
 [node name="pizza box v41" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 03" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.0575649, -0.000160875, -0.191537, 0.000182844, 0.199999, -0.000113079, 0.191537, -0.000142535, 0.0575649, 7.71193, 0.997688, 29.1041)
+transform = Transform3D(0.191537, -0.000142535, 0.0575649, 0.000182844, 0.199999, -0.000113079, -0.0575649, 0.000160875, 0.191537, 21.5353, 0.997688, 28.4352)
 
 [node name="Pizza box stack C 04" type="Node3D" parent="Environment/GroundLevel/Pizza box corner Mound A 06"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75538, 1.07533, 0)
 
 [node name="pizza box v35" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 04" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.199949, -0.000185323, -0.00453486, 0.000182844, 0.199999, -0.000113079, 0.00453487, 0.000108868, 0.199949, 7.76104, 0.0729145, 29.1628)
+transform = Transform3D(0.00453486, 0.000108868, 0.199949, 0.000182844, 0.199999, -0.000113079, -0.199949, 0.000185323, 0.00453485, 22.1325, 0.0729147, 28.9246)
 
 [node name="pizza box v36" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 04" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.199502, -0.000190323, -0.0141019, 0.000182844, 0.199999, -0.000113079, 0.0141019, 9.98709e-05, 0.199503, 7.72864, 0.223608, 29.1763)
+transform = Transform3D(0.0141019, 9.98709e-05, 0.199503, 0.000182844, 0.199999, -0.000113079, -0.199502, 0.000190323, 0.0141019, 22.146, 0.223608, 28.957)
 
 [node name="pizza box v37" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 04" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.199502, -0.000190323, -0.0141019, 0.000182844, 0.199999, -0.000113079, 0.0141019, 9.98709e-05, 0.199503, 7.72864, 0.37652, 29.1763)
+transform = Transform3D(0.0141019, 9.98709e-05, 0.199503, 0.000182844, 0.199999, -0.000113079, -0.199502, 0.000190323, 0.0141019, 22.146, 0.37652, 28.957)
 
 [node name="pizza box v38" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 04" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.199949, -0.000185323, -0.00453486, 0.000182844, 0.199999, -0.000113079, 0.00453487, 0.000108868, 0.199949, 7.71511, 0.537954, 29.151)
+transform = Transform3D(0.00453486, 0.000108868, 0.199949, 0.000182844, 0.199999, -0.000113079, -0.199949, 0.000185323, 0.00453485, 22.1207, 0.537954, 28.9705)
 
 [node name="pizza box v39" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 04" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.199909, -0.000179316, 0.00603008, 0.000182844, 0.199999, -0.000113079, -0.00603005, 0.000118502, 0.199909, 7.76634, 0.68815, 29.1144)
+transform = Transform3D(-0.00603006, 0.000118502, 0.199909, 0.000182844, 0.199999, -0.000113079, -0.199909, 0.000179316, -0.00603009, 22.0841, 0.68815, 28.9193)
 
 [node name="pizza box v40" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 04" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.199909, -0.000179316, 0.00603008, 0.000182844, 0.199999, -0.000113079, -0.00603005, 0.000118502, 0.199909, 7.76634, 0.839098, 29.1144)
+transform = Transform3D(-0.00603006, 0.000118502, 0.199909, 0.000182844, 0.199999, -0.000113079, -0.199909, 0.000179316, -0.00603009, 22.0841, 0.839098, 28.9193)
 
 [node name="pizza box v41" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 04" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.199909, -0.000179316, 0.00603008, 0.000182844, 0.199999, -0.000113079, -0.00603005, 0.000118502, 0.199909, 7.68433, 0.997688, 29.1619)
+transform = Transform3D(-0.00603006, 0.000118502, 0.199909, 0.000182844, 0.199999, -0.000113079, -0.199909, 0.000179316, -0.00603009, 22.1316, 0.997688, 29.0013)
 
 [node name="Pizza box stack C 05" type="Node3D" parent="Environment/GroundLevel/Pizza box corner Mound A 06"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.448946, 1.07533, 0)
 
 [node name="pizza box v35" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 05" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.0561309, 5.71931e-05, 0.191962, 0.000182844, 0.199999, -0.000113079, -0.191962, 0.000207186, 0.0561309, 7.7537, 0.0729145, 29.6786)
+transform = Transform3D(-0.191962, 0.000207186, 0.0561309, 0.000182844, 0.199999, -0.000113079, -0.0561309, -5.71931e-05, -0.191962, 23.9547, 0.0729147, 30.2384)
 
 [node name="pizza box v36" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 05" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.0652564, 4.72088e-05, 0.189055, 0.000182844, 0.199999, -0.000113079, -0.189055, 0.000209686, 0.0652565, 7.75835, 0.223608, 29.7134)
+transform = Transform3D(-0.189055, 0.000209686, 0.0652565, 0.000182844, 0.199999, -0.000113079, -0.0652564, -4.72088e-05, -0.189055, 23.9895, 0.223608, 30.2337)
 
 [node name="pizza box v37" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 05" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.0652564, 4.72088e-05, 0.189055, 0.000182844, 0.199999, -0.000113079, -0.189055, 0.000209686, 0.0652565, 7.46675, 0.37652, 29.5916)
+transform = Transform3D(-0.189055, 0.000209686, 0.0652565, 0.000182844, 0.199999, -0.000113079, -0.0652564, -4.72088e-05, -0.189055, 23.8677, 0.37652, 30.5253)
 
 [node name="pizza box v38" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 05" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.0561309, 5.71931e-05, 0.191962, 0.000182844, 0.199999, -0.000113079, -0.191962, 0.000207186, 0.0561309, 7.43882, 0.537954, 29.7003)
+transform = Transform3D(-0.191962, 0.000207186, 0.0561309, 0.000182844, 0.199999, -0.000113079, -0.0561309, -5.71931e-05, -0.191962, 23.9764, 0.537954, 30.5533)
 
 [node name="pizza box v39" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 05" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.0459157, 6.8054e-05, 0.194658, 0.000182844, 0.199999, -0.000113079, -0.194658, 0.000203876, 0.0459158, 7.31871, 0.68815, 29.6407)
+transform = Transform3D(-0.194658, 0.000203876, 0.0459158, 0.000182844, 0.199999, -0.000113079, -0.0459157, -6.8054e-05, -0.194658, 23.9168, 0.68815, 30.6734)
 
 [node name="pizza box v40" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 05" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.0459157, 6.8054e-05, 0.194658, 0.000182844, 0.199999, -0.000113079, -0.194658, 0.000203876, 0.0459158, 7.31871, 0.839098, 29.7795)
+transform = Transform3D(-0.194658, 0.000203876, 0.0459158, 0.000182844, 0.199999, -0.000113079, -0.0459157, -6.8054e-05, -0.194658, 24.0556, 0.839098, 30.6734)
 
 [node name="pizza box v41" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack C 05" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.0459157, 6.8054e-05, 0.194658, 0.000182844, 0.199999, -0.000113079, -0.194658, 0.000203876, 0.0459158, 7.34339, 0.997688, 29.871)
+transform = Transform3D(-0.194658, 0.000203876, 0.0459158, 0.000182844, 0.199999, -0.000113079, -0.0459157, -6.8054e-05, -0.194658, 24.1471, 0.997688, 30.6487)
 
 [node name="Pizza box stack A 03" type="Node3D" parent="Environment/GroundLevel/Pizza box corner Mound A 06"]
 transform = Transform3D(-0.021159, 0.00842678, 0.198699, 0.00126593, 0.199822, -0.00833963, -0.198873, 0.000375334, -0.0211933, 10.5177, 0.669026, 27.0615)
 
 [node name="pizza box v29" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack A 03" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.956734, 0.00529039, -0.290923, 0.00699411, 0.999127, 0.0411704, 0.290887, -0.0414236, 0.955863, 0.162521, -2.89526, 0.171219)
+transform = Transform3D(0.290926, 0.00660467, 0.956728, -0.0408219, 0.99915, 0.00551576, -0.955878, -0.0406596, 0.290949, -10.2138, -0.521974, 55.4613)
 
 [node name="pizza box v30" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack A 03" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.825948, 0.00525568, -0.563726, 0.0191971, 0.999112, 0.0374419, 0.563423, -0.0417467, 0.825116, -1.41618, -2.65051, 7.75674)
+transform = Transform3D(0.563729, 0.00628122, 0.825942, -0.0370933, 0.999152, 0.0177187, -0.825131, -0.040625, 0.563486, -2.62534, -0.585848, 57.0435)
 
 [node name="pizza box v36" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack A 03" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.826575, -0.16187, -0.539053, 0.223574, 0.97338, 0.0505324, 0.516522, -0.162284, 0.840759, -2.9395, -1.76632, 6.72618)
+transform = Transform3D(0.526696, -0.11536, 0.842195, 0.169148, 0.985162, 0.0291625, -0.83306, 0.127096, 0.538393, -3.61228, 0.400109, 58.5329)
 
 [node name="pizza box v31" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack A 03" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.286314, 0.0302731, 0.957656, -0.261414, 0.964048, 0.0476807, -0.921784, -0.263996, 0.283935, -1.6971, -1.47025, 2.9506)
+transform = Transform3D(-0.933265, -0.217395, 0.285936, -0.22684, 0.973932, 9.33275e-05, -0.278502, -0.0647743, -0.95825, -7.36925, 0.832895, 57.2742)
 
 [node name="pizza box v32" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack A 03" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.956514, 0.0320639, -0.289923, 0.047784, 0.963289, 0.264184, 0.287751, -0.266549, 0.919867, -1.14076, -1.24492, 1.1285)
+transform = Transform3D(0.289752, -0.219981, 0.931483, 5.3749e-05, 0.973233, 0.229825, -0.957104, -0.0665416, 0.282007, -9.17841, 1.12559, 56.7071)
 
 [node name="pizza box v33" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack A 03" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.956514, 0.0320639, -0.289923, 0.047784, 0.963289, 0.264184, 0.287751, -0.266549, 0.919867, -1.01282, -0.585281, 0.857697)
+transform = Transform3D(0.289752, -0.219981, 0.931483, 5.3749e-05, 0.973233, 0.229825, -0.957104, -0.0665416, 0.282007, -9.41721, 1.79253, 56.5555)
 
 [node name="pizza box v34" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack A 03" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.99957, 0.0258381, 0.0138467, -0.0282934, 0.973922, 0.225117, -0.00766855, -0.225412, 0.974234, -0.677567, 0.249741, 1.06966)
+transform = Transform3D(-0.00897871, -0.178381, 0.983923, -0.063234, 0.982093, 0.177472, -0.997959, -0.0606239, -0.020098, -9.1654, 2.60403, 56.1913)
 
 [node name="Pizza box stack A 04" type="Node3D" parent="Environment/GroundLevel/Pizza box corner Mound A 06"]
 transform = Transform3D(-0.199286, 0.00196245, 0.0167725, 0.00126593, 0.199822, -0.00833963, -0.0168392, -0.00820367, -0.199121, 9.00343, 0.669027, 25.2451)
 
 [node name="pizza box v29" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack A 04" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.956734, 0.00529039, -0.290923, 0.00699411, 0.999127, 0.0411704, 0.290887, -0.0414236, 0.955863, 0.162521, -2.89526, 0.171219)
+transform = Transform3D(0.290925, 0.00660464, 0.956725, -0.0408218, 0.999149, 0.00551579, -0.955875, -0.0406595, 0.290948, -56.3707, -3.22586, -16.3318)
 
 [node name="pizza box v31" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack A 04" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.300657, 0.00500837, 0.953718, -0.0394174, 0.999195, 0.00717868, -0.952916, -0.0397514, 0.300613, -0.985016, -2.12537, 1.4312)
+transform = Transform3D(-0.953695, 0.00827822, 0.300649, -0.00425168, 0.999148, -0.0409976, -0.300733, -0.0403773, -0.952851, -55.0752, -2.47721, -15.2099)
 
 [node name="pizza box v32" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack A 04" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.952545, 0.00683953, -0.304327, 0.00638987, 0.999078, 0.0424549, 0.304337, -0.0423846, 0.951622, -0.421173, -1.48083, -0.285561)
+transform = Transform3D(0.304331, 0.00564248, 0.952549, -0.0419222, 0.999092, 0.00747567, -0.951644, -0.0422077, 0.304291, -56.7591, -1.77138, -15.7993)
 
 [node name="pizza box v33" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack A 04" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.952545, 0.00683953, -0.304327, 0.00638987, 0.999078, 0.0424549, 0.304337, -0.0423846, 0.951622, -0.30986, -0.77417, -0.399139)
+transform = Transform3D(0.304331, 0.00564248, 0.952549, -0.0419222, 0.999092, 0.00747567, -0.951644, -0.0422077, 0.304291, -56.8385, -1.06446, -15.9357)
 
 [node name="Pizza box stack B 02" type="Node3D" parent="Environment/GroundLevel/Pizza box corner Mound A 06"]
 transform = Transform3D(-0.0198176, 0.0235597, 0.197616, 0.0338246, 0.196103, -0.0199872, -0.19612, 0.0314409, -0.023416, 9.71467, -1.18637, 30.1433)
 
 [node name="pizza box v29" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack B 02" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(-0.198005, 0.139051, -0.970288, 0.0496886, 0.990039, 0.131741, 0.978943, -0.0221268, -0.20294, 12.8258, 4.14288, -3.22139)
+transform = Transform3D(0.950865, 0.245772, -0.188297, -0.226763, 0.966907, 0.116931, 0.210805, -0.0684871, 0.975127, -2.19681, 13.5003, 63.1647)
 
 [node name="pizza box v31" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack B 02" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(-0.184427, 0.145719, -0.971988, 0.0572758, 0.988862, 0.137382, 0.981179, -0.0303342, -0.190719, 11.5583, 5.02454, -3.631)
+transform = Transform3D(0.955425, 0.237741, -0.17507, -0.219171, 0.968406, 0.118978, 0.197824, -0.0753035, 0.977346, -2.3934, 14.3738, 64.4875)
 
 [node name="pizza box v32" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack B 02" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.970547, 0.150871, -0.187836, -0.142574, 0.988139, 0.0570025, 0.194208, -0.0285428, 0.980544, 12.0662, 5.73138, -3.51341)
+transform = Transform3D(0.177011, 0.239423, 0.954643, -0.124996, 0.967572, -0.219489, -0.976244, -0.0804757, 0.201199, -2.0778, 15.0554, 64.0324)
 
 [node name="pizza box v33" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack B 02" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.311716, 0.161218, 0.936399, -0.0816777, 0.9864, -0.142636, -0.946658, -0.0320207, 0.320644, 12.2188, 6.44334, -3.50401)
+transform = Transform3D(-0.925004, 0.235905, 0.297853, 0.194877, 0.967511, -0.161078, -0.326175, -0.0909545, -0.940926, -1.87514, 15.7475, 63.931)
 
 [node name="pizza box v34" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack B 02" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(-0.847958, 0.164246, 0.503979, 0.118932, 0.985492, -0.121065, -0.516552, -0.0427191, -0.85519, 12.5862, 7.15362, -3.42586)
+transform = Transform3D(-0.490403, 0.225441, -0.841833, 0.196446, 0.969695, 0.145246, 0.849069, -0.0941462, -0.519831, -1.6005, 16.4336, 63.6158)
 
 [node name="pizza box v35" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack B 02" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(-0.47761, 0.809371, -0.341772, 0.0548086, 0.415698, 0.907847, 0.876862, 0.414865, -0.242902, 16.0872, 5.45308, -2.05823)
+transform = Transform3D(0.845862, 0.533398, -0.00256633, -0.212997, 0.342172, 0.915175, 0.489033, -0.773567, 0.403043, -0.63446, 14.6641, 60.0165)
 
 [node name="pizza box v36" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack B 02" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.373301, 0.806153, -0.459096, -0.89516, 0.442944, 0.0499126, 0.243589, 0.39233, 0.886988, 16.9122, 5.35541, -1.61861)
+transform = Transform3D(0.007502, 0.518831, 0.854848, -0.901084, 0.374174, -0.219189, -0.433581, -0.768645, 0.47032, -0.213203, 14.5071, 59.1911)
 
 [node name="pizza box v37" parent="Environment/GroundLevel/Pizza box corner Mound A 06/Pizza box stack B 02" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.508793, 0.729442, -0.457217, -0.803822, 0.592676, 0.0510625, 0.308228, 0.341539, 0.887892, 18.3033, 4.99906, -0.8638)
+transform = Transform3D(0.0979387, 0.507488, 0.856079, -0.821609, 0.52664, -0.218202, -0.56158, -0.681987, 0.468536, 0.459221, 14.0546, 57.7858)
 
 [node name="pizza box v35" parent="Environment/GroundLevel" instance=ExtResource("22_yjrt6")]
 transform = Transform3D(0.00421211, -0.000116866, -0.199956, 0.000182844, 0.199999, -0.000113079, 0.199955, -0.000180385, 0.0042119, -7.85289, 0.0729146, 29.1768)
@@ -3752,7 +3752,7 @@ transform = Transform3D(0.991581, 8.08924e-05, 0.129506, -6.55247e-05, 1, -0.000
 transform = Transform3D(0.991581, 8.08924e-05, 0.129506, -6.55247e-05, 1, -0.00012316, -0.129504, 0.000113616, 0.991577, 0.0244751, 19.9278, -0.264717)
 
 [node name="pizza box v39" parent="Environment/GroundLevel" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.199955, -0.000180385, 0.0042119, 0.000182844, 0.199999, -0.000113079, -0.00421212, 0.000116866, 0.199956, -12.6791, 0.0729146, 28.9636)
+transform = Transform3D(0.199955, -0.000180385, 0.0042119, 0.000182844, 0.199999, -0.000113079, -0.00421212, 0.000116866, 0.199956, -7.61902, 0.0729146, 28.0522)
 
 [node name="pizza box v36" parent="Environment/GroundLevel/pizza box v39" instance=ExtResource("22_yjrt6")]
 transform = Transform3D(0.998854, -2.60128e-05, -0.0478725, 2.81159e-05, 1, 4.31151e-05, 0.0478735, -4.44044e-05, 0.998849, -0.159714, 0.753657, 0.0707054)
@@ -6929,7 +6929,7 @@ transform = Transform3D(0.999575, 1.6858e-05, 0.0291439, -1.60885e-05, 1, -2.688
 transform = Transform3D(0.997034, 4.62108e-05, 0.076963, -4.08028e-05, 1, -7.20383e-05, -0.0769622, 6.86698e-05, 0.997034, -0.213531, 18.4224, -0.0561829)
 
 [node name="pizza box v47" parent="Environment/GroundLevel" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.199955, -0.000180385, 0.0042119, 0.000182844, 0.199999, -0.000113079, -0.00421212, 0.000116866, 0.199956, -28.7327, 0.0729146, 22.8167)
+transform = Transform3D(0.199955, -0.000180385, 0.0042119, 0.000182844, 0.199999, -0.000113079, -0.00421212, 0.000116866, 0.199956, -7.53341, 0.0729146, 25.8161)
 
 [node name="pizza box v36" parent="Environment/GroundLevel/pizza box v47" instance=ExtResource("22_yjrt6")]
 transform = Transform3D(0.998854, -2.60128e-05, -0.0478725, 2.81159e-05, 1, 4.31151e-05, 0.0478735, -4.44044e-05, 0.998849, -0.159714, 0.753657, 0.0707054)
@@ -7610,7 +7610,7 @@ transform = Transform3D(0.999575, 1.6858e-05, 0.0291439, -1.60885e-05, 1, -2.688
 transform = Transform3D(0.999575, 1.6858e-05, 0.0291439, -1.60885e-05, 1, -2.68871e-05, -0.0291426, 2.63989e-05, 0.99957, -0.134415, 17.6152, 0.0633202)
 
 [node name="pizza box v56" parent="Environment/GroundLevel" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(-0.199956, 0.000180385, -0.00421189, 0.000182844, 0.199999, -0.000113079, 0.00421211, -0.000116866, -0.199956, -26.8523, 0.0729146, 25.2031)
+transform = Transform3D(-0.199956, 0.000180385, -0.00421189, 0.000182844, 0.199999, -0.000113079, 0.00421211, -0.000116866, -0.199956, -7.70464, 0.0729146, 26.8932)
 
 [node name="pizza box v36" parent="Environment/GroundLevel/pizza box v56" instance=ExtResource("22_yjrt6")]
 transform = Transform3D(0.998854, -2.60129e-05, -0.0478725, 2.81158e-05, 1, 4.31152e-05, 0.0478735, -4.44044e-05, 0.998849, -0.159714, 0.753657, 0.0706978)
@@ -10779,7 +10779,7 @@ transform = Transform3D(-0.136712, 0.0364534, 0.479563, -0.0886244, 0.488115, -0
 transform = Transform3D(0.249725, 0.11337, -0.418073, -0.134487, 0.479016, 0.0495635, 0.411765, 0.0876961, 0.269738, -9.80905, 4.99904, 5.86389)
 
 [node name="pizza box v5" parent="Environment/GroundLevel/PizzaBoxesPuzzle" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(-0.498548, -0.0286135, -0.0251266, -0.0231316, 0.489632, -0.0986157, 0.0302491, -0.0971668, -0.489534, -9.80905, 5.26138, -1.11068)
+transform = Transform3D(-0.498548, -0.0286135, -0.0251266, -0.0231316, 0.489632, -0.0986157, 0.0302491, -0.0971667, -0.489534, -9.80905, 5.26138, -1.11068)
 
 [node name="pizza box v12" parent="Environment/GroundLevel/PizzaBoxesPuzzle" instance=ExtResource("22_yjrt6")]
 transform = Transform3D(-0.384997, 0.0177595, 0.318531, -0.135788, 0.442624, -0.1888, -0.288685, -0.231881, -0.335995, -8.29508, 5.7666, 4.95514)
@@ -12446,7 +12446,6 @@ transform = Transform3D(1, 0, -8.52651e-14, 0, 1, 0, 8.52651e-14, 0, 1, 1.28047,
 
 [node name="Elevator11" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("7_x28al")]
 transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, -4.8537, 103.615, -30.9883)
-activated = true
 is_pausable = true
 animation_duration = 2.5
 animation_transition_type = 1
@@ -12455,7 +12454,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---/Elevator11" index="0"]
-transform = Transform3D(1, 0, -7.70986e-14, 0, 1, 0, 7.70986e-14, 0, 1, -0.552242, 3.66884, -1.52237)
+transform = Transform3D(1, 0, -5.70343e-14, 0, 1, 0, 5.70343e-14, 0, 1, -0.00520444, 0.0345821, -5.26266)
 
 [node name="InteractableButton" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---/Elevator11/Pivot" index="2" node_paths=PackedStringArray("movable_platforms")]
 transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0.0121803, -0.00328827, 0.0389786)
@@ -12479,7 +12478,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---/Elevator13" index="0"]
-transform = Transform3D(0.995909, -0.0903562, -8.69758e-09, 0.0903562, 0.995909, 3.80183e-16, 8.662e-09, -7.85881e-10, 1, -1.66832, 7.15802, 3.55146)
+transform = Transform3D(0.442407, -0.896814, -1.06943e-07, 0.896814, 0.442407, 4.67464e-15, 4.73121e-08, -9.59075e-08, 1, -1.16296, 4.76029, 0.247602)
 
 [node name="InteractableButton" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---/Elevator13/Pivot" index="2" node_paths=PackedStringArray("movable_platforms")]
 transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0.0121803, -0.00328827, 0.0389786)
@@ -12694,7 +12693,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform4" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.749195, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.21192, 5, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform4/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -12712,7 +12711,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.0132, 5, 0)
 
 [node name="SlidingPlatform2" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, -0.0171695, 38.8905, 10.0952)
-activated = true
 animation_duration = 4.0
 animation_transition_type = 1
 move_with_timer = true
@@ -12720,7 +12718,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20928, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3931, 0, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform2/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -12735,7 +12733,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 0, 0)
 
 [node name="SlidingPlatform15" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, -4.82836, 46.5124, 10.0952)
-activated = true
 animation_duration = 4.0
 animation_transition_type = 1
 move_with_timer = true
@@ -12743,7 +12740,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform15" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20928, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3931, 0, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform15/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -12758,7 +12755,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 0, 0)
 
 [node name="SlidingPlatform14" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, 4.86771, 48.5124, 10.0952)
-activated = true
 animation_duration = 4.0
 animation_transition_type = 1
 move_with_timer = true
@@ -12766,7 +12762,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform14" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20928, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3931, 0, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform14/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -12781,7 +12777,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 0, 0)
 
 [node name="SlidingPlatform12" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, -0.0171695, 44.2713, 10.0952)
-activated = true
 animation_duration = 4.0
 animation_transition_type = 1
 move_with_timer = true
@@ -12789,7 +12784,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform12" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20928, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3931, 0, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform12/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -12937,7 +12932,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform13" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3327, 5, -2.46024e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8568, 5, -1.63613e-07)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/Part 1/SlidingPlatform13/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -12962,7 +12957,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform14" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.573303, 5, -7.29577e-09)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.04921, 5, -8.97069e-08)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/Part 1/SlidingPlatform14/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -12989,7 +12984,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform15" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3327, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8568, 0, 0)
 
 [node name="InteractableButton" parent="Environment/FifthLevel/Part 1/SlidingPlatform15/Pivot/AnimatableBody3D" index="0" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(7.54979e-08, 0, -1, 0, 3, 0, 1, 0, 7.54979e-08, 0, 0, 0)
@@ -13017,7 +13012,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform12" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3327, 5, -2.46024e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8568, 5, -1.63613e-07)
 
 [node name="InteractableButton" parent="Environment/FifthLevel/Part 1/SlidingPlatform12/Pivot/AnimatableBody3D" index="0" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 3, 0, -1, 0, -4.37114e-08, 0, 5, 0)
@@ -13691,4 +13686,5 @@ libraries = {
 [editable path="Environment/FifthLevel/Part 1/SlidingPlatform15"]
 [editable path="Environment/FifthLevel/Part 1/SlidingPlatform12"]
 [editable path="Environment/FifthLevel/Part 1/SlidingPlatform16"]
+[editable path="Environment/FifthLevel/FlavourBox-53"]
 [editable path="Environment/SixthLevel/chair_stool_wood"]

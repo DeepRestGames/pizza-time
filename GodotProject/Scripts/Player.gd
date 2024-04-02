@@ -7,6 +7,9 @@ const WALK_SPEED = 5.0
 const SPRINT_SPEED = 8.0
 const JUMP_VELOCITY = 4.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+# Coyote effect
+@export var hang_time: float = .1
+var hang_time_counter: float
 
 # Camera variables
 @onready var head = $Head
@@ -79,9 +82,12 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+		hang_time_counter -= delta
+	else:
+		hang_time_counter = hang_time
 	
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and hang_time_counter > 0:
 		velocity.y = JUMP_VELOCITY
 		
 		audio_stream_player.stream = jumping_sounds.pick_random()

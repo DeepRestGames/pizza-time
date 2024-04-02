@@ -90,8 +90,11 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and hang_time_counter > 0:
 		velocity.y = JUMP_VELOCITY
 		
-		audio_stream_player.stream = jumping_sounds.pick_random()
-		audio_stream_player.play()
+		#40% chance to play jump sound
+		var randomNumber = randi_range(1,10)
+		if randomNumber <= 4:
+			audio_stream_player.stream = jumping_sounds.pick_random()
+			audio_stream_player.play()
 	
 	# Sprint
 	if Input.is_action_pressed("sprint") and is_on_floor():
@@ -122,6 +125,9 @@ func _physics_process(delta):
 			#velocity.y = 2
 		
 	else:
+		if audio_stream_player.stream == walking_sound:
+			audio_stream_player.stop()
+		
 		velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
 		velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
 	

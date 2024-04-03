@@ -559,7 +559,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_8b7j0")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8b7j0")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_8b7j0")
 theme_override_styles/focus = SubResource("StyleBoxFlat_8b7j0")
-text = "CLOSE"
+text = "QUIT"
 alignment = 0
 
 [node name="OptionsMenu" type="Control" parent="HUD"]

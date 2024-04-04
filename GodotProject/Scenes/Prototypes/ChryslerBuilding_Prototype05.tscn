@@ -54,7 +54,6 @@ ambient_light_sky_contribution = 0.13
 reflected_light_source = 2
 tonemap_mode = 3
 tonemap_exposure = 1.8
-adjustment_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vak4n"]
 size = Vector3(50, 1, 120)

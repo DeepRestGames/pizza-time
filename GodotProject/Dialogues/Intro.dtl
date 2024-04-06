@@ -3,10 +3,7 @@
 [wait time="4.0"]
 [sound path="res://Audio/Intro/Doorbell-old-tring.wav" volume="0.0"]
 [wait time="3.0"]
-Pizza Pasta Pizzeria, how can I help you today?
-Hey there, I wanted some pizza for a small party I'm giving. I was thinking around 100. How fast can you make them?
-Uh that's a lot of pizza. Let me check.
-[wait time="2.0" hide_text="false"]
-I think we can make them in around an hour, is that ok?
-Sounds good, thanks. The place is 405 Lexington Ave, the big building, you can't miss it. Name's Jimmy Patrinki.
-Pff- of course. Thanks for the order, bye!
+where am I?
+...
+Pizza?\
+Was I sleeping on the job?

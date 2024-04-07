@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="pizza-time"
-run/main_scene="res://Scenes/Prototypes/ChryslerBuilding_Prototype04.tscn"
+run/main_scene="res://Scenes/Prototypes/ChryslerBuilding_Prototype05.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameManager="*res://Scripts/Utils/GameManager.gd"
 Analytics="*res://addons/quiver_analytics/analytics.tscn"
+Music="*res://Scenes/Utils/Music.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]

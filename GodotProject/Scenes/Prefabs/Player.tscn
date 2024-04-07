@@ -652,7 +652,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_oc1ly")
 button_pressed = true
 text = "SHOW FPS"
 
-[node name="AudioVolumeLabel" type="Label" parent="HUD/OptionsMenu/Panel/VBoxContainer"]
+[node name="SFXVolumeLabel" type="Label" parent="HUD/OptionsMenu/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -660,9 +660,26 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 13
 theme_override_styles/normal = SubResource("StyleBoxFlat_oc1ly")
-text = "AUDIO VOLUME:"
+text = "SFX VOLUME:"
 
-[node name="AudioVolumeSlider" type="HSlider" parent="HUD/OptionsMenu/Panel/VBoxContainer"]
+[node name="SFXVolumeSlider" type="HSlider" parent="HUD/OptionsMenu/Panel/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+focus_mode = 0
+min_value = -30.0
+max_value = 0.0
+
+[node name="MusicVolumeLabel" type="Label" parent="HUD/OptionsMenu/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_oc1ly")
+text = "MUSIC VOLUME:"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="HUD/OptionsMenu/Panel/VBoxContainer"]
 clip_contents = true
 layout_mode = 2
 focus_mode = 0
@@ -689,6 +706,7 @@ text = "BACK"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 volume_db = -20.0
 pitch_scale = 0.8
+bus = &"SFX"
 
 [connection signal="body_entered" from="Head/WeaponPivot/WeaponModel/WeaponHitbox" to="." method="_on_weapon_hitbox_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
@@ -697,5 +715,6 @@ pitch_scale = 0.8
 [connection signal="pressed" from="HUD/PauseMenu/Panel/VBoxContainer/CloseButton" to="HUD" method="_on_close_button_pressed"]
 [connection signal="toggled" from="HUD/OptionsMenu/Panel/VBoxContainer/TimerCheckButton" to="HUD" method="_on_timer_check_button_toggled"]
 [connection signal="toggled" from="HUD/OptionsMenu/Panel/VBoxContainer/FPSCheckButton" to="HUD" method="_on_fps_check_button_toggled"]
-[connection signal="value_changed" from="HUD/OptionsMenu/Panel/VBoxContainer/AudioVolumeSlider" to="HUD" method="_on_audio_volume_slider_value_changed"]
+[connection signal="value_changed" from="HUD/OptionsMenu/Panel/VBoxContainer/SFXVolumeSlider" to="HUD" method="_on_sfx_volume_slider_value_changed"]
+[connection signal="value_changed" from="HUD/OptionsMenu/Panel/VBoxContainer/MusicVolumeSlider" to="HUD" method="_on_music_volume_slider_value_changed"]
 [connection signal="pressed" from="HUD/OptionsMenu/Panel/VBoxContainer/BackButton" to="HUD" method="_on_options_back_button_pressed"]

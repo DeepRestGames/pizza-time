@@ -10,7 +10,8 @@ extends Control
 @onready var pause_menu = $PauseMenu
 @onready var options_menu = $OptionsMenu
 
-var master_bus = AudioServer.get_bus_index("Master")
+var SFX_audio_bus = AudioServer.get_bus_index("SFX")
+var music_audio_bus = AudioServer.get_bus_index("Music")
 
 @onready var death_screen = $DeathScreen
 @onready var animation_player = $"../AnimationPlayer"
@@ -132,10 +133,19 @@ func _on_options_back_button_pressed():
 	pause_menu.show()
 
 
-func _on_audio_volume_slider_value_changed(value):
-	AudioServer.set_bus_volume_db(master_bus, value)
+func _on_sfx_volume_slider_value_changed(value):
+	AudioServer.set_bus_volume_db(SFX_audio_bus, value)
 	
 	if value == -30:
-		AudioServer.set_bus_mute(master_bus, true)
+		AudioServer.set_bus_mute(SFX_audio_bus, true)
 	else:
-		AudioServer.set_bus_mute(master_bus, false)
+		AudioServer.set_bus_mute(SFX_audio_bus, false)
+
+
+func _on_music_volume_slider_value_changed(value):
+	AudioServer.set_bus_volume_db(music_audio_bus, value)
+	
+	if value == -30:
+		AudioServer.set_bus_mute(music_audio_bus, true)
+	else:
+		AudioServer.set_bus_mute(music_audio_bus, false)

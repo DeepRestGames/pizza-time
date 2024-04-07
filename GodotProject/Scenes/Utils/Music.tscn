@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://5oxge8gii7wg"]
+
+[ext_resource type="Script" path="res://Scripts/Music.gd" id="1_k5egl"]
+[ext_resource type="AudioStream" uid="uid://b7o8u2q80b7rx" path="res://Audio/Music/PizzaTime_MainLoop_v0.3.wav" id="2_spc4m"]
+[ext_resource type="AudioStream" uid="uid://cisdruhg7hmuu" path="res://Audio/Music/PizzaTime_MainLoop_Distorted_v0.1.wav" id="3_w8gmm"]
+[ext_resource type="AudioStream" uid="uid://bpllqd6tmanql" path="res://Audio/Music/PizzaTime_Final_v0.1.wav" id="4_baod7"]
+
+[node name="Music" type="Node2D"]
+script = ExtResource("1_k5egl")
+
+[node name="AudioStreamPlayer_MainLoop" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("2_spc4m")
+autoplay = true
+bus = &"Main_Loop"
+
+[node name="AudioStreamPlayer_DistortedLoop" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("3_w8gmm")
+autoplay = true
+bus = &"Distorted_Loop"
+
+[node name="AudioStreamPlayer_Music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("4_baod7")
+bus = &"Music"

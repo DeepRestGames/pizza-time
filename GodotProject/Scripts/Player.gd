@@ -185,6 +185,4 @@ func _on_animation_player_animation_finished(anim_name):
 		projectile_instance.transform.basis = projectile_throw_trajectory.global_transform.basis
 		get_parent().add_child(projectile_instance)
 		
-		Music.switch_loops()
-		
 		Analytics.add_event("Thrown Pizzas")

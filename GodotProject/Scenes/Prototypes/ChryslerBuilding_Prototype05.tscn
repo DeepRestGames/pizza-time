@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://bq4r28jv36sep" path="res://Scenes/Prefabs/Player.tscn" id="15_olpqq"]
 [ext_resource type="PackedScene" uid="uid://dsmjjvqy12l4b" path="res://Scenes/Prefabs/Level Design Elements/PizzaBoxPlatformAnimated.tscn" id="22_yjrt6"]
 [ext_resource type="Material" uid="uid://b0hpogyokd4q2" path="res://Art/Materials/water_material.tres" id="23_ho5j1"]
+[ext_resource type="PackedScene" uid="uid://dgxch3uvmwmpl" path="res://Scenes/Utils/MusicChangeArea.tscn" id="23_itlt7"]
 [ext_resource type="PackedScene" uid="uid://b2rnrj5exvrc6" path="res://Scenes/Prefabs/NPCs/MeditatingNPC.tscn" id="23_pny7q"]
 [ext_resource type="Material" uid="uid://c3vhodwyfrn1v" path="res://Art/Materials/waterSphere_material.tres" id="25_ccv2f"]
 [ext_resource type="PackedScene" uid="uid://cias1nc0ubmto" path="res://Scenes/Prefabs/NPCs/DancingNPC.tscn" id="26_nqknn"]
@@ -22726,6 +22727,9 @@ transform = Transform3D(1, 5.96046e-08, 5.96046e-08, 0, 1, -1.86265e-09, 0, 0, 1
 [node name="Flavour_Box01" parent="Environment/GroundLevel" instance=ExtResource("3_q6mt2")]
 transform = Transform3D(8.3336, 0.140399, 2.37025, -0.688776, 0.699443, -2.18314, -3.50014, 0.19664, 6.07301, -25.6064, 15.3101, -3.96378)
 
+[node name="MusicChangeArea" parent="Environment/GroundLevel" instance=ExtResource("23_itlt7")]
+transform = Transform3D(-4.37114e-08, 0, 60, 0, 10, 0, -1, 0, -2.62268e-06, 0, 16.6108, -1.17317)
+
 [node name="FirstLevel" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.685, 23)
 
@@ -23161,6 +23165,9 @@ movable_platforms = [NodePath("../SlidingDoor12"), NodePath("../SlidingDoor14")]
 [node name="SecondLevelCeiling" parent="Environment/SecondLevel" instance=ExtResource("3_q6mt2")]
 transform = Transform3D(49, 0, 0, 0, 1, 0, 0, 0, 34.9878, 0.0517502, 6.00008, -3.35715)
 
+[node name="MusicChangeArea" parent="Environment/SecondLevel" instance=ExtResource("23_itlt7")]
+transform = Transform3D(-4.37114e-08, 0, 4.5, 0, 4, 0, -1, 0, -1.96701e-07, -0.0190832, 3.57803, -14.0679)
+
 [node name="ThirdLevel" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.7, 0)
 
@@ -23426,6 +23433,9 @@ transform = Transform3D(2.77739, -0.00860332, -2.22654, -0.183262, -0.173683, -0
 
 [node name="FlavourBox-149" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
 transform = Transform3D(2.89546, 0.0495641, -0.971348, 0.858, -0.16679, -0.309053, -0.605386, 0.000669293, -5.08381, 35.7658, 14.4085, 36.034)
+
+[node name="MusicChangeArea" parent="Environment/ThirdLevel" instance=ExtResource("23_itlt7")]
+transform = Transform3D(-4.37114e-08, 0, 12, 0, 6, 0, -1, 0, -5.24537e-07, -18.0471, 9.45792, 13.8418)
 
 [node name="FourthLevel" type="Node3D" parent="Environment"]
 

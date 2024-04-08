@@ -24331,6 +24331,10 @@ checkpoint_signal = -1
 transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 10, -1.07714, 64.755, -5.14559)
 checkpoint_signal = -1
 
+[node name="SaveCheckpoint4" parent="Environment/FifthLevel" instance=ExtResource("8_axjnh")]
+transform = Transform3D(0.778199, 0, -3.14009, 0, 3, 0, 0.628017, 0, 3.891, 14.6457, 81.9781, -11.6826)
+checkpoint_signal = -1
+
 [node name="Boombox" parent="Environment/FifthLevel" instance=ExtResource("28_ctcll")]
 transform = Transform3D(0.375557, -0.124826, 0.577387, 0.206798, 0.66868, 0.0100528, -0.553346, 0.165181, 0.395631, -15.3899, 1.4221, 12.9748)
 

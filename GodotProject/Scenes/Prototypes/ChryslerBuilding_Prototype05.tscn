@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=3 uid="uid://cs4plu65t2yxf"]
+[gd_scene load_steps=113 format=3 uid="uid://cs4plu65t2yxf"]
 
 [ext_resource type="Texture2D" uid="uid://irl85kmk43k0" path="res://Art/Sky/240329_Skybox test_panorama_v3 fin.png" id="1_3032f"]
 [ext_resource type="PackedScene" uid="uid://djcjuxcxoilpw" path="res://Art/Models/Environment/Chrysler building v6.gltf" id="2_1p8g1"]
@@ -943,10 +943,25 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_qm18i"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_18kmf"]
-size = Vector3(1, 1.51991, 4.64075)
+size = Vector3(1, 1.67194, 2.1783)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vf4ag"]
 size = Vector3(1.16382, 1.08154, 3.36621)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3bbpj"]
+size = Vector3(1.16504, 0.591675, 1.03558)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gmijo"]
+size = Vector3(1.12563, 1.39893, 1.04926)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bhir6"]
+size = Vector3(1.43549, 0.617065, 1.13086)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_plu4i"]
+size = Vector3(1.05902, 4.1718, 1.05359)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mx7qt"]
+size = Vector3(2.19757, 4.30127, 2.3132)
 
 [sub_resource type="Animation" id="Animation_byrsk"]
 length = 0.001
@@ -2373,6 +2388,7 @@ surface_material_override/0 = ExtResource("2_tjq3o")
 
 [node name="240316_Surroundings_v1" parent="Environment/Chrysler building v6" instance=ExtResource("38_fc7s1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -0.1, -30)
+visible = false
 
 [node name="GroundLevel" type="Node3D" parent="Environment"]
 
@@ -9569,39 +9585,6 @@ transform = Transform3D(0.976333, 0.000143921, 0.216269, -0.000100641, 0.999997,
 
 [node name="pizza box v46" parent="Environment/GroundLevel/All static pizza boxes on the ground level/pizza box v105" instance=ExtResource("22_yjrt6")]
 transform = Transform3D(0.963554, 0.000184573, 0.267524, -0.000117937, 0.999999, -0.000265186, -0.267524, 0.000223972, 0.963547, -40.6915, 4.63146, 28.1792)
-
-[node name="pizza box v48" parent="Environment/GroundLevel/All static pizza boxes on the ground level/pizza box v105" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.626919, 0.00078157, 0.779082, -9.94143e-05, 0.999997, -0.000923196, -0.779088, 0.000501326, 0.626914, -47.5721, 0.0700209, 30.2406)
-
-[node name="pizza box v49" parent="Environment/GroundLevel/All static pizza boxes on the ground level/pizza box v105" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.528706, 0.00091074, 0.848805, -4.90444e-05, 0.999994, -0.00104247, -0.848805, 0.000509535, 0.528704, -47.3304, 0.781827, 29.9304)
-
-[node name="pizza box v50" parent="Environment/GroundLevel/All static pizza boxes on the ground level/pizza box v105" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.568735, 0.000859299, 0.822517, -7.07782e-05, 0.999996, -0.000995803, -0.822521, 0.000508138, 0.56873, -47.354, 1.53535, 30.1037)
-
-[node name="pizza box v51" parent="Environment/GroundLevel/All static pizza boxes on the ground level/pizza box v105" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.568735, 0.000859299, 0.822517, -7.07782e-05, 0.999996, -0.000995803, -0.822521, 0.000508138, 0.56873, -47.3534, 2.29996, 30.1033)
-
-[node name="pizza box v52" parent="Environment/GroundLevel/All static pizza boxes on the ground level/pizza box v105" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.528706, 0.00091074, 0.848805, -4.90444e-05, 0.999994, -0.00104247, -0.848805, 0.000509535, 0.528704, -47.4959, 3.10726, 30.0966)
-
-[node name="pizza box v53" parent="Environment/GroundLevel/All static pizza boxes on the ground level/pizza box v105" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.483148, 0.000967495, 0.875539, -2.2509e-05, 0.999995, -0.00109267, -0.875541, 0.000508226, 0.483142, -47.5223, 3.85804, 29.7826)
-
-[node name="pizza box v54" parent="Environment/GroundLevel/All static pizza boxes on the ground level/pizza box v105" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.483148, 0.000967495, 0.875539, -2.2509e-05, 0.999995, -0.00109267, -0.875541, 0.000508226, 0.483142, -47.5216, 4.61284, 29.7821)
-
-[node name="pizza box v55" parent="Environment/GroundLevel/All static pizza boxes on the ground level/pizza box v105" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.285708, 0.0011948, 0.958314, 0.000111193, 0.999993, -0.00127997, -0.958319, 0.000472281, 0.285703, -47.1689, 5.40541, 29.7879)
-
-[node name="pizza box v56" parent="Environment/GroundLevel/All static pizza boxes on the ground level/pizza box v105" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.224815, 0.00125959, 0.9744, 0.000157769, 0.999993, -0.0013291, -0.9744, 0.000452545, 0.224815, -46.9527, 6.18147, 29.2508)
-
-[node name="pizza box v57" parent="Environment/GroundLevel/All static pizza boxes on the ground level/pizza box v105" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.0932752, 0.00139187, 0.995633, 0.000266018, 0.999993, -0.00142289, -0.99564, 0.000397587, 0.0932727, -46.9094, 6.93469, 28.9788)
-
-[node name="pizza box v58" parent="Environment/GroundLevel/All static pizza boxes on the ground level/pizza box v105" instance=ExtResource("22_yjrt6")]
-transform = Transform3D(0.0932752, 0.00139187, 0.995633, 0.000266018, 0.999992, -0.00142289, -0.99564, 0.000397587, 0.0932727, -46.4285, 7.69863, 28.5927)
 
 [node name="pizza box v106" parent="Environment/GroundLevel/All static pizza boxes on the ground level" instance=ExtResource("22_yjrt6")]
 transform = Transform3D(-0.199956, 0.000180385, -0.00421189, 0.000182844, 0.199999, -0.000113079, 0.00421211, -0.000116866, -0.199956, -3.25309, 0.0729146, 4.23733)
@@ -22553,12 +22536,84 @@ transform = Transform3D(-0.0198176, 0.0235597, 0.197616, 0.0338246, 0.196103, -0
 [node name="Collision all static pizzaboxes on ground level" type="StaticBody3D" parent="Environment/GroundLevel"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/GroundLevel/Collision all static pizzaboxes on ground level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.31108, 0.74449, 12.3003)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.31108, 0.820505, 12.4358)
 shape = SubResource("BoxShape3D_18kmf")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment/GroundLevel/Collision all static pizzaboxes on ground level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.23649, 0.530237, 12.0139)
 shape = SubResource("BoxShape3D_vf4ag")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Environment/GroundLevel/Collision all static pizzaboxes on ground level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.11885, 0.288513, 10.9752)
+shape = SubResource("BoxShape3D_3bbpj")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Environment/GroundLevel/Collision all static pizzaboxes on ground level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.11885, 0.00640059, 12.0751)
+shape = SubResource("BoxShape3D_3bbpj")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Environment/GroundLevel/Collision all static pizzaboxes on ground level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.65646, 0.679383, 14.1245)
+shape = SubResource("BoxShape3D_gmijo")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Environment/GroundLevel/Collision all static pizzaboxes on ground level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.34288, 0.291673, 14.3699)
+shape = SubResource("BoxShape3D_bhir6")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Environment/GroundLevel/Collision all static pizzaboxes on ground level"]
+transform = Transform3D(0.888969, 0, 0.457967, 0, 1, 0, -0.457967, 0, 0.888969, -1.60755, 2.05054, 5.76273)
+shape = SubResource("BoxShape3D_plu4i")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="Environment/GroundLevel/Collision all static pizzaboxes on ground level"]
+transform = Transform3D(0.888969, 0, 0.457967, 0, 1, 0, -0.457967, 0, 0.888969, -2.10211, 2.05054, 4.85022)
+shape = SubResource("BoxShape3D_plu4i")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="Environment/GroundLevel/Collision all static pizzaboxes on ground level"]
+transform = Transform3D(0.837328, 0, 0.546701, 0, 1, 0, -0.546701, 0, 0.837328, -1.19615, 2.05054, 4.08313)
+shape = SubResource("BoxShape3D_plu4i")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="Environment/GroundLevel/Collision all static pizzaboxes on ground level"]
+transform = Transform3D(0.921247, 0, 0.388979, 0, 1, 0, -0.388979, 0, 0.921247, -0.0626993, 1.5964, 3.35965)
+shape = SubResource("BoxShape3D_plu4i")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="Environment/GroundLevel/Collision all static pizzaboxes on ground level"]
+transform = Transform3D(0.921247, 0, 0.388979, 0, 1, 0, -0.388979, 0, 0.921247, 0.23724, 1.28196, 4.33935)
+shape = SubResource("BoxShape3D_plu4i")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="Environment/GroundLevel/Collision all static pizzaboxes on ground level"]
+transform = Transform3D(0.921247, 0, 0.388979, 0, 1, 0, -0.388979, 0, 0.921247, 0.622959, 1.28196, 5.36016)
+shape = SubResource("BoxShape3D_plu4i")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="Environment/GroundLevel/Collision all static pizzaboxes on ground level"]
+transform = Transform3D(0.921247, 0, 0.388979, 0, 1, 0, -0.388979, 0, 0.921247, 0.720915, 1.61178, 5.85447)
+shape = SubResource("BoxShape3D_plu4i")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="Environment/GroundLevel/Collision all static pizzaboxes on ground level"]
+transform = Transform3D(0.956432, 0, 0.291954, 0, 1, 0, -0.291954, 0, 0.956432, 0.993804, 0.836952, 7.1129)
+shape = SubResource("BoxShape3D_plu4i")
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="Environment/GroundLevel/Collision all static pizzaboxes on ground level"]
+transform = Transform3D(0.920355, 0, 0.391084, 0, 1, 0, -0.391084, 0, 0.920355, 2.36759, 0.996969, 5.73981)
+shape = SubResource("BoxShape3D_plu4i")
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="Environment/GroundLevel/Collision all static pizzaboxes on ground level"]
+transform = Transform3D(0.920355, 0, 0.391084, 0, 1, 0, -0.391084, 0, 0.920355, 1.84362, 0.391261, 4.65006)
+shape = SubResource("BoxShape3D_plu4i")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="Environment/GroundLevel/Collision all static pizzaboxes on ground level"]
+transform = Transform3D(0.855265, 0, 0.518191, 0, 1, 0, -0.518191, 0, 0.855265, -0.802141, 2.05054, 5.09033)
+shape = SubResource("BoxShape3D_plu4i")
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="Environment/GroundLevel/Collision all static pizzaboxes on ground level"]
+transform = Transform3D(0.609371, 0, 0.792886, 0, 1, 0, -0.792886, 0, 0.609371, -4.8649, 2.13393, 10.7906)
+shape = SubResource("BoxShape3D_mx7qt")
+
+[node name="CollisionShape3D20" type="CollisionShape3D" parent="Environment/GroundLevel/Collision all static pizzaboxes on ground level"]
+transform = Transform3D(-0.00490435, 0, 0.999988, 0, 1, 0, -0.999988, 0, -0.00490435, -6.98322, 1.99298, 17.3675)
+shape = SubResource("BoxShape3D_mx7qt")
+
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="Environment/GroundLevel/Collision all static pizzaboxes on ground level"]
+transform = Transform3D(0.6931, 0, 0.720842, 0, 1, 0, -0.720842, 0, 0.6931, -4.13386, -0.221512, 9.81158)
+shape = SubResource("BoxShape3D_mx7qt")
 
 [node name="Flavour pizza boxes ground floor animation" type="AnimationPlayer" parent="Environment/GroundLevel"]
 root_node = NodePath("Flavour_Cylinder10")
@@ -24546,7 +24601,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---/Elevator11" index="0"]
-transform = Transform3D(1, 0, -8.43354e-14, 0, 1, 0, 8.43354e-14, 0, 1, -0.74955, 4.97966, -0.173306)
+transform = Transform3D(1, 0, -7.14114e-14, 0, 1, 0, 7.14114e-14, 0, 1, -0.397185, 2.63871, -2.58255)
 
 [node name="InteractableButton" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---/Elevator11/Pivot" index="2" node_paths=PackedStringArray("movable_platforms")]
 transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0.0121803, -0.00328827, 0.0389786)
@@ -24561,6 +24616,7 @@ transform = Transform3D(1, 0, -8.52651e-14, 0, 1, 0, 8.52651e-14, 0, 1, -0.77489
 
 [node name="Elevator13" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("7_x28al")]
 transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, 4.72718, 103.615, -15.8523)
+activated = true
 is_pausable = true
 animation_duration = 5.0
 animation_transition_type = 1
@@ -24569,7 +24625,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---/Elevator13" index="0"]
-transform = Transform3D(0.997914, -0.0645289, -6.20736e-09, 0.0645289, 0.997914, 2.71331e-16, 6.19442e-09, -4.00555e-10, 1, -1.68113, 7.2188, 3.63521)
+transform = Transform3D(-0.452965, -0.891527, -1.96184e-07, 0.891527, -0.452965, 8.57552e-15, -8.88643e-08, -1.74903e-07, 1, -0.703912, 2.5823, -2.75347)
 
 [node name="InteractableButton" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---/Elevator13/Pivot" index="2" node_paths=PackedStringArray("movable_platforms")]
 transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0.0121803, -0.00328827, 0.0389786)
@@ -24782,7 +24838,6 @@ movable_platforms = [NodePath("..")]
 
 [node name="SlidingPlatform4" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 13.2226, 74.9782, -17.1457)
-activated = true
 animation_duration = 5.0
 animation_transition_type = 1
 move_with_timer = true
@@ -24790,7 +24845,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform4" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.534689, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8991, 5, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform4/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -24808,6 +24863,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.0132, 5, 0)
 
 [node name="SlidingPlatform2" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, -0.0171695, 38.8905, 10.0952)
+activated = true
 animation_duration = 4.0
 animation_transition_type = 1
 move_with_timer = true
@@ -24815,7 +24871,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.870903, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.65646, 0, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform2/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -24830,6 +24886,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 0, 0)
 
 [node name="SlidingPlatform15" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, -4.82836, 46.5124, 10.0952)
+activated = true
 animation_duration = 4.0
 animation_transition_type = 1
 move_with_timer = true
@@ -24837,7 +24894,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform15" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.870903, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.65646, 0, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform15/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -24852,6 +24909,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 0, 0)
 
 [node name="SlidingPlatform14" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, 4.86771, 48.5124, 10.0952)
+activated = true
 animation_duration = 4.0
 animation_transition_type = 1
 move_with_timer = true
@@ -24859,7 +24917,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform14" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.870903, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.65646, 0, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform14/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -24874,6 +24932,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 0, 0)
 
 [node name="SlidingPlatform12" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, -0.0171695, 44.2713, 10.0952)
+activated = true
 animation_duration = 4.0
 animation_transition_type = 1
 move_with_timer = true
@@ -24881,7 +24940,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform12" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.870903, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.65646, 0, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform12/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -25021,6 +25080,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, 4.83
 
 [node name="SlidingPlatform13" parent="Environment/FifthLevel/Part 1" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.1657, -38.4352, 14.9558)
+activated = true
 animation_duration = 5.0
 animation_transition_type = 1
 move_with_timer = true
@@ -25028,7 +25088,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform13" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4968, 5, -2.48113e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.97439, 5, -8.87547e-08)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/Part 1/SlidingPlatform13/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -25046,7 +25106,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 5, -2.5332e-07)
 
 [node name="SlidingPlatform14" parent="Environment/FifthLevel/Part 1" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -16.8473, -48.7286, 14.9558)
-activated = true
 animation_duration = 5.0
 animation_transition_type = 1
 move_with_timer = true
@@ -25054,7 +25113,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform14" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.409158, 5, -5.20687e-09)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9316, 5, -1.64565e-07)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/Part 1/SlidingPlatform14/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -25072,6 +25131,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 5, -2.5332e-07)
 
 [node name="SlidingPlatform15" parent="Environment/FifthLevel/Part 1" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.016, -49.249, 14.956)
+activated = true
 is_pausable = true
 animation_duration = 5.0
 animation_transition_type = 1
@@ -25080,7 +25140,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform15" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4968, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.97439, 0, 0)
 
 [node name="InteractableButton" parent="Environment/FifthLevel/Part 1/SlidingPlatform15/Pivot/AnimatableBody3D" index="0" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(7.54979e-08, 0, -1, 0, 3, 0, 1, 0, 7.54979e-08, 0, 0, 0)
@@ -25099,6 +25159,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 0, 0)
 
 [node name="SlidingPlatform12" parent="Environment/FifthLevel/Part 1" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -62.4854, 14.9558)
+activated = true
 is_pausable = true
 animation_duration = 5.0
 animation_transition_type = 1
@@ -25107,7 +25168,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform12" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4968, 5, -2.48113e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.97439, 5, -8.87547e-08)
 
 [node name="InteractableButton" parent="Environment/FifthLevel/Part 1/SlidingPlatform12/Pivot/AnimatableBody3D" index="0" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 3, 0, -1, 0, -4.37114e-08, 0, 5, 0)

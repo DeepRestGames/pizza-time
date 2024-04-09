@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsmjjvqy12l4b"]
+[gd_scene load_steps=4 format=3 uid="uid://dsmjjvqy12l4b"]
 
 [ext_resource type="Material" uid="uid://dbjqbkda74tke" path="res://Art/Materials/pizzabox_material.tres" id="1_vfowx"]
 
@@ -34,20 +34,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wip6w")
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_smm0l"]
-data = PackedVector3Array(-2.5, -2.5, 2.5, -2.5, 2.5, -2.5, -2.5, 2.5, 2.5, -2.5, -2.5, 2.5, -2.5, -2.5, -2.5, -2.5, 2.5, -2.5, -2.5, -2.5, -2.5, 2.5, 2.5, -2.5, -2.5, 2.5, -2.5, -2.5, -2.5, -2.5, 2.5, -2.5, -2.5, 2.5, 2.5, -2.5, 2.5, -2.5, -2.5, 2.5, 2.5, 2.5, 2.5, 2.5, -2.5, 2.5, -2.5, -2.5, 2.5, -2.5, 2.5, 2.5, 2.5, 2.5, 2.5, -2.5, 2.5, -2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, -2.5, 2.5, -2.5, -2.5, 2.5, -2.5, 2.5, 2.5, -2.5, -2.5, -2.5, 2.5, -2.5, 2.5, 2.5, -2.5, -2.5, -2.5, -2.5, -2.5, -2.5, -2.5, 2.5, 2.5, -2.5, 2.5, 2.5, 2.5, -2.5, -2.5, 2.5, 2.5, -2.5, 2.5, -2.5, 2.5, 2.5, -2.5, 2.5, 2.5, 2.5, -2.5, 2.5, 2.5)
-
 [node name="PizzaBoxPlatform" type="Node3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.143145, 0, 0, 0, 1, 0, 0, 0)
-layers = 2
 mesh = SubResource("ArrayMesh_wa1ii")
 skeleton = NodePath("")
-
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Cube"]
-sync_to_physics = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/AnimatableBody3D"]
-shape = SubResource("ConcavePolygonShape3D_smm0l")

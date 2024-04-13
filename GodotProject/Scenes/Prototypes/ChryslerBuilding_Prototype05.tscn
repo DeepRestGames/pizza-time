@@ -25983,10 +25983,11 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/SixthLevel/Step14"]
 shape = SubResource("CylinderShape3D_i5xm5")
 
-[node name="CameraMovement" type="Node3D" parent="." node_paths=PackedStringArray("hud")]
+[node name="CameraMovement" type="Node3D" parent="." node_paths=PackedStringArray("hud", "pizza_presence_animation_player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 237.669, -12.5991)
 script = ExtResource("35_noiuo")
 hud = NodePath("../Player/HUD")
+pizza_presence_animation_player = NodePath("../PizzaPresence/AnimationPlayer")
 
 [node name="Path3D" type="Path3D" parent="CameraMovement"]
 curve = SubResource("Curve3D_2wj0v")
@@ -25995,6 +25996,9 @@ curve = SubResource("Curve3D_2wj0v")
 rotation_mode = 0
 loop = false
 tilt_enabled = false
+
+[node name="ChoicePosition" type="Node3D" parent="CameraMovement"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -1.7)
 
 [node name="SkyDarkening" type="MeshInstance3D" parent="."]
 transform = Transform3D(3000, 0.000732422, 7.27596e-12, 0, -0.000131134, -3000, -0.000732422, 3000, -0.000131134, -3.05176e-05, 399.28, 9.15527e-05)

@@ -23,13 +23,16 @@ scene = ExtResource("4_vhbud")
 overrides = {
 "box_animation_in": "0",
 "box_animation_out": "0",
+"box_margin_bottom": "20.0",
 "box_panel": "\"vn_textbox_default_panel.tres\"",
-"box_size": "Vector2(550, 120)",
+"box_size": "Vector2(1200, 250)",
 "name_label_box_modulate": "Color(0, 0, 0, 0)",
 "name_label_box_use_global_color": "false",
-"next_indicator_size": "Vector2(35, 35)",
+"next_indicator_size": "Vector2(50, 50)",
 "next_indicator_texture": "\"res://Art/Icons/next_E.png\"",
-"text_alignment": "1"
+"text_alignment": "1",
+"text_size": "20.0",
+"text_use_global_size": "false"
 }
 
 [sub_resource type="Resource" id="Resource_5wdd7"]

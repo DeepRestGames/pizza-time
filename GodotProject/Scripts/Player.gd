@@ -47,16 +47,20 @@ var weapon_attack_animation = Weapon_Attack_Types["THROW"]
 @export var jumping_sounds: Array[AudioStreamWAV]
 
 var process_inputs = true
+var limit_inputs = false
 
 
 func _ready():
-	Dialogic.signal_event.connect(_disable_inputs)
+	Dialogic.signal_event.connect(_final_cutscenes)
 
 
-func _disable_inputs(argument: String):
-	if argument == "start_ending_cinematic":
+func _final_cutscenes(argument: String):
+	if argument == "start_choice_cinematic":
 		process_inputs = false
 		$HUD.disable_all()
+	if argument == "enable_final_choice":
+		process_inputs = true
+		limit_inputs = true
 
 
 func _unhandled_input(event):
@@ -69,14 +73,26 @@ func _unhandled_input(event):
 	
 	# Camera movement
 	if event is InputEventMouseMotion and process_inputs:
-		head.rotate_y(-event.relative.x * SENSITIVITY)
-		camera.rotate_x(-event.relative.y * SENSITIVITY)
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(80))
+		if limit_inputs:
+			head.rotate_y(-event.relative.x * SENSITIVITY)
+			camera.rotation.y = clamp(camera.rotation.y, deg_to_rad(-30), deg_to_rad(30))
+		else:
+			head.rotate_y(-event.relative.x * SENSITIVITY)
+			camera.rotate_x(-event.relative.y * SENSITIVITY)
+			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(80))
 
 
 func _physics_process(delta):
 	# When Dialogue is active, skip physics process
 	if Dialogic.current_timeline != null or !process_inputs:
+		if limit_inputs == false:
+			return
+	
+		# Weapon attack
+	if Input.is_action_just_pressed("attack") and !animation_player.is_playing():
+		animation_player.play(weapon_attack_animation)
+	
+	if limit_inputs == true:
 		return
 	
 	# Add the gravity.
@@ -140,10 +156,6 @@ func _physics_process(delta):
 	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	
-	# Weapon attack
-	if Input.is_action_just_pressed("attack") and !animation_player.is_playing():
-		animation_player.play(weapon_attack_animation)
-	
 	move_and_slide()
 
 
@@ -186,3 +198,4 @@ func _on_animation_player_animation_finished(anim_name):
 		get_parent().add_child(projectile_instance)
 		
 		Analytics.add_event("Thrown Pizzas")
+

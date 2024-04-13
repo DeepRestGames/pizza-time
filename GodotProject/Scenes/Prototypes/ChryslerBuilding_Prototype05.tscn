@@ -2391,7 +2391,6 @@ surface_material_override/0 = ExtResource("2_tjq3o")
 
 [node name="240316_Surroundings_v1" parent="Environment/Chrysler building v6" instance=ExtResource("38_fc7s1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -0.1, -30)
-visible = false
 
 [node name="GroundLevel" type="Node3D" parent="Environment"]
 
@@ -24945,7 +24944,7 @@ transform = Transform3D(-1.11137, 0, 1.15102, 0, 1.6, 0, -1.15102, 0, -1.11137, 
 random_dialogues_indexes = Array[String](["02", "03"])
 
 [node name="AnalyticsCheckpoint" parent="Environment/FifthLevel" instance=ExtResource("8_axjnh")]
-transform = Transform3D(16, 0, 0, 0, 4, 0, 0, 0, 1, 0, 2.46494, -12.0575)
+transform = Transform3D(16, 0, 0, 0, 4, 0, 0, 0, 1, 0, 2.46494, -11.1973)
 checkpoint_signal = 5
 
 [node name="FifthLevelBase" parent="Environment/FifthLevel" instance=ExtResource("3_q6mt2")]

@@ -2404,7 +2404,7 @@ directional_shadow_max_distance = 2000.0
 directional_shadow_pancake_size = 1024.0
 
 [node name="Player" parent="." instance=ExtResource("15_olpqq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.249436, 1.00242, 16.4952)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9683, 59.5827, 13.6339)
 
 [node name="WeaponPivot" parent="Player/Head" index="3"]
 transform = Transform3D(0.998353, -0.0355339, -0.0450135, 0.0171093, 0.933713, -0.357611, 0.0547371, 0.356253, 0.932783, 0.5, -0.7, -0.1)
@@ -23960,7 +23960,7 @@ transform = Transform3D(2.94465, -0.00795692, 0.15465, 0.0132654, 1.07596, 0.508
 [node name="RightPath" type="Node3D" parent="Environment/ThirdLevel"]
 
 [node name="FlavourBox-129" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(2.02326, -0.269628, -0.168039, -1.57293, -0.0749675, 4.97858, -3.26417, -0.131001, -2.50322, 41.4873, 34.6914, -26.8362)
+transform = Transform3D(2.02326, -0.269628, -0.168039, -1.84926, -0.0860132, 4.74351, -3.11595, -0.124029, -2.9243, 41.4873, 34.6914, -26.8362)
 
 [node name="FlavourBox-130" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
 transform = Transform3D(-3.86585, -0.0657558, 1.6441, -1.03496, 0.297879, -0.513612, -1.09845, -0.0492441, -5.30224, 35.2215, 33.9824, -26.0656)
@@ -23978,79 +23978,76 @@ transform = Transform3D(-0.593893, -0.168243, 0.822569, -2.84382, 0.0210856, -1.
 transform = Transform3D(3.01748, 0.00457135, 1.03039, -0.24467, -0.149522, 2.61961, 0.566852, -0.0888724, -4.35432, 33.0344, 32.5234, -21.3446)
 
 [node name="FlavourBox-135" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(2.99717, 0.0374274, 0.427427, 0.528778, -0.159352, 1.88241, 0.47305, -0.0590091, -4.81228, 32.8261, 30.3394, -16.5348)
+transform = Transform3D(2.99717, 0.0374274, 0.427427, 0.528778, -0.159352, 1.88241, 0.47305, -0.0590091, -4.81228, 38.4632, 30.7418, -16.5348)
 
 [node name="FlavourBox-153" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(0.0604656, 0.0305473, 5.54709, -1.03496, 0.297879, -0.513612, -4.01842, -0.0762605, 0.215758, 18.2775, 11.5926, 36.3536)
+transform = Transform3D(3.77665, -0.127713, 0.177048, 1.70605, 0.281092, 0.328544, -0.220979, -0.0125374, 5.56249, 18.1652, 11.8647, 36.9776)
 
 [node name="FlavourBox-154" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(0.233444, 0.0870273, 4.47263, -0.24467, -0.149522, 2.61961, 3.06137, -0.0185863, -0.131701, 13.1513, 10.1336, 35.4629)
+transform = Transform3D(0.249885, 0.0812012, 4.56642, 0.423094, -0.153193, 2.3533, 3.04054, 0.0146434, -0.702759, 13.3911, 10.1848, 34.0587)
 
 [node name="FlavourBox-175" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(2.31675, 0.0488789, 3.09057, 0.964948, -0.164997, 0.267213, 1.78546, 0.0257484, -4.15464, 15.3867, 9.35862, 38.007)
+transform = Transform3D(0.910149, 0.0677846, 4.52288, 1.04543, -0.15596, 1.47931, 2.75046, 0.0368486, -2.05894, 11.5416, 9.35862, 38.9781)
 
 [node name="FlavourBox-176" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(2.46372, 0.0407605, -2.86477, 0.61314, -0.169148, -0.642678, -1.7437, -0.00188618, -4.27366, 16.4279, 9.61326, 41.8032)
+transform = Transform3D(2.46372, 0.0407605, -2.86477, 0.61314, -0.169148, -0.642678, -1.7437, -0.00188618, -4.27366, 12.5828, 9.61326, 46.0725)
 
 [node name="FlavourBox-177" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(0.977852, 0.0720634, 4.423, 1.11077, -0.153941, 1.5312, 2.70117, 0.0372156, -2.23083, 21.3989, 10.1448, 44.5158)
+transform = Transform3D(0.977852, 0.0720634, 4.423, 1.11077, -0.153941, 1.5312, 2.70117, 0.0372156, -2.23083, 19.9038, 10.1448, 50.3129)
 
 [node name="FlavourBox-155" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(0.318793, 0.0666853, 4.75893, 0.528778, -0.159352, 1.88241, 3.01748, 0.0208794, -0.832647, 8.45145, 7.9496, 36.5066)
+transform = Transform3D(0.227308, 0.0889741, 4.43939, 0.265707, -0.149396, 2.62019, 3.06009, 0.00636288, -0.557277, 8.39742, 8.04453, 36.5066)
 
 [node name="FlavourBox-136" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(2.96954, 0.0308344, 1.0244, 0.307036, -0.162119, 1.81071, 0.757573, -0.0551584, -4.74933, 32.4991, 28.8654, -11.4012)
+transform = Transform3D(2.96954, 0.0308344, 1.0244, 0.307036, -0.162119, 1.81071, 0.757573, -0.0551584, -4.74933, 32.4991, 28.8654, -13.4269)
 
 [node name="FlavourBox-137" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(3.03876, -0.0184678, 0.642021, -0.436138, -0.162544, 1.69836, 0.249187, -0.0592818, -4.85671, 34.4135, 25.4625, -2.96253)
+transform = Transform3D(3.03876, -0.0184678, 0.642021, -0.436138, -0.162544, 1.69836, 0.249187, -0.0592818, -4.85671, 39.0043, 24.1286, -3.65815)
 
 [node name="FlavourBox-138" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(3.0676, -0.00576953, -0.431737, -0.0166017, -0.165217, 1.62625, -0.275548, -0.0542765, -4.9044, 33.7539, 22.2354, 6.01915)
+transform = Transform3D(3.0676, -0.00576953, -0.431737, -0.00628634, -0.163072, 1.80851, -0.275976, -0.0604166, -4.84016, 36.5646, 21.8186, 3.53609)
 
 [node name="FlavourBox-139" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(2.82089, 0.0152303, 2.03149, 0.0158848, -0.170246, 1.07085, 1.23639, -0.0325612, -4.64871, 31.0569, 19.4637, 15.1881)
+transform = Transform3D(2.82089, 0.0152303, 2.03149, 0.0158848, -0.170246, 1.07085, 1.23639, -0.0325612, -4.64871, 30.1068, 18.5571, 13.3533)
 
 [node name="FlavourBox-140" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(-0.705124, -0.0406874, 4.8995, -0.512275, -0.164786, -1.42409, 2.95411, -0.0382872, 0.922518, 32.4991, 27.1347, -7.32445)
+transform = Transform3D(-0.705124, -0.0406874, 4.8995, -0.512275, -0.164786, -1.42409, 2.95411, -0.0382872, 0.922518, 32.4991, 26.7179, -7.32445)
 
 [node name="FlavourBox-141" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(3.06759, -0.00927777, 0.373707, -0.229248, -0.163546, 1.72758, 0.153933, -0.0586746, -4.87443, 32.0856, 23.8239, 1.04186)
+transform = Transform3D(3.06759, -0.00927777, 0.373707, -0.229248, -0.163546, 1.72758, 0.153933, -0.0586746, -4.87443, 38.8148, 30.4516, -9.45662)
 
 [node name="FlavourBox-144" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(3.03876, -0.0184678, 0.642021, -0.436138, -0.162544, 1.69836, 0.249187, -0.0592818, -4.85671, 34.578, 18.5777, 22.774)
-
-[node name="FlavourBox-145" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(3.0676, -0.00576953, -0.431737, -0.0166017, -0.165217, 1.62625, -0.275548, -0.0542765, -4.9044, 33.9185, 15.3506, 31.7557)
-
-[node name="FlavourBox-146" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(3.06759, -0.00927777, 0.373707, -0.229248, -0.163546, 1.72758, 0.153933, -0.0586746, -4.87443, 32.2501, 16.939, 26.7784)
+transform = Transform3D(3.03876, -0.0184678, 0.642021, -0.436138, -0.162544, 1.69836, 0.249187, -0.0592818, -4.85671, 34.578, 17.2953, 22.774)
 
 [node name="FlavourBox-142" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(0.468099, 0.0538057, 4.8675, -0.0166017, -0.165217, 1.62625, 3.04417, -0.00917465, -0.7396, 33.1905, 20.8157, 10.3617)
+transform = Transform3D(1.95896, 0.0415469, 3.80474, -0.0166017, -0.165217, 1.62625, 2.37667, -0.0353989, -3.12467, 36.8084, 19.8324, 10.1305)
 
 [node name="FlavourBox-156" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(-2.52877, 0.0318864, 2.80339, -0.0166017, -0.165217, 1.62625, 1.75825, 0.0442999, 4.04729, 2.0147, 5.58895, 30.7433)
+transform = Transform3D(-2.52877, 0.0318864, 2.80339, -0.0166017, -0.165217, 1.62625, 1.75825, 0.0442999, 4.04729, 2.45412, 5.58895, 31.3135)
 
 [node name="FlavourBox-178" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(-3.04356, 0.0244998, -0.315167, -0.4723, -0.156759, 2.10508, 0.00740719, 0.0714291, 4.72795, 3.74921, 4.07631, 28.5384)
+transform = Transform3D(-3.04356, 0.0244998, -0.315167, -0.4723, -0.156759, 2.10508, 0.00740719, 0.0714291, 4.72795, 4.18863, 4.07631, 29.1086)
 
 [node name="FlavourBox-157" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(-2.74141, 0.037112, 2.08877, -0.229248, -0.163546, 1.72758, 1.3851, 0.0463841, 4.42004, 5.92857, 7.17743, 34.2416)
+transform = Transform3D(-2.74141, 0.037112, 2.08877, -0.229248, -0.163546, 1.72758, 1.3851, 0.0463841, 4.42004, 42.8887, 13.7507, 45.6446)
+
+[node name="FlavourBox-161" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-2.80786, 0.0634255, -0.984232, -1.04324, -0.16147, -0.805121, -0.716887, -0.0134439, 5.02666, 47.5536, 15.4963, 41.9979)
 
 [node name="FlavourBox-158" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(-1.91394, -0.0422049, -3.86279, -0.0166017, -0.165217, 1.62625, -2.41307, 0.0346117, 3.0526, 0.354102, 4.16924, 26.6915)
+transform = Transform3D(-1.91394, -0.0422049, -3.86279, -0.0166017, -0.165217, 1.62625, -2.41307, 0.0346117, 3.0526, 0.793524, 4.16924, 27.2617)
 
 [node name="FlavourBox-159" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(0.021717, -0.00728607, -5.18032, -0.011082, -0.173846, 0.216987, -3.0799, 0.000574155, -0.0373085, 0.354102, 3.22229, 23.8745)
+transform = Transform3D(0.021717, -0.00728607, -5.18032, -0.011082, -0.173846, 0.216987, -3.0799, 0.000574155, -0.0373085, 36.0786, 12.7807, 48.7614)
 
 [node name="FlavourBox-163" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(0.618003, -0.0536438, -4.82147, -0.0166017, -0.165217, 1.62625, -3.01732, -0.0100781, -0.996483, 24.7274, 34.1313, -32.8852)
+transform = Transform3D(0.618003, -0.0536438, -4.82147, -0.0166017, -0.165217, 1.62625, -3.01732, -0.0100781, -0.996483, 24.7274, 38.836, -32.8852)
 
 [node name="FlavourBox-172" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
 transform = Transform3D(1.59152, 0.0502305, -4.17918, 0.33842, -0.166346, -1.41014, -2.61514, 0.00904271, -2.72585, 26.84, 34.1313, -35.9251)
 
 [node name="FlavourBox-173" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(0.741464, -0.105299, -3.93453, -0.646166, -0.138466, 2.94549, -2.91875, 0.00390481, -1.6516, 23.9752, 35.7298, -38.9743)
+transform = Transform3D(0.910819, -0.0547588, -4.6766, -0.371092, -0.165113, 1.5119, -2.91875, 0.00390481, -1.6516, 23.9752, 35.7298, -38.9743)
 
 [node name="FlavourBox-174" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
 transform = Transform3D(-2.74458, 0.0309813, -2.16434, -0.0403467, -0.161737, -1.91082, -1.39715, -0.056189, 4.30681, 24.0674, 38.0729, -42.2674)
@@ -24059,58 +24056,55 @@ transform = Transform3D(-2.74458, 0.0309813, -2.16434, -0.0403467, -0.161737, -1
 transform = Transform3D(1.04637, -0.0431949, -4.70368, 0.230462, -0.166057, 1.49939, -2.88762, -0.0289053, -1.58477, 19.4806, 35.7198, -32.7182)
 
 [node name="FlavourBox-167" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(2.88274, 0.0255131, -1.65991, 0.479477, -0.171878, 0.0140284, -0.97277, -0.00911215, -4.9121, 16.2926, 35.4364, -32.225)
+transform = Transform3D(2.88274, 0.0255131, -1.65991, 0.479477, -0.171878, 0.0140284, -0.97277, -0.00911215, -4.9121, 16.2926, 41.7629, -32.225)
 
 [node name="FlavourBox-168" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(2.53414, 0.0309927, -2.79856, 0.275674, -0.170239, -0.966662, -1.72874, 0.0182847, -4.25651, 14.8955, 35.834, -30.8257)
+transform = Transform3D(2.53414, 0.0309927, -2.79856, 0.275674, -0.170239, -0.966662, -1.72874, 0.0182847, -4.25651, 14.8955, 36.7584, -30.8257)
 
 [node name="FlavourBox-169" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(1.46134, 0.0359252, -4.43691, 0.275674, -0.170239, -0.966662, -2.6972, 0.00206461, -2.50272, 14.8955, 36.4781, -29.1915)
+transform = Transform3D(1.46134, 0.0359252, -4.43691, 0.275674, -0.170239, -0.966662, -2.6972, 0.00206461, -2.50272, 14.8955, 36.4781, -39.3749)
 
 [node name="FlavourBox-170" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(-0.635812, 0.0286923, -5.00076, 0.275674, -0.170239, -0.966662, -3.00102, -0.021717, 0.970695, 13.5523, 37.0738, -26.9799)
+transform = Transform3D(3.07259, -0.000664172, 0.358653, 0.02058, -0.172004, -0.782457, 0.212379, 0.0262754, -5.11306, 10.6804, 34.6302, -23.292)
 
 [node name="FlavourBox-171" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(-2.73562, 0.00109524, -2.38218, 0.275674, -0.170239, -0.966662, -1.38809, -0.0359678, 4.50278, 10.5795, 35.6013, -23.4254)
+transform = Transform3D(-2.73562, 0.00109524, -2.38218, 0.275674, -0.170239, -0.966662, -1.38809, -0.0359678, 4.50278, 10.5795, 35.6013, -33.5849)
 
 [node name="FlavourBox-165" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(3.05023, 0.00668147, 0.691, -0.0166016, -0.165217, 1.62625, 0.426842, -0.0541718, -4.87463, 28.7246, 32.7116, -31.0971)
+transform = Transform3D(3.05023, 0.00668147, 0.691, -0.0166016, -0.165217, 1.62625, 0.426842, -0.0541718, -4.87463, 25.0199, 32.7116, -31.0971)
 
 [node name="FlavourBox-166" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
 transform = Transform3D(2.10878, 0.00487909, 3.7763, -0.011082, -0.173846, 0.216987, 2.24484, -0.0054416, -3.54635, 30.6677, 31.7647, -29.0576)
 
 [node name="FlavourBox-160" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(1.60243, -0.0375589, -4.28422, -0.303168, -0.169865, 1.00099, -2.61279, -0.00332503, -2.74366, -1.36969, 3.75964, 21.3524)
-
-[node name="FlavourBox-161" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(2.46525, -0.0335715, -2.9428, -0.0419458, -0.165717, 1.57913, -1.84585, -0.0410709, -3.96617, -1.36969, 4.67329, 19.3997)
+transform = Transform3D(0.106676, -0.0347823, -5.07717, -0.249704, -0.170019, 1.01941, -3.068, 0.0126285, -0.259498, 0.342264, 5.62319, 21.771)
 
 [node name="FlavourBox-179" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(3.055, -0.00893921, -0.603029, -0.132611, -0.173375, 0.378217, -0.368462, -0.0117179, -5.13591, 1.58104, 4.95544, 18.4944)
+transform = Transform3D(2.92517, -0.00180233, -1.62237, -0.224377, -0.170404, -0.978418, -0.937774, 0.03515, -4.82648, 2.62009, 5.27399, 19.0599)
 
 [node name="FlavourBox-162" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(2.96557, -0.0236653, 1.20964, -0.503674, -0.170721, 0.533635, 0.661895, -0.0238809, -5.01361, -0.642121, 5.69333, 17.6216)
+transform = Transform3D(2.9471, -0.0230278, 1.34134, -0.503674, -0.170721, 0.533635, 0.739812, -0.0244962, -4.97999, -0.600511, 5.6753, 17.9519)
 
 [node name="FlavourBox-150" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
 transform = Transform3D(0.335242, 0.0541538, 4.89506, -0.0166017, -0.165217, 1.62625, 3.06165, -0.00682557, -0.527177, 31.7665, 13.6225, 37.2635)
 
 [node name="FlavourBox-151" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(-1.18121, 0.0328517, 4.6874, 0.0158848, -0.170246, 1.07085, 2.84444, 0.0145932, 1.94056, 22.5468, 10.8508, 34.7456)
+transform = Transform3D(-1.18121, 0.0328517, 4.6874, 0.0158848, -0.170246, 1.07085, 2.84444, 0.0145932, 1.94056, 28.3232, 11.5354, 50.798)
 
 [node name="FlavourBox-152" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(-3.03448, 0.0102209, 0.834262, -0.0166017, -0.165217, 1.62625, 0.5273, 0.0536168, 4.85217, 27.4138, 12.2028, 36.7848)
+transform = Transform3D(-3.03448, 0.0102209, 0.834262, -0.304241, -0.167434, -1.31465, 0.430997, -0.0462307, 4.9457, 28.0846, 14.1033, 36.7848)
 
 [node name="FlavourBox-143" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(2.80237, 0.0336885, 1.90272, 0.323137, -0.167573, 1.28581, 1.23639, -0.0325612, -4.64871, 32.4888, 18.9393, 20.0464)
+transform = Transform3D(0.359422, -0.0410149, -5.00243, -0.112953, -0.169091, 1.20806, -3.05686, 0.00142545, -0.632817, 27.2197, 18.4223, 20.5691)
 
 [node name="FlavourBox-147" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(2.97931, 0.0346206, -0.815203, 0.57077, -0.170145, -0.50468, -0.533168, 0.0113129, -5.09558, 32.0536, 13.1599, 32.7799)
+transform = Transform3D(2.97931, 0.0346206, -0.815203, 0.676487, -0.1683, 0.659829, -0.3904, -0.0274276, -5.07782, 32.0536, 15.378, 31.504)
 
 [node name="FlavourBox-148" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(2.77739, -0.00860332, -2.22654, -0.183262, -0.173683, -0.0519218, -1.31867, 0.0060171, -4.68231, 38.9469, 15.1056, 37.1875)
+transform = Transform3D(2.77739, -0.00860332, -2.22654, -0.183262, -0.173683, -0.0519218, -1.31867, 0.0060171, -4.68231, 39.5599, 15.1056, 37.1875)
 
 [node name="FlavourBox-149" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
-transform = Transform3D(2.89546, 0.0495641, -0.971348, 0.858, -0.16679, -0.309053, -0.605386, 0.000669293, -5.08381, 35.7658, 14.4085, 36.034)
+transform = Transform3D(1.02455, 0.163724, -0.326617, 2.8408, -0.0589054, -0.965584, -0.605386, 0.000669293, -5.08381, 35.7658, 15.0175, 33.6202)
 
 [node name="MusicChangeArea" parent="Environment/ThirdLevel" instance=ExtResource("23_itlt7")]
 transform = Transform3D(-4.37114e-08, 0, 12, 0, 6, 0, -1, 0, -5.24537e-07, -18.0471, 9.45792, 13.8418)
@@ -24910,6 +24904,7 @@ transform = Transform3D(1, 0, -8.52651e-14, 0, 1, 0, 8.52651e-14, 0, 1, 1.28047,
 
 [node name="Elevator11" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("7_x28al")]
 transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, -4.8537, 103.615, -30.9883)
+activated = true
 is_pausable = true
 animation_duration = 2.5
 animation_transition_type = 1
@@ -24918,7 +24913,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---/Elevator11" index="0"]
-transform = Transform3D(1, 0, -6.76371e-14, 0, 1, 0, 6.76371e-14, 0, 1, -0.294282, 1.95507, -3.28614)
+transform = Transform3D(1, 0, -5.84682e-14, 0, 1, 0, 5.84682e-14, 0, 1, -0.0442994, 0.29431, -4.99535)
 
 [node name="InteractableButton" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---/Elevator11/Pivot" index="2" node_paths=PackedStringArray("movable_platforms")]
 transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0.0121803, -0.00328827, 0.0389786)
@@ -24933,7 +24928,6 @@ transform = Transform3D(1, 0, -8.52651e-14, 0, 1, 0, 8.52651e-14, 0, 1, -0.77489
 
 [node name="Elevator13" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" instance=ExtResource("7_x28al")]
 transform = Transform3D(-0.9, 0, -1.35896e-07, 0, 0.9, 0, 1.35896e-07, 0, -0.9, 4.72718, 103.615, -15.8523)
-activated = true
 is_pausable = true
 animation_duration = 5.0
 animation_transition_type = 1
@@ -24942,7 +24936,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---/Elevator13" index="0"]
-transform = Transform3D(0.998007, -0.0630717, -6.06701e-09, 0.0630717, 0.998007, 2.65196e-16, 6.05492e-09, -3.82657e-10, 1, -1.68185, 7.22222, 3.63993)
+transform = Transform3D(0.0139453, -0.999901, -1.49655e-07, 0.999901, 0.0139453, 6.54167e-15, 2.08698e-09, -1.4964e-07, 1, -0.943251, 3.71786, -1.18877)
 
 [node name="InteractableButton" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---/Elevator13/Pivot" index="2" node_paths=PackedStringArray("movable_platforms")]
 transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0.0121803, -0.00328827, 0.0389786)
@@ -25155,6 +25149,7 @@ movable_platforms = [NodePath("..")]
 
 [node name="SlidingPlatform4" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 13.2226, 74.9782, -17.1457)
+activated = true
 animation_duration = 5.0
 animation_transition_type = 1
 move_with_timer = true
@@ -25162,7 +25157,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform4" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.522598, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8911, 5, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform4/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -25180,6 +25175,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.0132, 5, 0)
 
 [node name="SlidingPlatform2" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, -0.0171695, 38.8905, 10.0952)
+activated = true
 animation_duration = 4.0
 animation_transition_type = 1
 move_with_timer = true
@@ -25187,7 +25183,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0947, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3077, 0, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform2/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -25202,6 +25198,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 0, 0)
 
 [node name="SlidingPlatform15" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, -4.82836, 46.5124, 10.0952)
+activated = true
 animation_duration = 4.0
 animation_transition_type = 1
 move_with_timer = true
@@ -25209,7 +25206,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform15" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0947, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3077, 0, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform15/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -25224,6 +25221,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 0, 0)
 
 [node name="SlidingPlatform14" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, 4.86771, 48.5124, 10.0952)
+activated = true
 animation_duration = 4.0
 animation_transition_type = 1
 move_with_timer = true
@@ -25231,7 +25229,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform14" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0947, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3077, 0, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform14/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -25246,6 +25244,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 0, 0)
 
 [node name="SlidingPlatform12" parent="Environment/FifthLevel" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, -0.0171695, 44.2713, 10.0952)
+activated = true
 animation_duration = 4.0
 animation_transition_type = 1
 move_with_timer = true
@@ -25253,7 +25252,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/SlidingPlatform12" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0947, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3077, 0, 0)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/SlidingPlatform12/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, -0.008, 0, 0)
@@ -25393,7 +25392,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.5, 0, 1, 0, -4.37114e-08, 4.83
 
 [node name="SlidingPlatform13" parent="Environment/FifthLevel/Part 1" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.1657, -38.4352, 14.9558)
-activated = true
 animation_duration = 5.0
 animation_transition_type = 1
 move_with_timer = true
@@ -25401,7 +25399,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform13" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5061, 5, -2.48231e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0414, 5, -1.27785e-07)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/Part 1/SlidingPlatform13/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -25419,6 +25417,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 5, -2.5332e-07)
 
 [node name="SlidingPlatform14" parent="Environment/FifthLevel/Part 1" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -16.8473, -48.7286, 14.9558)
+activated = true
 animation_duration = 5.0
 animation_transition_type = 1
 move_with_timer = true
@@ -25426,7 +25425,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform14" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.399906, 5, -5.08913e-09)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.86464, 5, -1.25535e-07)
 
 [node name="MeshInstance3D" parent="Environment/FifthLevel/Part 1/SlidingPlatform14/Pivot/AnimatableBody3D" index="0"]
 transform = Transform3D(6, 0, 0, 0, 0.5, 0, 0, 0, 6, 0, 5, 0)
@@ -25444,7 +25443,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 5, -2.5332e-07)
 
 [node name="SlidingPlatform15" parent="Environment/FifthLevel/Part 1" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.016, -49.249, 14.956)
-activated = true
 is_pausable = true
 animation_duration = 5.0
 animation_transition_type = 1
@@ -25453,7 +25451,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform15" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5061, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0414, 0, 0)
 
 [node name="InteractableButton" parent="Environment/FifthLevel/Part 1/SlidingPlatform15/Pivot/AnimatableBody3D" index="0" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(7.54979e-08, 0, -1, 0, 3, 0, 1, 0, 7.54979e-08, 0, 0, 0)
@@ -25472,7 +25470,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.906, 0, 0)
 
 [node name="SlidingPlatform12" parent="Environment/FifthLevel/Part 1" instance=ExtResource("10_2g3pf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -62.4854, 14.9558)
-activated = true
 is_pausable = true
 animation_duration = 5.0
 animation_transition_type = 1
@@ -25481,7 +25478,7 @@ auto_start = true
 metadata/_edit_group_ = true
 
 [node name="Pivot" parent="Environment/FifthLevel/Part 1/SlidingPlatform12" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5061, 5, -2.48231e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0414, 5, -1.27785e-07)
 
 [node name="InteractableButton" parent="Environment/FifthLevel/Part 1/SlidingPlatform12/Pivot/AnimatableBody3D" index="0" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 3, 0, -1, 0, -4.37114e-08, 0, 5, 0)

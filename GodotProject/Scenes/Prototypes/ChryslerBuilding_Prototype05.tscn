@@ -36,7 +36,7 @@
 [ext_resource type="Material" uid="uid://dbjqbkda74tke" path="res://Art/Materials/pizzabox_material.tres" id="34_wvhes"]
 [ext_resource type="Script" path="res://Scripts/CameraMovement.gd" id="35_noiuo"]
 [ext_resource type="PackedScene" uid="uid://diiam5vtrjabd" path="res://Art/Models/Environment/Props/chair_stool_wood.gltf" id="35_ycekf"]
-[ext_resource type="PackedScene" uid="uid://b6o7ybw4x2lck" path="res://Scenes/Prefabs/NPCs/FinalNPC.tscn" id="36_3hmvg"]
+[ext_resource type="PackedScene" uid="uid://ce7w1qvmurqmu" path="res://Scenes/Prefabs/NPCs/FinalNPC.tscn" id="37_bejw8"]
 [ext_resource type="PackedScene" uid="uid://bbekkuxaa8jqu" path="res://Art/Models/Environment/240316_Surroundings_v1.gltf" id="38_fc7s1"]
 [ext_resource type="PackedScene" uid="uid://c2qldkcxsibka" path="res://Art/Models/Environment/RoundOpening_col.glb" id="39_xnbjg"]
 
@@ -25949,8 +25949,8 @@ transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 13.873, -10.4455)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.184063)
 mesh = SubResource("ArrayMesh_3jfee")
 
-[node name="FinalNPC" parent="Environment/SixthLevel" instance=ExtResource("36_3hmvg")]
-transform = Transform3D(-1.7, -1.19755e-08, -2.56413e-07, 0, 1.69815, -0.0793104, 2.56693e-07, -0.0793104, -1.69815, 1.90482e-07, 13.9607, -10.7385)
+[node name="FinalNPC" parent="Environment/SixthLevel" instance=ExtResource("37_bejw8")]
+transform = Transform3D(-1.6, -1.12711e-08, -2.4133e-07, 0, 1.59826, -0.074645, 2.41593e-07, -0.074645, -1.59826, 1.90482e-07, 13.9465, -10.4772)
 
 [node name="AnalyticsCheckpoint" parent="Environment/SixthLevel" instance=ExtResource("8_axjnh")]
 transform = Transform3D(1, 0, 0, 0, 4, 0, 0, 0, 5, 11.8602, 2.24513, 0)

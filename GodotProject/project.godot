@@ -32,6 +32,8 @@ directories/dtl_directory={
 "CouchDude_03": "res://Dialogues/CouchDude_03.dtl",
 "CouchDude_04": "res://Dialogues/CouchDude_04.dtl",
 "FinalNPC_01": "res://Dialogues/FinalNPC_01.dtl",
+"FinalNPC_Choice_Blue": "res://Dialogues/FinalNPC_Choice_Blue.dtl",
+"FinalNPC_Choice_Red": "res://Dialogues/FinalNPC_Choice_Red.dtl",
 "HypeGuy_01": "res://Dialogues/HypeGuy_01.dtl",
 "HypeGuy_02": "res://Dialogues/HypeGuy_02.dtl",
 "HypeGuy_03": "res://Dialogues/HypeGuy_03.dtl",

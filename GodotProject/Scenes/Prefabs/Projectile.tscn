@@ -52,7 +52,7 @@ _data = {
 
 [node name="Projectile" type="Area3D"]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
-collision_layer = 0
+collision_layer = 16
 collision_mask = 13
 script = ExtResource("1_ghg8v")
 pizza_throw_sounds = Array[AudioStreamWAV]([ExtResource("2_1bjxb"), ExtResource("3_w7ggx")])

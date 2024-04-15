@@ -37,6 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://diiam5vtrjabd" path="res://Art/Models/Environment/Props/chair_stool_wood.gltf" id="35_ycekf"]
 [ext_resource type="PackedScene" uid="uid://ce7w1qvmurqmu" path="res://Scenes/Prefabs/NPCs/FinalNPC.tscn" id="37_bejw8"]
 [ext_resource type="PackedScene" uid="uid://bbekkuxaa8jqu" path="res://Art/Models/Environment/240316_Surroundings_v1.gltf" id="38_fc7s1"]
+[ext_resource type="Script" path="res://Scripts/PizzaChoice.gd" id="39_1xbh8"]
 [ext_resource type="PackedScene" uid="uid://c2qldkcxsibka" path="res://Art/Models/Environment/RoundOpening_col.glb" id="39_xnbjg"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bhaf0"]
@@ -2011,7 +2012,7 @@ shadow_mesh = SubResource("ArrayMesh_ehdi4")
 
 [sub_resource type="Curve3D" id="Curve3D_2wj0v"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 34.125, 9.335, 0, 0, 0, 0, 0, 100, 0, 34.125, 20, 0, 0, 0, 0, 0, 0, 0, 0, 350),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -5, 0, 5, 0, 0.5, 0, -1, 0, -5, -10, 0, 0, -1, 0, 0, 0.08, 2, -237, -21),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
@@ -2069,6 +2070,8 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rtpex")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lbjge"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v2f0v"]
 resource_name = "Material.002"
@@ -2263,6 +2266,30 @@ tracks/13/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("RedPizzaArea3D:monitoring")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(22.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("BluePizzaArea3D:monitoring")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(22.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_8jfrk"]
 length = 0.001
@@ -2381,6 +2408,30 @@ tracks/9/path = NodePath("../RisingWater:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("RedPizzaArea3D:monitoring")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("BluePizzaArea3D:monitoring")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -26113,11 +26164,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 237.669, -12.5991)
 script = ExtResource("35_noiuo")
 pizza_presence_animation_player = NodePath("../PizzaPresence/AnimationPlayer")
 
-[node name="Path3D" type="Path3D" parent="CameraMovement"]
+[node name="RedPath3D" type="Path3D" parent="CameraMovement"]
 curve = SubResource("Curve3D_2wj0v")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="CameraMovement/Path3D"]
+[node name="PathFollow3D" type="PathFollow3D" parent="CameraMovement/RedPath3D"]
 rotation_mode = 0
+loop = false
+tilt_enabled = false
+
+[node name="BluePath3D" type="Path3D" parent="CameraMovement"]
+curve = SubResource("Curve3D_2wj0v")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="CameraMovement/BluePath3D"]
+transform = Transform3D(0.999998, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 7.62939e-05, 0.00701904)
+rotation_mode = 4
 loop = false
 tilt_enabled = false
 
@@ -26141,18 +26201,48 @@ transform = Transform3D(726.575, 0, -687.088, 0, 1000, 0, 687.088, 0, 726.575, 3
 
 [node name="Pizza red" type="MeshInstance3D" parent="PizzaPresence"]
 transform = Transform3D(1.0185, -2.26367e-17, 9.88542e-24, 0, -4.45625e-09, -1.0185, 2.26152e-16, 0.101947, -4.452e-08, 0, 0.0079499, 1.06814e-09)
+sorting_offset = 10.0
 mesh = SubResource("ArrayMesh_go43m")
 skeleton = NodePath("")
+
+[node name="RedPizzaArea3D" type="Area3D" parent="PizzaPresence"]
+transform = Transform3D(1, -1.84169e-07, -7.45058e-09, 1.51456e-07, 1, 2.98023e-08, 2.468e-08, 2.38419e-07, 1, 0.000280056, -0.0503498, 0.0711118)
+collision_layer = 16
+collision_mask = 16
+monitoring = false
+monitorable = false
+script = ExtResource("39_1xbh8")
+dialogue = "FinalNPC_Choice_Red"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PizzaPresence/RedPizzaArea3D"]
+transform = Transform3D(0.28, 0.000488693, -1.16415e-10, -0.000400313, 0.229362, -0.160602, -0.000280301, 0.160601, 0.229363, -0.167934, -0.0597239, 0.0843512)
+shape = SubResource("BoxShape3D_lbjge")
 
 [node name="Pizza blue" type="MeshInstance3D" parent="PizzaPresence"]
 transform = Transform3D(1.0185, -2.26367e-17, 9.88542e-24, 0, -4.45625e-09, -1.0185, 2.26152e-16, 0.101947, -4.452e-08, 0, 0.0079499, 1.06814e-09)
 mesh = SubResource("ArrayMesh_2iear")
 skeleton = NodePath("")
 
+[node name="BluePizzaArea3D" type="Area3D" parent="PizzaPresence"]
+transform = Transform3D(1, 7.02916e-07, 1.76718e-07, 2.1758e-07, 1, 1.19209e-07, -1.55997e-08, 5.06639e-07, 1, 0.334828, -0.0497292, 0.0702348)
+collision_layer = 16
+collision_mask = 16
+monitoring = false
+monitorable = false
+script = ExtResource("39_1xbh8")
+dialogue = "FinalNPC_Choice_Blue"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PizzaPresence/BluePizzaArea3D"]
+transform = Transform3D(0.28, 0.000488693, -1.16415e-10, -0.000400313, 0.229362, -0.160602, -0.000280301, 0.160601, 0.229363, -0.167934, -0.0597239, 0.0843512)
+shape = SubResource("BoxShape3D_lbjge")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PizzaPresence"]
 libraries = {
 "": SubResource("AnimationLibrary_wuobq")
 }
+
+[connection signal="area_entered" from="PizzaPresence/RedPizzaArea3D" to="PizzaPresence/RedPizzaArea3D" method="_on_area_entered"]
+[connection signal="area_entered" from="PizzaPresence/BluePizzaArea3D" to="PizzaPresence/BluePizzaArea3D" method="_on_area_entered"]
 
 [editable path="Environment/Chrysler building v6"]
 [editable path="Environment/GroundLevel/AnimatedPizzaBoxesPuzzle/pizza box v1"]

@@ -55,7 +55,7 @@ func _ready():
 
 
 func _final_cutscenes(argument: String):
-	if argument == "start_choice_cinematic":
+	if argument == "start_choice_cinematic" or argument == "choice_taken":
 		process_inputs = false
 		$HUD.disable_all()
 	if argument == "enable_final_choice":

@@ -75,7 +75,7 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion and process_inputs:
 		if limit_inputs:
 			head.rotate_y(-event.relative.x * SENSITIVITY)
-			camera.rotation.y = clamp(camera.rotation.y, deg_to_rad(-30), deg_to_rad(30))
+			head.rotation.y = clamp(head.rotation.y, deg_to_rad(-30), deg_to_rad(30))
 		else:
 			head.rotate_y(-event.relative.x * SENSITIVITY)
 			camera.rotate_x(-event.relative.y * SENSITIVITY)

@@ -26108,10 +26108,9 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/SixthLevel/Step14"]
 shape = SubResource("CylinderShape3D_i5xm5")
 
-[node name="CameraMovement" type="Node3D" parent="." node_paths=PackedStringArray("hud", "pizza_presence_animation_player")]
+[node name="CameraMovement" type="Node3D" parent="." node_paths=PackedStringArray("pizza_presence_animation_player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 237.669, -12.5991)
 script = ExtResource("35_noiuo")
-hud = NodePath("../Player/HUD")
 pizza_presence_animation_player = NodePath("../PizzaPresence/AnimationPlayer")
 
 [node name="Path3D" type="Path3D" parent="CameraMovement"]
@@ -26155,9 +26154,6 @@ libraries = {
 "": SubResource("AnimationLibrary_wuobq")
 }
 
-[connection signal="body_entered" from="Environment/EndlessVoid" to="Player/HUD" method="_on_endless_void_body_entered"]
-
-[editable path="Player"]
 [editable path="Environment/Chrysler building v6"]
 [editable path="Environment/GroundLevel/AnimatedPizzaBoxesPuzzle/pizza box v1"]
 [editable path="Environment/GroundLevel/AnimatedPizzaBoxesPuzzle/pizza box v2"]

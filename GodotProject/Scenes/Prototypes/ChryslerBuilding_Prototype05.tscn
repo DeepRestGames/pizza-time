@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://irl85kmk43k0" path="res://Art/Sky/240329_Skybox test_panorama_v3 fin.png" id="1_3032f"]
 [ext_resource type="PackedScene" uid="uid://djcjuxcxoilpw" path="res://Art/Models/Environment/Chrysler building v6.gltf" id="2_1p8g1"]
 [ext_resource type="ArrayOccluder3D" uid="uid://cyetaisjnp06u" path="res://Scenes/Prototypes/ChryslerBuilding_Prototype04_OccluderBake.occ" id="2_hj2vh"]
-[ext_resource type="Texture2D" uid="uid://bedb72rgjgwu1" path="res://Art/UI/240414_in game menu_without_text-02.png" id="2_p3di4"]
 [ext_resource type="Material" uid="uid://bqh8kkm1la54r" path="res://Art/Materials/building_material.tres" id="2_tjq3o"]
 [ext_resource type="PackedScene" uid="uid://jjygr33tp3f" path="res://Scenes/Prefabs/Level Design Elements/StaticBox.tscn" id="3_q6mt2"]
 [ext_resource type="PackedScene" uid="uid://cepkyfy5f1jgq" path="res://Art/Models/Environment/Props/couch_pillows.gltf" id="5_3t2rq"]
@@ -2404,23 +2403,11 @@ shadow_enabled = true
 directional_shadow_max_distance = 2000.0
 directional_shadow_pancake_size = 1024.0
 
-[node name="Player" parent="." instance=ExtResource("15_olpqq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9683, 59.5827, 13.6339)
-
-[node name="WeaponPivot" parent="Player/Head" index="3"]
-transform = Transform3D(0.998353, -0.0355339, -0.0450135, 0.0171093, 0.933713, -0.357611, 0.0547371, 0.356253, 0.932783, 0.5, -0.7, -0.1)
-
-[node name="PauseMenu" parent="Player/HUD" index="6"]
-visible = true
-
-[node name="Panel" parent="Player/HUD/PauseMenu" index="0"]
-texture = ExtResource("2_p3di4")
-
-[node name="OptionsButton" parent="Player/HUD/PauseMenu/Panel/VBoxContainer" index="1"]
-text = "AUDIO"
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_gk65a")
+
+[node name="Player" parent="." instance=ExtResource("15_olpqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.34315, 235.973, -10.9494)
 
 [node name="PlayerStartingPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 27)

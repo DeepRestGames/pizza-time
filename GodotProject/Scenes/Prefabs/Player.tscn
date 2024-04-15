@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://dv2q0e8ff7ldb" path="res://Audio/SFX/PizzaTime_Jump04.wav" id="6_o22b6"]
 [ext_resource type="PackedScene" uid="uid://bw3e72fqxwb7" path="res://Scenes/Prefabs/pizza_v_5_3.tscn" id="7_kec1n"]
 [ext_resource type="Script" path="res://Scripts/HUD.gd" id="9_7uv1p"]
-[ext_resource type="Texture2D" uid="uid://bdabpt1olxhy4" path="res://Art/UI/240330_in game menu_without_text-02.png" id="10_ciih0"]
+[ext_resource type="Texture2D" uid="uid://bedb72rgjgwu1" path="res://Art/UI/240414_in game menu_without_text-02.png" id="10_nt6wg"]
 [ext_resource type="FontFile" uid="uid://43nlb582sp2m" path="res://Art/Fonts/ArcaneNine-eZP1x.ttf" id="11_yndsa"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cyhp0"]
@@ -216,6 +216,13 @@ _data = {
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8b7j0"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6mf3u"]
+bg_color = Color(0.92549, 0.690196, 0.4, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_it7v1"]
 bg_color = Color(0.219608, 0, 0.423529, 1)
@@ -474,7 +481,7 @@ offset_right = 544.0
 offset_bottom = 558.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10_ciih0")
+texture = ExtResource("10_nt6wg")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HUD/PauseMenu/Panel"]
@@ -510,22 +517,60 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_8b7j0")
 text = "RESUME"
 alignment = 0
 
-[node name="OptionsButton" type="Button" parent="HUD/PauseMenu/Panel/VBoxContainer"]
+[node name="AudioLabel" type="Label" parent="HUD/PauseMenu/Panel/VBoxContainer"]
 layout_mode = 2
-focus_mode = 0
 theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("11_yndsa")
 theme_override_font_sizes/font_size = 44
 theme_override_styles/normal = SubResource("StyleBoxFlat_8b7j0")
-theme_override_styles/hover = SubResource("StyleBoxFlat_8b7j0")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8b7j0")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_8b7j0")
-theme_override_styles/focus = SubResource("StyleBoxFlat_8b7j0")
-text = "OPTIONS"
-alignment = 0
+text = "AUDIO"
+
+[node name="MusicLabel" type="Label" parent="HUD/PauseMenu/Panel/VBoxContainer/AudioLabel"]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 36.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_yndsa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8b7j0")
+text = "MUSIC"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="HUD/PauseMenu/Panel/VBoxContainer/AudioLabel/MusicLabel"]
+clip_contents = true
+layout_mode = 2
+offset_left = 45.0
+offset_top = 1.0
+offset_right = 195.0
+offset_bottom = 17.0
+focus_mode = 0
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_6mf3u")
+min_value = -30.0
+max_value = 0.0
+
+[node name="SFXLabel" type="Label" parent="HUD/PauseMenu/Panel/VBoxContainer/AudioLabel"]
+layout_mode = 0
+offset_top = 75.0
+offset_right = 36.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_yndsa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8b7j0")
+text = "SFX"
+
+[node name="SFXVolumeSlider" type="HSlider" parent="HUD/PauseMenu/Panel/VBoxContainer/AudioLabel/SFXLabel"]
+clip_contents = true
+layout_mode = 2
+offset_left = 45.0
+offset_top = 1.0
+offset_right = 195.0
+offset_bottom = 17.0
+focus_mode = 0
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_6mf3u")
+min_value = -30.0
+max_value = 0.0
 
 [node name="MainMenuButton" type="Button" parent="HUD/PauseMenu/Panel/VBoxContainer"]
 layout_mode = 2
@@ -662,13 +707,6 @@ theme_override_font_sizes/font_size = 13
 theme_override_styles/normal = SubResource("StyleBoxFlat_oc1ly")
 text = "SFX VOLUME:"
 
-[node name="SFXVolumeSlider" type="HSlider" parent="HUD/OptionsMenu/Panel/VBoxContainer"]
-clip_contents = true
-layout_mode = 2
-focus_mode = 0
-min_value = -30.0
-max_value = 0.0
-
 [node name="MusicVolumeLabel" type="Label" parent="HUD/OptionsMenu/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -678,13 +716,6 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 13
 theme_override_styles/normal = SubResource("StyleBoxFlat_oc1ly")
 text = "MUSIC VOLUME:"
-
-[node name="MusicVolumeSlider" type="HSlider" parent="HUD/OptionsMenu/Panel/VBoxContainer"]
-clip_contents = true
-layout_mode = 2
-focus_mode = 0
-min_value = -30.0
-max_value = 0.0
 
 [node name="BackButton" type="Button" parent="HUD/OptionsMenu/Panel/VBoxContainer"]
 layout_mode = 2
@@ -711,10 +742,9 @@ bus = &"SFX"
 [connection signal="body_entered" from="Head/WeaponPivot/WeaponModel/WeaponHitbox" to="." method="_on_weapon_hitbox_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="HUD/PauseMenu/Panel/VBoxContainer/ResumeButton" to="HUD" method="_on_resume_button_pressed"]
-[connection signal="pressed" from="HUD/PauseMenu/Panel/VBoxContainer/OptionsButton" to="HUD" method="_on_options_button_pressed"]
+[connection signal="value_changed" from="HUD/PauseMenu/Panel/VBoxContainer/AudioLabel/MusicLabel/MusicVolumeSlider" to="HUD" method="_on_music_volume_slider_value_changed"]
+[connection signal="value_changed" from="HUD/PauseMenu/Panel/VBoxContainer/AudioLabel/SFXLabel/SFXVolumeSlider" to="HUD" method="_on_sfx_volume_slider_value_changed"]
 [connection signal="pressed" from="HUD/PauseMenu/Panel/VBoxContainer/CloseButton" to="HUD" method="_on_close_button_pressed"]
 [connection signal="toggled" from="HUD/OptionsMenu/Panel/VBoxContainer/TimerCheckButton" to="HUD" method="_on_timer_check_button_toggled"]
 [connection signal="toggled" from="HUD/OptionsMenu/Panel/VBoxContainer/FPSCheckButton" to="HUD" method="_on_fps_check_button_toggled"]
-[connection signal="value_changed" from="HUD/OptionsMenu/Panel/VBoxContainer/SFXVolumeSlider" to="HUD" method="_on_sfx_volume_slider_value_changed"]
-[connection signal="value_changed" from="HUD/OptionsMenu/Panel/VBoxContainer/MusicVolumeSlider" to="HUD" method="_on_music_volume_slider_value_changed"]
 [connection signal="pressed" from="HUD/OptionsMenu/Panel/VBoxContainer/BackButton" to="HUD" method="_on_options_back_button_pressed"]

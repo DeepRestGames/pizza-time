@@ -1,6 +1,9 @@
+[signal arg="choice_taken"]
+[wait time="2.5"]
 ...I see.
 Sometimes it's hard to let go of what feels secure. Sometimes our own reality - no matter how distorted it can be - is the only thing that feels bearable.
 Don't worry, friend. No matter how many more times we'll meet, we'll always be here for you.
 And whenever you'll feel ready, we'll walk that path. Together.
 Now, let's go once more, from the start.\
 We got some pizza to think of.
+[signal arg="start_blue_ending_cinematic"]

@@ -78,6 +78,7 @@ autoplay = "pizza projectile animation"
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 volume_db = -15.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]

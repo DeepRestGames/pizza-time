@@ -10,6 +10,9 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 # Coyote effect
 @export var hang_time: float = .1
 var hang_time_counter: float
+# Fall damage simulation variables
+@export var max_fall_time: float = 3.5
+var fall_time_counter = max_fall_time
 
 # Camera variables
 @onready var head = $Head
@@ -95,12 +98,19 @@ func _physics_process(delta):
 	if limit_inputs == true:
 		return
 	
+	# Fall damage respawn
+	if fall_time_counter <= 0 and is_on_floor():
+		$HUD.respawn_player_animation()
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 		hang_time_counter -= delta
+		fall_time_counter -= delta
 	else:
 		hang_time_counter = hang_time
+		fall_time_counter = max_fall_time
+		
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and hang_time_counter > 0:

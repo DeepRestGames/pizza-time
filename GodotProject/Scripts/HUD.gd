@@ -84,7 +84,7 @@ func _on_checkpoint_reached():
 	checkpoint_label.hide()
 
 
-func _on_endless_void_body_entered(_body):
+func respawn_player_animation():
 	animation_player.play("fade_to_black")
 	await animation_player.animation_finished
 	GameManager.respawn_player()

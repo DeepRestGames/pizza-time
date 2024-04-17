@@ -2010,6 +2010,13 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ehdi4")
 
+[sub_resource type="Curve3D" id="Curve3D_3re7t"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 34.125, 9.335, 0, 0, 0, 0, 0, 100, 0, 34.125, 20, 0, 0, 0, 0, 0, 0, 0, 0, 350),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
 [sub_resource type="Curve3D" id="Curve3D_2wj0v"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -5, 0, 5, 0, 0.5, 0, -1, 0, -5, -10, 0, 0, -1, 0, 0, 0.08, 2, -237, -21),
@@ -26165,7 +26172,7 @@ script = ExtResource("35_noiuo")
 pizza_presence_animation_player = NodePath("../PizzaPresence/AnimationPlayer")
 
 [node name="RedPath3D" type="Path3D" parent="CameraMovement"]
-curve = SubResource("Curve3D_2wj0v")
+curve = SubResource("Curve3D_3re7t")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="CameraMovement/RedPath3D"]
 rotation_mode = 0
@@ -26176,7 +26183,7 @@ tilt_enabled = false
 curve = SubResource("Curve3D_2wj0v")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="CameraMovement/BluePath3D"]
-transform = Transform3D(0.999998, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 7.62939e-05, 0.00701904)
+transform = Transform3D(0.999998, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 rotation_mode = 4
 loop = false
 tilt_enabled = false

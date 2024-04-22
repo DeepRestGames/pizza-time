@@ -11,8 +11,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var hang_time: float = .1
 var hang_time_counter: float
 # Fall damage simulation variables
-@export var max_fall_time: float = 3.5
-var fall_time_counter = max_fall_time
+@export var fall_velocity_limit: float = -23
+var current_fall_velocity = 0.0
 
 # Camera variables
 @onready var head = $Head
@@ -98,19 +98,19 @@ func _physics_process(delta):
 	if limit_inputs == true:
 		return
 	
-	# Fall damage respawn
-	if fall_time_counter <= 0 and is_on_floor():
-		$HUD.respawn_player_animation()
-	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 		hang_time_counter -= delta
-		fall_time_counter -= delta
+		current_fall_velocity = velocity.y
 	else:
+		# Fall damage respawn
+		if current_fall_velocity <= fall_velocity_limit:
+			current_fall_velocity = 0.0
+			$HUD.respawn_player_animation()
+			return
+
 		hang_time_counter = hang_time
-		fall_time_counter = max_fall_time
-		
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and hang_time_counter > 0:
@@ -145,10 +145,6 @@ func _physics_process(delta):
 			velocity.x = lerp(velocity.x, direction.x * speed, delta * 7.0)
 			velocity.z = lerp(velocity.z, direction.z * speed, delta * 7.0)
 			audio_stream_player.stop()
-		
-		# Handle stairs/steps
-		#if step_detection.is_colliding() and not wall_detection.is_colliding():
-			#velocity.y = 2
 		
 	else:
 		if audio_stream_player.stream == walking_sound:

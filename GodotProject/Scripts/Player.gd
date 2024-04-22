@@ -98,7 +98,7 @@ func _physics_process(delta):
 	if limit_inputs == true:
 		return
 	
-	# Add the gravity.
+	# Add the gravity
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 		hang_time_counter -= delta
@@ -109,7 +109,7 @@ func _physics_process(delta):
 			current_fall_velocity = 0.0
 			$HUD.respawn_player_animation()
 			return
-
+		
 		hang_time_counter = hang_time
 	
 	# Handle jump.
@@ -196,6 +196,10 @@ func pickup_item(item_name: String):
 		weapon_attack_animation = Weapon_Attack_Types["MELEE"]
 
 
+func respawn_player():
+	$HUD.respawn_player_animation()
+
+
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "attack_throw":
 		projectile_instance = projectile_prefab.instantiate()
@@ -204,4 +208,3 @@ func _on_animation_player_animation_finished(anim_name):
 		get_parent().add_child(projectile_instance)
 		
 		Analytics.add_event("Thrown Pizzas")
-

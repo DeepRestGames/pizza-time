@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://djcjuxcxoilpw" path="res://Art/Models/Environment/Chrysler building v6.gltf" id="2_1p8g1"]
 [ext_resource type="ArrayOccluder3D" uid="uid://cyetaisjnp06u" path="res://Scenes/Prototypes/ChryslerBuilding_Prototype04_OccluderBake.occ" id="2_hj2vh"]
 [ext_resource type="Material" uid="uid://bqh8kkm1la54r" path="res://Art/Materials/building_material.tres" id="2_tjq3o"]
+[ext_resource type="Script" path="res://Scripts/EndlessVoid.gd" id="3_bpm5w"]
 [ext_resource type="PackedScene" uid="uid://jjygr33tp3f" path="res://Scenes/Prefabs/Level Design Elements/StaticBox.tscn" id="3_q6mt2"]
 [ext_resource type="PackedScene" uid="uid://cepkyfy5f1jgq" path="res://Art/Models/Environment/Props/couch_pillows.gltf" id="5_3t2rq"]
 [ext_resource type="PackedScene" uid="uid://b8intk1ci0l4v" path="res://Scenes/Prefabs/Level Design Elements/InteractableButton.tscn" id="5_bq56s"]
@@ -2472,9 +2473,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 27)
 
 [node name="Environment" type="Node3D" parent="."]
 
-[node name="EndlessVoid" type="StaticBody3D" parent="Environment"]
+[node name="EndlessVoid" type="Area3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.241185, 0)
-collision_mask = 0
+collision_mask = 2
+script = ExtResource("3_bpm5w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/EndlessVoid"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 0, 0)
@@ -26247,6 +26249,7 @@ libraries = {
 "": SubResource("AnimationLibrary_wuobq")
 }
 
+[connection signal="body_entered" from="Environment/EndlessVoid" to="Environment/EndlessVoid" method="_on_body_entered"]
 [connection signal="area_entered" from="PizzaPresence/RedPizzaArea3D" to="PizzaPresence/RedPizzaArea3D" method="_on_area_entered"]
 [connection signal="area_entered" from="PizzaPresence/BluePizzaArea3D" to="PizzaPresence/BluePizzaArea3D" method="_on_area_entered"]
 

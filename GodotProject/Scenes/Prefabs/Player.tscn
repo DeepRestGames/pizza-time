@@ -3,11 +3,12 @@
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_6d860"]
 [ext_resource type="AudioStream" uid="uid://c2y3wea0niu03" path="res://Audio/SFX/240416_SFX_walking2.wav" id="2_brvfr"]
 [ext_resource type="Texture2D" uid="uid://ma18qtx1qeta" path="res://Art/Icons/WhiteCircle.png" id="2_jepl7"]
-[ext_resource type="AudioStream" uid="uid://dab7nbdnypttn" path="res://Audio/SFX/PizzaTime_Jump01.wav" id="3_3xvii"]
-[ext_resource type="AudioStream" uid="uid://c4kpq7gwyehef" path="res://Audio/SFX/PizzaTime_Jump02.wav" id="4_l47gu"]
-[ext_resource type="AudioStream" uid="uid://48nitw4vbmhn" path="res://Audio/SFX/PizzaTime_Jump03.wav" id="5_moyer"]
-[ext_resource type="AudioStream" uid="uid://dv2q0e8ff7ldb" path="res://Audio/SFX/PizzaTime_Jump04.wav" id="6_o22b6"]
+[ext_resource type="AudioStream" uid="uid://d2hc2x3wy4vcx" path="res://Audio/SFX/240416_SFX_jump1.wav" id="3_wyooa"]
+[ext_resource type="AudioStream" uid="uid://bm7yy74vyuwpr" path="res://Audio/SFX/240416_SFX_jump2.wav" id="4_ttgca"]
+[ext_resource type="AudioStream" uid="uid://dpjvfoge5nndp" path="res://Audio/SFX/240416_SFX_jump3.wav" id="5_n82ba"]
+[ext_resource type="AudioStream" uid="uid://dbnn1vpr62dgl" path="res://Audio/SFX/240416_SFX_jump4.wav" id="6_0h76m"]
 [ext_resource type="PackedScene" uid="uid://bw3e72fqxwb7" path="res://Scenes/Prefabs/pizza_v_5_3.tscn" id="7_kec1n"]
+[ext_resource type="AudioStream" uid="uid://cpsvepu4j7ykg" path="res://Audio/SFX/240416_SFX_jump5.wav" id="7_yvowy"]
 [ext_resource type="Script" path="res://Scripts/HUD.gd" id="9_7uv1p"]
 [ext_resource type="Texture2D" uid="uid://bedb72rgjgwu1" path="res://Art/UI/240414_in game menu_without_text-02.png" id="10_nt6wg"]
 [ext_resource type="FontFile" uid="uid://43nlb582sp2m" path="res://Art/Fonts/ArcaneNine-eZP1x.ttf" id="11_yndsa"]
@@ -247,7 +248,7 @@ collision_mask = 5
 floor_stop_on_slope = false
 script = ExtResource("1_6d860")
 walking_sound = ExtResource("2_brvfr")
-jumping_sounds = Array[AudioStreamWAV]([ExtResource("3_3xvii"), ExtResource("4_l47gu"), ExtResource("5_moyer"), ExtResource("6_o22b6")])
+jumping_sounds = Array[AudioStreamWAV]([ExtResource("3_wyooa"), ExtResource("4_ttgca"), ExtResource("5_n82ba"), ExtResource("6_0h76m"), ExtResource("7_yvowy")])
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 visible = false

@@ -1,3 +1,4 @@
+[sound path="res://Audio/SFX/240416_SFX_npc_final3.wav" volume="-10.0" bus="SFX"]
 Is it pizza time?\
 \
 I guess I'll take some, thank you for coming all the way up.
@@ -10,6 +11,7 @@ Don't you think it's time to, you know...\
 \
 Change things?
 Let the past in the past, move on...
+[sound path="res://Audio/SFX/240416_SFX_npc_final4.wav" volume="-10.0" bus="SFX"]
 Aren't you tired of this little game you're playing?\
 Aren't you tired of delivering pizza?\
 \

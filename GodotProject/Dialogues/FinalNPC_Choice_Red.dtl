@@ -1,5 +1,6 @@
 [signal arg="choice_taken"]
 [wait time="2.5"]
+[sound path="res://Audio/SFX/240416_SFX_npc_final1.wav" volume="-10.0" bus="SFX"]
 Well, this comes as a surprise.
 A nice one, mind you. I just didn't think we were ever going to leave here.
 Nevertheless.\

@@ -7,7 +7,15 @@ var main_dialogue_done = false
 @export var random_dialogues_indexes: Array[String]
 var rng = RandomNumberGenerator.new()
 
+# Audio variables
+@onready var audio_stream_player = $AudioStreamPlayer3D
+@export var dialogue_sounds: Array[AudioStreamWAV]
+
 func start_dialogue():
+	if dialogue_sounds.size() > 0:
+		audio_stream_player.stream = dialogue_sounds.pick_random()
+		audio_stream_player.play()
+	
 	if !main_dialogue_done:
 		Dialogic.start(NPC_name + "_" + main_dialogue_index)
 		main_dialogue_done = true

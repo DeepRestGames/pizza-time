@@ -1,8 +1,8 @@
 [gd_scene load_steps=27 format=3 uid="uid://bq4r28jv36sep"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_6d860"]
+[ext_resource type="AudioStream" uid="uid://c2y3wea0niu03" path="res://Audio/SFX/240416_SFX_walking2.wav" id="2_brvfr"]
 [ext_resource type="Texture2D" uid="uid://ma18qtx1qeta" path="res://Art/Icons/WhiteCircle.png" id="2_jepl7"]
-[ext_resource type="AudioStream" uid="uid://w5hhq2cl1qui" path="res://Audio/SFX/PizzaTime_Walk.wav" id="2_xht7t"]
 [ext_resource type="AudioStream" uid="uid://dab7nbdnypttn" path="res://Audio/SFX/PizzaTime_Jump01.wav" id="3_3xvii"]
 [ext_resource type="AudioStream" uid="uid://c4kpq7gwyehef" path="res://Audio/SFX/PizzaTime_Jump02.wav" id="4_l47gu"]
 [ext_resource type="AudioStream" uid="uid://48nitw4vbmhn" path="res://Audio/SFX/PizzaTime_Jump03.wav" id="5_moyer"]
@@ -246,7 +246,7 @@ collision_layer = 2
 collision_mask = 5
 floor_stop_on_slope = false
 script = ExtResource("1_6d860")
-walking_sound = ExtResource("2_xht7t")
+walking_sound = ExtResource("2_brvfr")
 jumping_sounds = Array[AudioStreamWAV]([ExtResource("3_3xvii"), ExtResource("4_l47gu"), ExtResource("5_moyer"), ExtResource("6_o22b6")])
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

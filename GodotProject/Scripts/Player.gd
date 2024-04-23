@@ -20,7 +20,7 @@ var current_fall_velocity = 0.0
 const SENSITIVITY = 0.001
 var mouse_captured = false
 # Head bob
-const BOB_FREQUENCY = 2.0
+const BOB_FREQUENCY = 1.8
 const BOB_AMPLITUDE = 0.08
 var t_bob = 0.0
 # FOV

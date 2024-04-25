@@ -294,74 +294,65 @@ script = ExtResource("9_7uv1p")
 
 [node name="Target" type="Control" parent="HUD"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 10.0
-offset_bottom = 10.0
+anchor_left = 0.494792
+anchor_top = 0.490741
+anchor_right = 0.505208
+anchor_bottom = 0.509259
+offset_right = 6.10352e-05
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Outline" type="TextureRect" parent="HUD/Target"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -6.0
-offset_top = -6.0
-offset_right = 6.0
-offset_bottom = 6.0
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.8
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_jepl7")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Inner" type="TextureRect" parent="HUD/Target"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -5.0
-offset_top = -5.0
-offset_right = 5.0
-offset_bottom = 5.0
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.25
+anchor_right = 0.75
+anchor_bottom = 0.75
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_jepl7")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="TimerLabel" type="Label" parent="HUD"]
 layout_mode = 1
-offset_left = 20.0
-offset_top = 15.0
-offset_right = 100.0
-offset_bottom = 50.0
+anchors_preset = -1
+anchor_left = 0.0104167
+anchor_top = 0.0138889
+anchor_right = 0.0520833
+anchor_bottom = 0.0462963
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 25
 text = "00:00"
+metadata/_edit_use_anchors_ = true
 
 [node name="CheckpointLabel" type="Label" parent="HUD"]
 visible = false
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -276.0
-offset_top = 30.0
-offset_right = 276.0
-offset_bottom = 85.0
+anchors_preset = -1
+anchor_left = 0.35625
+anchor_top = 0.0277778
+anchor_right = 0.64375
+anchor_bottom = 0.0787037
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -369,16 +360,16 @@ theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 25
 text = "NEW CHECKPOINT REACHED!"
 horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="FPSLabel" type="Label" parent="HUD"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -70.0
-offset_top = 15.0
-offset_right = -20.0
-offset_bottom = 50.0
+anchors_preset = -1
+anchor_left = 0.963542
+anchor_top = 0.0138889
+anchor_right = 0.989583
+anchor_bottom = 0.0462963
 grow_horizontal = 0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -386,6 +377,7 @@ theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 25
 text = "60"
 horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="DeathScreen" type="ColorRect" parent="HUD"]
 layout_mode = 1
@@ -396,6 +388,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
 
 [node name="CinematicBands" type="Control" parent="HUD"]
 layout_mode = 1
@@ -444,37 +437,29 @@ grow_vertical = 2
 
 [node name="Panel" type="TextureRect" parent="HUD/PauseMenu"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -544.0
-offset_top = -393.0
-offset_right = 544.0
-offset_bottom = 558.0
+anchors_preset = -1
+anchor_left = 0.216667
+anchor_top = 0.136111
+anchor_right = 0.783333
+anchor_bottom = 1.01667
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_nt6wg")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HUD/PauseMenu/Panel"]
+[node name="ResumeButtonContainer" type="AspectRatioContainer" parent="HUD/PauseMenu/Panel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -307.0
-offset_top = -351.5
-offset_right = -132.0
-offset_bottom = 48.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 58
-metadata/_edit_group_ = true
+anchors_preset = -1
+anchor_left = 0.217831
+anchor_top = 0.128286
+anchor_right = 0.375
+anchor_bottom = 0.180862
+alignment_horizontal = 0
+alignment_vertical = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="ResumeButton" type="Button" parent="HUD/PauseMenu/Panel/VBoxContainer"]
+[node name="ResumeButton" type="Button" parent="HUD/PauseMenu/Panel/ResumeButtonContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
@@ -491,7 +476,18 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_8b7j0")
 text = "RESUME"
 alignment = 0
 
-[node name="AudioLabel" type="Label" parent="HUD/PauseMenu/Panel/VBoxContainer"]
+[node name="AudioButtonsContainer" type="AspectRatioContainer" parent="HUD/PauseMenu/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.217831
+anchor_top = 0.236593
+anchor_right = 0.425551
+anchor_bottom = 0.289169
+alignment_horizontal = 0
+alignment_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioLabel" type="Label" parent="HUD/PauseMenu/Panel/AudioButtonsContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -500,7 +496,7 @@ theme_override_font_sizes/font_size = 44
 theme_override_styles/normal = SubResource("StyleBoxFlat_8b7j0")
 text = "AUDIO"
 
-[node name="MusicLabel" type="Label" parent="HUD/PauseMenu/Panel/VBoxContainer/AudioLabel"]
+[node name="MusicLabel" type="Label" parent="HUD/PauseMenu/Panel/AudioButtonsContainer/AudioLabel"]
 layout_mode = 0
 offset_top = 50.0
 offset_right = 36.0
@@ -511,7 +507,7 @@ theme_override_fonts/font = ExtResource("11_yndsa")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8b7j0")
 text = "MUSIC"
 
-[node name="MusicVolumeSlider" type="HSlider" parent="HUD/PauseMenu/Panel/VBoxContainer/AudioLabel/MusicLabel"]
+[node name="MusicVolumeSlider" type="HSlider" parent="HUD/PauseMenu/Panel/AudioButtonsContainer/AudioLabel/MusicLabel"]
 clip_contents = true
 layout_mode = 2
 offset_left = 45.0
@@ -523,7 +519,7 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_6mf3u")
 min_value = -30.0
 max_value = 0.0
 
-[node name="SFXLabel" type="Label" parent="HUD/PauseMenu/Panel/VBoxContainer/AudioLabel"]
+[node name="SFXLabel" type="Label" parent="HUD/PauseMenu/Panel/AudioButtonsContainer/AudioLabel"]
 layout_mode = 0
 offset_top = 75.0
 offset_right = 36.0
@@ -534,7 +530,7 @@ theme_override_fonts/font = ExtResource("11_yndsa")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8b7j0")
 text = "SFX"
 
-[node name="SFXVolumeSlider" type="HSlider" parent="HUD/PauseMenu/Panel/VBoxContainer/AudioLabel/SFXLabel"]
+[node name="SFXVolumeSlider" type="HSlider" parent="HUD/PauseMenu/Panel/AudioButtonsContainer/AudioLabel/SFXLabel"]
 clip_contents = true
 layout_mode = 2
 offset_left = 45.0
@@ -546,7 +542,18 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_6mf3u")
 min_value = -30.0
 max_value = 0.0
 
-[node name="MainMenuButton" type="Button" parent="HUD/PauseMenu/Panel/VBoxContainer"]
+[node name="MainMenuButtonContainer" type="AspectRatioContainer" parent="HUD/PauseMenu/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.217831
+anchor_top = 0.353312
+anchor_right = 0.389706
+anchor_bottom = 0.405889
+alignment_horizontal = 0
+alignment_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MainMenuButton" type="Button" parent="HUD/PauseMenu/Panel/MainMenuButtonContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
@@ -564,7 +571,18 @@ disabled = true
 text = "MAIN MENU"
 alignment = 0
 
-[node name="CloseButton" type="Button" parent="HUD/PauseMenu/Panel/VBoxContainer"]
+[node name="CloseButtonContainer" type="AspectRatioContainer" parent="HUD/PauseMenu/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.217831
+anchor_top = 0.466877
+anchor_right = 0.327206
+anchor_bottom = 0.519453
+alignment_horizontal = 0
+alignment_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CloseButton" type="Button" parent="HUD/PauseMenu/Panel/CloseButtonContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
@@ -580,6 +598,20 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_8b7j0")
 theme_override_styles/focus = SubResource("StyleBoxFlat_8b7j0")
 text = "QUIT"
 alignment = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/PauseMenu/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.217831
+anchor_top = 0.130389
+anchor_right = 0.488051
+anchor_bottom = 0.550999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 58
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
 
 [node name="OptionsMenu" type="Control" parent="HUD"]
 visible = false
@@ -714,10 +746,10 @@ bus = &"SFX"
 
 [connection signal="body_entered" from="Head/WeaponPivot/WeaponModel/WeaponHitbox" to="." method="_on_weapon_hitbox_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="pressed" from="HUD/PauseMenu/Panel/VBoxContainer/ResumeButton" to="HUD" method="_on_resume_button_pressed"]
-[connection signal="value_changed" from="HUD/PauseMenu/Panel/VBoxContainer/AudioLabel/MusicLabel/MusicVolumeSlider" to="HUD" method="_on_music_volume_slider_value_changed"]
-[connection signal="value_changed" from="HUD/PauseMenu/Panel/VBoxContainer/AudioLabel/SFXLabel/SFXVolumeSlider" to="HUD" method="_on_sfx_volume_slider_value_changed"]
-[connection signal="pressed" from="HUD/PauseMenu/Panel/VBoxContainer/CloseButton" to="HUD" method="_on_close_button_pressed"]
+[connection signal="pressed" from="HUD/PauseMenu/Panel/ResumeButtonContainer/ResumeButton" to="HUD" method="_on_resume_button_pressed"]
+[connection signal="value_changed" from="HUD/PauseMenu/Panel/AudioButtonsContainer/AudioLabel/MusicLabel/MusicVolumeSlider" to="HUD" method="_on_music_volume_slider_value_changed"]
+[connection signal="value_changed" from="HUD/PauseMenu/Panel/AudioButtonsContainer/AudioLabel/SFXLabel/SFXVolumeSlider" to="HUD" method="_on_sfx_volume_slider_value_changed"]
+[connection signal="pressed" from="HUD/PauseMenu/Panel/CloseButtonContainer/CloseButton" to="HUD" method="_on_close_button_pressed"]
 [connection signal="toggled" from="HUD/OptionsMenu/Panel/VBoxContainer/TimerCheckButton" to="HUD" method="_on_timer_check_button_toggled"]
 [connection signal="toggled" from="HUD/OptionsMenu/Panel/VBoxContainer/FPSCheckButton" to="HUD" method="_on_fps_check_button_toggled"]
 [connection signal="pressed" from="HUD/OptionsMenu/Panel/VBoxContainer/BackButton" to="HUD" method="_on_options_back_button_pressed"]

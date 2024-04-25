@@ -15,6 +15,8 @@ var music_audio_bus = AudioServer.get_bus_index("Music")
 
 @onready var death_screen = $DeathScreen
 @onready var animation_player = $"../AnimationPlayer"
+@onready var cinematic_band_top = $CinematicBands/CinematicBandTop
+@onready var cinematic_band_bottom = $CinematicBands/CinematicBandBottom
 
 var start_time: int
 var elapsed_time: int
@@ -54,9 +56,15 @@ func disable_all():
 
 func show_cinematic_bands(show_bands: bool):
 	if show_bands:
-		animation_player.play("start_cinematic")
+		var cinematic_band_height = cinematic_band_top.size.y
+		var tween = create_tween().set_trans(Tween.TRANS_CUBIC)
+		tween.tween_property(cinematic_band_top, "position:y", cinematic_band_top.position.y + cinematic_band_height, 1.5)
+		tween.parallel().tween_property(cinematic_band_bottom, "position:y", cinematic_band_bottom.position.y - cinematic_band_height, 1.5)
 	else:
-		animation_player.play("start_cinematic", -1, -2, true)
+		var cinematic_band_height = cinematic_band_top.size.y
+		var tween = create_tween().set_trans(Tween.TRANS_CUBIC)
+		tween.tween_property(cinematic_band_top, "position:y", cinematic_band_top.position.y - cinematic_band_height, 1.5)
+		tween.parallel().tween_property(cinematic_band_bottom, "position:y", cinematic_band_bottom.position.y + cinematic_band_height, 1.5)
 
 
 func _unhandled_key_input(_event):

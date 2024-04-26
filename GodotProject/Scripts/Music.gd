@@ -2,42 +2,50 @@ extends Node
 
 @onready var main_loop = $AudioStreamPlayer_MainLoop
 @onready var distorted_loop = $AudioStreamPlayer_DistortedLoop
+@onready var ambient_loop = $AudioStreamPlayer_AmbientLoop
 var main_loop_audio_bus = AudioServer.get_bus_index("Main_Loop")
 var distorted_loop_audio_bus = AudioServer.get_bus_index("Distorted_Loop")
+var ambient_loop_audio_bus = AudioServer.get_bus_index("Ambient_Loop")
 
 var max_target_volume = 0
 var min_target_volume = -30
 @export var loop_change_timescale = 0.5
 var switching_loops = false
-var activating_main = true
+
+var current_loop: LoopType
+var current_loop_bus: int
+var previous_loop_bus: int
+
+enum LoopType {
+	MAIN_LOOP,
+	DISTORTED_LOOP,
+	AMBIENT_LOOP
+}
+
+
+func _ready():
+	current_loop = LoopType.DISTORTED_LOOP
+	current_loop_bus = distorted_loop_audio_bus
+	previous_loop_bus = main_loop_audio_bus
 
 
 func _process(delta):
 	if switching_loops:
-		var main_loop_audio_bus_volume = AudioServer.get_bus_volume_db(main_loop_audio_bus)
-		var distorted_loop_audio_bus_volume = AudioServer.get_bus_volume_db(distorted_loop_audio_bus)
-		var main_loop_volume: float
-		var distorted_loop_volume: float
+		var current_loop_audio_bus_volume = AudioServer.get_bus_volume_db(current_loop_bus)
+		var previous_loop_audio_bus_volume = AudioServer.get_bus_volume_db(previous_loop_bus)
+		var current_loop_volume: float
+		var previous_loop_volume: float
 		
-		if activating_main:
-			main_loop_volume = lerpf(main_loop_audio_bus_volume, max_target_volume, delta * loop_change_timescale)
-			distorted_loop_volume = lerpf(distorted_loop_audio_bus_volume, min_target_volume, delta * loop_change_timescale)
-		else:
-			main_loop_volume = lerpf(main_loop_audio_bus_volume, min_target_volume, delta * loop_change_timescale)
-			distorted_loop_volume = lerpf(distorted_loop_audio_bus_volume, max_target_volume, delta * loop_change_timescale)
+		current_loop_volume = lerpf(current_loop_audio_bus_volume, max_target_volume, delta * loop_change_timescale)
+		previous_loop_volume = lerpf(previous_loop_audio_bus_volume, min_target_volume, delta * loop_change_timescale)
 		
-		AudioServer.set_bus_volume_db(main_loop_audio_bus, main_loop_volume)
-		AudioServer.set_bus_volume_db(distorted_loop_audio_bus, distorted_loop_volume)
+		AudioServer.set_bus_volume_db(current_loop_bus, current_loop_volume)
+		AudioServer.set_bus_volume_db(previous_loop_bus, previous_loop_volume)
 		
-		if !activating_main and AudioServer.get_bus_volume_db(main_loop_audio_bus) <= min_target_volume + 1:
-			AudioServer.set_bus_mute(main_loop_audio_bus, true)
-			AudioServer.set_bus_volume_db(main_loop_audio_bus, min_target_volume)
-			AudioServer.set_bus_volume_db(distorted_loop_audio_bus, max_target_volume)
-			switching_loops = false
-		elif activating_main and AudioServer.get_bus_volume_db(distorted_loop_audio_bus) <= min_target_volume + 1:
-			AudioServer.set_bus_mute(distorted_loop_audio_bus, true)
-			AudioServer.set_bus_volume_db(main_loop_audio_bus, max_target_volume)
-			AudioServer.set_bus_volume_db(distorted_loop_audio_bus, min_target_volume)
+		if AudioServer.get_bus_volume_db(previous_loop_bus) <= min_target_volume + 1:
+			AudioServer.set_bus_mute(previous_loop_bus, true)
+			AudioServer.set_bus_volume_db(previous_loop_bus, min_target_volume)
+			AudioServer.set_bus_volume_db(current_loop_bus, max_target_volume)
 			switching_loops = false
 
 # Converts from linear energy to decibels (audio). This can be used to implement volume sliders that behave as expected (since volume isn't linear).
@@ -51,16 +59,20 @@ func _process(delta):
 
 
 
-func switch_loops():
-	if switching_loops:
-		activating_main = !activating_main
-	else:
-		if AudioServer.is_bus_mute(main_loop_audio_bus):
-			activating_main = true
-			AudioServer.set_bus_mute(main_loop_audio_bus, false)
-		else:
-			activating_main = false
-			AudioServer.set_bus_mute(distorted_loop_audio_bus, false)
+func switch_loops(new_loop):
+	if new_loop == current_loop:
+		return
 	
+	previous_loop_bus = current_loop_bus
+	current_loop = new_loop
+	
+	match new_loop:
+		LoopType.MAIN_LOOP:
+			current_loop_bus = main_loop_audio_bus
+		LoopType.DISTORTED_LOOP:
+			current_loop_bus = distorted_loop_audio_bus
+		LoopType.AMBIENT_LOOP:
+			current_loop_bus = ambient_loop_audio_bus
+	
+	AudioServer.set_bus_mute(current_loop_bus, false)
 	switching_loops = true
-

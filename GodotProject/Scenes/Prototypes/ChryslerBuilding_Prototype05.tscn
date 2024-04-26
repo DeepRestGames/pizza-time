@@ -23449,7 +23449,8 @@ transform = Transform3D(61, 0, 0, 0, 2, 0, 0, 0, 32, -0.257643, 12.0483, 14.8597
 transform = Transform3D(8.3336, 0.140399, 2.37025, -0.688776, 0.699443, -2.18314, -3.50014, 0.19664, 6.07301, -25.6064, 15.3101, -3.96378)
 
 [node name="MusicChangeArea" parent="Environment/GroundLevel" instance=ExtResource("23_itlt7")]
-transform = Transform3D(-4.37114e-08, 0, 60, 0, 10, 0, -1, 0, -2.62268e-06, 0, 16.6108, -1.17317)
+transform = Transform3D(60, 0, 0, 0, 6, 0, 0, 0, 25, 1.72898, 8.27685, -8.20244)
+area_loop = 1
 
 [node name="FirstLevel" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.685, 23)
@@ -23539,6 +23540,12 @@ transform = Transform3D(-1.22146, 0, 6.78791, 0, 1, 0, -4.84851, 0, -1.71005, 2.
 
 [node name="Platform18" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
 transform = Transform3D(-1.83545, -0.0560176, -2.41639, 0.131706, 0.82137, -1.9155, 0.78343, -0.269325, -5.3392, -1.35975, 38.1635, -47.1471)
+
+[node name="MusicChangeArea" parent="Environment/FirstLevel" instance=ExtResource("23_itlt7")]
+transform = Transform3D(-6.55671e-07, 0, 60, 0, 40, 0, -15, 0, -2.62268e-06, 0, 18.8116, -14.873)
+
+[node name="MusicChangeArea2" parent="Environment/FirstLevel" instance=ExtResource("23_itlt7")]
+transform = Transform3D(-6.55671e-07, -2.62268e-06, 60, -15, -2.62268e-06, -2.62268e-06, 6.55671e-07, -60, -2.62268e-06, -8.19911, 31.3736, -19.3648)
 
 [node name="SecondLevel" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.7, 0)
@@ -23893,7 +23900,8 @@ movable_platforms = [NodePath("../SlidingDoor12"), NodePath("../SlidingDoor14")]
 transform = Transform3D(49, 0, 0, 0, 1, 0, 0, 0, 34.9878, 0.0517502, 6.00008, -3.35715)
 
 [node name="MusicChangeArea" parent="Environment/SecondLevel" instance=ExtResource("23_itlt7")]
-transform = Transform3D(-4.37114e-08, 0, 4.5, 0, 4, 0, -1, 0, -1.96701e-07, -0.0190832, 3.57803, -14.0679)
+transform = Transform3D(-1.5299e-06, 0, 60, 0, 3, 0, -35, 0, -2.62268e-06, -0.019, 3.27983, -3.37334)
+area_loop = 1
 
 [node name="ThirdLevel" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.7, 0)
@@ -24169,7 +24177,8 @@ transform = Transform3D(2.77739, -0.00860332, -2.22654, -0.183262, -0.173683, -0
 transform = Transform3D(1.02455, 0.163724, -0.326617, 2.8408, -0.0589054, -0.965584, -0.605386, 0.000669293, -5.08381, 35.7658, 15.0175, 33.6202)
 
 [node name="MusicChangeArea" parent="Environment/ThirdLevel" instance=ExtResource("23_itlt7")]
-transform = Transform3D(-4.37114e-08, 0, 12, 0, 6, 0, -1, 0, -5.24537e-07, -18.0471, 9.45792, 13.8418)
+transform = Transform3D(-3.20601e-06, 0, 60, 0, 18, 0, -73.345, 0, -2.62268e-06, 0, 15.5257, 1.898)
+area_loop = 2
 
 [node name="FourthLevel" type="Node3D" parent="Environment"]
 
@@ -25048,6 +25057,10 @@ movable_platforms = [NodePath("../Elevator13")]
 [node name="InteractableButton6" parent="Environment/FourthLevel/---ANTI CHEAT & SAFETY---" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8285, 109.607, -13.3787)
 movable_platforms = [NodePath("../Elevator12")]
+
+[node name="MusicChangeArea" parent="Environment/FourthLevel" instance=ExtResource("23_itlt7")]
+transform = Transform3D(50, 0, 0, 0, 23, 0, 0, 0, 50, 0, 97.9689, 0)
+area_loop = 1
 
 [node name="FifthLevel" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 110.013, 0)
@@ -25985,6 +25998,16 @@ transform = Transform3D(-0.040644, -0.0566131, -0.187465, -0.0997149, 0.170763, 
 [node name="pizza box v25" parent="Environment/FifthLevel" instance=ExtResource("22_yjrt6")]
 transform = Transform3D(-0.150357, 0.0250529, 0.12948, 0.0253421, 0.198187, -0.00891883, -0.129424, 0.00970147, -0.152168, 15.0834, 80.6416, -10.2322)
 
+[node name="MusicChangeArea_Chill" parent="Environment/FifthLevel" instance=ExtResource("23_itlt7")]
+transform = Transform3D(27, 0, 0, 0, 20, 0, 0, 0, 27, 0, 10.2459, 0)
+area_loop = 2
+
+[node name="MusicChangeArea_Main" parent="Environment/FifthLevel" instance=ExtResource("23_itlt7")]
+transform = Transform3D(27, 0, 0, 0, 30, 0, 0, 0, 27, 0, 41.6659, 0)
+
+[node name="MusicChangeArea_Distorted" parent="Environment/FifthLevel" instance=ExtResource("23_itlt7")]
+transform = Transform3D(27, 0, 0, 0, 50, 0, 0, 0, 27, 0, 84.78, 0)
+
 [node name="SixthLevel" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 221.446, 0)
 
@@ -26166,6 +26189,10 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/SixthLevel/Step14"]
 shape = SubResource("CylinderShape3D_i5xm5")
+
+[node name="MusicChangeArea" parent="Environment/SixthLevel" instance=ExtResource("23_itlt7")]
+transform = Transform3D(26, 0, 0, 0, 13, 0, 0, 0, 26, 0, 6.57709, 0)
+area_loop = 2
 
 [node name="CameraMovement" type="Node3D" parent="." node_paths=PackedStringArray("pizza_presence_animation_player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 237.669, -12.5991)

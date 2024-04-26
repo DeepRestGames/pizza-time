@@ -16,8 +16,8 @@ Aren't you tired of this little game you're playing?\
 Aren't you tired of delivering pizza?\
 \
 ...
-Look, I'm going to offer you a choice.
+Look kiddo, you've got a choice to make...
 [signal arg="start_choice_cinematic"]
 [wait time="23.0"]
-After this, there is no turning back. You take the blue pizza - the story ends, you go back to deliver pizza and believe whatever you want to believe. You take the red pill - we face the truth, whatever that might mean, and move on with our lives.
+After this, there is no turning back. You take the blue pizza - the story ends, you go back to deliver pizza and believe whatever you want to believe. You take the red pizza - we face the truth, whatever that might mean, and move on with our lives.
 [signal arg="enable_final_choice"]

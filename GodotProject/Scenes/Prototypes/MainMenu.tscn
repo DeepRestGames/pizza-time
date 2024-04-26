@@ -1,25 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://doekc1fh2fvsm"]
+[gd_scene load_steps=14 format=3 uid="uid://doekc1fh2fvsm"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_l4b7b"]
 [ext_resource type="PackedScene" uid="uid://djcjuxcxoilpw" path="res://Art/Models/Environment/Chrysler building v6.gltf" id="1_xf4ko"]
+[ext_resource type="Texture2D" uid="uid://irl85kmk43k0" path="res://Art/Sky/240329_Skybox test_panorama_v3 fin.png" id="2_frunc"]
 [ext_resource type="Material" uid="uid://bqh8kkm1la54r" path="res://Art/Materials/building_material.tres" id="2_yr5gd"]
+[ext_resource type="Texture2D" uid="uid://cgbfdhvrur1jc" path="res://Art/Icons/240423_DRG_Full_Logo_white.png" id="4_3smou"]
+[ext_resource type="Texture2D" uid="uid://bfhc40pdel5qp" path="res://Art/Icons/godot.png" id="5_crjwd"]
+[ext_resource type="Texture2D" uid="uid://brnywj01a8hj8" path="res://Art/Icons/pizza time.png" id="6_s3o1f"]
+[ext_resource type="FontFile" uid="uid://43nlb582sp2m" path="res://Art/Fonts/ArcaneNine-eZP1x.ttf" id="7_dbty7"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_olur4"]
-sky_top_color = Color(0.541176, 0.129412, 1, 1)
-sky_horizon_color = Color(1, 0.419608, 0.678431, 1)
-sky_curve = 0.0609202
-sky_energy_multiplier = 0.6
-ground_bottom_color = Color(0.233758, 0.00064707, 0.426209, 1)
-ground_horizon_color = Color(0.72549, 0.560784, 0.945098, 1)
-ground_curve = 0.0237842
-ground_energy_multiplier = 0.9
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_og8vo"]
+panorama = ExtResource("2_frunc")
 
 [sub_resource type="Sky" id="Sky_pkavx"]
-sky_material = SubResource("ProceduralSkyMaterial_olur4")
+sky_material = SubResource("PanoramaSkyMaterial_og8vo")
 
 [sub_resource type="Environment" id="Environment_io1mx"]
 background_mode = 2
 sky = SubResource("Sky_pkavx")
+sky_custom_fov = 125.0
 ambient_light_sky_contribution = 0.3
 tonemap_mode = 2
 
@@ -29,6 +28,9 @@ _data = {
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wl68"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="MainMenu" type="Node3D"]
 script = ExtResource("1_l4b7b")
@@ -59,42 +61,181 @@ transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, 
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.413542
+anchor_top = 0.418519
+anchor_right = 0.586458
+anchor_bottom = 0.990741
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="TextureRect" parent="HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.78012
+anchor_top = 0.658576
+anchor_right = 3.25904
+anchor_bottom = 0.89644
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_3smou")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel2" type="TextureRect" parent="HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.23193
+anchor_top = 0.658576
+anchor_right = -1.69578
+anchor_bottom = 0.899676
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_crjwd")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel3" type="TextureRect" parent="HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.726238
+anchor_top = -0.538835
+anchor_right = 1.72624
+anchor_bottom = -0.176375
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_s3o1f")
+expand_mode = 3
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="MenuItems" type="VBoxContainer" parent="HUD"]
 layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -300.0
-offset_right = 300.0
+anchors_preset = -1
+anchor_left = 0.0391566
+anchor_top = 0.268301
+anchor_right = 0.963855
+anchor_bottom = 0.889661
+offset_top = -30.45
+offset_bottom = -30.4509
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 50
+theme_override_constants/separation = 20
 alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="StartButton" type="Button" parent="HUD/MenuItems"]
+[node name="PLAYButtonContainer" type="AspectRatioContainer" parent="HUD/MenuItems"]
 layout_mode = 2
-text = "START GAME"
+alignment_vertical = 2
 
-[node name="OptionsButton" type="Button" parent="HUD/MenuItems"]
+[node name="PLAY" type="Button" parent="HUD/MenuItems/PLAYButtonContainer"]
 layout_mode = 2
-text = "OPTIONS"
+focus_mode = 0
+theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("7_dbty7")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6wl68")
+text = "PLAY"
 
-[node name="CreditsButton" type="Button" parent="HUD/MenuItems"]
+[node name="CREDITSButtonContainer" type="AspectRatioContainer" parent="HUD/MenuItems"]
 layout_mode = 2
+alignment_vertical = 2
+
+[node name="CREDITS" type="Button" parent="HUD/MenuItems/CREDITSButtonContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_dbty7")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6wl68")
 text = "CREDITS"
 
-[node name="CloseButton" type="Button" parent="HUD/MenuItems"]
+[node name="CREDITS2" type="Button" parent="HUD/MenuItems/CREDITSButtonContainer"]
 layout_mode = 2
-text = "CLOSE GAME"
+focus_mode = 0
+theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("7_dbty7")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6wl68")
+text = "CREDITS"
 
-[connection signal="pressed" from="HUD/MenuItems/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="HUD/MenuItems/CloseButton" to="." method="_on_close_button_pressed"]
+[node name="QUITButtonContainer" type="AspectRatioContainer" parent="HUD/MenuItems"]
+layout_mode = 2
+alignment_vertical = 2
+
+[node name="QUIT" type="Button" parent="HUD/MenuItems/QUITButtonContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_dbty7")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6wl68")
+text = "QUIT"
+
+[node name="QUIT2" type="Button" parent="HUD/MenuItems/QUITButtonContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("7_dbty7")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6wl68")
+text = "QUIT"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/MenuItems"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 58
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HUD"]
+layout_mode = 0
+anchor_left = 3.10843
+anchor_top = 0.917476
+anchor_right = 3.22892
+anchor_bottom = 0.982201
+theme_override_colors/default_color = Color(0.929412, 0.690196, 0.4, 1)
+text = "V1.0"
+metadata/_edit_use_anchors_ = true
 
 [editable path="Chrysler building v6"]

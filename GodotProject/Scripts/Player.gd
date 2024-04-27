@@ -55,6 +55,7 @@ var limit_inputs = false
 
 func _ready():
 	Dialogic.signal_event.connect(_final_cutscenes)
+	GameManager.set_player(self)
 
 
 func _final_cutscenes(argument: String):

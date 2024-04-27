@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://crlexchvkokvw"]
+
+[ext_resource type="Script" path="res://Scripts/LoadingScreen.gd" id="1_v3uj1"]
+[ext_resource type="Texture2D" uid="uid://b2kplp6pwxq72" path="res://Art/Icons/240326_pizza.png" id="3_kof0y"]
+
+[sub_resource type="Animation" id="Animation_m26ts"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AspectRatioContainer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_rwp6s"]
+resource_name = "pizza_rotation"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AspectRatioContainer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.5708, 3.14159, 4.71239, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5mxtx"]
+_data = {
+"RESET": SubResource("Animation_m26ts"),
+"pizza_rotation": SubResource("Animation_rwp6s")
+}
+
+[node name="LoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v3uj1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5mxtx")
+}
+autoplay = "pizza_rotation"
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.34375
+anchor_top = 0.222222
+anchor_right = 0.65625
+anchor_bottom = 0.777778
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(300, 300)
+metadata/_edit_use_anchors_ = true
+
+[node name="Pizza_TextureRect" type="TextureRect" parent="AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("3_kof0y")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true

@@ -33,8 +33,8 @@ enum LoopType {
 
 
 func _ready():
-	current_loop = LoopType.DISTORTED_LOOP
-	current_loop_bus = distorted_loop_audio_bus
+	current_loop = LoopType.MINIMAL_AMBIENT_LOOP
+	current_loop_bus = minimal_ambient_loop_audio_bus
 	previous_loop_bus = main_loop_audio_bus
 	
 	music_player.finished.connect(quit_game)

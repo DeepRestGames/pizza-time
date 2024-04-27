@@ -14,6 +14,7 @@ func _process(delta):
 
 
 func _on_start_button_pressed():
+	Music.stop_music()
 	animation_player.play("loading_screen")
 	await animation_player.animation_finished
 	get_tree().change_scene_to_file("res://Scenes/Prototypes/LoadingScreen.tscn")

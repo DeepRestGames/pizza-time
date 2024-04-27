@@ -2470,7 +2470,7 @@ directional_shadow_pancake_size = 1024.0
 environment = SubResource("Environment_gk65a")
 
 [node name="Player" parent="." instance=ExtResource("15_olpqq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.34315, 235.973, -10.9494)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 27)
 
 [node name="PlayerStartingPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 27)
@@ -23348,6 +23348,7 @@ transform = Transform3D(6, 0, 0, 0, 12, 0, 0, 0, 1, -4, 6, 0)
 transform = Transform3D(2, 0, 0, 0, 7.5, 0, 0, 0, 1, 0, 7.5, 0)
 
 [node name="EntryDoor" parent="Environment/GroundLevel/Doorway" instance=ExtResource("10_2g3pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9, 0, 0, 0)
 
 [node name="Pivot" parent="Environment/GroundLevel/Doorway/EntryDoor" index="0"]
 transform = Transform3D(0.35, 0, 0, 0, 0.38, 0, 0, 0, 1, 0, 0, 0)
@@ -23454,6 +23455,10 @@ transform = Transform3D(8.3336, 0.140399, 2.37025, -0.688776, 0.699443, -2.18314
 
 [node name="MusicChangeArea" parent="Environment/GroundLevel" instance=ExtResource("23_itlt7")]
 transform = Transform3D(60, 0, 0, 0, 6, 0, 0, 0, 25, 1.72898, 8.27685, -8.20244)
+area_loop = 1
+
+[node name="MusicChangeArea2" parent="Environment/GroundLevel" instance=ExtResource("23_itlt7")]
+transform = Transform3D(5, 0, 0, 0, 6, 0, 0, 0, 1, 0, 3, 17.0881)
 area_loop = 1
 
 [node name="FirstLevel" type="Node3D" parent="Environment"]

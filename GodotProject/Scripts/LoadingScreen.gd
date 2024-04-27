@@ -9,7 +9,6 @@ func _ready():
 	
 	var pizza_texture_size = pizza_texture.size
 	pizza_texture.pivot_offset = pizza_texture_size / 2
-	pass
 
 func _process(_delta):
 	var loading_progress = ResourceLoader.load_threaded_get_status(main_scene_path)

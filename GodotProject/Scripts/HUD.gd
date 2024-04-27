@@ -26,11 +26,11 @@ var process_inputs = true
 
 func _ready():
 	# Play Intro
-	#animation_player.current_animation = "fade_to_black"
-	#animation_player.seek(animation_player.current_animation_length, true, true)
-	#Dialogic.start("Intro")
-	#await Dialogic.timeline_ended
-	#animation_player.play("fade_to_black", -1, -2, true)
+	animation_player.current_animation = "fade_to_black"
+	animation_player.seek(animation_player.current_animation_length, true, true)
+	Dialogic.start("Intro")
+	await Dialogic.timeline_ended
+	animation_player.play("fade_to_black", -1, -2, true)
 	
 	start_time = Time.get_ticks_msec() / 1000
 	GameManager.checkpoint_reached.connect(_on_checkpoint_reached)

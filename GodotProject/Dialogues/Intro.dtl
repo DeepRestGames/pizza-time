@@ -1,9 +1,9 @@
-[wait time="1.0"]
-[sound path="res://Audio/Intro/Doorbell-old-tring.wav" volume="0.0"]
+[wait time="2.0"]
+[sound path="res://Audio/Intro/Doorbell-old-tring.wav" volume="-15.0"]
 [wait time="4.0"]
-[sound path="res://Audio/Intro/Doorbell-old-tring.wav" volume="0.0"]
+[sound path="res://Audio/Intro/Doorbell-old-tring.wav" volume="-15.0"]
 [wait time="3.0"]
-where am I?
+Where am I?
 ...
 Pizza?\
 Was I sleeping on the job?

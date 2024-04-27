@@ -4,6 +4,7 @@ extends Node
 @onready var distorted_loop = $AudioStreamPlayer_DistortedLoop
 @onready var ambient_loop = $AudioStreamPlayer_AmbientLoop
 @onready var music_player = $AudioStreamPlayer_FinalMusic
+@onready var splash_sfx_player = $AudioStreamPlayer_SplashSFX
 var main_loop_audio_bus = AudioServer.get_bus_index("Main_Loop")
 var distorted_loop_audio_bus = AudioServer.get_bus_index("Distorted_Loop")
 var ambient_loop_audio_bus = AudioServer.get_bus_index("Ambient_Loop")
@@ -83,6 +84,10 @@ func stop_music():
 func play_final_music():
 	play_final_music_trigger = true
 	music_player.play()
+
+
+func play_splash_sfx():
+	splash_sfx_player.play()
 
 
 func quit_game():

@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://cisdruhg7hmuu" path="res://Audio/Music/PizzaTime_MainLoop_Distorted_v0.1.wav" id="3_w8gmm"]
 [ext_resource type="AudioStream" uid="uid://cvvesgakkqg5v" path="res://Audio/Music/PizzaTime_Ambient_Loop_v0.1.wav" id="4_31isa"]
 [ext_resource type="AudioStream" uid="uid://bpllqd6tmanql" path="res://Audio/Music/PizzaTime_Final_v0.1.wav" id="4_baod7"]
+[ext_resource type="AudioStream" uid="uid://cusun33fs3fkx" path="res://Audio/SFX/240427_SFX_splash.wav" id="6_5wkme"]
 
 [node name="Music" type="Node2D"]
 process_mode = 3
@@ -32,3 +33,8 @@ bus = &"Ambient_Loop"
 process_mode = 3
 stream = ExtResource("4_baod7")
 bus = &"Music"
+
+[node name="AudioStreamPlayer_SplashSFX" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("6_5wkme")
+volume_db = 15.0

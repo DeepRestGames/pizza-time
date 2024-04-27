@@ -155,6 +155,7 @@ general/auth_token="9xDHLwMsVuJtC9oqXyIuAQ5oZb7sBivIvRvtzzRf"
 
 [rendering]
 
+renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=3
 anti_aliasing/quality/msaa_3d=1

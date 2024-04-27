@@ -3,9 +3,11 @@ extends Node
 @onready var main_loop = $AudioStreamPlayer_MainLoop
 @onready var distorted_loop = $AudioStreamPlayer_DistortedLoop
 @onready var ambient_loop = $AudioStreamPlayer_AmbientLoop
+@onready var music_player = $AudioStreamPlayer_FinalMusic
 var main_loop_audio_bus = AudioServer.get_bus_index("Main_Loop")
 var distorted_loop_audio_bus = AudioServer.get_bus_index("Distorted_Loop")
 var ambient_loop_audio_bus = AudioServer.get_bus_index("Ambient_Loop")
+var music_audio_bus = AudioServer.get_bus_index("Music")
 
 var max_target_volume = 0
 var min_target_volume = -30
@@ -15,6 +17,9 @@ var switching_loops = false
 var current_loop: LoopType
 var current_loop_bus: int
 var previous_loop_bus: int
+
+var stop_music_trigger = false
+var play_final_music_trigger = false
 
 enum LoopType {
 	MAIN_LOOP,
@@ -27,6 +32,8 @@ func _ready():
 	current_loop = LoopType.DISTORTED_LOOP
 	current_loop_bus = distorted_loop_audio_bus
 	previous_loop_bus = main_loop_audio_bus
+	
+	music_player.finished.connect(quit_game)
 
 
 func _process(delta):
@@ -47,17 +54,40 @@ func _process(delta):
 			AudioServer.set_bus_volume_db(previous_loop_bus, min_target_volume)
 			AudioServer.set_bus_volume_db(current_loop_bus, max_target_volume)
 			switching_loops = false
+	
+	if stop_music_trigger:
+		var current_loop_audio_bus_volume = AudioServer.get_bus_volume_db(current_loop_bus)
+		var current_loop_volume: float
+		current_loop_volume = lerpf(current_loop_audio_bus_volume, min_target_volume, delta * loop_change_timescale * 0.7)
+		AudioServer.set_bus_volume_db(current_loop_bus, current_loop_volume)
+		
+		if AudioServer.get_bus_volume_db(current_loop_bus) <= min_target_volume + 1:
+			AudioServer.set_bus_mute(current_loop_bus, true)
+			AudioServer.set_bus_volume_db(current_loop_bus, min_target_volume)
+			
+			AudioServer.set_bus_volume_db(music_audio_bus, min_target_volume)
+			stop_music_trigger = false
+	
+	if play_final_music_trigger:
+		var music_audio_bus_volume = AudioServer.get_bus_volume_db(music_audio_bus)
+		var music_volume: float
+		music_volume = lerpf(music_audio_bus_volume, max_target_volume, delta * loop_change_timescale * 0.4)
+		AudioServer.set_bus_volume_db(music_audio_bus, music_volume)
 
-# Converts from linear energy to decibels (audio). This can be used to implement volume sliders that behave as expected (since volume isn't linear).
 
-# Example:
-
-# "Slider" refers to a node that inherits Range such as HSlider or VSlider.
-# Its range must be configured to go from 0 to 1.
-# Change the bus name if you'd like to change the volume of a specific bus only.
-#AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db($Slider.value))
+func stop_music():
+	stop_music_trigger = true
+	switching_loops = false
 
 
+func play_final_music():
+	play_final_music_trigger = true
+	music_player.play()
+
+
+func quit_game():
+	await get_tree().create_timer(2).timeout
+	get_tree().quit()
 
 func switch_loops(new_loop):
 	if new_loop == current_loop:

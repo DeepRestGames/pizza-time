@@ -100,9 +100,7 @@ func respawn_player_animation():
 
 
 func last_hide():
-	animation_player.play("fade_to_black", -1, .02)
-	await animation_player.animation_finished
-	get_tree().quit()
+	animation_player.play("fade_to_black", -1, .01)
 
 
 # Pause menu

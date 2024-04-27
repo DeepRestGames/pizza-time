@@ -20,13 +20,15 @@ var follow_red_path_started = false
 var follow_blue_path_started = false
 var falling_time = 0.0
 
+var faded_to_black = false
+
 
 func _ready():
 	camera = get_viewport().get_camera_3d()
-	Dialogic.signal_event.connect(start_cinematic)
+	Dialogic.signal_event.connect(end_cinematic)
 
 
-func start_cinematic(argument: String):
+func end_cinematic(argument: String):
 	if argument == "start_choice_cinematic":
 		pizza_presence_animation_player.play("Final_purple_pizza")
 		
@@ -36,7 +38,7 @@ func start_cinematic(argument: String):
 		tween.parallel().tween_property(player, "position", choice_position.global_position, 5)
 		hud.show_cinematic_bands(true)
 	
-	elif argument == "choice_taken":
+	if argument == "choice_taken":
 		pizza_presence_red_area.monitoring = false
 		pizza_presence_blue_area.monitoring = false
 		
@@ -45,28 +47,32 @@ func start_cinematic(argument: String):
 		await  tween.finished
 		player_pizza.hide()
 	
-	elif argument == "start_red_ending_cinematic":
+	if argument == "start_red_ending_cinematic":
+		Music.play_final_music()
 		camera.reparent(red_path_follow)
-		follow_red_path_started = true 
-		var tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
-		tween.tween_property(camera, "rotation", Vector3.ZERO, 3)
+		follow_red_path_started = true
+		await get_tree().create_timer(2.9).timeout
+		camera.rotation = Vector3.ZERO
+		pizza_presence_animation_player.stop()
 	
-	elif argument == "start_blue_ending_cinematic":
+	if argument == "start_blue_ending_cinematic":
 		pizza_presence.hide()
 		camera.reparent(blue_path_follow)
 		follow_blue_path_started = true 
 		var tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
 		tween.tween_property(camera, "rotation", Vector3.ZERO, 0.5)
+		
+	if argument == "lower_music_volume":
+		Music.stop_music()
 
 
 func _process(delta):
 	if follow_red_path_started:
 		camera.position = lerp(camera.position, Vector3.ZERO, delta * 1.5)
-		red_path_follow.progress_ratio = lerp(red_path_follow.progress_ratio, 1.0, delta * camera_speed)
-		if red_path_follow.progress_ratio >= .9:
+		red_path_follow.progress_ratio = lerp(red_path_follow.progress_ratio, 1.0, delta * camera_speed * 0.5)
+		if red_path_follow.progress_ratio >= .9 and !faded_to_black:
 			hud.last_hide()
-		if red_path_follow.progress_ratio > .1:
-			pizza_presence_animation_player.stop()
+			faded_to_black = true
 			
 	elif follow_blue_path_started:
 		# camera.position = lerp(camera.position, Vector3.ZERO, delta * 1.5)

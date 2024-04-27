@@ -1,5 +1,5 @@
 [sound path="res://Audio/SFX/240416_SFX_npc_final3.wav" volume="-10.0" bus="SFX"]
-[signal arg="lower_music_volume"]
+[signal arg="minimal_music"]
 Is it pizza time?\
 \
 I guess I'll take some, thank you for coming all the way up.

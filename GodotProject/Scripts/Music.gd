@@ -3,11 +3,13 @@ extends Node
 @onready var main_loop = $AudioStreamPlayer_MainLoop
 @onready var distorted_loop = $AudioStreamPlayer_DistortedLoop
 @onready var ambient_loop = $AudioStreamPlayer_AmbientLoop
+@onready var minimal_ambient_loop_player = $AudioStreamPlayer_AmbientLoopMinimal
 @onready var music_player = $AudioStreamPlayer_FinalMusic
 @onready var splash_sfx_player = $AudioStreamPlayer_SplashSFX
 var main_loop_audio_bus = AudioServer.get_bus_index("Main_Loop")
 var distorted_loop_audio_bus = AudioServer.get_bus_index("Distorted_Loop")
 var ambient_loop_audio_bus = AudioServer.get_bus_index("Ambient_Loop")
+var minimal_ambient_loop_audio_bus = AudioServer.get_bus_index("Ambient_Loop_Minimal")
 var music_audio_bus = AudioServer.get_bus_index("Music")
 
 var max_target_volume = 0
@@ -25,7 +27,8 @@ var play_final_music_trigger = false
 enum LoopType {
 	MAIN_LOOP,
 	DISTORTED_LOOP,
-	AMBIENT_LOOP
+	AMBIENT_LOOP,
+	MINIMAL_AMBIENT_LOOP
 }
 
 
@@ -94,6 +97,7 @@ func quit_game():
 	await get_tree().create_timer(2).timeout
 	get_tree().quit()
 
+
 func switch_loops(new_loop):
 	if new_loop == current_loop:
 		return
@@ -108,6 +112,8 @@ func switch_loops(new_loop):
 			current_loop_bus = distorted_loop_audio_bus
 		LoopType.AMBIENT_LOOP:
 			current_loop_bus = ambient_loop_audio_bus
+		LoopType.MINIMAL_AMBIENT_LOOP:
+			current_loop_bus = minimal_ambient_loop_audio_bus
 	
 	AudioServer.set_bus_mute(current_loop_bus, false)
 	switching_loops = true

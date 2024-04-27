@@ -5,7 +5,8 @@ extends Node3D
 enum LoopType {
 	MAIN_LOOP,
 	DISTORTED_LOOP,
-	AMBIENT_LOOP
+	AMBIENT_LOOP,
+	MINIMAL_AMBIENT_LOOP
 }
 
 func _on_area_3d_body_entered(body):

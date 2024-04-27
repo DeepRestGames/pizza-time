@@ -41,6 +41,7 @@ func end_cinematic(argument: String):
 		hud.show_cinematic_bands(true)
 	
 	if argument == "choice_taken":
+		Music.stop_music()
 		pizza_presence_red_area.monitoring = false
 		pizza_presence_blue_area.monitoring = false
 		
@@ -65,8 +66,8 @@ func end_cinematic(argument: String):
 		tween.tween_interval(0.2)
 		tween.chain().tween_property(camera, "rotation", Vector3.ZERO, 0.4)
 		
-	if argument == "lower_music_volume":
-		Music.stop_music()
+	if argument == "minimal_music":
+		Music.switch_loops(3)
 
 
 func _process(delta):

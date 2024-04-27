@@ -2459,6 +2459,10 @@ transform = Transform3D(-0.627813, -0.596261, 0.500323, -9.56351e-08, 0.642788, 
 light_color = Color(1, 0.866667, 0.886275, 1)
 light_energy = 0.1
 shadow_enabled = true
+directional_shadow_split_1 = 0.02
+directional_shadow_split_2 = 0.1
+directional_shadow_split_3 = 0.2
+directional_shadow_blend_splits = true
 directional_shadow_max_distance = 2000.0
 directional_shadow_pancake_size = 1024.0
 

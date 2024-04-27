@@ -54,9 +54,9 @@ func end_cinematic(argument: String):
 		Music.play_final_music()
 		camera.reparent(red_path_follow)
 		follow_red_path_started = true
-		await get_tree().create_timer(2.9).timeout
-		camera.rotation = Vector3.ZERO
-		pizza_presence_animation_player.stop()
+		var tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+		tween.tween_interval(0.77)
+		tween.chain().tween_property(camera, "rotation", Vector3.ZERO, 1.3)
 	
 	if argument == "start_blue_ending_cinematic":
 		pizza_presence.hide()
@@ -77,6 +77,8 @@ func _process(delta):
 		if red_path_follow.progress_ratio >= .9 and !faded_to_black:
 			hud.last_hide(.01)
 			faded_to_black = true
+		if red_path_follow.progress_ratio > .1:
+			pizza_presence_animation_player.stop()
 			
 	elif follow_blue_path_started:
 		falling_time += delta

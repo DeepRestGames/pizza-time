@@ -1,6 +1,8 @@
 extends Node3D
 
 
+@onready var underwater_environment= preload("res://Art/Environments/underwater._environment.tres")
+
 @onready var red_path_follow = $RedPath3D/PathFollow3D
 @onready var blue_path_follow = $BluePath3D/PathFollow3D
 @onready var choice_position = $ChoicePosition
@@ -11,7 +13,6 @@ extends Node3D
 @onready var pizza_presence = $"../PizzaPresence"
 @onready var pizza_presence_red_area = $"../PizzaPresence/RedPizzaArea3D"
 @onready var pizza_presence_blue_area = $"../PizzaPresence/BluePizzaArea3D"
-@onready var rising_water = $"../RisingWater"
 @export var pizza_presence_animation_player: AnimationPlayer
 var camera: Camera3D
 var camera_speed = .08
@@ -21,6 +22,7 @@ var follow_blue_path_started = false
 var falling_time = 0.0
 
 var faded_to_black = false
+var underwater = false
 
 
 func _ready():
@@ -59,8 +61,9 @@ func end_cinematic(argument: String):
 		pizza_presence.hide()
 		camera.reparent(blue_path_follow)
 		follow_blue_path_started = true 
-		var tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
-		tween.tween_property(camera, "rotation", Vector3.ZERO, 0.5)
+		var tween = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
+		tween.tween_interval(0.2)
+		tween.chain().tween_property(camera, "rotation", Vector3.ZERO, 0.4)
 		
 	if argument == "lower_music_volume":
 		Music.stop_music()
@@ -71,12 +74,18 @@ func _process(delta):
 		camera.position = lerp(camera.position, Vector3.ZERO, delta * 1.5)
 		red_path_follow.progress_ratio = lerp(red_path_follow.progress_ratio, 1.0, delta * camera_speed * 0.5)
 		if red_path_follow.progress_ratio >= .9 and !faded_to_black:
-			hud.last_hide()
+			hud.last_hide(.01)
 			faded_to_black = true
 			
 	elif follow_blue_path_started:
-		# camera.position = lerp(camera.position, Vector3.ZERO, delta * 1.5)
 		falling_time += delta
-		blue_path_follow.progress_ratio += falling_time * camera_speed * 0.1
-		if blue_path_follow.progress_ratio >= .8:
-			hud.last_hide()
+		blue_path_follow.progress_ratio += falling_time * camera_speed * 0.07
+		
+		if blue_path_follow.progress_ratio > 0.35 and !underwater:
+			camera.environment = underwater_environment
+			Music.play_splash_sfx()
+			underwater = true
+
+		if blue_path_follow.progress_ratio >= .9 and !faded_to_black:
+			hud.last_hide(3)
+			faded_to_black = true

@@ -99,8 +99,8 @@ func respawn_player_animation():
 	animation_player.play("fade_to_black", -1, -1, true)
 
 
-func last_hide():
-	animation_player.play("fade_to_black", -1, .01)
+func last_hide(animation_speed: float):
+	animation_player.play("fade_to_black", -1, animation_speed)
 
 
 # Pause menu

@@ -35,8 +35,10 @@ enum LoopType {
 
 
 func _ready():
-	current_loop = LoopType.MINIMAL_AMBIENT_LOOP
-	current_loop_bus = minimal_ambient_loop_audio_bus
+	play_all_tracks(false)
+	
+	current_loop = LoopType.AMBIENT_LOOP
+	current_loop_bus = ambient_loop_audio_bus
 	previous_loop_bus = main_loop_audio_bus
 	
 	music_player.finished.connect(quit_game)
@@ -49,8 +51,8 @@ func _process(delta):
 		var current_loop_volume: float
 		var previous_loop_volume: float
 		
-		current_loop_volume = lerpf(current_loop_audio_bus_volume, max_target_volume, delta * loop_change_timescale)
-		previous_loop_volume = lerpf(previous_loop_audio_bus_volume, min_target_volume, delta * loop_change_timescale)
+		current_loop_volume = lerpf(current_loop_audio_bus_volume, max_target_volume, delta * loop_change_timescale * 0.8)
+		previous_loop_volume = lerpf(previous_loop_audio_bus_volume, min_target_volume, delta * loop_change_timescale * 1.3)
 		
 		AudioServer.set_bus_volume_db(current_loop_bus, current_loop_volume)
 		AudioServer.set_bus_volume_db(previous_loop_bus, previous_loop_volume)
@@ -116,6 +118,8 @@ func quit_game():
 
 
 func switch_loops(new_loop):
+	AudioServer.set_bus_volume_db(music_audio_bus, max_target_volume)
+	
 	if new_loop == current_loop:
 		return
 	

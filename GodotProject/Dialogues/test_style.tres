@@ -30,8 +30,10 @@ overrides = {
 "name_label_box_use_global_color": "false",
 "next_indicator_size": "Vector2(50, 50)",
 "next_indicator_texture": "\"res://Art/Icons/next_E.png\"",
+"normal_font": "\"res://Art/Fonts/ArcaneNine-eZP1x.ttf\"",
 "text_alignment": "1",
-"text_size": "20.0",
+"text_size": "30.0",
+"text_use_global_font": "false",
 "text_use_global_size": "false"
 }
 

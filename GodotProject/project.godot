@@ -17,8 +17,8 @@ config/features=PackedStringArray("4.2", "GL Compatibility")
 run/max_fps=60
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
-config/icon="res://Art/Icons/240326_pizza.png"
-config/windows_native_icon="res://Art/Icons/240326_pizza.png"
+config/icon="res://Art/Icons/240326_icon.png"
+config/windows_native_icon="res://Art/Icons/240326_icon.ico"
 
 [autoload]
 

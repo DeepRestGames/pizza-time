@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://dsmjjvqy12l4b" path="res://Scenes/Prefabs/Level Design Elements/PizzaBoxPlatformAnimated.tscn" id="22_yjrt6"]
 [ext_resource type="Material" uid="uid://b0hpogyokd4q2" path="res://Art/Materials/water_material.tres" id="23_ho5j1"]
 [ext_resource type="PackedScene" uid="uid://dgxch3uvmwmpl" path="res://Scenes/Utils/MusicChangeArea.tscn" id="23_itlt7"]
+[ext_resource type="FontFile" uid="uid://43nlb582sp2m" path="res://Art/Fonts/ArcaneNine-eZP1x.ttf" id="23_jjtql"]
 [ext_resource type="PackedScene" uid="uid://b2rnrj5exvrc6" path="res://Scenes/Prefabs/NPCs/MeditatingNPC.tscn" id="23_pny7q"]
 [ext_resource type="Material" uid="uid://c3vhodwyfrn1v" path="res://Art/Materials/waterSphere_material.tres" id="25_ccv2f"]
 [ext_resource type="PackedScene" uid="uid://cias1nc0ubmto" path="res://Scenes/Prefabs/NPCs/DancingNPC.tscn" id="26_nqknn"]
@@ -1841,6 +1842,39 @@ shader_parameter/uv_offset = Vector2(0, 0)
 [sub_resource type="BoxMesh" id="BoxMesh_ims0n"]
 material = SubResource("ShaderMaterial_woh2f")
 size = Vector3(0.1, 0.4, 1.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_in5pw"]
+next_pass = ExtResource("7_2sskf")
+emission_enabled = true
+emission = Color(0.929412, 0.690196, 0.4, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_lnknh"]
+material = SubResource("StandardMaterial3D_in5pw")
+text = "WALK:
+WASD"
+font = ExtResource("23_jjtql")
+font_size = 50
+
+[sub_resource type="TextMesh" id="TextMesh_fnodb"]
+material = SubResource("StandardMaterial3D_in5pw")
+text = "JUMP:
+SPACEBAR"
+font = ExtResource("23_jjtql")
+font_size = 50
+
+[sub_resource type="TextMesh" id="TextMesh_81jpa"]
+material = SubResource("StandardMaterial3D_in5pw")
+text = "SPRINT:
+LEFT SHIFT"
+font = ExtResource("23_jjtql")
+font_size = 50
+
+[sub_resource type="TextMesh" id="TextMesh_31d1h"]
+material = SubResource("StandardMaterial3D_in5pw")
+text = "THROW PIZZA:
+LEFT MOUSE BUTTON"
+font = ExtResource("23_jjtql")
+font_size = 50
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_o0ewm"]
 material = ExtResource("23_ho5j1")
@@ -23438,6 +23472,26 @@ skeleton = NodePath("../../..")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, 1.5, 0.4)
 movable_platforms = [NodePath("../EntryDoor")]
 
+[node name="Tutorial_MeshInstance3D_Walk" type="MeshInstance3D" parent="Environment/GroundLevel/Doorway"]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 3.5, 2.8, 3)
+layers = 2
+mesh = SubResource("TextMesh_lnknh")
+
+[node name="Tutorial_MeshInstance3D_Jump" type="MeshInstance3D" parent="Environment/GroundLevel/Doorway"]
+transform = Transform3D(-0.365689, 0, -0.930737, 0, 1, 0, 0.930737, 0, -0.365689, 6.84877, 1.70745, -1.96654)
+layers = 2
+mesh = SubResource("TextMesh_fnodb")
+
+[node name="Tutorial_MeshInstance3D_Sprint" type="MeshInstance3D" parent="Environment/GroundLevel/Doorway"]
+transform = Transform3D(0.354993, 0, 0.934869, 0, 1, 0, -0.934869, 0, 0.354993, -20.4021, 5.65859, 9.30082)
+layers = 2
+mesh = SubResource("TextMesh_81jpa")
+
+[node name="Tutorial_MeshInstance3D_Shoot" type="MeshInstance3D" parent="Environment/GroundLevel/Doorway"]
+transform = Transform3D(0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866026, -3.5, 2.8, 2)
+layers = 2
+mesh = SubResource("TextMesh_31d1h")
+
 [node name="AnalyticsCheckpoint" parent="Environment/GroundLevel" instance=ExtResource("8_axjnh")]
 transform = Transform3D(3, 0, 0, 0, 5, 0, 0, 0, 1, 0, 2.33792, 17.114)
 
@@ -26293,6 +26347,7 @@ libraries = {
 [connection signal="area_entered" from="PizzaPresence/RedPizzaArea3D" to="PizzaPresence/RedPizzaArea3D" method="_on_area_entered"]
 [connection signal="area_entered" from="PizzaPresence/BluePizzaArea3D" to="PizzaPresence/BluePizzaArea3D" method="_on_area_entered"]
 
+[editable path="Player"]
 [editable path="Environment/Chrysler building v6"]
 [editable path="Environment/GroundLevel/AnimatedPizzaBoxesPuzzle/pizza box v1"]
 [editable path="Environment/GroundLevel/AnimatedPizzaBoxesPuzzle/pizza box v2"]

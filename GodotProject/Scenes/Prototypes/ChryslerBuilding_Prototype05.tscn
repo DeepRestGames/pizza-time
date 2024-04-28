@@ -23820,6 +23820,10 @@ metadata/_edit_group_ = true
 [node name="Pivot" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor13" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.62, 0, 0, 0, 1, 0, 0, 0)
 
+[node name="InteractableButton" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor13/Pivot" index="2" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
+transform = Transform3D(1.53846, -6.72483e-08, 2.01745e-07, 2.11507e-07, 7.05022e-08, -1.6129, 8.74228e-08, 2, 8.74228e-08, 0, 5, 0.4)
+movable_platforms = [NodePath("../..")]
+
 [node name="EndingNode" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE/SlidingDoor13" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.2, 0)
 

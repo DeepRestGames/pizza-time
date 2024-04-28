@@ -92,3 +92,6 @@ func _process(delta):
 		if blue_path_follow.progress_ratio >= .9 and !faded_to_black:
 			hud.last_hide(3)
 			faded_to_black = true
+			
+			await get_tree().create_timer(2).timeout
+			get_tree().change_scene_to_file("res://Scenes/Prototypes/MainMenu.tscn")

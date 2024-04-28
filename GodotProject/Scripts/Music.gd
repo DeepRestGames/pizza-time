@@ -114,7 +114,8 @@ func play_splash_sfx():
 
 func quit_game():
 	await get_tree().create_timer(2).timeout
-	get_tree().quit()
+	
+	get_tree().change_scene_to_file("res://Scenes/Prototypes/MainMenu.tscn")
 
 
 func switch_loops(new_loop):

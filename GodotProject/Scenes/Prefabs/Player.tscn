@@ -567,7 +567,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_8b7j0")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8b7j0")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_8b7j0")
 theme_override_styles/focus = SubResource("StyleBoxFlat_8b7j0")
-disabled = true
 text = "MAIN MENU"
 alignment = 0
 
@@ -749,6 +748,7 @@ bus = &"SFX"
 [connection signal="pressed" from="HUD/PauseMenu/Panel/ResumeButtonContainer/ResumeButton" to="HUD" method="_on_resume_button_pressed"]
 [connection signal="value_changed" from="HUD/PauseMenu/Panel/AudioButtonsContainer/AudioLabel/MusicLabel/MusicVolumeSlider" to="HUD" method="_on_music_volume_slider_value_changed"]
 [connection signal="value_changed" from="HUD/PauseMenu/Panel/AudioButtonsContainer/AudioLabel/SFXLabel/SFXVolumeSlider" to="HUD" method="_on_sfx_volume_slider_value_changed"]
+[connection signal="pressed" from="HUD/PauseMenu/Panel/MainMenuButtonContainer/MainMenuButton" to="HUD" method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="HUD/PauseMenu/Panel/CloseButtonContainer/CloseButton" to="HUD" method="_on_close_button_pressed"]
 [connection signal="toggled" from="HUD/OptionsMenu/Panel/VBoxContainer/TimerCheckButton" to="HUD" method="_on_timer_check_button_toggled"]
 [connection signal="toggled" from="HUD/OptionsMenu/Panel/VBoxContainer/FPSCheckButton" to="HUD" method="_on_fps_check_button_toggled"]

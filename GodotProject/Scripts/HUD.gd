@@ -30,7 +30,7 @@ func _ready():
 	animation_player.seek(animation_player.current_animation_length, true, true)
 	Dialogic.start("Intro")
 	await Dialogic.timeline_ended
-	animation_player.play("fade_to_black", -1, -2, true)
+	animation_player.play("fade_to_black", -1, -0.1, true)
 	
 	start_time = Time.get_ticks_msec() / 1000
 	GameManager.checkpoint_reached.connect(_on_checkpoint_reached)
@@ -107,6 +107,15 @@ func last_hide(animation_speed: float):
 func _on_resume_button_pressed():
 	pause_menu.hide()
 	get_tree().paused = false
+
+
+func _on_main_menu_button_pressed():
+	_on_resume_button_pressed()
+	
+	Music.switch_loops(3)
+	animation_player.play("fade_to_black", -1, .05)
+	await animation_player.animation_finished
+	get_tree().change_scene_to_file("res://Scenes/Prototypes/MainMenu.tscn")
 
 
 func _on_options_button_pressed():

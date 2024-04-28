@@ -23455,11 +23455,9 @@ transform = Transform3D(8.3336, 0.140399, 2.37025, -0.688776, 0.699443, -2.18314
 
 [node name="MusicChangeArea" parent="Environment/GroundLevel" instance=ExtResource("23_itlt7")]
 transform = Transform3D(60, 0, 0, 0, 6, 0, 0, 0, 25, 1.72898, 8.27685, -8.20244)
-area_loop = 1
 
 [node name="MusicChangeArea2" parent="Environment/GroundLevel" instance=ExtResource("23_itlt7")]
 transform = Transform3D(5, 0, 0, 0, 6, 0, 0, 0, 1, 0, 3, 17.0881)
-area_loop = 1
 
 [node name="FirstLevel" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.685, 23)
@@ -23552,9 +23550,11 @@ transform = Transform3D(-1.83545, -0.0560176, -2.41639, 0.131706, 0.82137, -1.91
 
 [node name="MusicChangeArea" parent="Environment/FirstLevel" instance=ExtResource("23_itlt7")]
 transform = Transform3D(-6.55671e-07, 0, 60, 0, 40, 0, -15, 0, -2.62268e-06, 0, 18.8116, -14.873)
+area_loop = 2
 
 [node name="MusicChangeArea2" parent="Environment/FirstLevel" instance=ExtResource("23_itlt7")]
 transform = Transform3D(-6.55671e-07, -2.62268e-06, 60, -15, -2.62268e-06, -2.62268e-06, 6.55671e-07, -60, -2.62268e-06, -8.19911, 31.3736, -19.3648)
+area_loop = 2
 
 [node name="SecondLevel" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.7, 0)

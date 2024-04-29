@@ -51,6 +51,7 @@ func end_cinematic(argument: String):
 		player_pizza.hide()
 	
 	if argument == "start_red_ending_cinematic":
+		Music.play_all_tracks(false)
 		Music.play_final_music()
 		camera.reparent(red_path_follow)
 		follow_red_path_started = true
@@ -93,5 +94,7 @@ func _process(delta):
 			hud.last_hide(3)
 			faded_to_black = true
 			
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(5).timeout
+			Music.switch_loops(2)
+			Music.switch_loops(3)
 			get_tree().change_scene_to_file("res://Scenes/Prototypes/MainMenu.tscn")

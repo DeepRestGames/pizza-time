@@ -12,7 +12,6 @@ extends Node3D
 
 func _ready():
 	animation_player.play("loading_screen", -1, -1, true)
-	Music.play_all_tracks(true)
 	Music.switch_loops(3)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	music_volume_slider.value = Music.get_music_volume()

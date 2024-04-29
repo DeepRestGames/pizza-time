@@ -25,7 +25,7 @@ var previous_loop_bus: int
 var stop_music_trigger = false
 var play_final_music_trigger = false
 
-var music_started = true
+var music_started = false
 
 enum LoopType {
 	MAIN_LOOP,
@@ -76,7 +76,6 @@ func _process(delta):
 			
 			AudioServer.set_bus_volume_db(music_audio_bus, min_target_volume)
 			stop_music_trigger = false
-			play_all_tracks(false)
 	
 	if play_final_music_trigger:
 		var music_audio_bus_volume = AudioServer.get_bus_volume_db(music_audio_bus)
@@ -120,6 +119,7 @@ func set_music_volume(volume: float):
 
 
 func play_final_music():
+	AudioServer.set_bus_volume_db(music_audio_bus, min_target_volume)
 	play_final_music_trigger = true
 	music_player.play()
 
@@ -130,12 +130,16 @@ func play_splash_sfx():
 
 func quit_game():
 	await get_tree().create_timer(2).timeout
-	
+	Music.switch_loops(2)
+	Music.switch_loops(3)
 	get_tree().change_scene_to_file("res://Scenes/Prototypes/MainMenu.tscn")
 
 
 func switch_loops(new_loop):
 	AudioServer.set_bus_volume_db(music_audio_bus, current_music_volume)
+	
+	if stop_music_trigger:
+		AudioServer.set_bus_volume_db(current_loop_bus, max_target_volume)
 	
 	if new_loop == current_loop:
 		return

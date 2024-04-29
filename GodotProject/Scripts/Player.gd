@@ -59,12 +59,22 @@ func _ready():
 
 
 func _final_cutscenes(argument: String):
-	if argument == "start_choice_cinematic" or argument == "choice_taken":
+	if argument == "start_choice_cinematic":
 		process_inputs = false
-		$HUD.disable_all()
+		$HUD.disable_all(true)
 	if argument == "enable_final_choice":
 		process_inputs = true
 		limit_inputs = true
+	if argument == "choice_taken":
+		process_inputs = false
+		limit_inputs = false
+
+
+func _process(_delta):
+	if Dialogic.current_timeline != null:
+		$HUD.disable_all(true)
+	else:
+		$HUD.disable_all(false)
 
 
 func _unhandled_input(event):

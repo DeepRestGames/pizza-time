@@ -36,6 +36,7 @@ func _ready():
 	start_time = Time.get_ticks_msec() / 1000
 	GameManager.checkpoint_reached.connect(_on_checkpoint_reached)
 	music_volume_slider.value = Music.get_music_volume()
+	disable_all(false)
 
 
 func _process(_delta):
@@ -49,11 +50,13 @@ func _process(_delta):
 		timer_label.text = ("%02d" % minutes) + ":" + ("%02d" % seconds)
 
 
-func disable_all():
-	process_inputs = false
-	target.hide()
-	timer_label.hide()
-	fps_label.hide()
+func disable_all(disable: bool):
+	if disable:
+		process_inputs = false
+		target.hide()
+	else:
+		process_inputs = true
+		target.show()
 
 
 func show_cinematic_bands(show_bands: bool):
@@ -107,6 +110,7 @@ func last_hide(animation_speed: float):
 
 # Pause menu
 func _on_resume_button_pressed():
+	disable_all(true)
 	pause_menu.hide()
 	get_tree().paused = false
 

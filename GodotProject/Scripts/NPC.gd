@@ -12,6 +12,9 @@ var rng = RandomNumberGenerator.new()
 @export var dialogue_sounds: Array[AudioStreamWAV]
 
 func start_dialogue():
+	if Dialogic.current_timeline != null:
+		return
+	
 	if dialogue_sounds.size() > 0:
 		audio_stream_player.stream = dialogue_sounds.pick_random()
 		audio_stream_player.play()

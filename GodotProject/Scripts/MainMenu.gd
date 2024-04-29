@@ -5,6 +5,7 @@ extends Node3D
 @onready var camera = $Path3D/PathFollow3D/Camera3D
 @onready var animation_player = $AnimationPlayer
 @onready var credits_panel = $HUD/CreditsPanel
+@onready var music_volume_slider = $HUD/MenuItems/MUSICSliderContainer/MusicVolumeSlider
 @export var camera_speed = 0.005
 @export var camera_rotation_speed = 0.05
 
@@ -14,6 +15,7 @@ func _ready():
 	Music.play_all_tracks(true)
 	Music.switch_loops(3)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	music_volume_slider.value = Music.get_music_volume()
 
 
 func _process(delta):
@@ -44,3 +46,7 @@ func _on_rich_text_label_meta_clicked(meta):
 
 func _on_credits_panel_mask_pressed():
 	credits_panel.hide()
+
+
+func _on_music_volume_slider_value_changed(value):
+	Music.set_music_volume(value)

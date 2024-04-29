@@ -104,7 +104,18 @@ func play_all_tracks(play: bool):
 		minimal_ambient_loop.stop()
 
 
+func get_music_volume():
+	return current_music_volume
+
+
 func set_music_volume(volume: float):
+	AudioServer.set_bus_volume_db(music_audio_bus, volume)
+	
+	if volume == -30:
+		AudioServer.set_bus_mute(music_audio_bus, true)
+	else:
+		AudioServer.set_bus_mute(music_audio_bus, false)
+	
 	current_music_volume = volume
 
 

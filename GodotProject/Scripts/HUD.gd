@@ -8,6 +8,7 @@ extends Control
 @onready var fps_label = $FPSLabel
 
 @onready var pause_menu = $PauseMenu
+@onready var music_volume_slider = $PauseMenu/Panel/AudioButtonsContainer/AudioLabel/MusicLabel/MusicVolumeSlider
 @onready var options_menu = $OptionsMenu
 
 var SFX_audio_bus = AudioServer.get_bus_index("SFX")
@@ -34,6 +35,7 @@ func _ready():
 	
 	start_time = Time.get_ticks_msec() / 1000
 	GameManager.checkpoint_reached.connect(_on_checkpoint_reached)
+	music_volume_slider.value = Music.get_music_volume()
 
 
 func _process(_delta):
@@ -158,10 +160,4 @@ func _on_sfx_volume_slider_value_changed(value):
 
 
 func _on_music_volume_slider_value_changed(value):
-	AudioServer.set_bus_volume_db(music_audio_bus, value)
 	Music.set_music_volume(value)
-	
-	if value == -30:
-		AudioServer.set_bus_mute(music_audio_bus, true)
-	else:
-		AudioServer.set_bus_mute(music_audio_bus, false)

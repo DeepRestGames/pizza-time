@@ -26347,7 +26347,6 @@ libraries = {
 [connection signal="area_entered" from="PizzaPresence/RedPizzaArea3D" to="PizzaPresence/RedPizzaArea3D" method="_on_area_entered"]
 [connection signal="area_entered" from="PizzaPresence/BluePizzaArea3D" to="PizzaPresence/BluePizzaArea3D" method="_on_area_entered"]
 
-[editable path="Player"]
 [editable path="Environment/Chrysler building v6"]
 [editable path="Environment/GroundLevel/AnimatedPizzaBoxesPuzzle/pizza box v1"]
 [editable path="Environment/GroundLevel/AnimatedPizzaBoxesPuzzle/pizza box v2"]

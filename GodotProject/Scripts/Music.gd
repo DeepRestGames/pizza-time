@@ -14,6 +14,7 @@ var music_audio_bus = AudioServer.get_bus_index("Music")
 
 var max_target_volume = 0
 var min_target_volume = -30
+var current_music_volume = max_target_volume
 @export var loop_change_timescale = 0.5
 var switching_loops = false
 
@@ -80,7 +81,7 @@ func _process(delta):
 	if play_final_music_trigger:
 		var music_audio_bus_volume = AudioServer.get_bus_volume_db(music_audio_bus)
 		var music_volume: float
-		music_volume = lerpf(music_audio_bus_volume, max_target_volume, delta * loop_change_timescale * 0.4)
+		music_volume = lerpf(music_audio_bus_volume, current_music_volume, delta * loop_change_timescale * 0.4)
 		AudioServer.set_bus_volume_db(music_audio_bus, music_volume)
 
 
@@ -103,6 +104,10 @@ func play_all_tracks(play: bool):
 		minimal_ambient_loop.stop()
 
 
+func set_music_volume(volume: float):
+	current_music_volume = volume
+
+
 func play_final_music():
 	play_final_music_trigger = true
 	music_player.play()
@@ -119,7 +124,7 @@ func quit_game():
 
 
 func switch_loops(new_loop):
-	AudioServer.set_bus_volume_db(music_audio_bus, max_target_volume)
+	AudioServer.set_bus_volume_db(music_audio_bus, current_music_volume)
 	
 	if new_loop == current_loop:
 		return

@@ -159,6 +159,7 @@ func _on_sfx_volume_slider_value_changed(value):
 
 func _on_music_volume_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(music_audio_bus, value)
+	Music.set_music_volume(value)
 	
 	if value == -30:
 		AudioServer.set_bus_mute(music_audio_bus, true)

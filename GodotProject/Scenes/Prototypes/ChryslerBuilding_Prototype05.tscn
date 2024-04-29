@@ -23707,6 +23707,9 @@ transform = Transform3D(-2.18557e-08, 0, 9, 0, 4, 0, -0.5, 0, -3.93403e-07, -15.
 [node name="ANTICHEAT1" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
 transform = Transform3D(0.321433, -2.1951, 0.978134, 0.325384, 2.03325, 1.47758, -0.202007, -0.217761, 3.93644, -24.9044, 1.93208, -14.7973)
 
+[node name="ANTICHEAT6" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-0.339198, 1.74859, 1.55732, -0.172342, -0.62914, -4.99356, -0.165734, -2.92452, 2.00538, -24.306, 0.132324, -18.1592)
+
 [node name="Wall15" parent="Environment/SecondLevel/SLIDING DOORS PUZZLE" instance=ExtResource("3_q6mt2")]
 transform = Transform3D(-2.18557e-08, 0, 12.9658, 0, 4, 0, -0.5, 0, -5.66753e-07, -17.156, 2, -9.02783)
 
@@ -24164,6 +24167,9 @@ transform = Transform3D(-2.52877, 0.0318864, 2.80339, -0.0166017, -0.165217, 1.6
 
 [node name="FlavourBox-178" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
 transform = Transform3D(-3.04356, 0.0244998, -0.315167, -0.4723, -0.156759, 2.10508, 0.00740719, 0.0714291, 4.72795, 4.18863, 4.07631, 29.1086)
+
+[node name="FlavourBox-180" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
+transform = Transform3D(-3.13193, -0.186049, 4.39833, 1.11609, -0.558595, -1.27889, 2.44151, 0.0166898, 6.22672, 9.9087, 1.73158, 27.4911)
 
 [node name="FlavourBox-157" parent="Environment/ThirdLevel/RightPath" instance=ExtResource("3_q6mt2")]
 transform = Transform3D(-2.74141, 0.037112, 2.08877, -0.229248, -0.163546, 1.72758, 1.3851, 0.0463841, 4.42004, 42.8887, 13.7507, 45.6446)

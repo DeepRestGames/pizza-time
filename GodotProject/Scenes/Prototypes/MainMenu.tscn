@@ -183,11 +183,12 @@ theme_override_constants/separation = 20
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="PLAYButtonContainer" type="AspectRatioContainer" parent="HUD/MenuItems"]
+[node name="ContinueButtonContainer" type="AspectRatioContainer" parent="HUD/MenuItems"]
 layout_mode = 2
 alignment_vertical = 2
 
-[node name="PLAY" type="Button" parent="HUD/MenuItems/PLAYButtonContainer"]
+[node name="CONTINUE" type="Button" parent="HUD/MenuItems/ContinueButtonContainer"]
+visible = false
 layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
@@ -196,13 +197,34 @@ theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("7_dbty7")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_6wl68")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6wl68")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6wl68")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_6wl68")
 theme_override_styles/focus = SubResource("StyleBoxFlat_6wl68")
-text = "PLAY"
+text = "CONTINUE"
+
+[node name="NewGameButtonContainer" type="AspectRatioContainer" parent="HUD/MenuItems"]
+layout_mode = 2
+alignment_vertical = 2
+
+[node name="NEWGAME" type="Button" parent="HUD/MenuItems/NewGameButtonContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("7_dbty7")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6wl68")
+text = "NEW GAME"
 
 [node name="MUSICSliderContainer" type="VBoxContainer" parent="HUD/MenuItems"]
 layout_mode = 2
@@ -216,7 +238,7 @@ theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("7_dbty7")
-theme_override_font_sizes/font_size = 90
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_6wl68")
 text = "MUSIC"
 
@@ -242,7 +264,7 @@ theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("7_dbty7")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_6wl68")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6wl68")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6wl68")
@@ -263,7 +285,7 @@ theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("7_dbty7")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_6wl68")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6wl68")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6wl68")
@@ -283,7 +305,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/normal_font = ExtResource("7_dbty7")
 theme_override_font_sizes/normal_font_size = 20
-text = "V1.0.0"
+text = "V1.0.1"
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="HUD"]
@@ -368,7 +390,8 @@ text = "[center]
 [/center]"
 scroll_active = false
 
-[connection signal="pressed" from="HUD/MenuItems/PLAYButtonContainer/PLAY" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="HUD/MenuItems/ContinueButtonContainer/CONTINUE" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="HUD/MenuItems/NewGameButtonContainer/NEWGAME" to="." method="_on_new_game_button_pressed"]
 [connection signal="value_changed" from="HUD/MenuItems/MUSICSliderContainer/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
 [connection signal="pressed" from="HUD/MenuItems/CREDITSButtonContainer/CREDITS" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="HUD/MenuItems/QUITButtonContainer/QUIT" to="." method="_on_close_button_pressed"]

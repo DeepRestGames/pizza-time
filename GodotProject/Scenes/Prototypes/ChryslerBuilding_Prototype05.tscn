@@ -1862,10 +1862,25 @@ SPACEBAR"
 font = ExtResource("23_jjtql")
 font_size = 50
 
+[sub_resource type="TextMesh" id="TextMesh_mkg2s"]
+material = SubResource("StandardMaterial3D_in5pw")
+text = "ESC:
+PAUSE GAME"
+font = ExtResource("23_jjtql")
+font_size = 50
+
 [sub_resource type="TextMesh" id="TextMesh_81jpa"]
 material = SubResource("StandardMaterial3D_in5pw")
 text = "SPRINT:
 LEFT SHIFT"
+font = ExtResource("23_jjtql")
+font_size = 50
+
+[sub_resource type="TextMesh" id="TextMesh_ikxat"]
+material = SubResource("StandardMaterial3D_in5pw")
+text = "RESTART FROM
+CHECKPOINT:
+R"
 font = ExtResource("23_jjtql")
 font_size = 50
 
@@ -23482,10 +23497,20 @@ transform = Transform3D(-0.365689, 0, -0.930737, 0, 1, 0, 0.930737, 0, -0.365689
 layers = 2
 mesh = SubResource("TextMesh_fnodb")
 
+[node name="Tutorial_MeshInstance3D_PauseMenu" type="MeshInstance3D" parent="Environment/GroundLevel/Doorway"]
+transform = Transform3D(0.633124, 0, 0.77405, 0, 1, 0, -0.77405, 0, 0.633124, -1.74119, 1.50745, -4.53328)
+layers = 2
+mesh = SubResource("TextMesh_mkg2s")
+
 [node name="Tutorial_MeshInstance3D_Sprint" type="MeshInstance3D" parent="Environment/GroundLevel/Doorway"]
 transform = Transform3D(0.354993, 0, 0.934869, 0, 1, 0, -0.934869, 0, 0.354993, -20.4021, 5.65859, 9.30082)
 layers = 2
 mesh = SubResource("TextMesh_81jpa")
+
+[node name="Tutorial_MeshInstance3D_Sprint2" type="MeshInstance3D" parent="Environment/GroundLevel/Doorway"]
+transform = Transform3D(0.701407, 0, -0.712761, 0, 1, 0, 0.712761, 0, 0.701407, -25.0084, 4.95094, 7.47832)
+layers = 2
+mesh = SubResource("TextMesh_ikxat")
 
 [node name="Tutorial_MeshInstance3D_Shoot" type="MeshInstance3D" parent="Environment/GroundLevel/Doorway"]
 transform = Transform3D(0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866026, -3.5, 2.8, 2)

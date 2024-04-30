@@ -23520,6 +23520,14 @@ mesh = SubResource("TextMesh_31d1h")
 [node name="AnalyticsCheckpoint" parent="Environment/GroundLevel" instance=ExtResource("8_axjnh")]
 transform = Transform3D(3, 0, 0, 0, 5, 0, 0, 0, 1, 0, 2.33792, 17.114)
 
+[node name="Checkpoint01" parent="Environment/GroundLevel" instance=ExtResource("8_axjnh")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 3.215, -28.2897, 4.8516, 27.5925)
+checkpoint_signal = -1
+
+[node name="Checkpoint02" parent="Environment/GroundLevel" instance=ExtResource("8_axjnh")]
+transform = Transform3D(3.5, 0, 0, 0, 1.5, 0, 0, 0, 3.5, -19.9613, 10.3893, -14.4378)
+checkpoint_signal = -1
+
 [node name="Stairs06" parent="Environment/GroundLevel" instance=ExtResource("3_q6mt2")]
 transform = Transform3D(-2.62268e-07, 0, -15, 0, 1, 0, 6, 0, -6.55671e-07, 0, 13.5483, 10.749)
 
@@ -23542,8 +23550,12 @@ transform = Transform3D(5, 0, 0, 0, 6, 0, 0, 0, 0.5, 0, 3, 17.3654)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.685, 23)
 
 [node name="AnalyticsCheckpoint" parent="Environment/FirstLevel" instance=ExtResource("8_axjnh")]
-transform = Transform3D(2.53679, 0, 0.861735, 0, 4, 0, -4.30868, 0, 0.507358, -1.52496, 5.29325, 3.30602)
+transform = Transform3D(14.275, 0, 0, 0, 4, 0, 0, 0, 1, -0.0933973, 3.47422, -8.60545)
 checkpoint_signal = 1
+
+[node name="Checkpoint01" parent="Environment/FirstLevel" instance=ExtResource("8_axjnh")]
+transform = Transform3D(5, 0, 0, 0, 4, 0, 0, 0, 1, -21.5014, 26.0383, 5.71241)
+checkpoint_signal = -1
 
 [node name="Slope01" parent="Environment/FirstLevel" instance=ExtResource("3_q6mt2")]
 transform = Transform3D(2.5, -0.296198, 14.6484, -2.66758e-15, 0.939693, 6.15636, -4.33013, -0.17101, 8.45724, -2.11306, 2.54158, 2.96563)
@@ -24056,7 +24068,7 @@ transform = Transform3D(11, 0, 0, 0, -3.49691e-07, 1, 0, -8, -4.37114e-08, -18.4
 checkpoint_signal = 3
 
 [node name="MeditationSphere" type="StaticBody3D" parent="Environment/ThirdLevel"]
-transform = Transform3D(11.1342, 0, 0, 0, 11.1342, 0, 0, 0, 11.1342, -0.275578, 14.4025, -0.816633)
+transform = Transform3D(-11.1342, 0, -9.73383e-07, 0, 11.1342, 0, 9.73383e-07, 0, -11.1342, -0.275578, 14.4025, -0.816633)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/ThirdLevel/MeditationSphere"]
 mesh = SubResource("SphereMesh_fdmm4")
@@ -24283,6 +24295,10 @@ area_loop = 2
 [node name="AnalyticsCheckpoint" parent="Environment/FourthLevel" instance=ExtResource("8_axjnh")]
 transform = Transform3D(12, 0, 0, 0, 6, 0, 0, 0, 1, 12.9733, 89.5066, -20.9082)
 checkpoint_signal = 4
+
+[node name="Checkpoint01" parent="Environment/FourthLevel" instance=ExtResource("8_axjnh")]
+transform = Transform3D(7, 0, 0, 0, 3, 0, 0, 0, 1, 14.7868, 94.5844, 8.07719)
+checkpoint_signal = -1
 
 [node name="Flavour" type="Node3D" parent="Environment/FourthLevel"]
 

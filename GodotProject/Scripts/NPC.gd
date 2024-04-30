@@ -11,6 +11,11 @@ var rng = RandomNumberGenerator.new()
 @onready var audio_stream_player = $AudioStreamPlayer3D
 @export var dialogue_sounds: Array[AudioStreamWAV]
 
+
+func _ready():
+	Dialogic.timeline_ended.connect(_unpause)
+
+
 func start_dialogue():
 	if Dialogic.current_timeline != null:
 		return
@@ -26,3 +31,7 @@ func start_dialogue():
 		var my_random_number = rng.randi_range(0, random_dialogues_indexes.size() - 1)
 		var random_dialogue_index = random_dialogues_indexes[my_random_number]
 		Dialogic.start(NPC_name + "_" + random_dialogue_index)
+
+
+func _unpause():
+	get_tree().paused = false

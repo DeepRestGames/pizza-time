@@ -75,7 +75,8 @@ func _process(_delta):
 		audio_stream_player.stop()
 		$HUD.disable_all(true)
 	else:
-		$HUD.disable_all(false)
+		if process_inputs:
+			$HUD.disable_all(false)
 
 
 func _unhandled_input(event):

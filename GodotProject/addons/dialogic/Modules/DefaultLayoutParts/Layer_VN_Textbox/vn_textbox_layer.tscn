@@ -7,8 +7,8 @@
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="4_ma5mw"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_next_indicator.gd" id="5_40a50"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/autoadvance_indicator.gd" id="6_07xym"]
-[ext_resource type="Texture2D" uid="uid://b0rpqfg4fhebk" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/next.svg" id="6_uch03"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="7_bi7sh"]
+[ext_resource type="Texture2D" uid="uid://b0a3utdibf0x3" path="res://Art/Icons/next_E.png" id="7_wj1qy"]
 [ext_resource type="StyleBox" uid="uid://m7gyepkysu83" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_name_label_panel.tres" id="9_yg8ig"]
 
 [sub_resource type="Animation" id="Animation_au0a2"]
@@ -300,7 +300,7 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 script = ExtResource("5_40a50")
 show_on_questions = true
-texture = ExtResource("6_uch03")
+texture = ExtResource("7_wj1qy")
 metadata/_edit_layout_mode = 1
 
 [node name="AutoAdvanceProgressbar" type="ProgressBar" parent="Anchor/AnimationParent/Sizer/DialogTextPanel"]

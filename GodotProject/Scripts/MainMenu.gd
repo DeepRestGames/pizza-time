@@ -6,11 +6,18 @@ extends Node3D
 @onready var animation_player = $AnimationPlayer
 @onready var credits_panel = $HUD/CreditsPanel
 @onready var music_volume_slider = $HUD/MenuItems/MUSICSliderContainer/MusicVolumeSlider
+@onready var continue_button = $HUD/MenuItems/ContinueButtonContainer/CONTINUE
 @export var camera_speed = 0.005
 @export var camera_rotation_speed = 0.05
 
 
 func _ready():
+	GameManager.check_for_saves()
+	if GameManager.checkpoint_saved:
+		continue_button.show()
+	else:
+		continue_button.hide()
+	
 	animation_player.play("loading_screen", -1, -1, true)
 	Music.switch_loops(3)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -20,14 +27,6 @@ func _ready():
 func _process(delta):
 	path_follow.progress_ratio += camera_speed * delta
 	camera.rotation.z += camera_rotation_speed * delta
-
-
-func _on_start_button_pressed():
-	Music.stop_music()
-	animation_player.play("loading_screen")
-	await animation_player.animation_finished
-	get_tree().change_scene_to_file("res://Scenes/Prototypes/LoadingScreen.tscn")
-	
 
 
 func _on_close_button_pressed():
@@ -49,3 +48,18 @@ func _on_credits_panel_mask_pressed():
 
 func _on_music_volume_slider_value_changed(value):
 	Music.set_music_volume(value)
+
+
+func _on_new_game_button_pressed():
+	GameManager.reset_game()
+	Music.stop_music()
+	animation_player.play("loading_screen")
+	await animation_player.animation_finished
+	get_tree().change_scene_to_file("res://Scenes/Prototypes/LoadingScreen.tscn")
+
+
+func _on_continue_button_pressed():
+	Music.stop_music()
+	animation_player.play("loading_screen")
+	await animation_player.animation_finished
+	get_tree().change_scene_to_file("res://Scenes/Prototypes/LoadingScreen.tscn")

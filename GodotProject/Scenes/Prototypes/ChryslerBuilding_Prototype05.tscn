@@ -23640,7 +23640,7 @@ transform = Transform3D(-1.22146, 0, 6.78791, 0, 1, 0, -4.84851, 0, -1.71005, 2.
 transform = Transform3D(-1.83545, -0.0560176, -2.41639, 0.131706, 0.82137, -1.9155, 0.78343, -0.269325, -5.3392, -1.35975, 38.1635, -47.1471)
 
 [node name="MusicChangeArea" parent="Environment/FirstLevel" instance=ExtResource("23_itlt7")]
-transform = Transform3D(-2.18557e-07, 0, 60, 0, 35.9, 0, -5, 0, -2.62268e-06, -8.73, 17.2451, -17.9224)
+transform = Transform3D(-8.74228e-07, 0, 60, 0, 35.9, 0, -20, 0, -2.62268e-06, -8.73, 17.2451, -13.4962)
 area_loop = 2
 
 [node name="MusicChangeArea2" parent="Environment/FirstLevel" instance=ExtResource("23_itlt7")]
@@ -26112,15 +26112,12 @@ transform = Transform3D(-0.040644, -0.0566131, -0.187465, -0.0997149, 0.170763, 
 [node name="pizza box v25" parent="Environment/FifthLevel" instance=ExtResource("22_yjrt6")]
 transform = Transform3D(-0.150357, 0.0250529, 0.12948, 0.0253421, 0.198187, -0.00891883, -0.129424, 0.00970147, -0.152168, 15.0834, 80.6416, -10.2322)
 
-[node name="MusicChangeArea_Chill" parent="Environment/FifthLevel" instance=ExtResource("23_itlt7")]
-transform = Transform3D(27, 0, 0, 0, 20, 0, 0, 0, 27, 0, 10.2459, 0)
-area_loop = 2
-
 [node name="MusicChangeArea_Main" parent="Environment/FifthLevel" instance=ExtResource("23_itlt7")]
-transform = Transform3D(27, 0, 0, 0, 30, 0, 0, 0, 27, 0, 41.6659, 0)
+transform = Transform3D(31, 0, 0, 0, 47, 0, 0, 0, 25, 0, 23.5447, 0)
 
 [node name="MusicChangeArea_Distorted" parent="Environment/FifthLevel" instance=ExtResource("23_itlt7")]
-transform = Transform3D(27, 0, 0, 0, 50, 0, 0, 0, 27, 0, 84.78, 0)
+transform = Transform3D(31, 0, 0, 0, 62, 0, 0, 0, 25, 0, 79.7002, 0)
+area_loop = 1
 
 [node name="SixthLevel" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 221.446, 0)

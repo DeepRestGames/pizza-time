@@ -19,6 +19,7 @@ func _ready():
 		continue_button.hide()
 	
 	animation_player.play("loading_screen", -1, -1, true)
+	Music.start_music()
 	Music.switch_loops(3)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	music_volume_slider.value = Music.get_music_volume()

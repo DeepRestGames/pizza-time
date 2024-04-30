@@ -119,8 +119,6 @@ func _on_resume_button_pressed():
 func _on_main_menu_button_pressed():
 	_on_resume_button_pressed()
 	
-	Music.switch_loops(2)
-	Music.switch_loops(3)
 	animation_player.play("fade_to_black", -1, .05)
 	await animation_player.animation_finished
 	get_tree().change_scene_to_file("res://Scenes/Prototypes/MainMenu.tscn")

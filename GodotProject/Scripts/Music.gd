@@ -133,31 +133,34 @@ func quit_game():
 	get_tree().change_scene_to_file("res://Scenes/Prototypes/EndingScreen_RedChoice.tscn")
 
 
-func switch_loops(new_loop):
-	AudioServer.set_bus_volume_db(music_audio_bus, current_music_volume)
-	
-	if stop_music_trigger:
-		AudioServer.set_bus_volume_db(current_loop_bus, max_target_volume)
-	
-	if new_loop == current_loop:
-		return
-	
+func start_music():
 	if not music_started:
 		play_all_tracks(true)
 		music_started = true
+
+
+func switch_loops(new_loop):
 	
-	previous_loop_bus = current_loop_bus
-	current_loop = new_loop
+	print("Switch to loop " + str(new_loop))
 	
-	match new_loop:
-		LoopType.MAIN_LOOP:
-			current_loop_bus = main_loop_audio_bus
-		LoopType.DISTORTED_LOOP:
-			current_loop_bus = distorted_loop_audio_bus
-		LoopType.AMBIENT_LOOP:
-			current_loop_bus = ambient_loop_audio_bus
-		LoopType.MINIMAL_AMBIENT_LOOP:
-			current_loop_bus = minimal_ambient_loop_audio_bus
+	AudioServer.set_bus_volume_db(music_audio_bus, current_music_volume)
+	
+	stop_music_trigger = false
+	switching_loops = true
+	start_music()
+	
+	if new_loop != current_loop:
+		previous_loop_bus = current_loop_bus
+		current_loop = new_loop
+	
+		match new_loop:
+			LoopType.MAIN_LOOP:
+				current_loop_bus = main_loop_audio_bus
+			LoopType.DISTORTED_LOOP:
+				current_loop_bus = distorted_loop_audio_bus
+			LoopType.AMBIENT_LOOP:
+				current_loop_bus = ambient_loop_audio_bus
+			LoopType.MINIMAL_AMBIENT_LOOP:
+				current_loop_bus = minimal_ambient_loop_audio_bus
 	
 	AudioServer.set_bus_mute(current_loop_bus, false)
-	switching_loops = true

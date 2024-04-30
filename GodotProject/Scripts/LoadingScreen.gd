@@ -3,7 +3,7 @@ extends Control
 var main_scene_path = "res://Scenes/Prototypes/ChryslerBuilding_Prototype05.tscn"
 @onready var pizza_texture = $AspectRatioContainer
 
-var min_loading_time = 10
+var min_loading_time = 5
 var current_loading_time = 0
 
 func _ready():

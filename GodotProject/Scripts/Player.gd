@@ -72,6 +72,7 @@ func _final_cutscenes(argument: String):
 
 func _process(_delta):
 	if Dialogic.current_timeline != null:
+		audio_stream_player.stop()
 		$HUD.disable_all(true)
 	else:
 		$HUD.disable_all(false)

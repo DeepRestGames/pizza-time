@@ -23,8 +23,8 @@ config/windows_native_icon="res://Art/Icons/240326_icon.ico"
 [autoload]
 
 GameManager="*res://Scripts/Utils/GameManager.gd"
-Analytics="*res://addons/quiver_analytics/analytics.tscn"
 Music="*res://Scenes/Utils/Music.tscn"
+Analytics="*res://addons/quiver_analytics/analytics.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]

@@ -95,6 +95,4 @@ func _process(delta):
 			faded_to_black = true
 			
 			await get_tree().create_timer(5).timeout
-			Music.switch_loops(2)
-			Music.switch_loops(3)
-			get_tree().change_scene_to_file("res://Scenes/Prototypes/MainMenu.tscn")
+			get_tree().change_scene_to_file("res://Scenes/Prototypes/EndingScreen_BlueChoice.tscn")

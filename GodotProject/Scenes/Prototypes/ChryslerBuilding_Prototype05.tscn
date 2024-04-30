@@ -24930,7 +24930,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 
 
 [node name="InteractableButton" parent="Environment/FourthLevel/---ROT PLAT PUZ 6---/RP1/Pivot" index="1" node_paths=PackedStringArray("movable_platforms") instance=ExtResource("5_bq56s")]
 transform = Transform3D(1, 0, 0, 0, -1, 2.62268e-07, 0, -2.62268e-07, -1, 0, -0.2, 0)
-movable_platforms = [NodePath("../../../RP4")]
+movable_platforms = [NodePath("../../../RP4"), NodePath("../../../RP3")]
 
 [node name="EndingNode" parent="Environment/FourthLevel/---ROT PLAT PUZ 6---/RP1" index="2"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)

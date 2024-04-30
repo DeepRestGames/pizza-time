@@ -23,9 +23,9 @@ var current_loop_bus: int
 var previous_loop_bus: int
 
 var stop_music_trigger = false
-var play_final_music_trigger = false
 
 var music_started = false
+var music_fade_in = false
 
 enum LoopType {
 	MAIN_LOOP,
@@ -77,11 +77,15 @@ func _process(delta):
 			AudioServer.set_bus_volume_db(music_audio_bus, min_target_volume)
 			stop_music_trigger = false
 	
-	if play_final_music_trigger:
+	if music_fade_in:
 		var music_audio_bus_volume = AudioServer.get_bus_volume_db(music_audio_bus)
 		var music_volume: float
-		music_volume = lerpf(music_audio_bus_volume, current_music_volume, delta * loop_change_timescale * 0.4)
+		music_volume = lerpf(music_audio_bus_volume, current_music_volume, delta * loop_change_timescale * 0.8)
 		AudioServer.set_bus_volume_db(music_audio_bus, music_volume)
+		
+		if AudioServer.get_bus_volume_db(music_audio_bus) >= max_target_volume - 1:
+			AudioServer.set_bus_volume_db(music_audio_bus, max_target_volume)
+			music_fade_in = false
 
 
 func stop_music():
@@ -120,7 +124,8 @@ func set_music_volume(volume: float):
 
 func play_final_music():
 	AudioServer.set_bus_volume_db(music_audio_bus, min_target_volume)
-	play_final_music_trigger = true
+	stop_music_trigger = false
+	music_fade_in = true
 	music_player.play()
 
 
@@ -130,6 +135,7 @@ func play_splash_sfx():
 
 func quit_game():
 	await get_tree().create_timer(2).timeout
+	stop_music()
 	get_tree().change_scene_to_file("res://Scenes/Prototypes/EndingScreen_RedChoice.tscn")
 
 
@@ -140,10 +146,9 @@ func start_music():
 
 
 func switch_loops(new_loop):
-	
-	print("Switch to loop " + str(new_loop))
-	
-	AudioServer.set_bus_volume_db(music_audio_bus, current_music_volume)
+	var music_volume = AudioServer.get_bus_volume_db(music_audio_bus)
+	if music_volume < current_music_volume:
+		music_fade_in = true
 	
 	stop_music_trigger = false
 	switching_loops = true

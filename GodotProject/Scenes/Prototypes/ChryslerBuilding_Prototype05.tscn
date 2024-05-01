@@ -24053,8 +24053,14 @@ autoplay = "new_animation"
 [node name="PizzaBoxPlatform" parent="Environment/ThirdLevel/AnimationPlayer" instance=ExtResource("22_yjrt6")]
 transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, -2.32072, 58.7844, -0.804428)
 
+[node name="Cube" parent="Environment/ThirdLevel/AnimationPlayer/PizzaBoxPlatform" index="0"]
+layers = 2
+
 [node name="PizzaBoxPlatform2" parent="Environment/ThirdLevel/AnimationPlayer" instance=ExtResource("22_yjrt6")]
 transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, 1.67928, 58.7844, -0.804428)
+
+[node name="Cube" parent="Environment/ThirdLevel/AnimationPlayer/PizzaBoxPlatform2" index="0"]
+layers = 2
 
 [node name="MeditationSpot" type="MeshInstance3D" parent="Environment/ThirdLevel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.275578, 6.45923, -0.816633)
@@ -26453,6 +26459,8 @@ libraries = {
 [editable path="Environment/ThirdLevel/RoundOpenings-col/RoundOpening-col_2"]
 [editable path="Environment/ThirdLevel/RoundOpenings-col/RoundOpening-col_3"]
 [editable path="Environment/ThirdLevel/RoundOpenings-col/RoundOpening-col_4"]
+[editable path="Environment/ThirdLevel/AnimationPlayer/PizzaBoxPlatform"]
+[editable path="Environment/ThirdLevel/AnimationPlayer/PizzaBoxPlatform2"]
 [editable path="Environment/FourthLevel/---ROT PLAT PUZ 6---/RP1"]
 [editable path="Environment/FourthLevel/---ROT PLAT PUZ 6---/Salvo/Elevator"]
 [editable path="Environment/FourthLevel/---ANTI CHEAT & SAFETY---/Elevator10"]

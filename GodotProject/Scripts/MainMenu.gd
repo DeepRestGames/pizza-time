@@ -9,6 +9,7 @@ extends Node3D
 @onready var continue_button = $HUD/MenuItems/ContinueButtonContainer/CONTINUE
 @export var camera_speed = 0.005
 @export var camera_rotation_speed = 0.05
+var camera_upwards = true
 
 
 func _ready():
@@ -26,8 +27,16 @@ func _ready():
 
 
 func _process(delta):
-	path_follow.progress_ratio += camera_speed * delta
 	camera.rotation.z += camera_rotation_speed * delta
+	if camera_upwards:
+		path_follow.progress_ratio += camera_speed * delta
+	else:
+		path_follow.progress_ratio -= camera_speed * delta
+	
+	if path_follow.progress_ratio >= 0.95:
+		camera_upwards = false
+	if path_follow.progress_ratio <= 0.05:
+		camera_upwards = true
 
 
 func _on_close_button_pressed():

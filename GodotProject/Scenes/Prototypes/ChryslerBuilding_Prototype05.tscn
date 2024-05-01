@@ -26122,7 +26122,7 @@ transform = Transform3D(-0.150357, 0.0250529, 0.12948, 0.0253421, 0.198187, -0.0
 transform = Transform3D(31, 0, 0, 0, 47, 0, 0, 0, 25, 0, 23.5447, 0)
 
 [node name="MusicChangeArea_Distorted" parent="Environment/FifthLevel" instance=ExtResource("23_itlt7")]
-transform = Transform3D(31, 0, 0, 0, 62, 0, 0, 0, 25, 0, 79.7002, 0)
+transform = Transform3D(33, 0, 0, 0, 62, 0, 0, 0, 30, 0, 79.7002, 0)
 area_loop = 1
 
 [node name="SixthLevel" type="Node3D" parent="Environment"]

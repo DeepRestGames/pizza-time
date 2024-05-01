@@ -58,7 +58,7 @@ func _process(delta):
 		AudioServer.set_bus_volume_db(current_loop_bus, current_loop_volume)
 		AudioServer.set_bus_volume_db(previous_loop_bus, previous_loop_volume)
 		
-		if AudioServer.get_bus_volume_db(previous_loop_bus) <= min_target_volume + 1:
+		if AudioServer.get_bus_volume_db(current_loop_bus) >= max_target_volume - 1:
 			AudioServer.set_bus_mute(previous_loop_bus, true)
 			AudioServer.set_bus_volume_db(previous_loop_bus, min_target_volume)
 			AudioServer.set_bus_volume_db(current_loop_bus, max_target_volume)
@@ -67,10 +67,15 @@ func _process(delta):
 	if stop_music_trigger:
 		var current_loop_audio_bus_volume = AudioServer.get_bus_volume_db(current_loop_bus)
 		var current_loop_volume: float
-		current_loop_volume = lerpf(current_loop_audio_bus_volume, min_target_volume, delta * loop_change_timescale * 0.7)
+		current_loop_volume = lerpf(current_loop_audio_bus_volume, min_target_volume, delta * loop_change_timescale)
 		AudioServer.set_bus_volume_db(current_loop_bus, current_loop_volume)
 		
-		if AudioServer.get_bus_volume_db(current_loop_bus) <= min_target_volume + 1:
+		var music_audio_bus_volume = AudioServer.get_bus_volume_db(music_audio_bus)
+		var music_volume: float
+		music_volume = lerpf(music_audio_bus_volume, min_target_volume, delta * loop_change_timescale)
+		AudioServer.set_bus_volume_db(music_audio_bus, music_volume)
+		
+		if AudioServer.get_bus_volume_db(music_audio_bus) <= min_target_volume + 1:
 			AudioServer.set_bus_mute(current_loop_bus, true)
 			AudioServer.set_bus_volume_db(current_loop_bus, min_target_volume)
 			
@@ -112,14 +117,15 @@ func get_music_volume():
 
 
 func set_music_volume(volume: float):
-	AudioServer.set_bus_volume_db(music_audio_bus, volume)
-	
-	if volume == -30:
-		AudioServer.set_bus_mute(music_audio_bus, true)
-	else:
-		AudioServer.set_bus_mute(music_audio_bus, false)
-	
 	current_music_volume = volume
+	
+	if not music_fade_in:
+		AudioServer.set_bus_volume_db(music_audio_bus, volume)
+		
+		if volume == -30:
+			AudioServer.set_bus_mute(music_audio_bus, true)
+		else:
+			AudioServer.set_bus_mute(music_audio_bus, false)
 
 
 func play_final_music():
@@ -146,13 +152,13 @@ func start_music():
 
 
 func switch_loops(new_loop):
-	var music_volume = AudioServer.get_bus_volume_db(music_audio_bus)
-	if music_volume < current_music_volume:
-		music_fade_in = true
-	
 	stop_music_trigger = false
 	switching_loops = true
 	start_music()
+	
+	var music_volume = AudioServer.get_bus_volume_db(music_audio_bus)
+	if music_volume < current_music_volume:
+		music_fade_in = true
 	
 	if new_loop != current_loop:
 		previous_loop_bus = current_loop_bus

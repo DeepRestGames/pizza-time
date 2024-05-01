@@ -56,8 +56,8 @@ func end_cinematic(argument: String):
 		camera.reparent(red_path_follow)
 		follow_red_path_started = true
 		var tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
-		tween.tween_interval(0.77)
-		tween.chain().tween_property(camera, "rotation", Vector3.ZERO, 1.3)
+		tween.tween_interval(2)
+		tween.chain().tween_property(camera, "rotation", Vector3.ZERO, 1.5)
 	
 	if argument == "start_blue_ending_cinematic":
 		pizza_presence.hide()

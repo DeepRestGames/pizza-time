@@ -6,7 +6,7 @@ extends Node3D
 @onready var starting_node = $StartingNode
 @onready var ending_node = $EndingNode
 @onready var animation_pivot = $Pivot
-@onready var audio_stream_player = $AudioStreamPlayer3D
+@onready var audio_stream_player = $Pivot/AudioStreamPlayer3D
 
 @export var two_way_movement = false
 @export var activated = false
@@ -83,17 +83,22 @@ func move_platform():
 					audio_stream_player.stream_paused = false
 	# New tween needs to be created
 	else:
-		var audio_stream = movement_sounds.pick_random()
-		audio_stream_player.stream = audio_stream
+		if move_with_timer:
+			audio_stream_player.stream = null
+		else:
+			var audio_stream = movement_sounds.pick_random()
+			audio_stream_player.stream = audio_stream
 		
 		if !activated:
 			_start_animation(true)
 			activated = true
-			audio_stream_player.play()
+			if audio_stream_player.stream != null:
+				audio_stream_player.play()
 		elif two_way_movement:
 			_start_animation(false)
 			activated = false
-			audio_stream_player.play()
+			if audio_stream_player.stream != null:
+				audio_stream_player.play()
 
 
 func _start_animation(forward: bool):

@@ -1,0 +1,401 @@
+[gd_scene load_steps=14 format=3 uid="uid://doekc1fh2fvsm"]
+
+[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_l4b7b"]
+[ext_resource type="PackedScene" uid="uid://djcjuxcxoilpw" path="res://Art/Models/Environment/Chrysler building v6.gltf" id="1_xf4ko"]
+[ext_resource type="Texture2D" uid="uid://irl85kmk43k0" path="res://Art/Sky/240329_Skybox test_panorama_v3 fin.png" id="2_frunc"]
+[ext_resource type="Material" uid="uid://bqh8kkm1la54r" path="res://Art/Materials/building_material.tres" id="2_yr5gd"]
+[ext_resource type="Texture2D" uid="uid://cgbfdhvrur1jc" path="res://Art/Icons/240423_DRG_Full_Logo_white.png" id="4_3smou"]
+[ext_resource type="Texture2D" uid="uid://bfhc40pdel5qp" path="res://Art/Icons/godot.png" id="5_crjwd"]
+[ext_resource type="Texture2D" uid="uid://brnywj01a8hj8" path="res://Art/Icons/pizza time.png" id="6_s3o1f"]
+[ext_resource type="FontFile" uid="uid://43nlb582sp2m" path="res://Art/Fonts/ArcaneNine-eZP1x.ttf" id="7_dbty7"]
+
+[sub_resource type="Animation" id="Animation_xk87y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hwqeo"]
+resource_name = "loading_screen"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lft38"]
+_data = {
+"RESET": SubResource("Animation_xk87y"),
+"loading_screen": SubResource("Animation_hwqeo")
+}
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_og8vo"]
+panorama = ExtResource("2_frunc")
+
+[sub_resource type="Sky" id="Sky_pkavx"]
+sky_material = SubResource("PanoramaSkyMaterial_og8vo")
+
+[sub_resource type="Environment" id="Environment_io1mx"]
+background_mode = 2
+sky = SubResource("Sky_pkavx")
+sky_custom_fov = 125.0
+ambient_light_sky_contribution = 0.3
+tonemap_mode = 2
+
+[sub_resource type="Curve3D" id="Curve3D_bw8n5"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 250, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wl68"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ar8qn"]
+bg_color = Color(0.92549, 0.690196, 0.4, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_754aw"]
+bg_color = Color(0.290196, 0, 0.396078, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_size = 4
+shadow_offset = Vector2(2, 2)
+
+[node name="MainMenu" type="Node3D"]
+script = ExtResource("1_l4b7b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../HUD")
+libraries = {
+"": SubResource("AnimationLibrary_lft38")
+}
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.383022, 0.321394, 0, 0.642788, 0.766044, -0.5, 0.663414, -0.556671, 0, 0, 0)
+light_energy = 0.2
+shadow_enabled = true
+directional_shadow_max_distance = 256.0
+directional_shadow_pancake_size = 1024.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_io1mx")
+
+[node name="Chrysler building v6" parent="." instance=ExtResource("1_xf4ko")]
+
+[node name="Mesh" parent="Chrysler building v6" index="0"]
+surface_material_override/0 = ExtResource("2_yr5gd")
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 10, -30)
+curve = SubResource("Curve3D_bw8n5")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D"]
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.413542
+anchor_top = 0.418519
+anchor_right = 0.586458
+anchor_bottom = 0.990741
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="TextureRect" parent="HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.78012
+anchor_top = 0.658576
+anchor_right = 3.25904
+anchor_bottom = 0.89644
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_3smou")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel2" type="TextureRect" parent="HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.23193
+anchor_top = 0.658576
+anchor_right = -1.69578
+anchor_bottom = 0.899676
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_crjwd")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel3" type="TextureRect" parent="HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.726238
+anchor_top = -0.538835
+anchor_right = 1.72624
+anchor_bottom = -0.176375
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_s3o1f")
+expand_mode = 3
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuItems" type="VBoxContainer" parent="HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0391546
+anchor_top = 0.0517791
+anchor_right = 0.963857
+anchor_bottom = 0.901294
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ContinueButtonContainer" type="AspectRatioContainer" parent="HUD/MenuItems"]
+layout_mode = 2
+alignment_vertical = 2
+
+[node name="CONTINUE" type="Button" parent="HUD/MenuItems/ContinueButtonContainer"]
+visible = false
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("7_dbty7")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6wl68")
+text = "CONTINUE"
+
+[node name="NewGameButtonContainer" type="AspectRatioContainer" parent="HUD/MenuItems"]
+layout_mode = 2
+alignment_vertical = 2
+
+[node name="NEWGAME" type="Button" parent="HUD/MenuItems/NewGameButtonContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("7_dbty7")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6wl68")
+text = "NEW GAME"
+
+[node name="MUSICSliderContainer" type="VBoxContainer" parent="HUD/MenuItems"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = -5
+alignment = 1
+
+[node name="MUSIC_Label" type="Label" parent="HUD/MenuItems/MUSICSliderContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("7_dbty7")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_6wl68")
+text = "MUSIC"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="HUD/MenuItems/MUSICSliderContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ar8qn")
+min_value = -30.0
+max_value = 0.0
+
+[node name="CREDITSButtonContainer" type="AspectRatioContainer" parent="HUD/MenuItems"]
+layout_mode = 2
+alignment_vertical = 2
+
+[node name="CREDITS" type="Button" parent="HUD/MenuItems/CREDITSButtonContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("7_dbty7")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6wl68")
+text = "CREDITS"
+
+[node name="QUITButtonContainer" type="AspectRatioContainer" parent="HUD/MenuItems"]
+layout_mode = 2
+alignment_vertical = 2
+
+[node name="QUIT" type="Button" parent="HUD/MenuItems/QUITButtonContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("7_dbty7")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6wl68")
+text = "QUIT"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.92772
+anchor_top = 0.917476
+anchor_right = 3.22893
+anchor_bottom = 0.982201
+theme_override_colors/default_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("7_dbty7")
+theme_override_font_sizes/normal_font_size = 20
+text = "V1.0.3"
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.41567
+anchor_top = -0.745955
+anchor_right = 3.43676
+anchor_bottom = 1.02913
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CreditsPanel" type="Panel" parent="HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.403618
+anchor_top = 0.0954691
+anchor_right = 1.40362
+anchor_bottom = 0.904531
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_754aw")
+metadata/_edit_use_anchors_ = true
+
+[node name="CreditsPanelMask" type="Button" parent="HUD/CreditsPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.41567
+anchor_top = -0.745955
+anchor_right = 0.822661
+anchor_bottom = 1.46404
+offset_left = 781.403
+offset_top = -147.022
+offset_right = 781.404
+offset_bottom = -147.022
+grow_horizontal = 2
+grow_vertical = 2
+mouse_force_pass_scroll_events = false
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HUD/CreditsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -250.0
+offset_right = 300.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/normal_font = ExtResource("7_dbty7")
+bbcode_enabled = true
+text = "[center]
+
+[font_size={40}]Deep Rest Games is:[/font_size]
+
+[font_size={28}]DughiBoogie[/font_size]
+[font_size={24}]Programming & Music[/font_size]
+
+[font_size={28}]enirfo[/font_size]
+[font_size={24}]Art & Graphics[/font_size]
+
+[font_size={28}]DughiBoogie & Enirfo[/font_size]
+[font_size={24}]Everything else[/font_size]
+
+
+[font_size={24}][url=https://deeprestgames.itch.io/pizza-time]Leave us a feedback on the game here[/url][/font_size]
+[font_size={20}]or[/font_size]
+[font_size={24}][url=https://discord.gg/J7BjxXnQ]Come say hi on our discord server[/url][/font_size]
+
+[/center]"
+scroll_active = false
+
+[connection signal="pressed" from="HUD/MenuItems/ContinueButtonContainer/CONTINUE" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="HUD/MenuItems/NewGameButtonContainer/NEWGAME" to="." method="_on_new_game_button_pressed"]
+[connection signal="value_changed" from="HUD/MenuItems/MUSICSliderContainer/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="pressed" from="HUD/MenuItems/CREDITSButtonContainer/CREDITS" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="HUD/MenuItems/QUITButtonContainer/QUIT" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="HUD/CreditsPanel/CreditsPanelMask" to="." method="_on_credits_panel_mask_pressed"]
+[connection signal="meta_clicked" from="HUD/CreditsPanel/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+
+[editable path="Chrysler building v6"]

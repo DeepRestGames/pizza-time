@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c62oc8lfn8h0h"]
+
+[ext_resource type="PackedScene" uid="uid://dxd7uffqo6fcg" path="res://Art/Models/Environment/240327_pizza_fin_anim_v2_stashed&merged.glb" id="1_mocnf"]
+
+[node name="240327_pizza_fin_anim_v2_stashed&merged" instance=ExtResource("1_mocnf")]
+
+[node name="Pizza red" parent="." index="0"]
+transform = Transform3D(0.882392, 1.80538e-08, -0.508651, -0.508651, 2.2052e-08, -0.882392, -4.62376e-08, 0.101947, 2.80946e-07, -0.187779, 0.0079499, 1.06814e-09)
+
+[node name="Pizza blue" parent="." index="1"]
+transform = Transform3D(0.882392, -1.80538e-08, 0.508651, 0.508651, 2.2052e-08, -0.882392, 4.62376e-08, 0.101947, 2.80946e-07, 0.187351, 0.0079499, 1.06814e-09)

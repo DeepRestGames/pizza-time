@@ -1,0 +1,24 @@
+[sound path="res://Audio/SFX/240416_SFX_npc_final3.wav" volume="-10.0" bus="SFX"]
+[signal arg="minimal_music"]
+Is it pizza time?\
+\
+I guess I'll take some, thank you for coming all the way up.
+It's good to see you again.
+How's life?
+...
+Hey, listen. I've been thinking....\
+\
+Don't you think it's time to, you know...\
+\
+Change things?
+Let the past in the past, move on...
+[sound path="res://Audio/SFX/240416_SFX_npc_final4.wav" volume="-10.0" bus="SFX"]
+Aren't you tired of this little game you're playing?\
+Aren't you tired of delivering pizza?\
+\
+...
+Look kiddo, you've got a choice to make...
+[signal arg="start_choice_cinematic"]
+[wait time="23.0"]
+After this, there is no turning back. You take the blue pizza - the story ends, you go back to deliver pizza and believe whatever you want to believe. You take the red pizza - we face the truth, whatever that might mean, and move on with our lives.
+[signal arg="enable_final_choice"]

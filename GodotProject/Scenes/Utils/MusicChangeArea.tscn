@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgxch3uvmwmpl"]
+
+[ext_resource type="Script" path="res://Scripts/MusicChangeArea.gd" id="1_lyd7v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pjup0"]
+
+[node name="MusicChangeArea" type="Node3D"]
+script = ExtResource("1_lyd7v")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_pjup0")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

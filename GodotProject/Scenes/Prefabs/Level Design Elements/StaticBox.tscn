@@ -1,6 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://jjygr33tp3f"]
+[gd_scene load_steps=4 format=3 uid="uid://jjygr33tp3f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nafrq"]
+emission_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_u1w48"]
+material = SubResource("StandardMaterial3D_nafrq")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jc0tb"]
 

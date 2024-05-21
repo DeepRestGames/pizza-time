@@ -1,0 +1,11 @@
+[signal arg="choice_taken"]
+[wait time="2.5"]
+[sound path="res://Audio/SFX/240416_SFX_npc_final1.wav" volume="-10.0" bus="SFX"]
+Well, this comes as a surprise.
+A nice one, mind you. I just didn't think we were ever going to leave here.
+Nevertheless.\
+No matter how much time it's been, no matter what was and what will be...
+We're all proud of you.\
+And we'll be by your side, always.
+Let's go now, friend. We got some pizza to share.
+[signal arg="start_red_ending_cinematic"]

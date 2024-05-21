@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://c80jmo5p7x2l4"]
 
-[ext_resource type="Script" path="res://Scripts/ActivatableMovableElement.gd" id="1_v0jgr"]
+[ext_resource type="Script" path="res://Scripts/MovableElement.gd" id="1_0theh"]
 [ext_resource type="AudioStream" uid="uid://i7fn0c217u5l" path="res://Audio/SFX/PizzaTime_PlatformMovement01.wav" id="2_15pq1"]
 [ext_resource type="PackedScene" uid="uid://b8intk1ci0l4v" path="res://Scenes/Prefabs/Level Design Elements/InteractableButton.tscn" id="2_g6dh4"]
 [ext_resource type="AudioStream" uid="uid://cs8hrjvyuo0e6" path="res://Audio/SFX/PizzaTime_PlatformMovement02.wav" id="3_5hftq"]
@@ -17,17 +17,25 @@ height = 1.0
 radius = 3.0
 
 [node name="Elevator" type="Node3D"]
-script = ExtResource("1_v0jgr")
+script = ExtResource("1_0theh")
 two_way_movement = true
 movement_sounds = Array[AudioStreamWAV]([ExtResource("2_15pq1"), ExtResource("3_5hftq"), ExtResource("4_xhuog"), ExtResource("5_8khd1")])
+animation_interval = 0.0
+auto_start = false
 
 [node name="Pivot" type="Node3D" parent="."]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Pivot"]
+volume_db = -10.0
+max_distance = 100.0
+bus = &"SFX"
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="Pivot"]
 collision_mask = 7
 sync_to_physics = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot/AnimatableBody3D"]
+layers = 2
 mesh = SubResource("CylinderMesh_1wxs3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/AnimatableBody3D"]
@@ -41,5 +49,3 @@ movable_platforms = [NodePath("../..")]
 
 [node name="EndingNode" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

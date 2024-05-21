@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Pizza Time"
-config/version="1.0.0"
+config/version="1.0.3"
 run/main_scene="res://Scenes/Prototypes/SplashScreen.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 run/max_fps=60

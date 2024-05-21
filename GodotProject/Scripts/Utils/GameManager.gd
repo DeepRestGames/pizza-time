@@ -19,7 +19,7 @@ func set_respawn_point(new_point: Vector3):
 
 	var extra_info := {}
 	extra_info["last_checkpoint"] = new_point
-	Dialogic.Save.save("save_slot", false, Dialogic.Save.ThumbnailMode.NONE, extra_info)
+	Dialogic.Save.save("save_slot04", false, Dialogic.Save.ThumbnailMode.NONE, extra_info)
 
 	checkpoint_reached.emit()
 
@@ -33,12 +33,11 @@ func respawn_player():
 
 func reset_game():
 	checkpoint_saved = false
-	Dialogic.Save.delete_slot("save_slot")
+	Dialogic.Save.delete_slot("save_slot04")
 
 
 func check_for_saves():
-	var extra_info = Dialogic.Save.get_slot_info("save_slot")
-	print(extra_info)
+	var extra_info = Dialogic.Save.get_slot_info("save_slot04")
 	if extra_info and extra_info.has("last_checkpoint"):
 		checkpoint_saved = true
 		player_respawn_point = extra_info["last_checkpoint"]
